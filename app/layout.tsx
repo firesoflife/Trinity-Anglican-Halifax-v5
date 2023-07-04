@@ -1,7 +1,6 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { heading, heading2, mainContent, mainContent2, subContent, subContent2 } from './site/utilities/fonts'
+import NavBar from './site/components/navbar'
 
 export const metadata = {
   title: 'Create Next App',
@@ -13,9 +12,35 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <div className={`
+            //  Fonts // 
+              ${heading.variable} 
+              ${heading2.variable} 
+              ${mainContent.variable}
+              ${mainContent2.variable}
+              ${subContent.variable}
+              ${subContent2.variable}
+              `}>
+          <div className='bg-secondary pt-7 h-[100%]'>
+            <div className='hidden lg:block'>
+              {/* @ts-expect-error Async Server Component */}
+              <NavBar props={mainContent} />
+            </div>
+            <div className='block lg:hidden'>
+              {/* <MobileNavbar /> */}
+            </div>
+            <main className='h-full'>
+              {children}
+            </main>
+            {/* <Footer /> */}
+          </div>
+        </div>
+      </body>
     </html>
   )
 }

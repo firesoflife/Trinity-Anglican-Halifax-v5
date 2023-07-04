@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,12 +10,27 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        primary: '#DFD8BE',
+        secondary: '#5F2533',
+        secondaryHover: '#982F2F',
+        accent: '#CA5A33',
+        accent2: '#D5845C',
+        myGrey: '#3B5771',
+        myBlue: '#577FA9',
+      },
+      fontFamily: {
+        heading: ['var(--font-header)', ...fontFamily.serif], // weight 400
+        subheading: ['var(--font-header2)', ...fontFamily.serif], // weight 700
+        mainContent: ['var(--font-main-content)', ...fontFamily.sans], // weight 400
+        mainContent2: ['var(--font-main-content2)', ...fontFamily.sans], // weight 700
+        subContent: ['var(--font-sub-content)', ...fontFamily.sans], // weight 400
+        subContent2: ['var(--font-sub-content2)', ...fontFamily.sans], // weight 700
       },
     },
   },
-  plugins: [],
-}
+  plugins: [require('daisyui')],
+  // daisyui: {
+  //   themes: ['light', 'dark', 'corporate', 'retro', 'coffee', 'black'],
+  // },
+};
