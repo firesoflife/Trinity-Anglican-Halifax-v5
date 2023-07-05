@@ -8,7 +8,6 @@ import {
 	subContent2,
 } from './site/utilities/fonts';
 import NavBar from './site/components/navbar';
-import MobileNavbar from './site/components/mobileNavbar';
 
 export const metadata = {
 	title: 'Create Next App',
@@ -21,24 +20,26 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en'>
+		<html
+			lang='en'
+			// data-theme='corporate'
+			data-theme='business'>
 			<body>
 				<div
 					className={`
-            //  Fonts // 
-              ${heading.variable} 
-              ${heading2.variable} 
-              ${mainContent.variable}
-              ${mainContent2.variable}
-              ${subContent.variable}
-              ${subContent2.variable}
-              `}>
-					<div className='bg-secondary pt-7 h-[100%]'>
-						<div className='hidden lg:block'>
-							{/* @ts-expect-error Async Server Component */}
-							<NavBar props={mainContent} />
-						</div>
-						<div className='block lg:hidden'>{<MobileNavbar />}</div>
+            			// Fonts // 
+						${heading.variable} 
+						${heading2.variable} 
+						${mainContent.variable}
+						${mainContent2.variable}
+						${subContent.variable}
+						${subContent2.variable}
+						`}>
+					<div className='bg-secondary pt-7 h-[100%] HELLO'>
+						{/* <div className='hidden lg:block'> */}
+						{/* @ts-expect-error Async Server Component */}
+						<NavBar props={mainContent} />
+						{/* </div> */}
 						<main className='h-full'>{children}</main>
 						{/* <Footer /> */}
 					</div>

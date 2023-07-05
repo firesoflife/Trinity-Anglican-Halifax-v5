@@ -29,8 +29,10 @@ module.exports = {
       },
     },
   },
-  plugins: [require('daisyui')],
-  // daisyui: {
-  //   themes: ['light', 'dark', 'corporate', 'retro', 'coffee', 'black'],
-  // },
+  plugins: [
+    require('daisyui')
+  ],
+  daisyui: {
+    themes: ['light', 'dark', 'corporate', 'retro', 'coffee', 'black', 'business'],
+  },
 };
