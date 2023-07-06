@@ -7,7 +7,7 @@ import {
 	subContent,
 	subContent2,
 } from './site/utilities/fonts';
-import NavBar from './site/components/navbar';
+import Navbar from './site/components/navbar';
 
 export const metadata = {
 	title: 'Create Next App',
@@ -38,7 +38,7 @@ export default function RootLayout({
 					<div className='bg-secondary pt-7 h-[100%] HELLO'>
 						{/* <div className='hidden lg:block'> */}
 						{/* @ts-expect-error Async Server Component */}
-						<NavBar props={mainContent} />
+						<Navbar props={mainContent} />
 						{/* </div> */}
 						<main className='h-full'>{children}</main>
 						{/* <Footer /> */}
