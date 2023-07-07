@@ -1,33 +1,5 @@
 'use client';
 
-// const MobileNavbar = () => {
-// 	return (
-// 		<div>
-// 			<div className='navbar-start'>
-// 				<div className='dropdown'>
-// 					<label tabIndex={0} className='btn btn-ghost lg:hidden'>
-// 						<svg
-// 							xmlns='http://www.w3.org/2000/svg'
-// 							className='h-5 w-5'
-// 							fill='none'
-// 							viewBox='0 0 24 24'
-// 							stroke='currentColor'>
-// 							<path
-// 								strokeLinecap='round'
-// 								strokeLinejoin='round'
-// 								strokeWidth='2'
-// 								d='M4 6h16M4 12h8m-8 6h16'
-// 							/>
-// 						</svg>
-// 					</label>
-// 				</div>
-// 			</div>
-// 		</div>
-// 	);
-// };
-
-// export default MobileNavbar;
-
 import { useState } from 'react';
 import Link from 'next/link';
 import { IoIosArrowBack, IoMdClose } from 'react-icons/io';
@@ -45,8 +17,8 @@ const MobileNavbar = () => {
 	};
 
 	return (
-		<div>
-			<div className='navbar-start'>
+		<>
+			<div className='navbar-end flex'>
 				<div className='dropdown'>
 					<button
 						onClick={toggleMenu}
@@ -74,7 +46,7 @@ const MobileNavbar = () => {
 					className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50'>
 					<nav
 						onClick={(e) => e.stopPropagation()}
-						className='bg-primary rounded-lg shadow-lg py-2 px-4 w-2/3 h-2/3 overflow-auto flex flex-col items-center justify-center shadow-2xl relative'>
+						className='bg-primary text-4xl rounded-lg shadow-lg py-2 px-4 w-2/3 h-2/3 overflow-auto flex flex-col items-center justify-center shadow-2xl relative'>
 						<IoMdClose
 							size={24}
 							onClick={toggleMenu}
@@ -89,7 +61,7 @@ const MobileNavbar = () => {
 										e.stopPropagation();
 										setActiveMenu(null);
 									}}
-									className='absolute top-2 left-2 text-subHeading hover:text-secondary'>
+									className='absolute text-md top-2 left-2 text-subHeading hover:text-secondary'>
 									<div className='flex'>
 										<IoIosArrowBack size={24} />
 										Go Back to Main Menu
@@ -123,7 +95,7 @@ const MobileNavbar = () => {
 									className='absolute top-2 left-2 text-subHeading hover:text-secondary'>
 									<div className='flex'>
 										<IoIosArrowBack size={24} />
-										Go Back to Main Menu
+										<p className='text-sm'>Go Back to Main Menu</p>
 									</div>
 								</div>
 								<Link href='/what-to-expect'>
@@ -139,6 +111,67 @@ const MobileNavbar = () => {
 								<Link href='/sermons-and-teaching'>
 									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
 										Sermons and Teaching
+									</p>
+								</Link>
+							</div>
+						) : activeMenu === 'parishlife' ? (
+							<div
+								onClick={toggleMenu}
+								className='w-full h-full flex flex-col items-center justify-center'>
+								<div
+									onClick={(e) => {
+										e.stopPropagation();
+										setActiveMenu(null);
+									}}
+									className='absolute top-2 left-2 text-subHeading hover:text-secondary'>
+									<div className='flex'>
+										<IoIosArrowBack size={24} />
+										Go Back to Main Menu
+									</div>
+								</div>
+								<Link href='/what-to-expect'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Parish Breakfast
+									</p>
+								</Link>
+								<Link href='/worship-schedule'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Ladies Bible Study
+									</p>
+								</Link>
+								<Link href='/sermons-and-teaching'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Sunday School
+									</p>
+								</Link>
+								<Link href='/sermons-and-teaching'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Parish Study Group
+									</p>
+								</Link>
+								<Link href='/sermons-and-teaching'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Rector's Rice Bowl
+									</p>
+								</Link>
+								<Link href='/sermons-and-teaching'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Refugee Sponsorship
+									</p>
+								</Link>
+								<Link href='/sermons-and-teaching'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Ministry & Volunteer Opportunities
+									</p>
+								</Link>
+								<Link href='/sermons-and-teaching'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Bulletins & News
+									</p>
+								</Link>
+								<Link href='/sermons-and-teaching'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Calendars
 									</p>
 								</Link>
 							</div>
@@ -167,13 +200,30 @@ const MobileNavbar = () => {
 									className='text-secondary my-2 p-2 rounded cursor-pointer'>
 									Worship
 								</button>
-								{/* Add more links as needed */}
+								<button
+									onClick={(e) => {
+										e.stopPropagation();
+										handleLinkClick('parishlife');
+									}}
+									className='text-secondary my-2 p-2 rounded cursor-pointer'>
+									Parish Life
+								</button>
+								<Link href='/facility'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Facility Rental
+									</p>
+								</Link>
+								<Link href='/contact'>
+									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
+										Contact
+									</p>
+								</Link>
 							</div>
 						)}
 					</nav>
 				</div>
 			)}
-		</div>
+		</>
 	);
 };
 
