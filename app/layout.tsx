@@ -8,7 +8,6 @@ import {
 	subContent2,
 } from './site/utilities/fonts';
 import Navbar from './site/components/Nav/navbar';
-import mobileNavbar from './site/components/Nav/mobileNavbar';
 import NavLayout from './site/components/Nav/layout';
 
 export const metadata = {
