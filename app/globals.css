@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* ............. OVERRIDE DAISY UI ............. */
+
+.nav-daisyui-override {
+    justify-content: end !important;
+}
