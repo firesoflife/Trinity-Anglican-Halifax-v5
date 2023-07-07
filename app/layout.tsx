@@ -7,8 +7,9 @@ import {
 	subContent,
 	subContent2,
 } from './site/utilities/fonts';
-import Navbar from './site/components/navbar';
-import mobileNavbar from './site/components/mobileNavbar';
+import Navbar from './site/components/Nav/navbar';
+import mobileNavbar from './site/components/Nav/mobileNavbar';
+import NavLayout from './site/components/Nav/layout';
 
 export const metadata = {
 	title: 'Create Next App',
@@ -37,14 +38,7 @@ export default function RootLayout({
 						${subContent2.variable}
 						`}>
 					<div className='bg-secondary pt-7 h-[100%]'>
-						<div className='hidden lg:block'>
-							{/* @ts-expect-error Async Server Component */}
-							{/* <Navbar props={mainContent} /> */}
-						</div>
-						<div className='md:block'>
-							{/* @ts-expect-error Async Server Component */}
-							<mobileNavbar props={mainContent} />
-						</div>
+						<NavLayout />
 						<main className='h-full'>{children}</main>
 						{/* <Footer /> */}
 					</div>
