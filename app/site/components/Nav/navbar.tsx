@@ -47,7 +47,7 @@ const Navbar = () => {
 						<FaChevronDown className='text-sm font-thin pr-2' />
 					</div>
 					<ul
-						className={`absolute top-full left-0 bg-cyan-50 mt-6 ${
+						className={`absolute top-full left-0 bg-cyan-50 mt-6 px-4 py-2 leading-10 ${
 							openDropdown === 'about' ? 'block' : 'hidden'
 						} whitespace-nowrap`}>
 						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
@@ -90,7 +90,7 @@ const Navbar = () => {
 						<FaChevronDown className='text-sm font-thin pr-2' />
 					</div>
 					<ul
-						className={`absolute top-full left-0 bg-cyan-50 mt-6 ${
+						className={`absolute top-full left-0 bg-cyan-50 mt-6 px-4 py-2 leading-10 ${
 							openDropdown === 'worship' ? 'block' : 'hidden'
 						} whitespace-nowrap`}>
 						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
@@ -133,7 +133,7 @@ const Navbar = () => {
 						<FaChevronDown className='text-sm font-thin pr-2' />
 					</div>
 					<ul
-						className={`absolute top-full left-0 bg-cyan-50 mt-6 ${
+						className={`absolute top-full left-0 bg-cyan-50 mt-6 px-4 py-2 leading-10 ${
 							openDropdown === 'parishlife' ? 'block' : 'hidden'
 						} whitespace-nowrap`}>
 						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
