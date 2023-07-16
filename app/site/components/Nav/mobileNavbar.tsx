@@ -4,15 +4,17 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { IoIosArrowBack, IoMdClose } from 'react-icons/io';
 
+type MenuType = 'about' | 'worship' | 'parishlife' | null;
+
 const MobileNavbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [activeMenu, setActiveMenu] = useState(null);
+	const [activeMenu, setActiveMenu] = useState<MenuType>(null);
 
 	const toggleMenu = () => {
 		setIsOpen(!isOpen);
 	};
 
-	const handleLinkClick = (menu) => {
+	const handleLinkClick = (menu: MenuType) => {
 		setActiveMenu(menu);
 	};
 

@@ -24,7 +24,7 @@ const NavLayout = () => {
 				</div>
 			</div>
 			{/* <div className='hidden lg:flex w-100 space-x-4 ml-8 justify-end'> */}
-			<div className='nav-daisyui-override hidden lg:flex'>
+			<div className='nav-daisyui-override navbar-end hidden lg:flex'>
 				<Navbar />
 			</div>
 			<div className='lg:hidden navbar-end text-end'>
