@@ -38,8 +38,7 @@ const Navbar = () => {
 
 	return (
 		<>
-			{/* <ul className='w-full text-secondary font-mainContent flex items-center whitespace-nowrap space-x-3 mx-8'> */}
-			<ul className='flex self-end space-x-4 font-mainContent'>
+			<ul className='flex self-end space-x-4 font-mainContent text-lg'>
 				<li className='relative' ref={submenuRef}>
 					<div
 						className='flex items-center space-x-1 cursor-pointer hover:text-secondaryHover'
@@ -48,7 +47,7 @@ const Navbar = () => {
 						<FaChevronDown className='text-sm font-thin pr-2' />
 					</div>
 					<ul
-						className={`absolute top-full left-0 bg-cyan-50 ${
+						className={`absolute top-full left-0 bg-cyan-50 mt-6 ${
 							openDropdown === 'about' ? 'block' : 'hidden'
 						} whitespace-nowrap`}>
 						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
@@ -91,7 +90,7 @@ const Navbar = () => {
 						<FaChevronDown className='text-sm font-thin pr-2' />
 					</div>
 					<ul
-						className={`absolute top-full left-0 bg-cyan-50 ${
+						className={`absolute top-full left-0 bg-cyan-50 mt-6 ${
 							openDropdown === 'worship' ? 'block' : 'hidden'
 						} whitespace-nowrap`}>
 						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
@@ -134,7 +133,7 @@ const Navbar = () => {
 						<FaChevronDown className='text-sm font-thin pr-2' />
 					</div>
 					<ul
-						className={`absolute top-full left-0 bg-cyan-50 ${
+						className={`absolute top-full left-0 bg-cyan-50 mt-6 ${
 							openDropdown === 'parishlife' ? 'block' : 'hidden'
 						} whitespace-nowrap`}>
 						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
