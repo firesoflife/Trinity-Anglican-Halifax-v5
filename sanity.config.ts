@@ -14,6 +14,8 @@ import { schema } from './sanity/schema'
 export default defineConfig({
   basePath: '/studio',
   projectId,
+  name: 'Trinity_Anglican_Church_Content_Studio',
+  title: 'Trinity Anglican Church Content Studio',
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
