@@ -12,6 +12,7 @@ import { rental } from './schemas/pages/facilityRentalSchema'
 import socialMediaPlatform from './schemas/components/contact/socialMedia'
 import { contactUs } from './schemas/pages/contactSchema'
 import { pastoralCare } from './schemas/components/contact/pastoralCare'
+import quickLinks from './schemas/components/home/quickLinks'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -28,7 +29,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     rental,
     socialMediaPlatform,
     contactUs,
-    pastoralCare
-
+    pastoralCare,
+    quickLinks
   ],
 }

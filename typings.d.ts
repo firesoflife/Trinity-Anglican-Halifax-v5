@@ -15,3 +15,14 @@
     welcomeImage: Image,
     alt: string
  }
+
+ interface QuickLinkCardProps {
+	imageSrc: string;
+	header: string;
+	subheader: string;
+	content: string;
+	cta?: {
+		text: string;
+		link: string;
+	} | null;
+}
