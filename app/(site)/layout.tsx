@@ -1,4 +1,3 @@
-import './globals.css';
 import {
 	heading,
 	heading2,
@@ -6,9 +5,8 @@ import {
 	mainContent2,
 	subContent,
 	subContent2,
-} from './(site)/utilities/fonts';
-import Navbar from './(site)/components/Nav/navbar';
-import NavLayout from './(site)/components/Nav/layout';
+} from './utilities/fonts';
+import NavLayout from './components/Nav/layout';
 
 export const metadata = {
 	title: 'Trinity Anglican Church, Halifax',
@@ -23,13 +21,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html
-			lang='en'
-			// data-theme='corporate'
-			data-theme='business'>
-			<body>
-				<div
-					className={`
+		<div
+			className={`
             			// Fonts // 
 						${heading.variable} 
 						${heading2.variable} 
@@ -38,13 +31,11 @@ export default function RootLayout({
 						${subContent.variable}
 						${subContent2.variable}
 						`}>
-					<div className='bg-secondary pt-7 h-[100%]'>
-						{/* <NavLayout /> */}
-						<main className='h-full'>{children}</main>
-						{/* <Footer /> */}
-					</div>
-				</div>
-			</body>
-		</html>
+			<div className='bg-secondary pt-7 h-[100%]'>
+				<NavLayout />
+				<main className='h-full'>{children}</main>
+				{/* <Footer /> */}
+			</div>
+		</div>
 	);
 }

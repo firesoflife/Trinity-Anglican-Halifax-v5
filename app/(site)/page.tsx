@@ -2,9 +2,9 @@ import { client } from '@/sanity/lib/client';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import ImageUrlBuilder from '@sanity/image-url';
 import 'app/globals.css';
-import { fallbackImages } from './(site)/utilities/fallbackAssets';
-import { getHome } from './lib/api/getHome';
-import QuickLinksLayout from './(site)/home/QuickLinksLayout';
+import { fallbackImages } from './utilities/fallbackAssets';
+import { getHome } from '../lib/api/getHome';
+import QuickLinksLayout from './home/QuickLinksLayout';
 
 const builder = ImageUrlBuilder(client);
 
