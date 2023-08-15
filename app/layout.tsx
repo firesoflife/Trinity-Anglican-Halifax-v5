@@ -38,7 +38,7 @@ export default function RootLayout({
 						${subContent.variable}
 						${subContent2.variable}
 						`}>
-					<div className='bg-secondary pt-7 h-[100%]'>
+					<div className='bg-secondary  h-[100%]'>
 						{/* <NavLayout /> */}
 						<main className='h-full'>{children}</main>
 						{/* <Footer /> */}
