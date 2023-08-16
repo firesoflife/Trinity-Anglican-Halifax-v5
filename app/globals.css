@@ -8,3 +8,51 @@
 .nav-daisyui-override {
     justify-content: end !important;
 }
+
+/* ............. OVERRIDE SANITY NAVBAR UI ............. */
+
+.sanity-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+}
+
+.sanity-link {
+    display: flex;
+    align-items: center;
+    color: #ffa024;
+    text-decoration: none;
+}
+
+.sanity-icon {
+    height: 1.5rem;
+    width: 1.25rem;
+    margin-right: 0.5rem;
+}
+
+.sanity-guide {
+    display: none;
+    padding: 1.25rem;
+    border: 2px solid #ffa;
+    border-radius: 0.5rem;
+    justify-content: center;
+    /* Add responsive style for md screen size */
+}
+
+@media (min-width: 768px) {
+    .sanity-guide {
+        display: flex;
+    }
+}
+
+.sanity-heading {
+    font-weight: bold;
+    color: white;
+}
+
+.sanity-link-guide {
+    color: #ffa024;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}

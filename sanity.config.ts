@@ -13,6 +13,7 @@ import { apiVersion, dataset, projectId } from './sanity/env'
 import { schema } from './sanity/schema'
 import { myTheme } from './theme'
 import Logo from './app/(site)/components/Images/Logo'
+import StudioNavbar from './sanity/components/StudioNavbar'
 
 
 export default defineConfig({
@@ -34,6 +35,7 @@ export default defineConfig({
  studio: {
     components: {
       logo: Logo,
+      navbar: StudioNavbar
     }
   },
   theme: myTheme,

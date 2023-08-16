@@ -27,24 +27,7 @@ export default function RootLayout({
 			lang='en'
 			// data-theme='corporate'
 			data-theme='business'>
-			<body>
-				<div
-					className={`
-            			// Fonts // 
-						${heading.variable} 
-						${heading2.variable} 
-						${mainContent.variable}
-						${mainContent2.variable}
-						${subContent.variable}
-						${subContent2.variable}
-						`}>
-					<div className='bg-secondary  h-[100%]'>
-						{/* <NavLayout /> */}
-						<main className='h-full'>{children}</main>
-						{/* <Footer /> */}
-					</div>
-				</div>
-			</body>
+			<body className='text-gray-300'>{children}</body>
 		</html>
 	);
 }
