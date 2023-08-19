@@ -26,3 +26,12 @@
 		link: string;
 	} | null;
 }
+
+interface About extends Base {
+   title: string,
+   slug: Slug,
+   description: string,
+   primaryImage: Image,
+   smallImage: Image,
+   body: Array<Block | Image>
+}

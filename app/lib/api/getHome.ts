@@ -1,29 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import { groq } from "next-sanity";
 
-// export function getHome() {
-//     return client.fetch(
-
-//     groq`
-    
-//     *[_type == "home"]{
-//       pageTitle,
-//       slug,
-//       welcomeHeading,
-//       welcome,
-//       welcomeImage{
-//         asset->{
-//           _id,
-//           url
-//         },
-//         alt
-//       }
-//     }
-//     `
-//   )
-
-// }
-
 export async function getHome(): Promise<Home> {
 
   return (client).fetch(
