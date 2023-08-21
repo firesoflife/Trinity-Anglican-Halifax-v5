@@ -4,13 +4,16 @@
 ////////// FALLBACK IMAGES ///////////
 //////////////////////////////////////
 
+// TODO - Add assets to build instead of URLs
+
 export const fallbackImages = {
 	heroImageFallback:
 		'https://images.unsplash.com/photo-1584792977024-014310b55977?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80',
 
 	about: {
-		primaryImage: '',
-		smallImage: '',
+		primaryImageFallback:
+			'https://images.unsplash.com/photo-1548093190-e40f9b1b4082?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+		smallImageFallback: '',
 	},
 };
 
