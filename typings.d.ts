@@ -28,10 +28,18 @@
 }
 
 interface About extends Base {
-   title: string,
-   slug: Slug,
-   description: string,
-   primaryImage: Image,
-   smallImage: Image,
+   title: string;
+   slug: Slug;
+   description: string;
+   primaryImage: Image;
+   smallImage: Image;
    body: Array<Block | Image>
+}
+
+interface Staff extends Base {
+   name: string;
+   role: string;
+   imageUrl: string;
+  bio: string;
+  email: string;
 }

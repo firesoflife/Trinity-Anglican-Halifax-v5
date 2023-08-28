@@ -11,7 +11,7 @@ export const home = defineType({
         title: 'Page Title',
         type: 'string',
         placeholder: 'Trinity Anglican Church',
-        validation: (Rule: StringRule) => Rule.required().max(27).warning('You have exceeded the maximum length')
+        validation: (Rule) => Rule.required().max(27).warning('You have exceeded the maximum length')
       }),
     defineField(
       {
@@ -24,14 +24,14 @@ export const home = defineType({
         },
       }),
     defineField(
-      {
-        name: 'welcomeHeading',
-        title: 'Welcome Heading',
-        type: 'string',
-        placeholder: 'Welcome to Trinity Anglican Church',
-        validation: (Rule: StringRule) => Rule.max(80).warning('You have exceeded the maximum length')
-      }
-    ),
+  {
+    name: 'welcomeHeading',
+    title: 'Welcome Heading',
+    type: 'string',
+    placeholder: 'Welcome to Trinity Anglican Church',
+    validation: (Rule: StringRule) => Rule.required().max(80).error('You have exceeded the maximum length or field is empty'),
+  }
+),
     defineField(
       {
         name: 'welcome',
@@ -39,7 +39,7 @@ export const home = defineType({
         type: 'text',
         placeholder:
           'ubi proles etiam contra votum nascitur, quamvis iam nata cogat se diligi. Recolo etiam, cum mihi theatrici carminis',
-        validation: (Rule: StringRule) => Rule.max(500).warning('You have exceeded the maximum length')
+        validation: (Rule: StringRule) => Rule.required().max(500).error('Either you haven not entered any content, or you have exceeded the maximum allowable length')
       }),
     defineField(
       {

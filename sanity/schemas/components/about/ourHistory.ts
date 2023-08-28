@@ -1,4 +1,7 @@
 // import { MdHistory as icon } from 'react-icons/md';
+
+// TODO - Delete or build conditionally rendered page for History and leave as optional for admins
+
 import { defineType, defineField, defineArrayMember } from '@sanity/types';
 import { MdOutlineChurch as icon } from 'react-icons/md';
 
