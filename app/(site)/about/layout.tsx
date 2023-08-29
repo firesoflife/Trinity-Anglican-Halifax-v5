@@ -1,7 +1,7 @@
+import { getStaff } from '@/app/lib/api/getStaff';
 import StaffBanner from './staff/StaffBanner';
 import StaffDetails from './staff/StaffDetails';
 import StaffList from './staff/StaffList';
-import StaffList2 from './staff/StaffList2';
 
 type LayoutProps = {
 	children: React.ReactNode;
@@ -24,7 +24,6 @@ export default function Layout({ children }: LayoutProps) {
 					<div className='flex flex-row flex-grow overflow-hidden'>
 						<StaffList />
 						<StaffDetails />
-						<StaffList2 />
 					</div>
 				</div>
 			</div>

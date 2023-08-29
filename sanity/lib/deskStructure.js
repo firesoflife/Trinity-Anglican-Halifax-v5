@@ -40,10 +40,10 @@ export const deskStructure = (S) =>
 								.title('Clergy and People')
 								.icon(MdPeople)
 								.child(
-									S.editor()
-										.schemaType('staffList')
-										.documentId('staffList')
-										.title('Order of Appearance')
+									S.documentList()
+										.schemaType('staff')
+										.title('Clergy and Staff')
+										.filter('_type == "staff"')
 								),
 						])
 				),

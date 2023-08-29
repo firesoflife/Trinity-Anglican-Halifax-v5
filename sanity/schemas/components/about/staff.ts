@@ -18,14 +18,21 @@ export const staff = defineType({
       }),
     defineField(
       {
+      name: 'position',
+      title: 'Position',
+      type: 'string',
+      }),
+    defineField(
+      {
         name: 'role',
         title: 'Role',
         type: 'string',
         options: {
           list: [
+            { title: 'Rector', value: 'rector'},
             { title: 'Clergy', value: 'clergy' },
-            { title: 'People', value: 'people' },
-            { title: 'Wardens', value: 'wardens' },
+            { title: 'General Staff', value: 'general' },
+            { title: 'Wardens', value: 'warden' },
           ],
           layout: 'dropdown',
         },

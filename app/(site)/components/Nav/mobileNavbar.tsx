@@ -48,7 +48,7 @@ const MobileNavbar = () => {
 					className='fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center z-50'>
 					<nav
 						onClick={(e) => e.stopPropagation()}
-						className='bg-primary font-mainContent rounded-lg shadow-lg py-2 px-4 w-2/3 h-2/3 overflow-auto flex flex-col items-center justify-center shadow-2xl relative'>
+						className='bg-primary font-mainContent rounded-lg py-2 px-4 w-2/3 h-2/3 overflow-auto flex flex-col items-center justify-center shadow-2xl relative'>
 						<IoMdClose
 							size={24}
 							onClick={toggleMenu}

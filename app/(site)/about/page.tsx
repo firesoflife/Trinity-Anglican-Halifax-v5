@@ -20,8 +20,6 @@ const aboutPage = async () => {
 		? urlFor(about.primaryImage).url()
 		: fallbackImages.about.primaryImageFallback;
 
-	console.log(about);
-
 	return (
 		<div>
 			<section
