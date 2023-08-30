@@ -8,7 +8,7 @@ interface StaffCardProps {
 const StaffCard: React.FC<StaffCardProps> = ({ staffMember }) => (
 	<div
 		key={staffMember._id}
-		className='max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
+		className='flex flex-col items-center max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700'>
 		<a href='#'>
 			<img
 				className='rounded-t-lg'
@@ -16,13 +16,13 @@ const StaffCard: React.FC<StaffCardProps> = ({ staffMember }) => (
 				alt={staffMember.name}
 			/>
 		</a>
-		<div className='p-5'>
+		<div className='p-5 w-full'>
 			<a href='#'>
-				<h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+				<h5 className='mb-2 text-2xl font-bold tracking-tight text-center text-gray-900 dark:text-white'>
 					{staffMember.name}
 				</h5>
 			</a>
-			<p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
+			<p className='mb-3 font-normal text-gray-700 dark:text-gray-400 line-clamp-5 '>
 				{staffMember.bio}
 			</p>
 			<a

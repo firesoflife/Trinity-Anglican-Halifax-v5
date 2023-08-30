@@ -38,13 +38,13 @@ const StaffPage = async () => {
 	const rolesOrder = ['rector', 'clergy', 'general', 'warden'];
 
 	return (
-		<div className='grid gap-8'>
+		<div className='flex flex-wrap gap-8 w-full'>
 			{rolesOrder.map((role) => (
-				<div key={role} className='border p-4 rounded-lg'>
+				<div key={role} className='w-full border p-4 rounded-lg'>
 					<h2 className='text-center text-4xl mb-8 text-primary font-subheading first-letter:uppercase'>
 						{roleTitles[role as Role]}
 					</h2>
-					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4'>
+					<div className='flex flex-wrap justify-center gap-4'>
 						{staffByRole[role]?.map((staffMember: Staff) => (
 							<StaffCard key={staffMember._id} staffMember={staffMember} />
 						))}
