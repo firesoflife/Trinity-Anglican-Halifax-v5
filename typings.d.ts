@@ -37,24 +37,22 @@ interface About extends Base {
 }
 
 interface Staff extends Base {
-  _id: string;
-  _createdAt: string;
   name: string;
   role: string;
-  image: {
-    asset: {
-      url: string;
-    };
-    alt: string;
-  };
+  imageUrl: SanityImageSource;
   bio: string;
   email: string;
 }
 
-interface StaffMembers extends Base {
+interface StaffCardProps {
+  staffMember: Staff;
+}
+
+interface StaffCardMember extends Base {
+   _id: string;
   name: string;
   role: string;
-  imageUrl: string | null;
+  imageUrl: SanityImageSource;
   bio: string;
-  email: string | null;
-};
+  email: string;
+}

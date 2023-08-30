@@ -1,7 +1,5 @@
-import { getStaff } from '@/app/lib/api/getStaff';
 import StaffBanner from './staff/StaffBanner';
-import StaffDetails from './staff/StaffDetails';
-import StaffList from './staff/StaffList';
+import StaffPage from './staff/StaffPage';
 
 type LayoutProps = {
 	children: React.ReactNode;
@@ -18,12 +16,13 @@ export default function Layout({ children }: LayoutProps) {
 			<main className='h-full'>{children}</main>
 
 			<StaffBanner />
+			<StaffPage />
 
 			<div className='container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14'>
 				<div className='flex flex-col h-screen'>
-					<div className='flex flex-row flex-grow overflow-hidden'>
-						<StaffList />
-						<StaffDetails />
+					<div className='flex flex-row flex-grow '>
+						{/* <StaffList /> */}
+						{/* <StaffDetails /> */}
 					</div>
 				</div>
 			</div>

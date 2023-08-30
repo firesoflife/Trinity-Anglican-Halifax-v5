@@ -32,7 +32,7 @@ export const staff = defineType({
             { title: 'Rector', value: 'rector'},
             { title: 'Clergy', value: 'clergy' },
             { title: 'General Staff', value: 'general' },
-            { title: 'Wardens', value: 'warden' },
+            { title: 'Warden', value: 'warden' },
           ],
           layout: 'dropdown',
         },
@@ -58,7 +58,7 @@ export const staff = defineType({
         title: 'Email',
         type: 'string',
         hidden: ({ parent }: { parent: { role: string } }) => {
-          return parent.role !== 'wardens';
+          return parent.role !== 'warden';
         },
         validation: (Rule: any) =>
           Rule.regex(
