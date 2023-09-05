@@ -11,6 +11,8 @@ function urlFor(source: SanityImageSource) {
 	return builder.image(source);
 }
 
+// TODO - Adapt for no staff members - i.e. if != wardens from Sanity then hide section and header
+
 const StaffPage = async () => {
 	const staffMembers: Staff[] = await getStaff();
 

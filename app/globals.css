@@ -56,3 +56,23 @@
     font-weight: bold;
     margin-left: 0.5rem;
 }
+
+/* ............. ABOUT PAGE STAFF DIVIDER............. */
+
+.staff-underline {
+    border: none;
+    border-top: 3px double #5F2533;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+.staff-underline:after {
+    background: #DFD8BE;
+    color: #5F2533;
+        content: '§';
+        padding: 0 4px;
+        position: relative;
+        top: -13px;
+}

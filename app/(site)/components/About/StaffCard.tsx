@@ -1,4 +1,8 @@
 // StaffCard.tsx
+
+// TODO - conditionaly render the contact button for Wardens only
+
+// TODO - Ensure all uploaded photos render the same size
 import urlFor from '@/sanity/lib/urlFor';
 
 interface StaffCardProps {
