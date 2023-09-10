@@ -69,7 +69,7 @@ const MobileNavbar = () => {
 										Go Back to Main Menu
 									</div>
 								</div>
-								<Link href='/our-history'>
+								<Link href='/about'>
 									<p className='text-secondary my-2 p-2 rounded cursor-pointer'>
 										Our History
 									</p>

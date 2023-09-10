@@ -1,16 +1,20 @@
-import { MdHome } from 'react-icons/md';
-import { MdInfo } from 'react-icons/md';
-import { MdHistory } from 'react-icons/md';
-import { MdPeople } from 'react-icons/md';
-import { MdContactMail } from 'react-icons/md';
-import { GiBookCover } from 'react-icons/gi';
-import { GiScrollUnfurled } from 'react-icons/gi';
+import {
+	MdHome,
+	MdInfo,
+	MdHistory,
+	MdPeople,
+	MdContactMail,
+} from 'react-icons/md';
+import { TbChristmasTree } from 'react-icons/tb';
+import {
+	GiBookCover,
+	GiScrollUnfurled,
+	GiChurch,
+	GiHeartPlus,
+} from 'react-icons/gi';
 import { MdEventNote } from 'react-icons/md';
-import { GiChurch } from 'react-icons/gi';
-import { GiHeartPlus } from 'react-icons/gi';
 import { IoShareSocialOutline } from 'react-icons/io5';
 
-// export default () =>
 export const deskStructure = (S) =>
 	S.list()
 		.title('Content')
@@ -92,12 +96,18 @@ export const deskStructure = (S) =>
 								.icon(GiBookCover)
 								.child(S.editor().schemaType('worship').documentId('worship')),
 							S.listItem()
-								.title('Worship Schedule')
+								.title('Regular Services')
 								.icon(MdEventNote)
 								.child(
-									S.editor()
-										.schemaType('worshipSchedule')
-										.documentId('worshipSchedule')
+									S.documentTypeList('regularService').title('Regular Services')
+								),
+							S.listItem()
+								.title('Special Services & Holidays')
+								.icon(TbChristmasTree)
+								.child(
+									S.documentTypeList('specialService').title(
+										'Special Services & Holidays'
+									)
 								),
 							S.listItem()
 								.title('Sermons')

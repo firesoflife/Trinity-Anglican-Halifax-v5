@@ -52,6 +52,7 @@ export const home = defineType({
             name: 'alt',
             title: 'Alt',
             type: 'string',
+            description: 'alt text describes the image and is displayed or read to visually impaired visitors to the site. It is also useful in SEO'
           },
         ],
       }),

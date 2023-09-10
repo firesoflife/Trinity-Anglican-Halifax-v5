@@ -21,7 +21,8 @@ const aboutPage = async () => {
 		: fallbackImages.about.primaryImageFallback;
 
 	return (
-		<div className='bg-secondary'>
+		// <div className='bg-secondary'>
+		<div className='bg-gradient-to-r from-secondary to-white'>
 			<section
 				className='hero h-[44vh] shadow-lg rounded-lg overflow-hidden mb-12'
 				style={{

@@ -5,7 +5,7 @@ import { ourHistory } from './schemas/components/about/ourHistory'
 import { staff } from './schemas/components/about/staff'
 import { staffList } from './schemas/components/about/staffList'
 import { worship } from './schemas/pages/worshipSchema'
-import { worshipSchedule } from './schemas/components/worship/worshipSchedule'
+import { regularService } from './schemas/components/worship/regularServiceSchedule'
 import { sermon } from './schemas/components/worship/sermon'
 import { speaker } from './schemas/components/worship/speaker'
 import { rental } from './schemas/pages/facilityRentalSchema'
@@ -13,6 +13,8 @@ import socialMediaPlatform from './schemas/components/contact/socialMedia'
 import { contactUs } from './schemas/pages/contactSchema'
 import { pastoralCare } from './schemas/components/contact/pastoralCare'
 import quickLinks from './schemas/components/home/quickLinks'
+import { specialService } from './schemas/components/worship/specialServiceSchedule'
+
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -23,7 +25,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     staff,
     staffList,
     worship,
-    worshipSchedule,
+    regularService,
+    specialService,
     sermon,
     speaker,
     rental,

@@ -1,239 +1,299 @@
 'use client';
 
+// TODO - Add animated / pulsing chevron (maybe in circle) to menu items in dropdowns
+
 import Link from 'next/link';
-import Image from 'next/image';
-// import Church_Crest from '../../../public/Church_Crest.png';
-import Church_Crest from '../../../../public/Church_Crest.png';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { Collapse } from 'flowbite';
+import type { CollapseOptions, CollapseInterface } from 'flowbite';
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
+import Triquetra from '../../../../public/triquetra1.png';
+import Logo from '../../../../public/triquetra-svg.svg';
 
 const Navbar = () => {
-	const logo = Church_Crest;
-	const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-	const submenuRef = useRef(null);
+	const triggerRef = useRef<HTMLButtonElement>(null);
+	const targetRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
-		const handleClickOutside = (event: MouseEvent) => {
-			if (
-				submenuRef.current &&
-				!(submenuRef.current as Element).contains(event.target as Element)
-			) {
-				setOpenDropdown(null);
-			}
+		const options: CollapseOptions = {
+			onCollapse: () => {
+				console.log('element has been collapsed');
+			},
+			onExpand: () => {
+				console.log('element has been expanded');
+			},
+			onToggle: () => {
+				console.log('element has been toggled');
+			},
 		};
 
-		document.addEventListener('mousedown', handleClickOutside);
+		const collapse: CollapseInterface = new Collapse(
+			targetRef.current,
+			triggerRef.current,
+			options
+		);
+
+		// Clean up function to avoid memory leaks
 		return () => {
-			document.removeEventListener('mousedown', handleClickOutside);
+			collapse.collapse();
 		};
-	}, [submenuRef]);
-
-	const handleSubMenuClick = (dropdownName: string) => {
-		setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
-	};
-
-	const handleLinkClick = () => {
-		setOpenDropdown(null);
-	};
+	}, []);
 
 	return (
-		<>
-			<ul className='flex self-end space-x-4 font-mainContent text-lg'>
-				<li className='relative' ref={submenuRef}>
+		<div>
+			<nav className='bg-primary border-myGrey'>
+				<div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
+					<Link href='#'>
+						<div className='flex items-center'>
+							{/* TODO - Upload Logo default and add to Sanity Studio */}
+							<img
+								src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.u24f1nQqWZYOG_Uia5NKjQHaHA%26pid%3DApi&f=1&ipt=2027b2a8f2afdc1d2f97fc1cca6ec854c66f05af9c28a38ed1fae28c1cae5d12&ipo=images'
+								// src={Logo}
+								className='h-8 mr-3'
+								alt='Flowbite Logo'
+							/>
+							<span className='self-center text-2xl text-secondary font-subheading whitespace-nowrap'>
+								Trinity Anglican Church
+							</span>
+						</div>
+					</Link>
+					<button
+						ref={triggerRef}
+						data-collapse-toggle='N-multi-level'
+						type='button'
+						className='inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-myGrey rounded-lg md:hidden hover:bg-primary focus:outline-none focus:ring-2 focus:ring-myGrey'
+						aria-controls='navbar-multi-level'
+						aria-expanded='false'>
+						<span className='sr-only'>Open main menu</span>
+						<svg
+							className='w-5 h-5'
+							aria-hidden='true'
+							xmlns='http://www.w3.org/2000/svg'
+							fill='none'
+							viewBox='0 0 17 14'>
+							<path
+								stroke='currentColor'
+								strokeLinecap='round'
+								strokeLinejoin='round'
+								strokeWidth='2'
+								d='M1 1h15M1 7h15M1 13h15'
+							/>
+						</svg>
+					</button>
 					<div
-						className='flex items-center space-x-1 cursor-pointer hover:text-secondaryHover'
-						onClick={() => handleSubMenuClick('about')}>
-						<p>About</p>
-						<FaChevronDown className='text-sm font-thin pr-2' />
+						ref={targetRef}
+						className=' w-full md:block md:w-auto'
+						id='navbar-multi-level'>
+						<ul className='flex flex-col font-medium p-4 md:p-0 mt-4 bg-primary md:flex-row md:space-x-8 md:mt-0 md:border-0 '>
+							<li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
+								<Link
+									href='/'
+									className='block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0'
+									aria-current='page'>
+									Home
+								</Link>
+							</li>
+							<li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
+								<button
+									id='dropdownNavbarLink'
+									data-dropdown-toggle='dropdownNavbar'
+									className='flex items-center justify-between w-full py-2 pl-3 pr-4 border-b border-primary  md:border-0 md:p-0 md:w-auto hover:text-white'>
+									About{' '}
+									<svg
+										className='w-2.5 h-2.5 ml-2.5'
+										aria-hidden='true'
+										xmlns='http://www.w3.org/2000/svg'
+										fill='none'
+										viewBox='0 0 10 6'>
+										<path
+											stroke='currentColor'
+											stroke-linecap='round'
+											stroke-linejoin='round'
+											stroke-width='2'
+											d='m1 1 4 4 4-4'
+										/>
+									</svg>
+								</button>
+								<div
+									id='dropdownNavbar'
+									className='z-10 hidden font-normal bg-white divide-y divide-myGrey rounded-lg shadow w-44'>
+									<ul
+										className='py-2 text-sm text-secondary'
+										aria-labelledby='dropdownLargeButton'>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Our History
+											</Link>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<div className='flex items-center justify-between w-full px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Staff & Clergy
+											</div>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Location
+											</Link>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
+								<button
+									id='dropdownNavbarLink'
+									data-dropdown-toggle='dropdownWorship'
+									className='flex items-center justify-between w-full py-2 pl-3 pr-4 border-b border-primary  md:border-0 md:p-0 md:w-auto hover:text-white'>
+									Worship{' '}
+									<svg
+										className='w-2.5 h-2.5 ml-2.5'
+										aria-hidden='true'
+										xmlns='http://www.w3.org/2000/svg'
+										fill='none'
+										viewBox='0 0 10 6'>
+										<path
+											stroke='currentColor'
+											stroke-linecap='round'
+											stroke-linejoin='round'
+											stroke-width='2'
+											d='m1 1 4 4 4-4'
+										/>
+									</svg>
+								</button>
+								<div
+									id='dropdownWorship'
+									className='z-10 hidden font-normal bg-white divide-y divide-myGrey rounded-lg shadow w-max'>
+									<ul
+										className='py-2 text-sm text-secondary'
+										aria-labelledby='dropdownLargeButton'>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
+												What to Expect
+											</Link>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<div className='flex items-center justify-between w-full px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Worship Schedule
+											</div>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Sermons & Teaching
+											</Link>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
+								<button
+									id='dropdownNavbarLink'
+									data-dropdown-toggle='dropdownLife'
+									className='flex items-center justify-between w-full py-2 pl-3 pr-4 border-b border-primary  md:border-0 md:p-0 md:w-auto hover:text-white'>
+									Parish Life{' '}
+									<svg
+										className='w-2.5 h-2.5 ml-2.5'
+										aria-hidden='true'
+										xmlns='http://www.w3.org/2000/svg'
+										fill='none'
+										viewBox='0 0 10 6'>
+										<path
+											stroke='currentColor'
+											stroke-linecap='round'
+											stroke-linejoin='round'
+											stroke-width='2'
+											d='m1 1 4 4 4-4'
+										/>
+									</svg>
+								</button>
+								<div
+									id='dropdownLife'
+									className='z-10 hidden font-normal bg-white divide-y divide-myGrey rounded-lg shadow w-max'>
+									<ul
+										className='py-2 text-sm text-secondary'
+										aria-labelledby='dropdownLargeButton'>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
+												All Events
+											</Link>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<div className='flex items-center justify-between w-full px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Parish Breakfast
+											</div>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Ladies' Bible Study
+											</Link>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Sunday School
+											</Link>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Parish Study Group
+											</Link>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Rector's Rice Bowl
+											</Link>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='flex justify-between px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Refugee Sponsorship
+											</Link>
+										</li>
+										<li className='font-subheading text-2xl'>
+											<Link
+												href='#'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
+												Other Ministries & Volunteer Opportunities
+											</Link>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
+								<Link
+									href='#'
+									className='block py-2 pl-3 pr-4 rounded md:border-0 md:p-0'>
+									Facility Rental
+								</Link>
+							</li>
+							<li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
+								<Link
+									href='#'
+									className='block py-2 pl-3 pr-4 rounded md:border-0 md:p-0'>
+									Contact
+								</Link>
+							</li>
+						</ul>
 					</div>
-					<ul
-						className={`absolute top-full left-0 bg-cyan-50 mt-6 px-4 py-2 leading-10 ${
-							openDropdown === 'about' ? 'block' : 'hidden'
-						} whitespace-nowrap`}>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Our History
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Clergy & People
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Location
-								</div>
-							</Link>
-						</li>
-					</ul>
-				</li>
-				<li className='relative' ref={submenuRef}>
-					<div
-						className='flex items-center space-x-1 cursor-pointer hover:text-secondaryHover'
-						onClick={() => handleSubMenuClick('worship')}>
-						<p>Worship</p>
-						<FaChevronDown className='text-sm font-thin pr-2' />
-					</div>
-					<ul
-						className={`absolute top-full left-0 bg-cyan-50 mt-6 px-4 py-2 leading-10 ${
-							openDropdown === 'worship' ? 'block' : 'hidden'
-						} whitespace-nowrap`}>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									What to Expect
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Worship Schedule
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Sermons & Teaching
-								</div>
-							</Link>
-						</li>
-					</ul>
-				</li>
-				<li className='relative' ref={submenuRef}>
-					<div
-						className='flex items-center space-x-1 cursor-pointer hover:text-secondaryHover'
-						onClick={() => handleSubMenuClick('parishlife')}>
-						<p>Parish Life</p>
-						<FaChevronDown className='text-sm font-thin pr-2' />
-					</div>
-					<ul
-						className={`absolute top-full left-0 bg-cyan-50 mt-6 px-4 py-2 leading-10 ${
-							openDropdown === 'parishlife' ? 'block' : 'hidden'
-						} whitespace-nowrap`}>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									All Events
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Parish Breakfast
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Ladies' Bible Study
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Sunday School
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Parish Study Group
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Rectors Rice Bowl
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Refugee Sponsorship
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Other Ministries <br /> & Volunteer Opportunities
-								</div>
-							</Link>
-						</li>
-						<li className='my-2 hover:bg-secondary hover:text-primary cursor-pointer'>
-							<Link href='#'>
-								<div
-									className='flex items-center  px-4'
-									onClick={handleLinkClick}>
-									<FaChevronRight className='text-sm font-thin pr-2' />
-									Events Calendar
-								</div>
-							</Link>
-						</li>
-					</ul>
-				</li>
-				<li className=' hover:text-secondaryHover cursor-pointer'>
-					Facility Rental
-				</li>
-				<li className='hover:text-secondaryHover cursor-pointer'>Contact</li>
-			</ul>
-		</>
+				</div>
+			</nav>
+		</div>
 	);
 };
 

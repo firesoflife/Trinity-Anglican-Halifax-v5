@@ -56,3 +56,41 @@ interface StaffCardMember extends Base {
   bio: string;
   email: string;
 }
+
+interface Worship extends Base{
+  pageTitle: string;
+  slug: { current: string };
+  mainContent: string;
+  item1: string;
+  item1Content: string;
+  item2: string;
+  item2Content: string;
+  item3: string;
+  item3Content: string;
+  mainImage: { asset: { url: string } } | null;
+}
+
+interface AccordionItem {
+  id: string;
+  title: string;
+  content: string;
+}
+
+interface RegularService extends Base {
+  _id: string;
+  title: string;
+  description: string;
+  startTime: string;
+  endTime: string;
+  daysOfWeek: string[];
+}
+
+interface SpecialService extends Base {
+  _id: string;
+  title: string;
+  description: string;
+  date: string;
+  startTime: string;
+  endTime: string;
+  daysOfWeek: string[];
+}

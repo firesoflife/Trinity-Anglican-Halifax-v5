@@ -15,6 +15,10 @@ export const fallbackImages = {
 			'https://images.unsplash.com/photo-1548093190-e40f9b1b4082?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
 		smallImageFallback: '',
 	},
+	worship: {
+		primaryImageFallback:
+			'https://churchos-uploads.s3.amazonaws.com/2020/04/09/09/32/21/9338edd7-2b91-41de-82b5-ab036c2688d3/Trinity_Halifax.png',
+	},
 };
 
 export const placeholders = {
