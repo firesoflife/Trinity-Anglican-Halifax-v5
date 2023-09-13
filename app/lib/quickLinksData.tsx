@@ -2,7 +2,8 @@ export const cards = [
 	{
 		// TODO: Replace imageSrc with actual image
 		imageSrc:
-			'https://cdn.midjourney.com/5c1a8949-481b-4984-8fdf-2dc87cd684e1/0_3.png',
+			// 'https://cdn.midjourney.com/5c1a8949-481b-4984-8fdf-2dc87cd684e1/0_3.png',
+			'https://prayerbook.ca/wp-content/uploads/2021/03/pbsc-template-logo-v2-01.png',
 		header: 'Prayer Book Society of Canada',
 		subheader:
 			' Visit the Prayer Book Society of Canada to learn more about the Book of Common Prayer.',
@@ -15,7 +16,8 @@ export const cards = [
 	},
 	{
 		imageSrc:
-			'https://cdn.midjourney.com/40fb6098-311f-4d9f-8b3c-fa555485d465/0_1.png',
+			// 'https://cdn.midjourney.com/40fb6098-311f-4d9f-8b3c-fa555485d465/0_1.png',
+			'https://dq5pwpg1q8ru0.cloudfront.net/2021/11/10/10/47/05/08122710-d5e6-41eb-bc2f-9da696c27d86/crest%20with%20name.png',
 		header: 'Anglican Diocese of NS & PEI',
 		subheader: 'Card Subheader 2',
 		content:

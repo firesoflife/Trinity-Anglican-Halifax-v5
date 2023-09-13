@@ -9,6 +9,9 @@
 
  interface Home extends Base {
     pageTitle: string,
+    logo: 'Image',
+    bannerTitle: string,
+    navbarTitle: string,
     slug: Slug,
     welcomeHeading: string,
     welcome: string,

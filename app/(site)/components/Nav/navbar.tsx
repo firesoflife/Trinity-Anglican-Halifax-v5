@@ -3,16 +3,22 @@
 // TODO - Add animated / pulsing chevron (maybe in circle) to menu items in dropdowns
 
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Collapse } from 'flowbite';
+import Image from 'next/image';
 import type { CollapseOptions, CollapseInterface } from 'flowbite';
-import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
-import Triquetra from '../../../../public/triquetra1.png';
 import Logo from '../../../../public/triquetra-svg.svg';
+import { getHome } from '@/app/lib/api/getHome';
 
 const Navbar = () => {
 	const triggerRef = useRef<HTMLButtonElement>(null);
 	const targetRef = useRef<HTMLDivElement>(null);
+
+	const [homeData, setHomeData] = useState<Home | null>(null);
+
+	useEffect(() => {
+		getHome().then((data) => setHomeData(data));
+	}, []);
 
 	useEffect(() => {
 		const options: CollapseOptions = {
@@ -46,20 +52,27 @@ const Navbar = () => {
 					<Link href='#'>
 						<div className='flex items-center'>
 							{/* TODO - Upload Logo default and add to Sanity Studio */}
-							<img
-								src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.u24f1nQqWZYOG_Uia5NKjQHaHA%26pid%3DApi&f=1&ipt=2027b2a8f2afdc1d2f97fc1cca6ec854c66f05af9c28a38ed1fae28c1cae5d12&ipo=images'
-								// src={Logo}
-								className='h-8 mr-3'
-								alt='Flowbite Logo'
+
+							<Image
+								src={Logo}
+								width={60}
+								height={60}
+								alt='Picture of the author'
 							/>
 							<span className='self-center text-2xl text-secondary font-subheading whitespace-nowrap'>
-								Trinity Anglican Church
+								{homeData ? (
+									homeData.navbarTitle
+								) : (
+									<div role='status' className='max-w-sm animate-pulse'>
+										<div className='h-2.5 bg-secondaryHover rounded-full w-48 '></div>
+									</div>
+								)}
 							</span>
 						</div>
 					</Link>
 					<button
 						ref={triggerRef}
-						data-collapse-toggle='N-multi-level'
+						// data-collapse-toggle='N-multi-level'
 						type='button'
 						className='inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-myGrey rounded-lg md:hidden hover:bg-primary focus:outline-none focus:ring-2 focus:ring-myGrey'
 						aria-controls='navbar-multi-level'
@@ -107,9 +120,9 @@ const Navbar = () => {
 										viewBox='0 0 10 6'>
 										<path
 											stroke='currentColor'
-											stroke-linecap='round'
-											stroke-linejoin='round'
-											stroke-width='2'
+											strokeLinecap='round'
+											strokeLinejoin='round'
+											strokeWidth='2'
 											d='m1 1 4 4 4-4'
 										/>
 									</svg>
@@ -156,9 +169,9 @@ const Navbar = () => {
 										viewBox='0 0 10 6'>
 										<path
 											stroke='currentColor'
-											stroke-linecap='round'
-											stroke-linejoin='round'
-											stroke-width='2'
+											strokeLinecap='round'
+											strokeLinejoin='round'
+											strokeWidth='2'
 											d='m1 1 4 4 4-4'
 										/>
 									</svg>
@@ -205,9 +218,9 @@ const Navbar = () => {
 										viewBox='0 0 10 6'>
 										<path
 											stroke='currentColor'
-											stroke-linecap='round'
-											stroke-linejoin='round'
-											stroke-width='2'
+											strokeLinecap='round'
+											strokeLinejoin='round'
+											strokeWidth='2'
 											d='m1 1 4 4 4-4'
 										/>
 									</svg>
