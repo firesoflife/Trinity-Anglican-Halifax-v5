@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import '../lib/sanity.css';
+
 import { ArrowUturnLeftIcon } from '@heroicons/react/24/solid';
 
 function StudioNavbar(props: any) {

@@ -1,9 +1,9 @@
+// import PrayerBook from '../(site)/components/Images/PrayerBook';
+
 export const cards = [
 	{
 		// TODO: Replace imageSrc with actual image
-		imageSrc:
-			// 'https://cdn.midjourney.com/5c1a8949-481b-4984-8fdf-2dc87cd684e1/0_3.png',
-			'https://prayerbook.ca/wp-content/uploads/2021/03/pbsc-template-logo-v2-01.png',
+		imageSrc: '',
 		header: 'Prayer Book Society of Canada',
 		subheader:
 			' Visit the Prayer Book Society of Canada to learn more about the Book of Common Prayer.',

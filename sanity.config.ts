@@ -15,6 +15,7 @@ import { myTheme } from './theme'
 import Logo from './app/(site)/components/Images/Logo'
 import StudioNavbar from './sanity/components/StudioNavbar'
 
+const singletonTypes = new Set(['home', 'about', 'ourHistory', 'staffList', 'worship', 'card', 'contactUs', 'rental', 'pastoralCare', 'facilityRental'])
 
 export default defineConfig({
   basePath: '/studio',
@@ -23,7 +24,13 @@ export default defineConfig({
   title: 'Trinity Content Studio',
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
-  schema,
+  schema: {
+    ...schema,
+    templates: 
+    (templates) =>
+      templates.filter(({ schemaType }) => !singletonTypes.has(schemaType)),
+  },
+
   plugins: [
     deskTool({
       structure: deskStructure,
@@ -32,11 +39,14 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
   ],
+  
  studio: {
     components: {
       logo: Logo,
-      navbar: StudioNavbar
+      navbar: StudioNavbar,
+
     }
+    
   },
   theme: myTheme,
 })

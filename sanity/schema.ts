@@ -16,7 +16,6 @@ import quickLinks from './schemas/components/home/quickLinks'
 import { specialService } from './schemas/components/worship/specialServiceSchedule'
 
 
-
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     home,

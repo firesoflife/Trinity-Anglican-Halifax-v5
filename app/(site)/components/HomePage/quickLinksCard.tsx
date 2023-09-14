@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const QuickLinkCard: React.FC<QuickLinkCardProps> = ({
 	imageSrc,
 	header,
@@ -6,29 +8,32 @@ const QuickLinkCard: React.FC<QuickLinkCardProps> = ({
 	cta,
 }) => {
 	return (
-		<div className='max-w-sm mx-auto bg-white rounded-xl shadow-md overflow-hidden flex flex-col'>
-			<img
-				className='w-full h-48 object-contain'
-				src={imageSrc}
-				alt='Card image'
-			/>
-			<div className='p-4 flex-grow flex flex-col justify-between'>
-				<div>
-					<h2 className='text-xl font-semibold text-gray-700'>{header}</h2>
-					<h3 className='text-lg text-gray-500 mt-2'>{subheader}</h3>
-					<p className='text-gray-600 mt-4'>{content}</p>
-				</div>
-				{cta && (
-					<a
-						href={cta.link}
-						target='_blank'
-						rel='noopener noreferrer'
-						className='bg-accent hover:bg-blue-600 text-white font-semibold py-2 px-4 mt-4 rounded inline-block self-center'>
-						{cta.text}
-					</a>
-				)}
-			</div>
-		</div>
+		<>
+			{cta && (
+				<Link
+					href={cta.link}
+					target='_blank'
+					rel='noopener noreferrer'
+					className='flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'>
+					{/* TODO Add image alt */}
+					<img
+						className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg'
+						src={imageSrc}
+						alt=''
+					/>
+					<div className='flex flex-col justify-between p-4 leading-normal'>
+						<h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>
+							{header}
+						</h5>
+						<p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>
+							Here are the biggest enterprise technology acquisitions of 2021 so
+							far, in reverse chronological order.
+						</p>
+					</div>
+				</Link>
+			)}
+		</>
+		// </div>
 	);
 };
 
