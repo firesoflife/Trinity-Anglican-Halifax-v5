@@ -18,6 +18,7 @@ export const regularService = defineType({
       title: 'Description',
       type: 'text',
       description: 'A short description of the event',
+            validation: (Rule) => Rule.max(80)
     },
     {
       name: 'startTime',

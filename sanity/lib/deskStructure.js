@@ -24,6 +24,9 @@ export const deskStructure = (S) =>
 				.icon(MdHome)
 				.child(S.editor().schemaType('home').documentId('home')),
 			S.listItem()
+				.title('Quick Links')
+				.child(S.editor().schemaType('card').documentId('card')),
+			S.listItem()
 				.title('About')
 				.icon(MdInfo)
 				.child(

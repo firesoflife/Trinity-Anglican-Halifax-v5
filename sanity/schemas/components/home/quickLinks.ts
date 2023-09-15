@@ -1,47 +1,44 @@
-export default {
+import { defineType, defineField } from '@sanity/types'
+
+export const card = defineType ({
   name: 'card',
   title: 'Card',
   type: 'document',
   fields: [
-    {
-      name: 'imageSrc',
-      title: 'Image Source',
-      type: 'image',
-      options: {
-        hotspot: true,
+    defineField(
+      {
+        name: 'imageSrc',
+        title: 'Image Source',
+        type: 'image',
+        options: {
+          hotspot: true,
+        },
       },
-    },
-    {
-      name: 'header',
-      title: 'Header',
-      type: 'string',
-    },
-    {
-      name: 'subheader',
-      title: 'Subheader',
-      type: 'string',
-    },
-    {
-      name: 'content',
-      title: 'Content',
-      type: 'text',
-    },
-    {
-      name: 'cta',
-      title: 'Call To Action',
-      type: 'object',
-      fields: [
-        {
-          name: 'text',
-          title: 'CTA Text',
-          type: 'string',
-        },
-        {
-          name: 'link',
-          title: 'CTA Link',
-          type: 'url',
-        },
-      ],
-    },
+    ),
+    defineField(
+      {
+        name: 'header',
+        title: 'Header',
+        type: 'string',
+        description: 'Give the link card a title'
+      },
+    ),
+    defineField(
+      {
+        name: 'content',
+        title: 'Content',
+        type: 'text',
+        description: 'Add some information about the site or organization you are linking to',
+        validation: (Rule) => Rule.required().max(60).warning('You have exceeded the maximum length of 60 character')
+      }
+    ),
+    defineField(
+      {
+        name: 'url',
+        title: 'Link URL',
+        type: 'string',
+        description: 'write the name or the link here. Usually starting with `https://`'
+      }
+    )
   ],
-};
+});
