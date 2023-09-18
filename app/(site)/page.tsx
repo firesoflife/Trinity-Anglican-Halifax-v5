@@ -53,7 +53,7 @@ const HomePage = async () => {
 				</section>
 
 				<div className='container my-12 py-12 mx-auto px-4 md:px-6 lg:px-12'>
-					{/* MAP */}
+					{/* MAP  & CONTACT */}
 					<section className='mb-20 text-primary'>
 						<div className='flex flex-wrap justify-center'>
 							<div className='flex-initial shrink w-full xl:w-5/12 lg:w-6/12'>
@@ -65,7 +65,7 @@ const HomePage = async () => {
 								</div>
 							</div>
 							<div className='flex-initial w-full xl:w-7/12 lg:w-6/12 mb-6 md:mb-0 lg:-ml-12'>
-								<div className='bg-secondary h-full rounded-lg p-6 lg:pl-12 text-white flex items-center justify-around py-12 lg:py-0" style="z-index: -10"'>
+								<div className='bg-secondary h-full rounded-lg p-6 lg:pl-12 text-white flex md:flex-row flex-col items-center justify-around py-12 lg:py-0" style="z-index: -10"'>
 									<div className='lg:p1-12'>
 										<h3 className='text-2xl font-mainContent2'>Contact Us</h3>
 										<h5 className='text-xl font-semibold mb-2'>Address:</h5>

@@ -1,6 +1,8 @@
 function StaffBanner() {
 	return (
-		<div className='h-auto py-20 bg-primary text-secondary p-4'>
+		<div
+			id='staff-clergy'
+			className='h-auto py-20 bg-primary text-secondary p-4'>
 			<div className='flex justify-around'>
 				<hr className='staff-underline w-2/3 mx-auto' />
 				{/* <hr className='staff-underline w-1/3 mx-auto' /> */}

@@ -49,7 +49,7 @@ const Navbar = () => {
 		<div>
 			<nav className='bg-primary border-myGrey'>
 				<div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
-					<Link href='#'>
+					<Link href='/'>
 						<div className='flex items-center'>
 							{/* TODO - Upload Logo default and add to Sanity Studio */}
 
@@ -135,19 +135,21 @@ const Navbar = () => {
 										aria-labelledby='dropdownLargeButton'>
 										<li className='font-subheading text-2xl'>
 											<Link
-												href='#'
+												href='/about#our-history'
 												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
 												Our History
 											</Link>
 										</li>
 										<li className='font-subheading text-2xl'>
-											<div className='flex items-center justify-between w-full px-4 py-2 hover:bg-myGrey hover:text-white'>
+											<Link
+												href='/about#staff-clergy'
+												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
 												Staff & Clergy
-											</div>
+											</Link>
 										</li>
 										<li className='font-subheading text-2xl'>
 											<Link
-												href='#'
+												href='/about'
 												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
 												Location
 											</Link>
