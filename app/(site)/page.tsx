@@ -6,38 +6,17 @@ import { fallbackImages } from './utilities/fallbackAssets';
 import { getHome } from '../lib/api/getHome';
 import QuickLinksLayout from './home/QuickLinksLayout';
 import { getRegularServices } from '../lib/api/getServices';
-
-const builder = ImageUrlBuilder(client);
-
-function urlFor(source: SanityImageSource) {
-	return builder.image(source);
-}
+import HomeBanner from './home/homeBanner';
 
 const HomePage = async () => {
 	// --------------FETCH FUNCTIONS --------------//
 	const home = await getHome();
 	const services = await getRegularServices();
 
-	// Hero Image
-	const welcomeImageUrl = home.welcomeImage
-		? urlFor(home.welcomeImage).url()
-		: fallbackImages.heroImageFallback;
-
 	return (
 		<div className='font-sans antialiased bg-primary text-gray-900'>
 			<div className='bg-primary'>
-				<section
-					className='hero h-[75vh] '
-					style={{ backgroundImage: `url(${welcomeImageUrl})` }}>
-					<div className='hero-overlay bg-opacity-60 border-b-[1px] border-primary'></div>
-					<div className='hero-content text-center text-neutral-content'>
-						<div className='max-w-md'>
-							<div className='mb-96 text-5xl font-bold font-heading leading-snug'>
-								{home.bannerTitle}
-							</div>
-						</div>
-					</div>
-				</section>
+				<HomeBanner />
 				<section className='px-8 py-16 bg-secondary'>
 					<h2 className='text-primary text-center text-4xl pb-4 font-subheading'>
 						{home.welcomeHeading}

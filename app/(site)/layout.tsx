@@ -29,9 +29,9 @@ export default function Layout({ children }: LayoutProps) {
 						${subContent.variable}
 						${subContent2.variable}
 						`}>
-			<div className='bg-secondary pt-7 h-[100%]'>
+			<div className='bg-secondary pt-7'>
 				<NavLayout />
-				<main className='h-full'>{children}</main>
+				<main>{children}</main>
 				{/* <Footer /> */}
 			</div>
 		</div>

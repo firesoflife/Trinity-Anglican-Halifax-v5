@@ -14,19 +14,11 @@ export const metadata = {
 export default function Layout({ children }: LayoutProps) {
 	return (
 		<>
-			<main className='h-full'>{children}</main>
-
-			<StaffBanner />
-			<StaffPage />
-
-			<div className='container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14'>
-				<div className='flex flex-col h-screen'>
-					<div className='flex flex-row flex-grow '>
-						{/* <StaffList /> */}
-						{/* <StaffDetails /> */}
-					</div>
-				</div>
-			</div>
+			<main className='h-full'>
+				{children}
+				<StaffBanner />
+				<StaffPage />
+			</main>
 		</>
 	);
 }
