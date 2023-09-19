@@ -193,13 +193,15 @@ const Navbar = () => {
 											</Link>
 										</li>
 										<li className='font-subheading text-2xl'>
-											<div className='flex items-center justify-between w-full px-4 py-2 hover:bg-myGrey hover:text-white'>
+											<Link
+												href='/worship#schedule'
+												className='flex items-center justify-between w-full px-4 py-2 hover:bg-myGrey hover:text-white'>
 												Worship Schedule
-											</div>
+											</Link>
 										</li>
 										<li className='font-subheading text-2xl'>
 											<Link
-												href='#'
+												href='/worship#sermons-teaching'
 												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
 												Sermons & Teaching
 											</Link>
