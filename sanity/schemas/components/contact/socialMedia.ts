@@ -37,7 +37,8 @@ export const socialMediaPlatform = defineType({
               type: 'string',
               title: 'Alternative Text',
               options: {
-                // isHighlighted: true, TODO: find type or non-deprecated way to do this
+                // TODO find type or non-deprecated way to do this
+                // isHighlighted: true, 
               },
             }),
         ],

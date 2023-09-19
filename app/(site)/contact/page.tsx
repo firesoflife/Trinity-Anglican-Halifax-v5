@@ -1,11 +1,17 @@
 import React from 'react';
-import Form from '../components/Contact/contactForm';
+import ContactForm from '../components/Contact/contactForm';
+import ContactBanner from '../components/Contact/contactBanner';
+import ContactHeader from '../components/Contact/contactHeader';
 
 const Contact = () => {
 	return (
 		<div>
-			<h1>Contact US</h1>
-			<Form />
+			<ContactBanner />
+			<ContactHeader />
+			{/* Contact Info Card (similar to map on home page) */}
+			{/* Social Media  */}
+			{/* Pastoral Care */}
+			<ContactForm />
 		</div>
 	);
 };

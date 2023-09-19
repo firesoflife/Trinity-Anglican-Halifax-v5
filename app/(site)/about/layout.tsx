@@ -1,4 +1,4 @@
-import StaffBanner from './staff/StaffBanner';
+import StaffHeader from './staff/StaffHeader';
 import StaffPage from './staff/StaffPage';
 
 type LayoutProps = {
@@ -16,7 +16,7 @@ export default function Layout({ children }: LayoutProps) {
 		<>
 			<main className='h-full'>
 				{children}
-				<StaffBanner />
+				<StaffHeader />
 				<StaffPage />
 			</main>
 		</>

@@ -3,16 +3,20 @@ import { fallbackImages } from '../../utilities/fallbackAssets';
 import '../../../globals.css';
 import { OurValues } from './Values';
 
+import WorshipHeader from './WorshipHeader';
+
 const WhatToExpect = async () => {
 	const worship = await getWorship();
 
 	return (
 		<>
+			{/* TODO - Add in Banner component */}
 			<main>
 				<div className='pt-8'>
-					<h1 className='my-20 font-heading text-primary text-center  text-4xl font-extrabold'>
+					<WorshipHeader />
+					{/* <h1 className='my-20 font-heading text-primary text-center  text-4xl font-extrabold'>
 						Worship with Us
-					</h1>
+					</h1> */}
 				</div>
 				<section className='py-8 md:py-16 bg-slate-100 mt-10'>
 					<div className='container mx-auto px-4 md:px-8 flex felx-col md:flex-row gap-8 mb-9'>

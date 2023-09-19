@@ -77,6 +77,24 @@
         top: -13px;
 }
 
+.inverse-staff-underline {
+    border: none;
+    border-top: 3px double #DFD8BE;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+.inverse-staff-underline:after {
+    background: #5F2533;
+    color: #DFD8BE;
+        content: '§';
+            padding: 0 4px;
+            position: relative;
+            top: -13px;
+}
+
 /* ............. WORSHIP PAGE ACCORDIAN ............. */
 
 

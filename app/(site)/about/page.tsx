@@ -14,14 +14,13 @@ function urlFor(source: SanityImageSource) {
 
 const aboutPage = async () => {
 	const about = await getAbout();
-
+	//  TODO - move to aboutBanner.tsx component
 	// Banner Image
 	const aboutBannerUrl = about.primaryImage
 		? urlFor(about.primaryImage).url()
 		: fallbackImages.about.primaryImageFallback;
 
 	return (
-		// <div className='bg-secondary'>
 		<div className=' bg-secondary'>
 			<section
 				className='hero h-[44vh] shadow-lg rounded-lg overflow-hidden mb-12'
