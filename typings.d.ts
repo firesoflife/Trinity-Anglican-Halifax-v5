@@ -70,7 +70,8 @@ interface Worship extends Base{
   item2Content: string;
   item3: string;
   item3Content: string;
-  mainImage: { asset: { url: string } } | null;
+  mainImage: Image;
+  featureVerse: string;
 }
 
 interface AccordionItem {

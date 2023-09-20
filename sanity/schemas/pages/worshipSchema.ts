@@ -30,6 +30,14 @@ export const worship = defineType(
       }),
        defineField(
         {
+          name: 'featureVerse',
+          title: 'Featured Verse or Quote',
+          type: 'string',
+          description: 'A short verse or quote that will be overlayed on the banner image (optional)'
+        }
+      ),
+       defineField(
+        {
           name: 'mainContent',
           type: 'text',
           title: 'What to Expect',

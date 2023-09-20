@@ -14,13 +14,11 @@ const WhatToExpect = async () => {
 			<main>
 				<div className='pt-8'>
 					<WorshipHeader />
-					{/* <h1 className='my-20 font-heading text-primary text-center  text-4xl font-extrabold'>
-						Worship with Us
-					</h1> */}
 				</div>
 				<section className='py-8 md:py-16 bg-slate-100 mt-10'>
 					<div className='container mx-auto px-4 md:px-8 flex felx-col md:flex-row gap-8 mb-9'>
 						<div className='relative flex-1 my-auto'>
+							{/* TODO - render conditionally with fallback; use Next Image? */}
 							<img
 								className='w-full object-cover shadow-2xl'
 								src='https://churchos-uploads.s3.amazonaws.com/2020/04/09/09/32/21/9338edd7-2b91-41de-82b5-ab036c2688d3/Trinity_Halifax.png'

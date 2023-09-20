@@ -10,11 +10,7 @@ export const metadata = {
 export default function Layout({ children }: LayoutProps) {
 	return (
 		<>
-			{/* Components */}
-
-			<div className='container mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 2xl:px-14'>
-				<main className='h-full'>{children}</main>
-			</div>
+			<main className='h-full'>{children}</main>
 		</>
 	);
 }

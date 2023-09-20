@@ -16,8 +16,9 @@ export const fallbackImages = {
 		smallImageFallback: '',
 	},
 	worship: {
+		// TODO - Change fallback image
 		primaryImageFallback:
-			'https://churchos-uploads.s3.amazonaws.com/2020/04/09/09/32/21/9338edd7-2b91-41de-82b5-ab036c2688d3/Trinity_Halifax.png',
+			'https://cdn.sanity.io/images/4ns0wsqo/production/6bb071ff5e49cc3e07916a3b0be4d431aea17026-2400x1600.jpg',
 	},
 };
 

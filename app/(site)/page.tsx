@@ -1,3 +1,4 @@
+// TODO - Refactor into multiple components - remove unnecessary imports
 import { client } from '@/sanity/lib/client';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import ImageUrlBuilder from '@sanity/image-url';

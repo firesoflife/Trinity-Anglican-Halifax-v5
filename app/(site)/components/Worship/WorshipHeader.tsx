@@ -8,7 +8,7 @@ function StaffHeader() {
 			</div>
 
 			<h1 className='text-4xl font-subheading text-center py-16'>
-				What to Expect
+				Worship With Us
 			</h1>
 			<hr className='inverse-staff-underline w-1/3 mx-auto' />
 		</div>
