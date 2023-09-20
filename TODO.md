@@ -1,5 +1,10 @@
 # Items Left to Do
 
+## TODO General
+
+- [ ] Add API calls for all header component - example AboutUs.tsx - to be done for all pages
+- [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
+
 ## TODO Landing Page
 
 - [x] Upload and render images for Quick links
@@ -22,6 +27,7 @@
 - [x] Remove Gradient on About page background
 - [ ] Conditioanlly render "contact" button for wardens
 - [ ] Change button on contact card for staff
+- [ ] Remove description from the about / our history schema
 
 ## TODO Contact Page
 
