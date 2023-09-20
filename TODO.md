@@ -8,10 +8,11 @@
 - [ ] Map and Content to be parsed to own component and rendered in parent
 - [x] Map to be made responsive
 - [ ]if schedule grows to more items, map will need to flow or image added below map.
-- [ ] Test schedule items for overflow and make responsive if needed
+- [x] Test schedule items for overflow and make responsive if needed
 - [ ] Ensure max content length is set for schedule items and works responsively
 - [ ] Calendar of events thumbnail
 - [ ] Hamburger Menu closed on load
+- [ ]
 
 ## TODO About Page
 

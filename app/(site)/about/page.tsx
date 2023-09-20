@@ -5,6 +5,7 @@ import { getAbout } from '@/app/lib/api/getAbout';
 import { PortableText } from '@portabletext/react';
 import { fallbackImages } from '../utilities/fallbackAssets';
 import { RichTextComponents } from '../utilities/RichTextComponents';
+import AboutBanner from '../components/About/AboutBanner';
 
 const builder = ImageUrlBuilder(client);
 
@@ -22,7 +23,8 @@ const aboutPage = async () => {
 
 	return (
 		<div className=' bg-secondary'>
-			<section
+			<AboutBanner />
+			{/* <section
 				className='hero h-[44vh] shadow-lg rounded-lg overflow-hidden mb-12'
 				style={{
 					backgroundImage: `url(${aboutBannerUrl})`,
@@ -37,7 +39,7 @@ const aboutPage = async () => {
 						</div>
 					</div>
 				</div>
-			</section>
+			</section> */}
 			<section className='bg-primary shadow-lg rounded-lg overflow-hidden py-12 px-4 md:px-40'>
 				<h2 className='text-center text-4xl mb-8 text-secondary font-subheading'>
 					{about.title}
