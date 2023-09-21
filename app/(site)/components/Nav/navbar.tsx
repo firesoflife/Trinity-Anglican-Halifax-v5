@@ -57,7 +57,7 @@ const Navbar = () => {
 								src={Logo}
 								width={60}
 								height={60}
-								alt='Picture of the author'
+								alt='Trinity Anglican Church, Halifax, Logo'
 							/>
 							<span className='self-center text-2xl text-secondary font-subheading whitespace-nowrap'>
 								{homeData ? (

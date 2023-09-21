@@ -1,19 +1,12 @@
-// TODO - Refactor into multiple components - remove unnecessary imports
-import { client } from '@/sanity/lib/client';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import ImageUrlBuilder from '@sanity/image-url';
 import 'app/globals.css';
-import { fallbackImages } from './utilities/fallbackAssets';
 import { getHome } from '../lib/api/getHome';
 import QuickLinksLayout from './home/QuickLinksLayout';
-import { getRegularServices } from '../lib/api/getServices';
 import HomeBanner from './home/homeBanner';
 import MapContactCard from './components/HomePage/mapContactCard';
 
 const HomePage = async () => {
 	// --------------FETCH FUNCTIONS --------------//
 	const home = await getHome();
-	const services = await getRegularServices();
 
 	return (
 		<div className='font-sans antialiased bg-primary text-gray-900'>
@@ -33,7 +26,7 @@ const HomePage = async () => {
 					<QuickLinksLayout pastoralCare={home.pastoralCare} />
 				</section>
 
-				<div className='container my-12 py-12 mx-auto px-4 md:px-6 lg:px-12'>
+				<div className='container my-12 p-12 mx-auto mb-0 px-4 md:px-6 lg:px-12'>
 					{/* MAP  & CONTACT */}
 					<MapContactCard />
 				</div>

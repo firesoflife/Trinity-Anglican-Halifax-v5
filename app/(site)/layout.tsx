@@ -7,6 +7,7 @@ import {
 	subContent2,
 } from './utilities/fonts';
 import NavLayout from './components/Nav/layout';
+import Footer from './components/Footer/Footer';
 
 type LayoutProps = {
 	children: React.ReactNode;
@@ -32,7 +33,7 @@ export default function Layout({ children }: LayoutProps) {
 			<div className='bg-secondary pt-7'>
 				<NavLayout />
 				<main>{children}</main>
-				{/* <Footer /> */}
+				<Footer />
 			</div>
 		</div>
 	);
