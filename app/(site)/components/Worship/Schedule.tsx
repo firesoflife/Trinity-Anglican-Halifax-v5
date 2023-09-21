@@ -3,6 +3,7 @@ import {
 	getSpecialServices,
 } from '@/app/lib/api/getServices';
 import ScheduleHeader from './ScheduleHeader';
+import { LiaCrossSolid } from 'react-icons/lia';
 
 // TODO - add image to top of content cards for schedule
 
@@ -45,7 +46,9 @@ export default async function EventList() {
 						)}
 					</div>
 
-					<div className='divider lg:divider-horizontal'>§</div>
+					<div className='divider lg:divider-horizontal'>
+						<LiaCrossSolid size={75} />
+					</div>
 
 					<div className='grid flex-1 card bg-white rounded-box text-black bg-opacity-80 p-4 pl-14'>
 						{specialServices.length > 0 ? (

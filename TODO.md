@@ -4,6 +4,12 @@
 
 - [ ] Add API calls for all header component - example AboutUs.tsx - to be done for all pages
 - [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
+- [ ] Add featureVerse to all pages with banner -- update schemas, update groq queries, update components - example WorshipBanner.tsx
+- [ ] loading pages or spinners / skeleton for components
+- [ ] 404 page - seek and ye shall find
+- [ ] Fallbacks for all images
+- [ ] Fallbacks for all fetched text
+- [ ] Build out Calendar of Events page
 
 ## TODO Landing Page
 
@@ -28,6 +34,13 @@
 - [ ] Conditioanlly render "contact" button for wardens
 - [ ] Change button on contact card for staff
 - [ ] Remove description from the about / our history schema
+
+## TODO Worship Page
+
+- [ ] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote
+- [ ] Add fallbacks for verse and attribute
+- [ ] Fix banner image above schedules - change opacity to mask? Add text option for quote? Ensure text is not opaque
+- [ ] Full Sermons section
 
 ## TODO Contact Page
 
