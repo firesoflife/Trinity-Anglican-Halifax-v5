@@ -23,10 +23,11 @@
 - [ ] Ensure max content length is set for schedule items and works responsively
 - [ ] Calendar of events thumbnail
 - [ ] Hamburger Menu closed on load
-- [ ]
+- [ ] map and schedule to be made responsive on medium screens
 
 ## TODO About Page
 
+- [ ] Remove "Description" from schema
 - [ ] Location page exists here as well -- might be intersting to have just a small bit of info on thel location -- the church's place in the commmunity.
 - [ ] Add in larger view of the map from the landing page
 - [x] Remove extra space at bottom of page

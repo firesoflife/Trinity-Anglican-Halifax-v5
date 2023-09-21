@@ -45,7 +45,7 @@ const HomePage = async () => {
 								</div>
 							</div>
 							<div className='flex-initial w-full xl:w-7/12 lg:w-6/12 mb-6 md:mb-0 lg:-ml-12'>
-								<div className='bg-secondary h-full rounded-lg p-6 lg:pl-12 text-white flex md:flex-row flex-col items-center justify-around py-12 lg:py-0" style="z-index: -10"'>
+								<div className='bg-secondary h-full rounded-lg p-6 lg:pl-12 text-white flex xl:flex-row flex-col items-center justify-around py-12 lg:py-0" style="z-index: -10"'>
 									<div className='lg:p1-12'>
 										<h3 className='text-2xl font-mainContent2'>Contact Us</h3>
 										<h5 className='text-xl font-semibold mb-2'>Address:</h5>
@@ -58,7 +58,9 @@ const HomePage = async () => {
 										<p className='mb-6'>(555) 555-5555</p>
 									</div>
 									{/* TODO - Add icon  */}
-									<div className='divider lg:divider-horizontal'>Icon</div>
+									<div className='divider lg:divider-horizontal justify-center'>
+										Icon
+									</div>
 									<div className='lg:p1-12'>
 										<h3 className='text-2xl mb-3 text-center font-mainContent2'>
 											Regular Services

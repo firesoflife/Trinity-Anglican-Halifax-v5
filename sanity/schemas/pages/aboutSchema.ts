@@ -25,24 +25,8 @@ export const about = defineType({
       }),
     defineField(
       {
-        name: 'description',
-        title: 'Description',
-        type: 'text',
-        validation: (Rule) => Rule.required(),
-      }),
-    defineField(
-      {
         name: 'primaryImage',
-        title: 'Priamary Image',
-        type: 'image',
-        options: {
-          hotspot: true,
-        },
-      }),
-    defineField(
-      {
-        name: 'smallImage',
-        title: 'Small Image',
+        title: 'Primary Image',
         type: 'image',
         options: {
           hotspot: true,

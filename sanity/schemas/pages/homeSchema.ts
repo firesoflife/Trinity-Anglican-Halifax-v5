@@ -35,7 +35,7 @@ export const home = defineType({
             title: 'Alt Text',
             type: 'string',
             description: 'alt text describes the image and is displayed or read to visually impaired visitors to the site. It is also useful in SEO',
-            placeholder: 'Trinity Aglicant Church Logo'
+            placeholder: 'Trinity Aglican Church Logo'
           },
         ],
           },

@@ -23,9 +23,9 @@ export const deskStructure = (S) =>
 				.title('Home')
 				.icon(MdHome)
 				.child(S.editor().schemaType('home').documentId('home')),
-			S.listItem()
-				.title('Quick Links')
-				.child(S.editor().schemaType('card').documentId('card')),
+			// S.listItem()
+			// .title('Quick Links')
+			// .child(S.editor().schemaType('card').documentId('card')),
 			S.listItem()
 				.title('About')
 				.icon(MdInfo)
@@ -37,12 +37,12 @@ export const deskStructure = (S) =>
 								.title('About')
 								.icon(MdInfo)
 								.child(S.editor().schemaType('about').documentId('about')),
-							S.listItem()
-								.title('Our History')
-								.icon(MdHistory)
-								.child(
-									S.editor().schemaType('ourHistory').documentId('ourHistory')
-								),
+							// S.listItem()
+							// 	.title('Our History')
+							// 	.icon(MdHistory)
+							// 	.child(
+							// 		S.editor().schemaType('ourHistory').documentId('ourHistory')
+							// 	),
 							S.listItem()
 								.title('Clergy and People')
 								.icon(MdPeople)

@@ -1,5 +1,7 @@
 import { defineType, defineField } from '@sanity/types'
 
+// Currently Unpublished in Sanity - Sept 2023 - Commented out in deskStructure.js
+
 export const card = defineType ({
   name: 'card',
   title: 'Card',
@@ -29,7 +31,7 @@ export const card = defineType ({
         title: 'Content',
         type: 'text',
         description: 'Add some information about the site or organization you are linking to',
-        validation: (Rule) => Rule.required().max(60).warning('You have exceeded the maximum length of 60 character')
+        validation: (Rule) => Rule.required().max(260).warning('You have exceeded the maximum length of 60 character')
       }
     ),
     defineField(
