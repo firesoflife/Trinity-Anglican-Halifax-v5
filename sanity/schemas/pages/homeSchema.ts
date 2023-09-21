@@ -93,5 +93,13 @@ export const home = defineType({
           },
         ],
       }),
+      defineField(
+        {
+          name: 'pastoralCare',
+          title: 'Pastoral Care Description',
+          type: 'string',
+          description: 'This text is rendered in the quicklinks cards. This one is specific to the "Get Patoral Care" card.'
+        }
+      ),
   ],
 });

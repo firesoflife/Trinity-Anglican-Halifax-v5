@@ -16,14 +16,16 @@
     welcomeHeading: string,
     welcome: string,
     welcomeImage: Image,
-    alt: string
+    alt: string,
+    pastoralCare: string;
  }
 
  interface QuickLinkCardProps {
 	imageSrc: string;
 	header: string;
-	subheader: string;
+	subheader?: string;
 	content: string;
+  alt: string;
 	cta?: {
 		text: string;
 		link: string;

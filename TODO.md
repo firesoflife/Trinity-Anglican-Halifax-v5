@@ -15,8 +15,8 @@
 
 - [x] Upload and render images for Quick links
 - [x] Quick Link to be made responsive
-- [ ] External links editable in Studio - Pastoral Care link overwrrite and hard coded to internal page
-- [ ] Map and Content to be parsed to own component and rendered in parent
+- [x] External links editable in Studio - Pastoral Care link overwrrite and hard coded to internal page
+- [x] Map and Content to be parsed to own component and rendered in parent
 - [x] Map to be made responsive
 - [ ]if schedule grows to more items, map will need to flow or image added below map.
 - [x] Test schedule items for overflow and make responsive if needed

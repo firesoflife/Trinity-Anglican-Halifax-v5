@@ -18,6 +18,7 @@ export async function getHome(): Promise<Home> {
       welcomeHeading,
       "welcomeImage": welcomeImage.asset->url,
       "welcomeImageAlt": welcomeImage.alt,
+      pastoralCare
     }
     `
   )
