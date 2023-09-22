@@ -33,7 +33,7 @@ git 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
 
 - [x] Add Location Component
 - [x] Add Location Header
-- [ ] add Location Schema with header and subheader for map contanct.
+- [x] add Location Schema with header and subheader for map contanct.
 - [x] Remove "Description" from schema
 - [ ] Location page exists here as well -- might be intersting to have just a small bit of info on thel location -- the church's place in the commmunity.
 - [x] Remove extra space at bottom of page
@@ -41,10 +41,11 @@ git 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
 - [x] Conditioanlly render "contact" button for wardens
 - [x] Change button on contact card for staff
 - [x] Remove description from the about / our history schema
+- [ ] Add Verse and Verse attribution to smallImage banner schema
 
 ## TODO Worship Page
 
-- [ ] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote
+- [ ] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote (both banner component and faq component)
 - [ ] Add fallbacks for verse and attribute
 - [ ] Fix banner image above schedules - change opacity to mask? Add text option for quote? Ensure text is not opaque
 - [ ] Full Sermons section

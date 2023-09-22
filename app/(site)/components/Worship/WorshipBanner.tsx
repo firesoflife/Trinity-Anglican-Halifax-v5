@@ -14,7 +14,7 @@ const HomeBanner = async () => {
 	const worship = await getWorship();
 
 	// Hero Image
-	const welcomeImageUrl = worship.mainImage
+	const bannerImageUrl = worship.mainImage
 		? urlFor(worship.mainImage).url()
 		: fallbackImages.worship.primaryImageFallback;
 
@@ -22,7 +22,7 @@ const HomeBanner = async () => {
 		<>
 			<section
 				className='hero h-[44vh] relative'
-				style={{ backgroundImage: `url(${welcomeImageUrl})` }}>
+				style={{ backgroundImage: `url(${bannerImageUrl})` }}>
 				<div className='hero-overlay bg-opacity-60 border-b-[1px] border-primary absolute inset-0'></div>
 				<div className='hero-content absolute top-10 left-28 text-neutral-content'>
 					<div className='max-w-md'>
@@ -40,6 +40,7 @@ const HomeBanner = async () => {
 								<p className='drop-shadow-2xl'>{worship.featureVerse}</p>
 								{/* Todo add to schema  */}
 								<p className='text-right pr-9'>-- Galatians 6:14</p>
+								{/* <p className='text-right pr-9'>--{' '}{worship.bannerVerse}</p> */}
 							</blockquote>
 						</div>
 					</div>

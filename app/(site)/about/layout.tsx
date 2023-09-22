@@ -15,12 +15,7 @@ export const metadata = {
 export default function Layout({ children }: LayoutProps) {
 	return (
 		<>
-			<main className='h-full'>
-				{children}
-				<StaffHeader />
-				<StaffPage />
-				<LocationMap />
-			</main>
+			<main>{children}</main>
 		</>
 	);
 }
