@@ -6,6 +6,7 @@ const MapContactCard = async () => {
 	const services = await getRegularServices();
 	return (
 		<>
+		
 			<section className='mb-20 text-primary'>
 				<div className='flex flex-wrap justify-center'>
 					<div className='flex-initial shrink w-full xl:w-5/12 lg:w-6/12'>

@@ -1,3 +1,4 @@
+import LocationMap from '../components/About/LocationMap';
 import StaffHeader from './staff/StaffHeader';
 import StaffPage from './staff/StaffPage';
 
@@ -18,6 +19,7 @@ export default function Layout({ children }: LayoutProps) {
 				{children}
 				<StaffHeader />
 				<StaffPage />
+				<LocationMap />
 			</main>
 		</>
 	);

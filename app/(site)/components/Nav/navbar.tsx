@@ -107,14 +107,14 @@ const Navbar = () => {
 						id='navbar-multi-level'>
 						<ul className='flex flex-col font-medium p-4 md:p-0 mt-4 bg-primary md:flex-row md:space-x-8 md:mt-0 md:border-0 '>
 							{/* TODO - Decide if Home item is wanted */}
-							{/* <li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
+							<li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
 								<Link
 									href='/'
 									className='block py-2 pl-3 pr-4 rounded md:bg-transparent md:p-0'
 									aria-current='page'>
 									Home
 								</Link>
-							</li> */}
+							</li>
 							<li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
 								<button
 									id='dropdownNavbarLink'
@@ -144,7 +144,7 @@ const Navbar = () => {
 										aria-labelledby='dropdownLargeButton'>
 										<li className='font-subheading text-2xl'>
 											<Link
-												href='/about#our-history'
+												href='/about'
 												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
 												Our History
 											</Link>
