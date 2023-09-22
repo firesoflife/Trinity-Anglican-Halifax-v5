@@ -15,6 +15,7 @@ const Navbar = () => {
 	const targetRef = useRef<HTMLDivElement>(null);
 
 	const [homeData, setHomeData] = useState<Home | null>(null);
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 	useEffect(() => {
 		getHome().then((data) => setHomeData(data));
@@ -44,6 +45,10 @@ const Navbar = () => {
 			collapse.collapse();
 		};
 	}, []);
+
+	const handleMobileMenuToggle = () => {
+		setIsMobileMenuOpen(!isMobileMenuOpen);
+	};
 
 	return (
 		<div>
@@ -76,7 +81,8 @@ const Navbar = () => {
 						type='button'
 						className='inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-myGrey rounded-lg md:hidden hover:bg-primary focus:outline-none focus:ring-2 focus:ring-myGrey'
 						aria-controls='navbar-multi-level'
-						aria-expanded='false'>
+						aria-expanded={isMobileMenuOpen}
+						onClick={handleMobileMenuToggle}>
 						<span className='sr-only'>Open main menu</span>
 						<svg
 							className='w-5 h-5'
@@ -95,7 +101,9 @@ const Navbar = () => {
 					</button>
 					<div
 						ref={targetRef}
-						className=' w-full md:block md:w-auto'
+						className={`w-full md:block md:w-auto ${
+							isMobileMenuOpen ? '' : 'hidden'
+						}`}
 						id='navbar-multi-level'>
 						<ul className='flex flex-col font-medium p-4 md:p-0 mt-4 bg-primary md:flex-row md:space-x-8 md:mt-0 md:border-0 '>
 							{/* TODO - Decide if Home item is wanted */}
