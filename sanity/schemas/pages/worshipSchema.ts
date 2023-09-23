@@ -36,8 +36,8 @@ export const worship = defineType(
        defineField(
         {
           name: 'bannerVerse',
-          title: 'Banner - Featured Verse or Quote',
-          type: 'string',
+          title: 'Enter a quote in the larger text box and quote attribution below',
+          type: 'text',
           placeholder: 'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
           description: 'A short verse or quote that will be overlayed on the banner image (optional)',
           fieldset: 'bannerVerseSet'
@@ -45,7 +45,7 @@ export const worship = defineType(
       ),
       defineField(
         {
-          name: 'fetureVerseAttribution',
+          name: 'bannerVerseAttribution',
           title: 'Attribution',
           type: 'string',
           placeholder: 'Galatians 6:14',

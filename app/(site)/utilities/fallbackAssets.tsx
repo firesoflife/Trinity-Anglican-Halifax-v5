@@ -38,4 +38,9 @@ export const placeholders = {
 			p6: 'Trinity Church is a parish in the Diocese of NS and PEI, and a member of the Anglican Church of Canada.',
 		},
 	},
+	worship: {
+		bannerVerseFallback:
+			'"But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
+		bannerVerseAttFallback: 'Galatians 6:14',
+	},
 };

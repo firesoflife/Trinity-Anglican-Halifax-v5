@@ -7,7 +7,7 @@ export async function getWorship(): Promise<Worship> {
         pageTitle,
         slug,
         bannerVerse,
-        fetureVerseAttribution,
+        bannerVerseAttribution,
         mainContent,
         item1,
         item1Content,

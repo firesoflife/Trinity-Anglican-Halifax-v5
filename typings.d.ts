@@ -66,6 +66,8 @@ interface Worship extends Base{
   pageTitle: string;
   slug: { current: string };
   mainContent: string;
+  bannerVerse: string;
+  bannerVerseAttribution: string;
   item1: string;
   item1Content: string;
   item2: string;
