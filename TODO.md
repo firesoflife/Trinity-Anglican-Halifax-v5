@@ -1,5 +1,3 @@
-git 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
-
 # Items Left to Do
 
 ## TODO General
@@ -49,6 +47,7 @@ git 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
 - [ ] Add fallbacks for verse and attribute
 - [ ] Fix banner image above schedules - change opacity to mask? Add text option for quote? Ensure text is not opaque
 - [ ] Full Sermons section
+- [ ] Re-write descriptions to indicate to use where things will appear - make more clear
 
 ## TODO Contact Page
 

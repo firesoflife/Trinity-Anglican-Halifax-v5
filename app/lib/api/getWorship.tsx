@@ -6,7 +6,8 @@ export async function getWorship(): Promise<Worship> {
 		groq`*[_type == "worship"]{
         pageTitle,
         slug,
-        featureVerse,
+        bannerVerse,
+        fetureVerseAttribution,
         mainContent,
         item1,
         item1Content,

@@ -11,6 +11,11 @@ export const worship = defineType(
         title: 'Dropdown "Accordian Style" items',
         options: { collapsible: true, collapsed: false },
       },
+       {
+        name: 'bannerVerseSet',
+        title: 'Banner Image Verse',
+        options: { collapsible: true, collapsed: false },
+      },
     ],
     fields: [
       defineField(
@@ -30,10 +35,22 @@ export const worship = defineType(
       }),
        defineField(
         {
-          name: 'featureVerse',
-          title: 'Featured Verse or Quote',
+          name: 'bannerVerse',
+          title: 'Banner - Featured Verse or Quote',
           type: 'string',
-          description: 'A short verse or quote that will be overlayed on the banner image (optional)'
+          placeholder: 'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
+          description: 'A short verse or quote that will be overlayed on the banner image (optional)',
+          fieldset: 'bannerVerseSet'
+        }
+      ),
+      defineField(
+        {
+          name: 'fetureVerseAttribution',
+          title: 'Attribution',
+          type: 'string',
+          placeholder: 'Galatians 6:14',
+          description: 'Enter the quote attribution here',
+          fieldset: 'bannerVerseSet'
         }
       ),
        defineField(
