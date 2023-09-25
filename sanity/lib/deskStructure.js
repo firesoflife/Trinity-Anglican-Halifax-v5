@@ -130,4 +130,7 @@ export const deskStructure = (S) =>
 				.child(
 					S.editor().schemaType('facilityRental').documentId('facilityRental')
 				),
+			S.listItem()
+				.title('Dummy Docs')
+				.child(S.documentTypeList('dummyAssetDoc').title('Dummy Docs')),
 		]);

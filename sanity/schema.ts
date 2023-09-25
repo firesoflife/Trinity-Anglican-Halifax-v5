@@ -14,6 +14,8 @@ import { contactUs } from './schemas/pages/contactSchema'
 import { pastoralCare } from './schemas/components/contact/pastoralCare'
 import { card } from './schemas/components/home/quickLinks'
 import { specialService } from './schemas/components/worship/specialServiceSchedule'
+import dummyAssetDoc from './schemas/dummyAssetDoc'
+import customAsset from './schemas/customAsset'
 
 
 export const schema: { types: SchemaTypeDefinition[] } = {
@@ -32,6 +34,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     socialMediaPlatform,
     contactUs,
     pastoralCare,
-    card
+    card,
+    dummyAssetDoc,
+    customAsset
   ],
 }
