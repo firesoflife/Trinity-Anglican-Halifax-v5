@@ -68,6 +68,8 @@ interface Worship extends Base{
   mainContent: string;
   bannerVerse: string;
   bannerVerseAttribution: string;
+  expectVerse: null;
+  expectVerseAttribution: string;
   item1: string;
   item1Content: string;
   item2: string;

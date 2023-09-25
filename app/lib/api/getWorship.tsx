@@ -8,6 +8,8 @@ export async function getWorship(): Promise<Worship> {
         slug,
         bannerVerse,
         bannerVerseAttribution,
+        expectVerse,
+        expectVerseAttribution,
         mainContent,
         item1,
         item1Content,

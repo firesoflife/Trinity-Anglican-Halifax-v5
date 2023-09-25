@@ -1,12 +1,15 @@
 import { getWorship } from '@/app/lib/api/getWorship';
-import { fallbackImages } from '../../utilities/fallbackAssets';
+import { fallbackImages, placeholders } from '../../utilities/fallbackAssets';
 import '../../../globals.css';
 import { OurValues } from './Values';
 
 import WorshipHeader from './WorshipHeader';
+import { log } from 'console';
 
 const WhatToExpect = async () => {
 	const worship = await getWorship();
+
+	console.log(worship);
 
 	return (
 		<>
@@ -47,13 +50,15 @@ const WhatToExpect = async () => {
 										viewBox='0 0 18 14'>
 										<path d='M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z' />
 									</svg>
-									{/* TODO - make editable - add to schema + fallback - add secondary quote atrribution edit */}
 									<p className='drop-shadow-2xl'>
-										"But God forbid that I should glory, save in the cross of
-										our Lord Jesus Christ, by whom the world is crucified unto
-										me, and I unto the world."
+										{worship.expectVerse ||
+											placeholders.worship.expectVerseFallback}
 									</p>
-									<p className='text-right pr-9'>-- Galatians 6:14</p>
+									<p className='text-right pr-9'>
+										----{' '}
+										{worship?.expectVerseAttribution ||
+											placeholders.worship.expectVerseAttFallback}
+									</p>
 								</blockquote>
 							</div>
 						</div>

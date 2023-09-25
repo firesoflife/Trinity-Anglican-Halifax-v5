@@ -16,6 +16,11 @@ export const worship = defineType(
         title: 'Banner Image Verse',
         options: { collapsible: true, collapsed: false },
       },
+      {
+        name: 'expectVerseSet',
+        title: 'What to Expect Verse',
+        options: {collapsible: true, collapsed: false}
+      }
     ],
     fields: [
       defineField(
@@ -51,6 +56,25 @@ export const worship = defineType(
           placeholder: 'Galatians 6:14',
           description: 'Enter the quote attribution here',
           fieldset: 'bannerVerseSet'
+        }
+      ),
+      defineField(
+        {
+          name: 'expectVerse',
+          title: 'Enter a verse for the "What to Expect" section',
+          type: 'text',
+          placeholder: 'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
+          description: 'A short verse or quote that will apper in the "What to Expect" block section',
+          fieldset: 'expectVerseSet'
+        }
+      ),
+      defineField(
+        {
+          name: 'expectVerseAttribution',
+          title: 'Attribution',
+          type: 'string',
+          description: 'Enter the quote or verse attribution here',
+          fieldset: 'expectVerseSet'
         }
       ),
        defineField(
