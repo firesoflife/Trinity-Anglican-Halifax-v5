@@ -79,7 +79,10 @@ interface Worship extends Base{
   bannerImage: Image;
   expectImage: Image;
   scheduleImage: Image;
-  featureVerse: string;
+  scheduleBannerVerse: string;
+  scheduleBannerVerseAtt: string;
+  regularScheduleHeader: string;
+  specialScheduleHeader: string;
 }
 
 interface AccordionItem {

@@ -6,15 +6,11 @@ import { getWorship } from '@/app/lib/api/getWorship';
 import ImageUrlBuilder from '@sanity/image-url';
 import ScheduleHeader from './ScheduleHeader';
 import { LiaCrossSolid } from 'react-icons/lia';
-import { fallbackImages } from '../../utilities/fallbackAssets';
+import { fallbackImages, placeholders } from '../../utilities/fallbackAssets';
 import { client } from '@/sanity/lib/client';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 const builder = ImageUrlBuilder(client);
-
-// function urlFor(source: SanityImageSource) {
-// 	return builder.image(source);
-// }
 
 function urlFor(source: SanityImageSource | undefined) {
 	if (!source) {
@@ -31,7 +27,7 @@ export default async function EventList() {
 	return (
 		<>
 			<ScheduleHeader />
-			<div className='mt-9'>
+			<div className=''>
 				<div className='bg-black relative h-60 mb-4'>
 					<img
 						src={
@@ -41,19 +37,43 @@ export default async function EventList() {
 						alt='Background'
 						className='w-full h-full object-cover'
 					/>
-					<div className='absolute inset-0 flex items-center justify-center'>
-						{/* TODO - add Verse option to sanity schema and render here */}
-						<p className='text-center text-white opacity-100 z-50'>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</p>
+					<div className='absolute inset-0 bg-black opacity-50'></div>
+					<div className='absolute inset-0 flex items-center justify-end pr-10'>
+						<div className='max-w-xs'>
+							<div className='text-xl font-bold font-heading leading-snug text-right'>
+								<blockquote className='text-xl italic font-semibold text-primary opacity-60 font-heading'>
+									<svg
+										className='w-4 h-4 text-primary opacity-60 mb-4'
+										aria-hidden='true'
+										xmlns='http://www.w3.org/2000/svg'
+										fill='currentColor'
+										viewBox='0 0 18 14'>
+										<path d='M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z' />
+									</svg>
+									<p className='drop-shadow-2xl'>
+										{worship?.scheduleBannerVerse ||
+											placeholders.worship.scheduleVerseFallback}
+									</p>
+									<p className='text-right pr-9'>
+										--{' '}
+										{worship?.scheduleBannerVerseAtt ||
+											placeholders.worship.scheduleVerseAttFallback}
+									</p>
+								</blockquote>
+							</div>
+						</div>
 					</div>
 				</div>
 				<div className='flex flex-col w-full lg:flex-row'>
 					<div className='grid flex-1 card bg-white rounded-box text-black bg-opacity-80 p-4 pl-14'>
+						<h2 className='font-subheading text-3xl text-secondary mb-5'>
+							{worship.regularScheduleHeader ||
+								placeholders.schedule.regularServiceTitle}
+						</h2>
 						{regularServices.length > 0 ? (
 							regularServices.map((service, index) => (
 								<div key={index} className='mb-4'>
-									<h2 className='font-subheading text-2xl '>{service.title}</h2>
+									<h3 className='font-subheading text-2xl '>{service.title}</h3>
 									<div className='border border-b border-slate-400 w-64'></div>
 									<p>{service.description}</p>
 									<p>Start Time: {service.startTime}</p>
@@ -71,10 +91,14 @@ export default async function EventList() {
 					</div>
 
 					<div className='grid flex-1 card bg-white rounded-box text-black bg-opacity-80 p-4 pl-14'>
+						<h2 className='font-subheading text-3xl text-secondary mb-5'>
+							{worship?.specialScheduleHeader ||
+								placeholders.schedule.specialServiceTitle}
+						</h2>
 						{specialServices.length > 0 ? (
 							specialServices.map((service, index) => (
 								<div key={index} className='mb-4'>
-									<h2 className='font-subheading text-2xl'>{service.title}</h2>
+									<h3 className='font-subheading text-2xl'>{service.title}</h3>
 									<p>{service.description}</p>
 									<p>Start Time: {service.startTime}</p>
 									<p>End Time: {service.endTime || 'Not specified'}</p>

@@ -1,3 +1,4 @@
+import { Mina } from 'next/font/google';
 import { defineType } from 'sanity';
 
 

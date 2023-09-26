@@ -20,6 +20,16 @@ export const worship = defineType(
         name: 'expectVerseSet',
         title: 'What to Expect Verse',
         options: {collapsible: true, collapsed: false}
+      },
+      {
+        name: 'scheduleVerseSet',
+        title: 'Schedule Image Verse',
+        options: { collapsible: true, collapsed: false}
+      },
+      {
+        name: 'scheduleHeaders',
+        title: 'Headers for Schedule Types. Special and Regular Services',
+        options: { collapsible: true, collapsed: false }
       }
     ],
     fields: [
@@ -173,5 +183,43 @@ export const worship = defineType(
           },
         },
       ),
+      defineField(
+        {
+          name: 'scheduleBannerVerse',
+          title: 'Schedule Banner Verse',
+          type: 'text',
+          description: 'A verse that overlays over top of the image above the two schedule block',
+          fieldset: 'scheduleVerseSet'
+        }
+      ),
+      defineField(
+        {
+          name: 'scheduleBannerVerseAtt',
+          title: 'Schedule Banner Verse Attribution',
+          type: 'string',
+          description: 'Enter the quote or verse attribution here',
+          fieldset: 'scheduleVerseSet'
+        }
+      ),
+      defineField(
+        {
+          name: 'regularScheduleHeader',
+          title: 'Regular Service Header Title',
+          type: 'string',
+          placeholder: 'Join us for our Regular Services',
+          fieldset: 'scheduleHeaders',
+          validation: (Rule) => Rule.min(10).max(80)
+        },
+      ),
+      defineField(
+        {
+          name: 'specialScheduleHeader',
+          title: 'Speacial Service Header Title',
+          type: 'string',
+          placeholder: 'Join us for our Regular Services',
+          fieldset: 'scheduleHeaders',
+          validation: (Rule) => Rule.min(10).max(80)
+        },
+      )
     ]
   })

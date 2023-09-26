@@ -48,5 +48,12 @@ export const placeholders = {
 		expectVerseFallback:
 			'"But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
 		expectVerseAttFallback: 'Galatians 6:14',
+		scheduleVerseFallback:
+			"And they continued steadfastly in the apostles' doctrine and fellowship, and in breaking of bread, and in prayers.",
+		scheduleVerseAttFallback: 'Acts 2:24',
+	},
+	schedule: {
+		regularServiceTitle: 'Join us for our Regular Services',
+		specialServiceTitle: 'Join us on these Special Occasions',
 	},
 };
