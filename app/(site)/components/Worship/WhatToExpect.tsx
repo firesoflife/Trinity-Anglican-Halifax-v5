@@ -9,8 +9,6 @@ import { log } from 'console';
 const WhatToExpect = async () => {
 	const worship = await getWorship();
 
-	console.log(worship);
-
 	return (
 		<>
 			{/* TODO - Add in Banner component */}

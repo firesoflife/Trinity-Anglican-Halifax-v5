@@ -40,11 +40,13 @@
 - [x] Change button on contact card for staff
 - [x] Remove description from the about / our history schema
 - [ ] Add Verse and Verse attribution to smallImage banner schema
+- [ ] checkout all images from Sanity for crop and hotspots - example of working scenario - worship.shceduleImage
 
 ## TODO Worship Page
 
-- [ ] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote (both banner component and faq component)
-- [ ] Add fallbacks for verse and attribute
+- [x] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote (both banner component and faq component)
+- [x] Add fallbacks for verse and attribute
+- [ ] check that all banners and images use image builder for all images
 - [ ] Fix banner image above schedules - change opacity to mask? Add text option for quote? Ensure text is not opaque
 - [ ] Full Sermons section
 - [ ] Re-write descriptions to indicate to use where things will appear - make more clear

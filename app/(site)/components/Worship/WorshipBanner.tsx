@@ -14,8 +14,8 @@ const HomeBanner = async () => {
 	const worship = await getWorship();
 
 	// Hero Image
-	const bannerImageUrl = worship.mainImage
-		? urlFor(worship.mainImage).url()
+	const bannerImageUrl = worship.bannerImage
+		? urlFor(worship.bannerImage).url()
 		: fallbackImages.worship.primaryImageFallback;
 
 	return (

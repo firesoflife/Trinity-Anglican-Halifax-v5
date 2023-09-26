@@ -2,22 +2,42 @@ import {
 	getRegularServices,
 	getSpecialServices,
 } from '@/app/lib/api/getServices';
+import { getWorship } from '@/app/lib/api/getWorship';
+import ImageUrlBuilder from '@sanity/image-url';
 import ScheduleHeader from './ScheduleHeader';
 import { LiaCrossSolid } from 'react-icons/lia';
+import { fallbackImages } from '../../utilities/fallbackAssets';
+import { client } from '@/sanity/lib/client';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
-// TODO - add image to top of content cards for schedule
+const builder = ImageUrlBuilder(client);
+
+// function urlFor(source: SanityImageSource) {
+// 	return builder.image(source);
+// }
+
+function urlFor(source: SanityImageSource | undefined) {
+	if (!source) {
+		return undefined;
+	}
+	return builder.image(source).url();
+}
 
 export default async function EventList() {
 	const regularServices = await getRegularServices();
 	const specialServices = await getSpecialServices();
+	const worship = await getWorship();
 
 	return (
 		<>
 			<ScheduleHeader />
 			<div className='mt-9'>
-				<div className='bg-black relative h-44 opacity-20 mb-4'>
+				<div className='bg-black relative h-60 mb-4'>
 					<img
-						src='https://castlestudioinc.com/wp-content/uploads/2015/07/Kaleidescope_Stained_Glass_Window.jpg'
+						src={
+							urlFor(worship.scheduleImage) ||
+							fallbackImages.worship.scheduleBannerFallback
+						}
 						alt='Background'
 						className='w-full h-full object-cover'
 					/>

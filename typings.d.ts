@@ -76,7 +76,9 @@ interface Worship extends Base{
   item2Content: string;
   item3: string;
   item3Content: string;
-  mainImage: Image;
+  bannerImage: Image;
+  expectImage: Image;
+  scheduleImage: Image;
   featureVerse: string;
 }
 

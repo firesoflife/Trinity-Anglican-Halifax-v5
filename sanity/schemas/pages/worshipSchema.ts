@@ -38,6 +38,17 @@ export const worship = defineType(
           maxLength: 96,
         },
       }),
+      defineField(
+        {
+          name: 'bannerImage',
+          title: 'Top of Page - Banner Image',
+          type: 'image',
+          description: 'This image appears at the top of the page. Use an image with some blank space on the top left where text will be positioned ',
+          options: {
+            hotspot: true,
+          },
+        },
+      ),
        defineField(
         {
           name: 'bannerVerse',
@@ -81,17 +92,17 @@ export const worship = defineType(
         {
           name: 'mainContent',
           type: 'text',
-          title: 'What to Expect',
+          title: 'What to Expect - Text Block Content',
           placeholder: 'What to Expect',
           description: 'This block will appear in the first section of the page. Write a short paragraph here.'
         }
       ),
       defineField(
         {
-          name: 'Image',
-          title: 'First Block Image',
+          name: 'expectImage',
+          title: 'What To Expect Section Image - First white Block',
           type: 'image',
-          description: 'appears to the left of the content block ',
+          description: 'This image appears to the left of the content block with the dropdown FAQ style menu',
           options: {
             hotspot: true,
           },
@@ -101,7 +112,7 @@ export const worship = defineType(
         {
           name: 'item1',
           type: 'string',
-          title: 'Item 1',
+          title: 'Item 1 of Accordian Style Dropdown Menu',
           placeholder: 'Our Vision',
           fieldset: 'items',
         }
@@ -119,7 +130,7 @@ export const worship = defineType(
         {
           name: 'item2',
           type: 'string',
-          title: 'Item 2',
+          title: 'Item 2 of Accordian Style Dropdown Menu',
           placeholder: 'Our Mission',
           fieldset: 'items',
         }
@@ -137,7 +148,7 @@ export const worship = defineType(
         {
           name: 'item3',
           type: 'string',
-          title: 'Item 3',
+          title: 'Item 3 of Accordian Style Dropdown Menu',
           placeholder: 'Our Values',
           fieldset: 'items',
         }
@@ -150,6 +161,17 @@ export const worship = defineType(
           placeholder: 'Add paragraph (1-3 sentences) visions statement here',
           fieldset: 'items',
         }
+      ),
+      defineField(
+        {
+          name: 'scheduleImage',
+          title: 'Schedule block header image',
+          type: 'image',
+          description: 'This image appears above the schedule blocks ',
+          options: {
+            hotspot: true,
+          },
+        },
       ),
     ]
   })
