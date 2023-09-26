@@ -20,7 +20,8 @@ export const fallbackImages = {
 		// TODO - Change fallback image
 		primaryImageFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/6bb071ff5e49cc3e07916a3b0be4d431aea17026-2400x1600.jpg',
-		expectBannerFallback: '',
+		expectBannerFallback:
+			'https://cdn.sanity.io/images/4ns0wsqo/production/c52614bcadbe51f5fa2c79a42236cc0240a28e4d-1278x650.png',
 		scheduleBannerFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/4f8b4d206c92ca00e3f7248cc3e87cc902ed8607-2400x1800.jpg',
 	},

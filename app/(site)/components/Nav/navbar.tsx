@@ -158,7 +158,7 @@ const Navbar = () => {
 										</li>
 										<li className='font-subheading text-2xl'>
 											<Link
-												href='/about'
+												href='/about#location'
 												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
 												Location
 											</Link>
@@ -195,7 +195,7 @@ const Navbar = () => {
 										aria-labelledby='dropdownLargeButton'>
 										<li className='font-subheading text-2xl'>
 											<Link
-												href='/worship#what-to-expect'
+												href='/worship'
 												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
 												What to Expect
 											</Link>
@@ -209,7 +209,7 @@ const Navbar = () => {
 										</li>
 										<li className='font-subheading text-2xl'>
 											<Link
-												href='/worship#sermons-teaching'
+												href='/worship#sermons'
 												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
 												Sermons & Teaching
 											</Link>

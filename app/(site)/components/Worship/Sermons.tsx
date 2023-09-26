@@ -1,7 +1,11 @@
-import React from 'react';
+import SermonsHeader from './SermonsHeader';
 
 const Sermons = () => {
-	return <div>Sermons</div>;
+	return (
+		<div>
+			<SermonsHeader />
+		</div>
+	);
 };
 
 export default Sermons;
