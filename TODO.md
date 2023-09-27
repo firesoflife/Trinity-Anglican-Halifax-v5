@@ -15,6 +15,7 @@
 - [ ] Meta tags for all pages -- check layout.tsx from about for example
 - [ ] check that all banners and images use image builder for all images
 - [ ] checkout all images from Sanity for crop and hotspots - example of working scenario - worship.shceduleImage
+- [ ] All routes to get loading components with spinner or skeleton - preferably skeleton
 
 ## TODO Landing Page
 
@@ -67,3 +68,5 @@
 - [ ] Mailer / Subscription host?
 - [ ] Domain information
 - [ ] Any background on location? Demographics, Attractions etc that could be added to map
+- [ ] Social Media Links
+      f

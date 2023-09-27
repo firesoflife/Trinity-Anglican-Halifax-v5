@@ -303,14 +303,14 @@ const Navbar = () => {
 							</li>
 							<li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
 								<Link
-									href='#'
+									href='facility'
 									className='block py-2 pl-3 pr-4 rounded md:border-0 md:p-0'>
 									Facility Rental
 								</Link>
 							</li>
 							<li className='p-2 font-subheading text-2xl hover:bg-myGrey hover:text-white text-secondary'>
 								<Link
-									href='#'
+									href='/contact'
 									className='block py-2 pl-3 pr-4 rounded md:border-0 md:p-0'>
 									Contact
 								</Link>
