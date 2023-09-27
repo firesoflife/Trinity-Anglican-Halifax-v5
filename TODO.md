@@ -2,10 +2,12 @@
 
 ## TODO General
 
+- [ ] Change Staff and Clergy menu to "Clergy & People"
 - [ ] Add all links to Navbar
 - [ ] Add announcements Schema / Component / Navigation - to home page
 - [ ] Add API calls for all header component - example AboutUs.tsx - to be done for all pages
 - [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
+- Locaiotn section -- move box out of map -- make schema for box info
 - [ ] Add featureVerse to all pages with banner -- update schemas, update groq queries, update components - example WorshipBanner.tsx
 - [ ] loading pages or spinners / skeleton for components
 - [ ] 404 page - seek and ye shall find
@@ -16,6 +18,7 @@
 - [ ] check that all banners and images use image builder for all images
 - [ ] checkout all images from Sanity for crop and hotspots - example of working scenario - worship.shceduleImage
 - [ ] All routes to get loading components with spinner or skeleton - preferably skeleton
+- [ ] Calendar and Events instead of All Events
 
 ## TODO Landing Page
 
@@ -52,6 +55,7 @@
 - [ ] Full Sermons section
 - [ ] Re-write descriptions to indicate to use where things will appear - make more clear
 - [ ] Check all quotes are using the `<RiDoubleQuotesR />` icon instead of svg
+- [ ] our vison arao -- our covenant in ministry
 
 ## TODO Contact Page
 
@@ -69,4 +73,5 @@
 - [ ] Domain information
 - [ ] Any background on location? Demographics, Attractions etc that could be added to map
 - [ ] Social Media Links
-      f
+- [ ] ANOUNCEMENTS ?
+-

@@ -1,12 +1,13 @@
-import React from 'react';
+import EventsBanner from '../components/Events/EventsBanner';
 
 const ParishLife = () => {
 	return (
-		<div>
+		<>
+			<EventsBanner />
 			<h1>All Events</h1>
 			{/* Parish Event List */}
 			{/* Either alternating cards on single scroll or thumbnail list with popup modal for info */}
-		</div>
+		</>
 	);
 };
 

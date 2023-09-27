@@ -246,7 +246,7 @@ const Navbar = () => {
 										aria-labelledby='dropdownLargeButton'>
 										<li className='font-subheading text-2xl'>
 											<Link
-												href='#'
+												href='events'
 												className='block px-4 py-2 hover:bg-myGrey hover:text-white'>
 												All Events
 											</Link>

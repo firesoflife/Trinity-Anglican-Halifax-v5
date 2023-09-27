@@ -30,6 +30,7 @@ const HomePage = async () => {
 					{/* MAP  & CONTACT */}
 					<MapContactCard />
 				</div>
+				{/* ANOUNCMENTS SECTION?  */}
 			</div>
 		</div>
 	);
