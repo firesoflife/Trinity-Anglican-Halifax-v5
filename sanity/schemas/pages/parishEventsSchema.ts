@@ -89,4 +89,18 @@ export const parishEvents = defineType({
 			],
 		},
 	],
+	preview: {
+		select: {
+			title: 'title',
+			eventType: 'eventDetails.eventType',
+		},
+		prepare(selection) {
+			const { title, eventType } = selection;
+			return {
+				title: title,
+				subtitle:
+					eventType === 'recurring' ? 'Recurring Event' : 'One-off Event',
+			};
+		},
+	},
 });
