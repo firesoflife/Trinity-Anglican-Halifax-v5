@@ -109,3 +109,16 @@ interface SpecialService extends Base {
   endTime: string;
   daysOfWeek: string[];
 }
+
+interface ParishEvent extends Base {
+  title: string;
+  slug: Slug;
+  description: string;
+  image: Image;
+}
+
+interface Event extends Base {
+  title: string;
+  date: Date;
+  description: ParishEvent;
+}

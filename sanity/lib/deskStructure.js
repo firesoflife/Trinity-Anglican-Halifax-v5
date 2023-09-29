@@ -2,6 +2,7 @@ import {
 	MdHome,
 	MdInfo,
 	MdHistory,
+	MdEvent,
 	MdPeople,
 	MdContactMail,
 } from 'react-icons/md';
@@ -121,6 +122,24 @@ export const deskStructure = (S) =>
 										.title('Sermons')
 										.schemaType('sermon')
 										.filter('_type == "sermon" ')
+								),
+						])
+				),
+			S.listItem()
+				.title('Parish Events')
+				.icon(MdEvent)
+				.child(
+					S.list()
+						.title('Parish Events')
+						.items([
+							S.listItem()
+								.title('Parish Events')
+								.icon(MdEvent)
+								.child(
+									S.documentList()
+										.schemaType('parishEvents')
+										.title('Parish Events')
+										.filter('_type == "parishEvents"')
 								),
 						])
 				),

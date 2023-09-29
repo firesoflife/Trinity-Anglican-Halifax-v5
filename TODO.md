@@ -2,6 +2,7 @@
 
 ## TODO General
 
+- [x] fix type error in Dummy Docs Schema
 - [ ] Change Staff and Clergy menu to "Clergy & People"
 - [ ] Add all links to Navbar
 - [ ] Add announcements Schema / Component / Navigation - to home page
@@ -32,6 +33,7 @@
 - [ ] Calendar of events thumbnail
 - [x] Hamburger Menu closed on load
 - [x] map and schedule to be made responsive on medium screens
+- [ ] calendarEvents scema - descriptino to be reference of Event page description? - use clamp to shorten on calendar component
 
 ## TODO About Page
 
