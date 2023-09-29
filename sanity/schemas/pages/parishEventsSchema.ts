@@ -1,9 +1,9 @@
-// parishEventsSchema.ts
+// // parishEventsSchema.ts
 
 import { defineType, defineField } from 'sanity';
 
 export const parishEvents = defineType({
-	name: 'parishEvents', // Required. Must be unique
+	name: 'parishEvents',
 	title: 'Parish Events',
 	type: 'document',
 	fields: [
@@ -32,16 +32,61 @@ export const parishEvents = defineType({
 			title: 'Image',
 			type: 'image',
 		}),
-		defineField({
-			name: 'eventType',
-			title: 'Event Type',
-			type: 'string',
-			options: {
-				list: ['recurring', 'one-off'],
-				layout: 'radio',
-				direction: 'horizontal',
-			},
-			validation: (Rule) => Rule.required(),
-		}),
+		{
+			name: 'eventDetails',
+			title: 'Event Details',
+			type: 'object',
+			fields: [
+				{
+					name: 'eventType',
+					title: 'Event Type',
+					type: 'string',
+					options: {
+						list: ['recurring', 'one-off'],
+						layout: 'radio',
+						direction: 'horizontal',
+					},
+					validation: (Rule) => Rule.required(),
+				},
+				{
+					name: 'date',
+					title: 'Event Date',
+					type: 'date',
+					hidden: ({ parent }) => parent && parent.eventType === 'recurring',
+				},
+				{
+					name: 'recurrence',
+					title: 'Recurrence',
+					type: 'object',
+					hidden: ({ parent }) => parent && parent.eventType === 'one-off',
+					fields: [
+						{
+							name: 'dayOfWeek',
+							title: 'Day of the Week',
+							type: 'string',
+							options: {
+								list: [
+									'Monday',
+									'Tuesday',
+									'Wednesday',
+									'Thursday',
+									'Friday',
+									'Saturday',
+									'Sunday',
+								],
+							},
+						},
+						{
+							name: 'frequency',
+							title: 'Frequency',
+							type: 'string',
+							options: {
+								list: ['Every week', 'Every 2 weeks', 'Every month'],
+							},
+						},
+					],
+				},
+			],
+		},
 	],
 });

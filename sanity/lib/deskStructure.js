@@ -128,21 +128,7 @@ export const deskStructure = (S) =>
 			S.listItem()
 				.title('Parish Events')
 				.icon(MdEvent)
-				.child(
-					S.list()
-						.title('Parish Events')
-						.items([
-							S.listItem()
-								.title('Parish Events')
-								.icon(MdEvent)
-								.child(
-									S.documentList()
-										.schemaType('parishEvents')
-										.title('Parish Events')
-										.filter('_type == "parishEvents"')
-								),
-						])
-				),
+				.child(S.documentTypeList('parishEvents').title('Parish Events')),
 			S.listItem()
 				.title('Facility Rental')
 				.icon(GiChurch)
