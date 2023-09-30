@@ -136,7 +136,7 @@ interface SpecialService extends Base {
 	daysOfWeek: string[];
 }
 
-interface ParishEvent extends Base {
+interface ParishEvents extends Base {
 	title: string;
 	slug: Slug;
 	description: string;
