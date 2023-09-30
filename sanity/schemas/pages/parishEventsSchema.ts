@@ -1,5 +1,6 @@
 // // parishEventsSchema.ts
 
+import { IoCalendarOutline, IoRepeatOutline } from 'react-icons/io5';
 import { defineType, defineField } from 'sanity';
 
 export const parishEvents = defineType({
@@ -100,6 +101,7 @@ export const parishEvents = defineType({
 				title: title,
 				subtitle:
 					eventType === 'recurring' ? 'Recurring Event' : 'One-off Event',
+				media: eventType === 'recurring' ? IoRepeatOutline : IoCalendarOutline,
 			};
 		},
 	},
