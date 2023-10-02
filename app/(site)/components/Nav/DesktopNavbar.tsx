@@ -1,10 +1,13 @@
 import Link from 'next/link';
 import Logo from '../../../../public/triquetra-svg.svg';
 import Image from 'next/image';
+import { getHome } from '@/app/lib/api/getHome';
 
-const NavTest = () => {
+const Navbar = async () => {
+	const home = await getHome();
+
 	return (
-		<div className='bg-primary border-myGrey z-50 hidden md:block'>
+		<div className='bg-primary border-myGrey z-50 hidden lg:block'>
 			<div className='m-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 px-20'>
 				<Link href='/'>
 					<div className='flex items-center'>
@@ -15,7 +18,7 @@ const NavTest = () => {
 							alt='Trinity Anglican Church, Halifax, Logo'
 						/>
 						<button className='bg-primary text-secondary font-subheading py-2 px-4 inline-flex items-center '>
-							<span className='mr-1 text-2xl'>TitleDrop</span>
+							<span className='mr-1 text-2xl'>{home.pageTitle}</span>
 						</button>
 					</div>
 				</Link>
@@ -72,25 +75,25 @@ const NavTest = () => {
 							</button>
 							<ul className='absolute hidden z-50 text-gray-700 pt-1 group-hover:block min-w-max'>
 								<li className=''>
-									<a
+									<Link
 										className='rounded-t bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='/worship'>
 										What to Expect
-									</a>
+									</Link>
 								</li>
 								<li className=''>
-									<a
+									<Link
 										className='bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='/worship#schedule'>
 										Worship Schedule
-									</a>
+									</Link>
 								</li>
 								<li className=''>
-									<a
+									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='/worship#sermons'>
 										Sermons & Teaching
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</div>
@@ -107,60 +110,60 @@ const NavTest = () => {
 							</button>
 							<ul className='absolute hidden z-50 text-gray-700 pt-1 group-hover:block min-w-max'>
 								<li className=''>
-									<a
+									<Link
 										className='rounded-t bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='#'>
 										All Events
-									</a>
+									</Link>
 								</li>
 								<li className=''>
-									<a
+									<Link
 										className='bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='#'>
 										Parish Breakfast
-									</a>
+									</Link>
 								</li>
 								<li className=''>
-									<a
+									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='#'>
 										Ladies' Bible Study
-									</a>
+									</Link>
 								</li>
 								<li className=''>
-									<a
+									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='#'>
 										Sunday School
-									</a>
+									</Link>
 								</li>
 								<li className=''>
-									<a
+									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='#'>
 										Parish Study Group
-									</a>
+									</Link>
 								</li>
 								<li className=''>
-									<a
+									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='#'>
 										Rector's Rice Bowl
-									</a>
+									</Link>
 								</li>
 								<li className=''>
-									<a
+									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='#'>
 										Refugee Sponsorship
-									</a>
+									</Link>
 								</li>
 								<li className=''>
-									<a
+									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='#'>
 										Other Ministries & Volunteer Opportunities
-									</a>
+									</Link>
 								</li>
 							</ul>
 						</div>
@@ -178,4 +181,4 @@ const NavTest = () => {
 	);
 };
 
-export default NavTest;
+export default Navbar;

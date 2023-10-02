@@ -1,14 +1,4 @@
 import './globals.css';
-import {
-	heading,
-	heading2,
-	mainContent,
-	mainContent2,
-	subContent,
-	subContent2,
-} from './(site)/utilities/fonts';
-import Navbar from './(site)/components/Nav/navbar';
-import NavLayout from './(site)/components/Nav/layout';
 
 export const metadata = {
 	title: 'Trinity Anglican Church, Halifax',

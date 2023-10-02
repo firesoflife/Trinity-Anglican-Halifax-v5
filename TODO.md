@@ -22,6 +22,10 @@
 - [ ] All routes to get loading components with spinner or skeleton - preferably skeleton
 - [ ] Calendar and Events instead of All Events
 
+## TODO Navigation
+
+- [ ] Ensure all links are to correct paths
+
 ## TODO Landing Page
 
 - [x] Upload and render images for Quick links
@@ -62,6 +66,7 @@
 - [ ] Re-write descriptions to indicate to use where things will appear - make more clear
 - [ ] Check all quotes are using the `<RiDoubleQuotesR />` icon instead of svg
 - [ ] our vison arao -- our covenant in ministry
+- [x] Flex col or vertical stack on image and content in the "what to expect" section
 
 ## TODO Parish Events Page
 

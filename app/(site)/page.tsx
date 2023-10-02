@@ -3,13 +3,9 @@ import { getHome } from '../lib/api/getHome';
 import QuickLinksLayout from './home/QuickLinksLayout';
 import HomeBanner from './home/homeBanner';
 import MapContactCard from './components/HomePage/mapContactCard';
-import { generateDate } from './components/Calendar/calendar';
 import CalendarUI from './components/Calendar/CalendarUI';
 
 const HomePage = async () => {
-	// TODO - Remove log and import
-	console.log(generateDate());
-
 	// --------------FETCH FUNCTIONS --------------//
 	const home = await getHome();
 

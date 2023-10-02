@@ -27,8 +27,8 @@ const WhatToExpect = async () => {
 					<WorshipHeader />
 				</div>
 				<section className='py-8 md:py-16 bg-slate-100 mt-10'>
-					<div className='container mx-auto px-4 md:px-8 flex felx-col md:flex-row gap-8 mb-9'>
-						<div className='relative flex-1 my-auto'>
+					<div className='container mx-auto px-4 md:px-8 lg:flex lg:felx-col block md:flex-row gap-8 mb-9'>
+						<div className='relative flex-1 pb-6 my-auto'>
 							<img
 								className='w-full object-cover shadow-2xl'
 								src={

@@ -1,13 +1,11 @@
 import MobileNav from './MobileNav';
-import Navbar from './navbar';
-import NavTest from './NavTest';
+import Navbar from './DesktopNavbar';
 
 const NavLayout = () => {
 	return (
-		// <Navbar />
-		<div className='z-50'>
+		<div>
 			<MobileNav />
-			<NavTest />
+			<Navbar />
 		</div>
 	);
 };
