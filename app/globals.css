@@ -95,3 +95,15 @@
             top: -13px;
 }
 
+
+/* MobileNav Menu Toggle */
+
+.menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+#menu-toggle:checked~.menu {
+    max-height: 100vh;
+}

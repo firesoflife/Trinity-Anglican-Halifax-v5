@@ -10,7 +10,7 @@ export const metadata = {
 export default function Layout({ children }: LayoutProps) {
 	return (
 		<>
-			<main className='h-full'>{children}</main>
+			<main>{children}</main>
 		</>
 	);
 }

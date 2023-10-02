@@ -14,6 +14,8 @@ export async function getAbout(): Promise<About> {
             url
           }
         },
+        bannerVerse,
+        bannerVerseAttribution,
         smallImage{
           asset->{
             _id,

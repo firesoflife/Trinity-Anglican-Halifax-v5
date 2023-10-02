@@ -3,6 +3,7 @@
 ## TODO General
 
 - [x] fix type error in Dummy Docs Schema
+- [ ] Convert component that fetch from multiple endpoints to fetch in parallel - guide: https://www.youtube.com/watch?v=-Sj05H2AuW8
 - [ ] Change Staff and Clergy menu to "Clergy & People"
 - [ ] Add all links to Navbar
 - [ ] Add announcements Schema / Component / Navigation - to home page
@@ -48,6 +49,9 @@
 - [x] Change button on contact card for staff
 - [x] Remove description from the about / our history schema
 - [x] Add Verse and Verse attribution to smallImage banner schema
+- [ ] Add main banner verse and vers attributtion
+- [ ] Move block inside map to above map
+- [ ] Put map in container with x margin
 
 ## TODO Worship Page
 
@@ -58,6 +62,11 @@
 - [ ] Re-write descriptions to indicate to use where things will appear - make more clear
 - [ ] Check all quotes are using the `<RiDoubleQuotesR />` icon instead of svg
 - [ ] our vison arao -- our covenant in ministry
+
+## TODO Parish Events Page
+
+- [ ] Allow for dynamic events to be made and then rendered via title in Navbar
+- [ ] Create dynamic pages like blogroll for events
 
 ## TODO Contact Page
 

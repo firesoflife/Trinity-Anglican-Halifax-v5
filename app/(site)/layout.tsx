@@ -31,7 +31,9 @@ export default function Layout({ children }: LayoutProps) {
 						${subContent2.variable}
 						`}>
 			<div className='bg-secondary pt-7'>
-				<NavLayout />
+				<div>
+					<NavLayout />
+				</div>
 				<main>{children}</main>
 				<Footer />
 			</div>

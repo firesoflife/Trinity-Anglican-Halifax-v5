@@ -57,7 +57,6 @@ const Navbar = () => {
 					<Link href='/'>
 						<div className='flex items-center'>
 							{/* TODO - Upload Logo default and add to Sanity Studio */}
-
 							<Image
 								src={Logo}
 								width={60}
