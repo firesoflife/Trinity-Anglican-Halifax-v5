@@ -7,10 +7,11 @@ export const parishEvents = defineType({
 	name: 'parishEvents',
 	title: 'Parish Events',
 	type: 'document',
+	groups: [{ name: 'banner', title: 'Banner' }],
 	fields: [
 		defineField({
-			name: 'title',
-			title: 'Title',
+			name: 'pageTitle',
+			title: 'Page Title',
 			type: 'string',
 		}),
 		defineField({
@@ -23,14 +24,48 @@ export const parishEvents = defineType({
 			},
 		}),
 		defineField({
+			name: 'bannerImage',
+			title: 'Top of Page -- Banner Image',
+			type: 'image',
+			description: 'This image appears at the top of the page.',
+			options: {
+				hotspot: true,
+			},
+			group: 'banner',
+		}),
+		defineField({
+			name: 'bannerVerse',
+			title: 'Enter a quote in the larger text box and quote attribution below',
+			type: 'text',
+			placeholder:
+				'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
+			description:
+				'A short verse or quote that will be overlayed on the banner image (optional)',
+			group: 'banner',
+		}),
+		defineField({
+			name: 'bannerVerseAttribution',
+			title: 'Attribution',
+			type: 'string',
+			placeholder: 'Galatians 6:14',
+			description: 'Enter the quote attribution here',
+			group: 'banner',
+		}),
+		defineField({
 			name: 'description',
-			title: 'Description',
+			title: 'Short Description of Event',
 			type: 'string',
 			placeholder: 'Get All the Latest News and Events',
 		}),
 		defineField({
-			name: 'image',
-			title: 'Image',
+			name: 'body',
+			title: 'Longer Description',
+			type: 'array',
+			of: [{ type: 'block' }, { type: 'image' }],
+		}),
+		defineField({
+			name: 'primaryImage',
+			title: 'Primary Event Image or Feature Photo',
 			type: 'image',
 		}),
 		{

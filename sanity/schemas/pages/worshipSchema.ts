@@ -31,8 +31,7 @@ export const worship = defineType({
 			name: 'bannerImage',
 			title: 'Top of Page - Banner Image',
 			type: 'image',
-			description:
-				'This image appears at the top of the page. Use an image with some blank space on the top left where text will be positioned ',
+			description: 'This image appears at the top of the page.',
 			options: {
 				hotspot: true,
 			},

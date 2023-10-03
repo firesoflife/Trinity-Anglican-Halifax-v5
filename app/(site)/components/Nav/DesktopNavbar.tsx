@@ -112,7 +112,7 @@ const Navbar = async () => {
 								<li className=''>
 									<Link
 										className='rounded-t bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='#'>
+										href='/events'>
 										All Events
 									</Link>
 								</li>

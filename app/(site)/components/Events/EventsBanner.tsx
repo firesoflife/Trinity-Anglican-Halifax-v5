@@ -14,6 +14,7 @@ const EventsBanner = async () => {
 	const worship = await getWorship();
 
 	// Hero Image
+	// TODO - pull from parishEvents Schema and change Image
 	const bannerImageUrl = worship.bannerImage
 		? urlFor(worship.bannerImage).url()
 		: fallbackImages.worship.primaryImageFallback;

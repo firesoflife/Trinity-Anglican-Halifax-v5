@@ -3,11 +3,21 @@ import { client } from '@/sanity/lib/client';
 
 export async function getParishEvents(): Promise<ParishEvents> {
 	return client.fetch(
-		groq`*[_type == "parishEvents"]{
-        title,
+		groq`*[_type == "parishEvents"]{ 
+        pageTitle,
         slug,
+        bannerImage {
+          asset->{
+            _id,
+            url
+          },
+          crop,
+          hotspot
+        },
+        bannerVerse,
+        bannerVerseAttribution,
         description,
-        image {
+        primaryImage {
             asset->{
                 _id,
                 url

@@ -57,4 +57,7 @@ export const placeholders = {
 		regularServiceTitle: 'Join us for our Regular Services',
 		specialServiceTitle: 'Join us on these Special Occasions',
 	},
+	parishEvents: {
+		allEventsBannerTitle: 'All Parish Events',
+	},
 };

@@ -21,6 +21,7 @@
 - [ ] checkout all images from Sanity for crop and hotspots - example of working scenario - worship.shceduleImage
 - [ ] All routes to get loading components with spinner or skeleton - preferably skeleton
 - [ ] Calendar and Events instead of All Events
+- [ ] Add Sanity Schema field and Groq for all Header Titles. Change Headers to fetch data? Need to think this one through
 
 ## TODO Navigation
 
@@ -67,12 +68,14 @@
 - [ ] Re-write descriptions to indicate to use where things will appear - make more clear
 - [ ] Check all quotes are using the `<RiDoubleQuotesR />` icon instead of svg
 - [ ] our vison arao -- our covenant in ministry
-- [x] Flex col or vertical stack on image and content in the "what to expect" section
+- [x] Flex-col or vertical stack on image and content in the "what to expect" section
 
 ## TODO Parish Events Page
 
 - [ ] Allow for dynamic events to be made and then rendered via title in Navbar
 - [ ] Create dynamic pages like blogroll for events
+- [ ] Change Events Banner Image and query from parish Events instead of worship
+- [ ] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote (both banner component)
 
 ## TODO Contact Page
 

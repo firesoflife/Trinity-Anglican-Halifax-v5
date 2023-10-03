@@ -40,6 +40,21 @@ interface About extends Base {
 	body: Array<Block | Image>;
 }
 
+interface Block {
+	_key: string;
+	_type: 'block';
+	children: Span[];
+	markDefs: any[];
+	style: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote';
+}
+
+interface Span {
+	_key: string;
+	_type: 'span';
+	marks: string[];
+	text: string;
+}
+
 interface Staff extends Base {
 	name: string;
 	role: string;
@@ -137,10 +152,16 @@ interface SpecialService extends Base {
 }
 
 interface ParishEvents extends Base {
-	title: string;
+	pageTitle: string;
 	slug: Slug;
+	bannerImage: Image;
 	description: string;
-	image: Image;
+	bannerVerse: string;
+	bannerVerseAttribution: string;
+	description: string;
+	body: Block[];
+	primaryImage: Image;
+	eventDetails: Object;
 }
 
 interface Event extends Base {

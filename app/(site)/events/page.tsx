@@ -1,13 +1,14 @@
 import EventsBanner from '../components/Events/EventsBanner';
+import AllEventsHeader from '../components/Events/EventsHeader';
 
 const ParishLife = () => {
 	return (
-		<>
+		<div className='bg-primary text-secondary'>
 			<EventsBanner />
-			<h1>All Events</h1>
+			<AllEventsHeader />
 			{/* Parish Event List */}
 			{/* Either alternating cards on single scroll or thumbnail list with popup modal for info */}
-		</>
+		</div>
 	);
 };
 
