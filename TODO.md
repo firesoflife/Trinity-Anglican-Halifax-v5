@@ -4,8 +4,8 @@
 
 - [x] fix type error in Dummy Docs Schema
 - [ ] Convert component that fetch from multiple endpoints to fetch in parallel - guide: https://www.youtube.com/watch?v=-Sj05H2AuW8
-- [ ] Change Staff and Clergy menu to "Clergy & People"
-- [ ] Add all links to Navbar
+- [x] Change Staff and Clergy menu to "Clergy & People"
+- [ ] Add all links to Navbar --> first create dynamic pages for Parish Events
 - [ ] Add announcements Schema / Component / Navigation - to home page
 - [ ] Add API calls for all header component - example AboutUs.tsx - to be done for all pages
 - [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
@@ -38,7 +38,8 @@
 - [ ] Calendar of events thumbnail
 - [x] Hamburger Menu closed on load
 - [x] map and schedule to be made responsive on medium screens
-- [ ] calendarEvents scema - descriptino to be reference of Event page description? - use clamp to shorten on calendar component
+- [ ] calendarEvents schema - description to be reference of Event page description? - use clamp to shorten on calendar component
+- [x] Make Calendar component responsive - currently div on right pushes outside screen
 
 ## TODO About Page
 
