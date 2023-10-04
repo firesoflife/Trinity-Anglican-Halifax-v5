@@ -6,6 +6,44 @@ type Base = {
 	_updatedAt: Date;
 };
 
+interface Image {
+	asset: {
+		_id: string;
+		url: string;
+	};
+	crop: any;
+	hotspot: any;
+}
+
+interface Slug {
+	current: string;
+}
+
+interface Recurrence {
+	dayOfWeek: string;
+	frequency: string;
+}
+
+interface EventDetails {
+	eventType: string;
+	date: string;
+	eventTime: string;
+	recurrence: Recurrence;
+}
+
+interface ParishEvents extends Base {
+	pageTitle: string;
+	slug: Slug;
+	bannerImage: Image;
+	bannerVerse: string;
+	bannerVerseAttribution: string;
+	eventTitle: string;
+	description: string;
+	body: Array<Block | Image>;
+	primaryImage: Image;
+	eventDetails: EventDetails;
+}
+
 interface Home extends Base {
 	pageTitle: string;
 	logo: 'Image';
@@ -149,19 +187,6 @@ interface SpecialService extends Base {
 	startTime: string;
 	endTime: string;
 	daysOfWeek: string[];
-}
-
-interface ParishEvents extends Base {
-	pageTitle: string;
-	slug: Slug;
-	bannerImage: Image;
-	description: string;
-	bannerVerse: string;
-	bannerVerseAttribution: string;
-	description: string;
-	body: Block[];
-	primaryImage: Image;
-	eventDetails: Object;
 }
 
 interface Event extends Base {

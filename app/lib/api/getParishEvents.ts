@@ -1,7 +1,7 @@
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 
-export async function getParishEvents(): Promise<ParishEvents> {
+export async function getParishEvents(): Promise<ParishEvents[]> {
 	return client.fetch(
 		groq`*[_type == "parishEvents"]{ 
         pageTitle,
@@ -16,7 +16,9 @@ export async function getParishEvents(): Promise<ParishEvents> {
         },
         bannerVerse,
         bannerVerseAttribution,
+        eventTitle,
         description,
+        body,
         primaryImage {
             asset->{
                 _id,
@@ -34,6 +36,6 @@ export async function getParishEvents(): Promise<ParishEvents> {
                 frequency
             }
         }
-    }[0]`
+    }`
 	);
 }

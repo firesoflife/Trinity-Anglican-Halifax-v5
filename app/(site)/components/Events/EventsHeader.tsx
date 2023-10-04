@@ -9,6 +9,7 @@ async function AllEventsHeader() {
 				<hr className='staff-underline w-2/3 mx-auto' />
 			</div>
 			<h1 className='text-4xl font-subheading text-center py-16'>
+				{/* TODO  - this should be fixed when moving the page  title and banner data to a singleton style doc currently the request is pulling an array - will also need to reconfigure fetch to get singletons maybe?*/}
 				{parishEvents?.pageTitle ||
 					placeholders.parishEvents.allEventsBannerTitle}
 			</h1>

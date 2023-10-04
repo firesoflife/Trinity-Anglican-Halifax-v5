@@ -1,5 +1,5 @@
-// // parishEventsSchema.ts
-
+// parishEventsSchema.ts
+// TODO - Change deskStructure so Banner and general page content is in own studio pane in singleton form. Then event docs on on pane with multiple docs allowable. Need to change so title and slug are added to event. Currently have primary page title populated with test data. Also must reformat preview as current implementation does not render event title
 import { IoCalendarOutline, IoRepeatOutline } from 'react-icons/io5';
 import { defineType, defineField } from 'sanity';
 
@@ -52,14 +52,23 @@ export const parishEvents = defineType({
 			group: 'banner',
 		}),
 		defineField({
+			name: 'eventTitle',
+			title: 'Name of the Event',
+			type: 'string',
+			placeholder: 'ex. Sunday School',
+		}),
+		defineField({
 			name: 'description',
 			title: 'Short Description of Event',
 			type: 'string',
+			description: 'Add a 2-3 sentence summary of the event',
 			placeholder: 'Get All the Latest News and Events',
 		}),
 		defineField({
 			name: 'body',
-			title: 'Longer Description',
+			title: 'Full Description',
+			description:
+				'Provide a full description of the event. This block can be styles with headings and images can be added.',
 			type: 'array',
 			of: [{ type: 'block' }, { type: 'image' }],
 		}),
@@ -67,6 +76,9 @@ export const parishEvents = defineType({
 			name: 'primaryImage',
 			title: 'Primary Event Image or Feature Photo',
 			type: 'image',
+			options: {
+				hotspot: true,
+			},
 		}),
 		{
 			name: 'eventDetails',
@@ -125,9 +137,10 @@ export const parishEvents = defineType({
 			],
 		},
 	],
+
 	preview: {
 		select: {
-			title: 'title',
+			title: 'pageTitle',
 			eventType: 'eventDetails.eventType',
 		},
 		prepare(selection) {
