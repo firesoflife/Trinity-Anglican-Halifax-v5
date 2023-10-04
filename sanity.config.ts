@@ -26,6 +26,7 @@ const singletonTypes = new Set([
 	'rental',
 	'pastoralCare',
 	'facilityRental',
+	'generalParishLayout',
 ]);
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore']);

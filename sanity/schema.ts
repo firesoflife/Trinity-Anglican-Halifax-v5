@@ -16,7 +16,8 @@ import { card } from './schemas/components/home/quickLinks';
 import { specialService } from './schemas/components/worship/specialServiceSchedule';
 import dummyAssetDoc from './schemas/dummyAssetDoc';
 import customAsset from './schemas/customAsset';
-import { parishEvents } from './schemas/pages/parishEventsSchema';
+import { parishEvents } from './schemas/components/parishEvents/parishEventsSchema';
+import { generalParishLayout } from './schemas/pages/parishSchema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
@@ -36,6 +37,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		pastoralCare,
 		card,
 		parishEvents,
+		generalParishLayout,
 		dummyAssetDoc,
 		customAsset,
 	],

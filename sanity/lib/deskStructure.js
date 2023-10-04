@@ -118,9 +118,22 @@ export const deskStructure = (S) =>
 						])
 				),
 			S.listItem()
-				.title('Parish Events')
+				.title('Parish Events & Activities')
 				.icon(MdEvent)
-				.child(S.documentTypeList('parishEvents').title('Parish Events')),
+				.child(
+					S.list()
+						.title('Parish Events')
+						.items([
+							S.listItem()
+								.title('Parish Page Layout')
+								.child(
+									S.editor()
+										.schemaType('generalParishLayout')
+										.documentId('generalParishLayout')
+								),
+							S.documentTypeListItem('parishEvents').title('List of Events'),
+						])
+				),
 			S.listItem()
 				.title('Facility Rental')
 				.icon(GiChurch)
