@@ -6,7 +6,7 @@ type Props = {
 // TODO - follow Sonny Blog Guide - at the 1h29m mark: https://www.youtube.com/watch?v=x3fCEPFgUSM&t=6382s
 
 const ParishEventList = ({ allParishEvents }: Props) => {
-	console.log(allParishEvents);
+	// console.log(allParishEvents);
 	return (
 		<div>
 			<hr className='border-secondary mb-10' />

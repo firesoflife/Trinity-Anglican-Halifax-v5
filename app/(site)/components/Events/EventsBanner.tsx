@@ -2,7 +2,7 @@ import { client } from '@/sanity/lib/client';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import ImageUrlBuilder from '@sanity/image-url';
 import { fallbackImages, placeholders } from '../../utilities/fallbackAssets';
-import { getWorship } from '@/app/lib/api/getWorship';
+import { getParish } from '@/app/lib/api/getParish';
 
 const builder = ImageUrlBuilder(client);
 
@@ -11,12 +11,12 @@ function urlFor(source: SanityImageSource) {
 }
 
 const EventsBanner = async () => {
-	const worship = await getWorship();
+	const parish = await getParish();
 
 	// Hero Image
-	// TODO - pull from parishEvents Schema and change Image
-	const bannerImageUrl = worship.bannerImage
-		? urlFor(worship.bannerImage).url()
+
+	const bannerImageUrl = parish.bannerImage
+		? urlFor(parish.bannerImage).url()
 		: fallbackImages.worship.primaryImageFallback;
 
 	return (
@@ -38,12 +38,12 @@ const EventsBanner = async () => {
 									<path d='M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z' />
 								</svg>
 								<p className='drop-shadow-2xl'>
-									{worship?.bannerVerse ||
+									{parish?.bannerVerse ||
 										placeholders.worship.bannerVerseFallback}
 								</p>
 								<p className='text-right pr-9'>
 									--{' '}
-									{worship?.bannerVerseAttribution ||
+									{parish?.bannerVerseAttribution ||
 										placeholders.worship.bannerVerseAttFallback}
 								</p>
 							</blockquote>

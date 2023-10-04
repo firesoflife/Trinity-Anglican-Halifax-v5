@@ -4,21 +4,15 @@ import { client } from '@/sanity/lib/client';
 export async function getParishEvents(): Promise<ParishEvents[]> {
 	return client.fetch(
 		groq`*[_type == "parishEvents"]{ 
-        pageTitle,
-        slug,
-        bannerImage {
-          asset->{
-            _id,
-            url
-          },
-          crop,
-          hotspot
-        },
-        bannerVerse,
-        bannerVerseAttribution,
         eventTitle,
         description,
-        body,
+        body[]{
+            ...,
+            asset->{
+                _id,
+                url
+            }
+        },
         primaryImage {
             asset->{
                 _id,
@@ -30,7 +24,6 @@ export async function getParishEvents(): Promise<ParishEvents[]> {
         eventDetails {
             eventType,
             date,
-            eventTime,
             recurrence {
                 dayOfWeek,
                 frequency

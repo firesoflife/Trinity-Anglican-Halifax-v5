@@ -1,8 +1,16 @@
-import urlFor from '@/sanity/lib/urlFor';
+import { client } from '@/sanity/lib/client';
+import ImageUrlBuilder from '@sanity/image-url';
+import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import Link from 'next/link';
 
 interface StaffCardProps {
 	staffMember: StaffCardMember;
+}
+
+const builder = ImageUrlBuilder(client);
+
+function urlFor(source: SanityImageSource) {
+	return builder.image(source);
 }
 
 const StaffCard: React.FC<StaffCardProps> = ({ staffMember }) => (
@@ -14,7 +22,7 @@ const StaffCard: React.FC<StaffCardProps> = ({ staffMember }) => (
 				className='rounded-t-lg'
 				src={urlFor(staffMember.imageUrl).url()}
 				alt={staffMember.name}
-				style={{ width: '100%', height: 'auto' }} // Ensure all images render the same size
+				style={{ width: '100%', height: 'auto' }}
 			/>
 		</div>
 		<div className='p-5 w-full flex flex-col justify-between h-full'>

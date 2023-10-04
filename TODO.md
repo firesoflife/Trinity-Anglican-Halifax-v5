@@ -22,11 +22,13 @@
 - [ ] All routes to get loading components with spinner or skeleton - preferably skeleton
 - [ ] Calendar and Events instead of All Events
 - [ ] Add Sanity Schema field and Groq for all Header Titles. Change Headers to fetch data? Need to think this one through
-- [ ] Change deskStructure so Banner and general page content is in own studio pane in singleton form. Then event docs on on pane with multiple docs allowable. Need to change so title and slug are added to event. Currently have primary page title populated with test data. Also must reformat preview as current implementation does not render event title
+- [x] Change deskStructure so Banner and general page content is in own studio pane in singleton form. Then event docs on on pane with multiple docs allowable. Need to change so title and slug are added to event. Currently have primary page title populated with test data. Also must reformat preview as current implementation does not render event title
+- [ ] Refactor ALL components to call data from props instead of directly from Sanity - may requrie refactoring most layout.tsx and page.tsx components to pass data down to children
 
 ## TODO Navigation
 
-- [ ] Ensure all links are to correct paths
+- [ ] Ensure all links are to correct paths - mobile
+- [ ] Ensure all links are to correct paths - desktop
 
 ## TODO Landing Page
 
@@ -77,6 +79,9 @@
 - [ ] Create dynamic pages like blogroll for events
 - [ ] Change Events Banner Image and query from parish Events instead of worship
 - [ ] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote (both banner component)
+- [ ] Create Groq for General Page
+- [ ] Create Groq for Event specific page
+- [ ] implement parallel fetching
 
 ## TODO Contact Page
 

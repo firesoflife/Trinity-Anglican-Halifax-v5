@@ -146,7 +146,7 @@ const MobileNav = () => {
 								<div className='flex w-full justify-center'>
 									<div className='rounded-sm p-4 space-y-2 inline-flex justify-center flex-col bg-black opacity-70 text-white text-left w-fit'>
 										{' '}
-										<Link href='/parish-life#all-events' onClick={closeMenu}>
+										<Link href='/events' onClick={closeMenu}>
 											<span className='text-lg opacity-100'>All Events</span>
 										</Link>
 										<Link

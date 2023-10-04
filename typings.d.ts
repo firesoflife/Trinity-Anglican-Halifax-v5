@@ -6,14 +6,14 @@ type Base = {
 	_updatedAt: Date;
 };
 
-interface Image {
-	asset: {
-		_id: string;
-		url: string;
-	};
-	crop: any;
-	hotspot: any;
-}
+// interface Image {
+// 	asset: {
+// 		_id: string;
+// 		url: string;
+// 	};
+// 	crop: any;
+// 	hotspot: any;
+// }
 
 interface Slug {
 	current: string;
@@ -189,12 +189,6 @@ interface SpecialService extends Base {
 	daysOfWeek: string[];
 }
 
-interface Event extends Base {
-	title: string;
-	date: Date;
-	description: ParishEvent;
-}
-
 interface ContactUs extends Base {
 	pageTitle: string;
 	slug: Slug;
@@ -250,4 +244,36 @@ interface FacilityRentalPreview {
 		subtitle: string;
 		media: string;
 	};
+}
+
+interface Parish extends Base {
+	pageTitle: string;
+	slug: string;
+	bannerImage: BannerImage;
+	bannerVerse: string;
+	bannerVerseAttribution: string;
+}
+
+// ParishEvents
+
+interface ParishEvents extends Base {
+	eventTitle: string;
+	description: string;
+	body: BodyElement[];
+	primaryImage: Image;
+	eventDetails: {
+		eventType: string;
+		date: Date;
+		recurrence: Recurrence;
+		dayOfWeek: string;
+		frequency: string;
+	};
+}
+
+interface Parish extends Base {
+	pageTitle: string;
+	slug: string;
+	bannerImage: Image;
+	bannerVerse: string;
+	bannerVerseAttribution: string;
 }
