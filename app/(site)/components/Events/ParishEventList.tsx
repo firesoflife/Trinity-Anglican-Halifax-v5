@@ -13,30 +13,37 @@ type CardProps = {
 };
 
 const Card = ({ pEvent, isReversed }: CardProps) => (
+	// <div
+	// 	className={`grid grid-cols-4 gap-4 ${
+	// 		isReversed ? 'flex-row-reverse' : ''
+	// 	} bg-base-100 shadow-xl p-3 m-3 mb-14 w-full`}>
+	// 	<div className='col-span-1 aspect-w-1 aspect-h-1'>
+	// 		<img
+	// 			className='object-cover w-full h-full'
+	// 			src={urlFor(pEvent.primaryImage)}
+	// 			alt={pEvent.pageTitle}
+	// 		/>
+	// 	</div>
+	// 	<div className='card-body col-span-3'>
 	<div
-		className={`flex ${
-			isReversed ? 'flex-row-reverse' : 'flex-row'
-		} bg-base-100 shadow-xl p-3 m-3 mb-14 w-full`}>
-		<figure className='relative'>
-			<img
-				className='max-h-fit'
-				src={urlFor(pEvent.primaryImage)}
-				alt={pEvent.pageTitle}
-				style={{ width: '100%', height: 'auto' }}
-			/>
-		</figure>
-		<div className='card-body'>
+		className={`grid grid-cols-4 gap-4 bg-base-100 shadow-xl p-3 m-3 mb-14 w-full`}>
+		<div className={`col-span-1 ${isReversed ? 'order-last' : 'order-first'}`}>
+			<div className='aspect-w-1 aspect-h-1'>
+				<img
+					className='object-cover w-full h-full'
+					src={urlFor(pEvent.primaryImage)}
+					alt={pEvent.pageTitle}
+				/>
+			</div>
+		</div>
+		<div
+			className={`card-body col-span-3 ${
+				isReversed ? 'order-first' : 'order-last'
+			}`}>
 			<h2 className='card-title text-2xl font-subheading underline underline-offset-3 decoration-5 decoration-myBlue'>
 				{pEvent.eventTitle}
 			</h2>
-			<p className='line-clamp-3'>
-				{pEvent.description} Lorem ipsum dolor sit amet consectetur, adipisicing
-				elit. Saepe, laudantium natus ipsum animi pariatur fugiat! Veritatis
-				aperiam voluptatem sunt ipsum facere natus qui error temporibus sapiente
-				reprehenderit ea id neque placeat, rerum eveniet. Recusandae, quidem
-				animi at saepe voluptate accusantium quibusdam, minima repellendus aut
-				architecto
-			</p>
+			<p className='line-clamp-2'>{pEvent.description}</p>
 			<div className='card-actions justify-between'>
 				<div className='text-white'>
 					<h2 className='text-lg font-heading'>
