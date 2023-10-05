@@ -22,6 +22,7 @@ interface Slug {
 interface Recurrence {
 	dayOfWeek: string;
 	frequency: string;
+	timeOfDay: string;
 }
 
 interface EventDetails {
@@ -267,6 +268,7 @@ interface ParishEvents extends Base {
 		recurrence: Recurrence;
 		dayOfWeek: string;
 		frequency: string;
+		timeOfDay: string;
 	};
 }
 

@@ -26,7 +26,8 @@ export async function getParishEvents(): Promise<ParishEvents[]> {
             date,
             recurrence {
                 dayOfWeek,
-                frequency
+                frequency,
+                timeOfDay
             }
         }
     }`

@@ -83,6 +83,7 @@
 - [ ] Create Groq for General Page
 - [ ] Create Groq for Event specific page
 - [ ] implement parallel fetching
+- [ ] Event time on events list? -- need to add, schema, groq, and component
 
 ## TODO Contact Page
 

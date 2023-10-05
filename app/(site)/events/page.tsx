@@ -12,7 +12,7 @@ const ParishLife = async () => {
 		: [parishEvent];
 
 	return (
-		<div className='bg-primary text-secondary'>
+		<div className='bg-primary text-secondary pb-10'>
 			<EventsBanner />
 			<AllEventsHeader data={parishMain} />
 			<ParishEventList allParishEvents={allParishEvents} />

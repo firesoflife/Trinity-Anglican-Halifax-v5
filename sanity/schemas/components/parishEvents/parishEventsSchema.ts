@@ -88,6 +88,11 @@ export const parishEvents = defineType({
 								list: ['Every week', 'Every 2 weeks', 'Every month'],
 							},
 						},
+						{
+							name: 'timeOfDay',
+							title: 'Time of Day',
+							type: 'string',
+						},
 					],
 				},
 			],
