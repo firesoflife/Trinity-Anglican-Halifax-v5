@@ -1,6 +1,5 @@
 import LocationMap from '../components/About/LocationMap';
 import StaffHeader from './staff/StaffHeader';
-import StaffPage from './staff/StaffPage';
 
 type LayoutProps = {
 	children: React.ReactNode;

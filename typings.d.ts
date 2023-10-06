@@ -18,33 +18,6 @@ type Base = {
 interface Slug {
 	current: string;
 }
-
-interface Recurrence {
-	dayOfWeek: string;
-	frequency: string;
-	timeOfDay: string;
-}
-
-interface EventDetails {
-	eventType: string;
-	date: string;
-	eventTime: string;
-	recurrence: Recurrence;
-}
-
-interface ParishEvents extends Base {
-	pageTitle: string;
-	slug: Slug;
-	bannerImage: Image;
-	bannerVerse: string;
-	bannerVerseAttribution: string;
-	eventTitle: string;
-	description: string;
-	body: Array<Block | Image>;
-	primaryImage: Image;
-	eventDetails: EventDetails;
-}
-
 interface Home extends Base {
 	pageTitle: string;
 	logo: 'Image';
@@ -257,19 +230,38 @@ interface Parish extends Base {
 
 // ParishEvents
 
+interface EventDetails {
+	eventType: string;
+	date: string;
+	eventTime: string;
+	recurrence: Recurrence;
+}
+
+interface Recurrence {
+	dayOfWeek: string;
+	frequency: string;
+	timeOfDay: string;
+}
+
 interface ParishEvents extends Base {
+	pageTitle: string;
+	slug: Slug;
+	bannerImage: Image;
+	bannerVerse: string;
+	bannerVerseAttribution: string;
 	eventTitle: string;
 	description: string;
-	body: BodyElement[];
+	body: Array<Block | Image>;
 	primaryImage: Image;
-	eventDetails: {
-		eventType: string;
-		date: Date;
-		recurrence: Recurrence;
-		dayOfWeek: string;
-		frequency: string;
-		timeOfDay: string;
-	};
+	eventDetails: EventDetails;
+}
+
+interface OneOffEvents extends Base {
+	eventTitle: string;
+	description: string;
+	body: Array<Block | Image>;
+	primaryImage: Image;
+	eventDetails: EventDetails;
 }
 
 interface Parish extends Base {

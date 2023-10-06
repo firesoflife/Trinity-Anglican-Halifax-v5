@@ -3,18 +3,16 @@ import { GiTriquetra } from 'react-icons/gi';
 import EventButton from './EventButton';
 import Link from 'next/link';
 
-// TODO - Add tabs at top to select between recurring and one-time events as well as category for Other Ministries & Volunteer Opportunities + Refugee Sponsorship etc
-
 type Props = {
-	allParishEvents: ParishEvents[];
+	oneOffEvents: OneOffEvents[];
 };
 
 type CardProps = {
-	pEvent: ParishEvents;
+	oEvent: OneOffEvents;
 	isReversed: boolean;
 };
 
-const Card = ({ pEvent, isReversed }: CardProps) => (
+const Card = ({ oEvent, isReversed }: CardProps) => (
 	<div
 		className={`grid grid-cols-1 md:grid-cols-4 gap-4 bg-base-100 shadow-xl p-3 m-3 mb-14 w-full mx-auto`}>
 		<div
@@ -24,8 +22,8 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 			<div className='aspect-w-1 aspect-h-1 mx-auto'>
 				<img
 					className='object-cover w-full h-full mx-auto'
-					src={urlFor(pEvent.primaryImage)}
-					alt={pEvent.pageTitle}
+					src={urlFor(oEvent.primaryImage)}
+					alt={oEvent.eventTitle}
 				/>
 			</div>
 		</div>
@@ -34,10 +32,10 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 				isReversed ? 'md:order-first' : 'md:order-last'
 			}`}>
 			<h2 className='card-title text-3xl font-subheading underline underline-offset-3 decoration-5 decoration-myBlue'>
-				{pEvent.eventTitle}
+				{oEvent.eventTitle}
 			</h2>
 			<p className='line-clamp-3 xl:line-clamp-none max-w-prose font-heading text-lg'>
-				{pEvent.description}
+				{oEvent.description}
 			</p>
 			<hr className='p-3 lg:hidden' />
 			<div className='card-actions justify-between'>
@@ -47,7 +45,7 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 						Join us:
 						<span className='  font-subheading text-lg'>
 							{'  '}
-							{pEvent.eventDetails?.recurrence?.dayOfWeek || (
+							{oEvent.eventDetails?.recurrence?.dayOfWeek || (
 								<Link href='/contact' className='hover:text-myBlue'>
 									{' '}
 									&nbsp; Contact us for details
@@ -59,7 +57,7 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 						Time:{' '}
 						<span className='  font-subheading text-lg'>
 							{'  '}
-							{pEvent.eventDetails?.recurrence?.timeOfDay || (
+							{oEvent.eventDetails?.recurrence?.timeOfDay || (
 								<Link href='/contact' className='hover:text-myBlue'>
 									{' '}
 									&nbsp; TBD
@@ -81,17 +79,18 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 	</div>
 );
 
-const ParishEventList = ({ allParishEvents }: Props) => {
+const ParishOneOff = ({ oneOffEvents }: Props) => {
 	return (
 		<div className='container mx-auto p-8 bg-primary w-full text-white'>
-			{/* EVENTS */}
-			{allParishEvents
-				.filter((pEvent) => pEvent.eventDetails.eventType === 'recurring')
-				.map((pEvent, index) => (
-					<Card key={pEvent._id} pEvent={pEvent} isReversed={index % 2 !== 0} />
-				))}
+			{oneOffEvents.map((oEvent, i) => (
+				<Card
+					key={oEvent._id}
+					oEvent={oEvent}
+					isReversed={i % 2 === 0 ? false : true}
+				/>
+			))}
 		</div>
 	);
 };
 
-export default ParishEventList;
+export default ParishOneOff;
