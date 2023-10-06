@@ -13,24 +13,15 @@ type CardProps = {
 };
 
 const Card = ({ pEvent, isReversed }: CardProps) => (
-	// <div
-	// 	className={`grid grid-cols-4 gap-4 ${
-	// 		isReversed ? 'flex-row-reverse' : ''
-	// 	} bg-base-100 shadow-xl p-3 m-3 mb-14 w-full`}>
-	// 	<div className='col-span-1 aspect-w-1 aspect-h-1'>
-	// 		<img
-	// 			className='object-cover w-full h-full'
-	// 			src={urlFor(pEvent.primaryImage)}
-	// 			alt={pEvent.pageTitle}
-	// 		/>
-	// 	</div>
-	// 	<div className='card-body col-span-3'>
 	<div
-		className={`grid grid-cols-4 gap-4 bg-base-100 shadow-xl p-3 m-3 mb-14 w-full`}>
-		<div className={`col-span-1 ${isReversed ? 'order-last' : 'order-first'}`}>
-			<div className='aspect-w-1 aspect-h-1'>
+		className={`grid grid-cols-1 md:grid-cols-4 gap-4 bg-base-100 shadow-xl p-3 m-3 mb-14 w-full mx-auto`}>
+		<div
+			className={`col-span-1 ${
+				isReversed ? 'md:order-last' : 'md:order-first'
+			} hidden sm:block`}>
+			<div className='aspect-w-1 aspect-h-1 mx-auto'>
 				<img
-					className='object-cover w-full h-full'
+					className='object-cover w-full h-full mx-auto'
 					src={urlFor(pEvent.primaryImage)}
 					alt={pEvent.pageTitle}
 				/>
@@ -38,15 +29,18 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 		</div>
 		<div
 			className={`card-body col-span-3 ${
-				isReversed ? 'order-first' : 'order-last'
+				isReversed ? 'md:order-first' : 'md:order-last'
 			}`}>
-			<h2 className='card-title text-2xl font-subheading underline underline-offset-3 decoration-5 decoration-myBlue'>
+			<h2 className='card-title text-3xl font-subheading underline underline-offset-3 decoration-5 decoration-myBlue'>
 				{pEvent.eventTitle}
 			</h2>
-			<p className='line-clamp-2'>{pEvent.description}</p>
+			<p className='line-clamp-3 xl:line-clamp-none max-w-prose font-heading text-lg'>
+				{pEvent.description}
+			</p>
+			<hr className='p-3 lg:hidden' />
 			<div className='card-actions justify-between'>
 				<div className='text-white'>
-					<h2 className='text-lg font-heading'>
+					<h2 className='text-xl font-heading'>
 						{' '}
 						Join us:
 						<span className='  font-subheading text-lg'>
@@ -59,7 +53,7 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 							)}
 						</span>
 					</h2>
-					<h2 className='text-lg font-heading'>
+					<h2 className='text-xl font-heading'>
 						Time:{' '}
 						<span className='  font-subheading text-lg'>
 							{'  '}
@@ -75,7 +69,7 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 				<div className='lg:flex hidden w-1/2'>
 					<hr className='w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 ' />
 					<span className='self-center px-5'>
-						<GiTriquetra />
+						<GiTriquetra size={30} />
 					</span>
 					<hr className='w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
 				</div>
@@ -87,7 +81,7 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 
 const ParishEventList = ({ allParishEvents }: Props) => {
 	return (
-		<div className='container mx-auto bg-primary w-full text-white'>
+		<div className='container mx-auto p-8 bg-primary w-full text-white'>
 			{/* EVENTS */}
 			{allParishEvents
 				.filter((pEvent) => pEvent.eventDetails.eventType === 'recurring')
