@@ -14,6 +14,8 @@ import { schema } from './sanity/schema';
 import { myTheme } from './theme';
 import Logo from './app/(site)/components/Images/Logo';
 import StudioNavbar from './sanity/components/StudioNavbar';
+import { get } from 'http';
+import { getDefaultDocumentNode } from './previewStructure';
 
 const singletonTypes = new Set([
 	'home',
@@ -52,6 +54,7 @@ export default defineConfig({
 	plugins: [
 		deskTool({
 			structure: deskStructure,
+			defaultDocumentNode: getDefaultDocumentNode,
 		}),
 		// Vision is a tool that lets you query your content with GROQ in the studio
 		// https://www.sanity.io/docs/the-vision-plugin

@@ -41,8 +41,10 @@ export const parishEvents = defineType({
 		}),
 		defineField({
 			name: 'primaryImage',
-			title: 'Primary Event Image or Feature Photo',
+			title: 'Primary Event Image or Feature Photo for Event List Page',
 			type: 'image',
+			description:
+				'This image will be used on the event list page where all events are listed. Try to crop the photo to make it square.',
 			options: {
 				hotspot: true,
 			},
@@ -106,6 +108,16 @@ export const parishEvents = defineType({
 						},
 					],
 				},
+				defineField({
+					name: 'pageBannerImage',
+					title: 'Image for Dedicated Event Page',
+					description:
+						'This image will be used on the dedicated event page. It appears on the top of the page after navigating from the event list page. Use a landscape image for this.',
+					type: 'image',
+					options: {
+						hotspot: true,
+					},
+				}),
 			],
 		},
 	],

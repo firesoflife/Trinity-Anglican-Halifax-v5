@@ -30,6 +30,14 @@ export async function getParishEvents(): Promise<ParishEvents[]> {
                 frequency,
                 timeOfDay
             }
+        },
+        pageBannerImage {
+            asset->{
+                _id,
+                url
+            },
+            crop,
+            hotspot
         }
     }`
 	);
