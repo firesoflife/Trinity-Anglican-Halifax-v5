@@ -258,6 +258,7 @@ interface ParishEvents extends Base {
 
 interface OneOffEvents extends Base {
 	eventTitle: string;
+	slug: Slug;
 	description: string;
 	body: Array<Block | Image>;
 	primaryImage: Image;

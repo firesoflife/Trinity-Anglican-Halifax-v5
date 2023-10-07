@@ -1,6 +1,5 @@
 import urlFor from '@/sanity/lib/urlFor';
 import { GiTriquetra } from 'react-icons/gi';
-import EventButton from './EventButton';
 import Link from 'next/link';
 
 type Props = {
@@ -73,7 +72,11 @@ const Card = ({ oEvent, isReversed }: CardProps) => (
 					</span>
 					<hr className='w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
 				</div>
-				<EventButton />
+				<Link href={`/event/${oEvent.slug.current}`}>
+					<button className='btn bg-myBlue hover:bg-myGrey text-white'>
+						More Info ...
+					</button>
+				</Link>
 			</div>
 		</div>
 	</div>
