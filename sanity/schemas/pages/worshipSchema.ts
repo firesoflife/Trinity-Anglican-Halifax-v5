@@ -18,16 +18,6 @@ export const worship = defineType({
 			group: 'banner',
 		}),
 		defineField({
-			name: 'slug',
-			title: 'Slug',
-			type: 'slug',
-			options: {
-				source: 'title',
-				maxLength: 96,
-			},
-			group: 'banner',
-		}),
-		defineField({
 			name: 'bannerImage',
 			title: 'Top of Page - Banner Image',
 			type: 'image',

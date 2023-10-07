@@ -15,15 +15,7 @@ export const home = defineType({
 			validation: (Rule) =>
 				Rule.required().max(27).warning('You have exceeded the maximum length'),
 		}),
-		defineField({
-			name: 'slug',
-			title: 'Slug',
-			type: 'slug',
-			options: {
-				source: 'pageTitle',
-				maxLength: 96,
-			},
-		}),
+
 		defineField({
 			name: 'logo',
 			title: 'Logo',

@@ -11,15 +11,7 @@ export const contactUs = defineType({
 			title: 'Page Title',
 			type: 'string',
 		}),
-		defineField({
-			name: 'slug',
-			title: 'Slug',
-			type: 'slug',
-			options: {
-				source: 'title',
-				maxLength: 96,
-			},
-		}),
+
 		defineField({
 			name: 'days',
 			title: 'Days',

@@ -5,6 +5,7 @@ export async function getParishEvents(): Promise<ParishEvents[]> {
 	return client.fetch(
 		groq`*[_type == "parishEvents"]{ 
         eventTitle,
+        slug.current,
         description,
         body[]{
             ...,

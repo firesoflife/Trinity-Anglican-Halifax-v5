@@ -3,8 +3,6 @@ import { GiTriquetra } from 'react-icons/gi';
 import EventButton from './EventButton';
 import Link from 'next/link';
 
-// TODO - Add tabs at top to select between recurring and one-time events as well as category for Other Ministries & Volunteer Opportunities + Refugee Sponsorship etc
-
 type Props = {
 	allParishEvents: ParishEvents[];
 };

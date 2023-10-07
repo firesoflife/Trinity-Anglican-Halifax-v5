@@ -11,15 +11,7 @@ export const rental = defineType({
 			type: 'string',
 			placeholder: 'Contact Us',
 		}),
-		defineField({
-			name: 'slug',
-			title: 'Slug',
-			type: 'slug',
-			options: {
-				source: 'title',
-				maxLength: 96,
-			},
-		}),
+
 		defineField({
 			name: 'name',
 			title: 'Facility Name',

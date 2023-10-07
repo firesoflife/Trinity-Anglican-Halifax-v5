@@ -16,6 +16,17 @@ export const staff = defineType({
 			type: 'string',
 		}),
 		defineField({
+			name: 'slug',
+			title: 'Slug',
+			type: 'slug',
+			description:
+				'Used to create a URL for this page. Click Generate to create a slug based on the title.',
+			options: {
+				source: 'name',
+				maxLength: 96,
+			},
+		}),
+		defineField({
 			name: 'position',
 			title: 'Position',
 			type: 'string',

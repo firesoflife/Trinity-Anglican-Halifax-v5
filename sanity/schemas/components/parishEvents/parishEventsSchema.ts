@@ -14,6 +14,17 @@ export const parishEvents = defineType({
 			placeholder: 'ex. Sunday School',
 		}),
 		defineField({
+			name: 'slug',
+			title: 'Slug',
+			type: 'slug',
+			description:
+				'Used to create a URL for this page. Click Generate to create a slug based on the title.',
+			options: {
+				source: 'eventTitle',
+				maxLength: 96,
+			},
+		}),
+		defineField({
 			name: 'description',
 			title: 'Short Description of Event',
 			type: 'string',
