@@ -23,6 +23,7 @@ export const parishEvents = defineType({
 				source: 'eventTitle',
 				maxLength: 96,
 			},
+			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
 			name: 'description',
@@ -108,18 +109,18 @@ export const parishEvents = defineType({
 						},
 					],
 				},
-				defineField({
-					name: 'pageBannerImage',
-					title: 'Image for Dedicated Event Page',
-					description:
-						'This image will be used on the dedicated event page. It appears on the top of the page after navigating from the event list page. Use a landscape image for this.',
-					type: 'image',
-					options: {
-						hotspot: true,
-					},
-				}),
 			],
 		},
+		defineField({
+			name: 'pageBannerImage',
+			title: 'Image for Dedicated Event Page',
+			description:
+				'This image will be used on the dedicated event page. It appears on the top of the page after navigating from the event list page. Use a landscape image for this.',
+			type: 'image',
+			options: {
+				hotspot: true,
+			},
+		}),
 	],
 
 	preview: {

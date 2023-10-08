@@ -254,6 +254,7 @@ interface ParishEvents extends Base {
 	body: Array<Block | Image>;
 	primaryImage: Image;
 	eventDetails: EventDetails;
+	pageBannerImage: Image;
 }
 
 interface OneOffEvents extends Base {
@@ -271,4 +272,14 @@ interface Parish extends Base {
 	bannerImage: Image;
 	bannerVerse: string;
 	bannerVerseAttribution: string;
+}
+
+interface SingleParishEvent extends Base {
+	eventTitle: string;
+	slug: Slug;
+	description: string;
+	body: Array<Block | Image>;
+	primaryImage: Image;
+	eventDetails: EventDetails;
+	pageBannerImage: Image;
 }

@@ -25,6 +25,10 @@ export const fallbackImages = {
 		scheduleBannerFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/4f8b4d206c92ca00e3f7248cc3e87cc902ed8607-2400x1800.jpg',
 	},
+	parishEvents: {
+		pageBannerImageFallback:
+			'https://cdn.sanity.io/images/4ns0wsqo/production/ba1297a6b58df28fb08871f0344edaf7b01e45cc-2400x1600.jpg',
+	},
 };
 
 export const placeholders = {
