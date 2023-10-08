@@ -84,6 +84,7 @@
 - [ ] Create Groq for Event specific page
 - [ ] implement parallel fetching
 - [ ] Event time on events list? -- need to add, schema, groq, and component
+- [ ] Add centering styles and Image manipulation (hotspot and crop? ) etc for RicheText Editor
 
 ## TODO Contact Page
 

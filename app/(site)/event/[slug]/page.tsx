@@ -2,6 +2,8 @@ import { getSingleParishEvent } from '@/app/lib/api/getSingleEvent';
 import urlFor from '@/sanity/lib/urlFor';
 import Image from 'next/image';
 import { fallbackImages } from '../../utilities/fallbackAssets';
+import { PortableText } from '@portabletext/react';
+import { RichTextComponents } from '../../utilities/RichTextComponents';
 
 type Props = {
 	params: {
@@ -13,7 +15,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 	const pEventData = await getSingleParishEvent(slug);
 
 	return (
-		<div className='h-[80vh] pt-32 bg-secondary border-t-2 border-secondary'>
+		<div className='h-full pt-32 bg-secondary border-t-2 border-secondary'>
 			<article className='px-10'>
 				<section className='space-y-2 border-primary text-white'>
 					<div className='relative min-h-56 flex flex-col md:flex-row justify-between'>
@@ -68,6 +70,12 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 						</section>
 					</div>
 				</section>
+				<div className='mt-24 lg:w-4/5 mx-auto text-secondary bg-primary p-14'>
+					<PortableText
+						value={pEventData.body}
+						components={RichTextComponents}
+					/>
+				</div>
 			</article>
 		</div>
 	);
