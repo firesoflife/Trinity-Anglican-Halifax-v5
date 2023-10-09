@@ -7,7 +7,6 @@ import cn from './cn';
 import dayjs from 'dayjs';
 import CalendarHeader from './CalendarBanner';
 import { getParishEvents } from '@/app/lib/api/getParishEvents';
-import { type } from 'os';
 
 type EventDetails = {
 	eventType: string;
@@ -47,14 +46,27 @@ function CalendarUI() {
 	const formatEvents = (eventsData: Event[]): Events => {
 		let eventsObj: Events = {};
 		eventsData.forEach((event) => {
-			const date = dayjs(event.eventDetails.date).format('YYYY=MM-DD');
-			if (!eventsObj[date]) {
-				eventsObj[date] = [];
+			if (event.eventDetails.eventType === 'recurring') {
+				// Handle recurring events
+				const { dayOfWeek, frequency } = event.eventDetails.recurrence;
+				// Use dayOfWeek and frequency to calculate the dates for recurring events
+				// and add them to eventsObj
+			} else {
+				// Handle one-off events
+				const date = event.eventDetails.date;
+				if (date) {
+					// check if the date is not null
+					if (!eventsObj[date]) {
+						eventsObj[date] = [];
+					}
+					eventsObj[date].push(event);
+				}
 			}
-			eventsObj[date].push(event);
 		});
 		return eventsObj;
 	};
+
+	console.log(events);
 
 	return (
 		<>
@@ -120,9 +132,25 @@ function CalendarUI() {
 						)}
 					</div>
 				</div>
+				{/* Date Select and Display */}
 				<div className='h-96 w-96 px-5'>
 					<h1>Events for {selectDate.toDate().toDateString()}</h1>
-					<p>Lorem ipsum dolor sit amet consectetur.</p>
+					{events[selectDate.format('YYYY-MM-DD')] ? (
+						events[selectDate.format('YYYY-MM-DD')].map((event, index) => (
+							<div
+								key={index}
+								className={`p-2 ${
+									event.eventDetails.eventType === 'recurring'
+										? 'bg-blue-400'
+										: 'bg-green-400'
+								}`}>
+								<h2>{event.eventTitle}</h2>
+								<p>{event.description}</p>
+							</div>
+						))
+					) : (
+						<p>No events for this day.</p>
+					)}
 				</div>
 			</div>
 		</>
