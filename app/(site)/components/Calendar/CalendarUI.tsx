@@ -49,13 +49,36 @@ function CalendarUI() {
 			if (event.eventDetails.eventType === 'recurring') {
 				// Handle recurring events
 				const { dayOfWeek, frequency } = event.eventDetails.recurrence;
-				// Use dayOfWeek and frequency to calculate the dates for recurring events
-				// and add them to eventsObj
+				// Assume the event starts from the current date
+				let eventDate = dayjs();
+				// Calculate the dates for recurring events based on the frequency
+				while (eventDate.isBefore(dayjs().add(1, 'year'))) {
+					// Generate dates for the next year
+					if (frequency === 'Every week') {
+						if (eventDate.format('dddd') === dayOfWeek) {
+							const formattedDate = eventDate.format('YYYY-MM-DD');
+							if (!eventsObj[formattedDate]) {
+								eventsObj[formattedDate] = [];
+							}
+							eventsObj[formattedDate].push(event);
+						}
+						eventDate = eventDate.add(1, 'day');
+					} else if (frequency === 'Every month') {
+						if (eventDate.date() === 1) {
+							// If the event occurs on the first day of every month
+							const formattedDate = eventDate.format('YYYY-MM-DD');
+							if (!eventsObj[formattedDate]) {
+								eventsObj[formattedDate] = [];
+							}
+							eventsObj[formattedDate].push(event);
+						}
+						eventDate = eventDate.add(1, 'day');
+					}
+				}
 			} else {
 				// Handle one-off events
 				const date = event.eventDetails.date;
 				if (date) {
-					// check if the date is not null
 					if (!eventsObj[date]) {
 						eventsObj[date] = [];
 					}
@@ -65,8 +88,6 @@ function CalendarUI() {
 		});
 		return eventsObj;
 	};
-
-	console.log(events);
 
 	return (
 		<>
@@ -133,23 +154,30 @@ function CalendarUI() {
 					</div>
 				</div>
 				{/* Date Select and Display */}
-				<div className='h-96 w-96 px-5'>
-					<h1>Events for {selectDate.toDate().toDateString()}</h1>
+
+				<div className='h-96 w-96 px-5 rounded-lg overflow-auto'>
+					<h1 className='text-2xl font-semibold text-gray-800 mb-4'>
+						Events for {selectDate.toDate().toDateString()}
+					</h1>
 					{events[selectDate.format('YYYY-MM-DD')] ? (
 						events[selectDate.format('YYYY-MM-DD')].map((event, index) => (
 							<div
 								key={index}
-								className={`p-2 ${
+								className={`p-4 mb-4 rounded-lg ${
 									event.eventDetails.eventType === 'recurring'
-										? 'bg-blue-400'
-										: 'bg-green-400'
+										? 'bg-blue-100'
+										: 'bg-green-100'
 								}`}>
-								<h2>{event.eventTitle}</h2>
-								<p>{event.description}</p>
+								<h2 className='text-lg font-semibold text-gray-700'>
+									{event.eventTitle}
+								</h2>
+								<p className='text-gray-600 line-clamp-2'>
+									{event.description}
+								</p>
 							</div>
 						))
 					) : (
-						<p>No events for this day.</p>
+						<p className='text-gray-600'>No events for this day.</p>
 					)}
 				</div>
 			</div>
