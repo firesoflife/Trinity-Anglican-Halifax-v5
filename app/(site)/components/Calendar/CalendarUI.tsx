@@ -1,11 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { generateDate, months } from './calendar';
 import cn from './cn';
 import dayjs from 'dayjs';
 import CalendarHeader from './CalendarBanner';
+import { getParishEvents } from '@/app/lib/api/getParishEvents';
+import { type } from 'os';
+
+type EventDetails = {
+	eventType: string;
+	date: string;
+	recurrence: {
+		dayOfWeek: string;
+		frequency: string;
+		timeofDay: string;
+	};
+};
+
+type Event = ParishEvents;
+
+type Events = {
+	[date: string]: Event[];
+};
 
 function CalendarUI() {
 	const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
@@ -15,6 +33,28 @@ function CalendarUI() {
 	const [today, setToday] = useState(currentDate);
 
 	const [selectDate, setSelectDate] = useState(currentDate);
+
+	// Data fetch and state management for events
+
+	const [events, setEvents] = useState<Events>({});
+
+	useEffect(() => {
+		getParishEvents().then((data: Event[]) => {
+			setEvents(formatEvents(data));
+		});
+	}, []);
+
+	const formatEvents = (eventsData: Event[]): Events => {
+		let eventsObj: Events = {};
+		eventsData.forEach((event) => {
+			const date = dayjs(event.eventDetails.date).format('YYYY=MM-DD');
+			if (!eventsObj[date]) {
+				eventsObj[date] = [];
+			}
+			eventsObj[date].push(event);
+		});
+		return eventsObj;
+	};
 
 	return (
 		<>
