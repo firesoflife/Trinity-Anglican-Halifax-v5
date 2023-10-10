@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { getParishEvents } from '@/app/lib/api/getParishEvents';
 import AllEventsHeader from '../components/Events/EventsHeader';
 import { getParish } from '@/app/lib/api/getParish';
 import EventsToggle from '../components/Events/EventsToggle';
+import Loading from './loading';
 
 const ParishLife = async () => {
 	const parishMain = await getParish();
@@ -16,14 +17,19 @@ const ParishLife = async () => {
 		? parishEvent.filter((event) => !event.eventDetails.recurrence)
 		: [parishEvent];
 
+	// TODO: Remove this after testing
+	await new Promise((resolve) => setTimeout(resolve, 4000));
+
 	return (
-		<div className='bg-primary text-secondary pb-10'>
-			<AllEventsHeader data={parishMain} />
-			<EventsToggle
-				allParishEvents={allParishEvents}
-				oneOffEvents={oneOffEvents}
-			/>
-		</div>
+		<Suspense fallback={<Loading />}>
+			<div className='bg-primary text-secondary pb-10'>
+				<AllEventsHeader data={parishMain} />
+				<EventsToggle
+					allParishEvents={allParishEvents}
+					oneOffEvents={oneOffEvents}
+				/>
+			</div>
+		</Suspense>
 	);
 };
 

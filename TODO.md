@@ -5,13 +5,13 @@
 - [x] fix type error in Dummy Docs Schema
 - [ ] Convert component that fetch from multiple endpoints to fetch in parallel - guide: https://www.youtube.com/watch?v=-Sj05H2AuW8
 - [x] Change Staff and Clergy menu to "Clergy & People"
-- [ ] Add all links to Navbar --> first create dynamic pages for Parish Events
-- [ ] Add announcements Schema / Component / Navigation - to home page
+- [x] Add all links to Navbar --> first create dynamic pages for Parish Events
+- [x] Add announcements Schema / Component / Navigation - to home page
 - [ ] Add API calls for all header component - example AboutUs.tsx - to be done for all pages
 - [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
-- Locaiotn section -- move box out of map -- make schema for box info
+- [ ] Locaiotn section -- move box out of map -- make schema for box info
 - [ ] Add featureVerse to all pages with banner -- update schemas, update groq queries, update components - example WorshipBanner.tsx
-- [ ] loading pages or spinners / skeleton for components
+- [ ] loading pages or spinners / skeleton for components -- skeleton example in Parish Events page
 - [ ] 404 page - seek and ye shall find
 - [ ] Fallbacks for all images
 - [ ] Fallbacks for all fetched text
@@ -29,7 +29,7 @@
 ## TODO Navigation
 
 - [ ] Ensure all links are to correct paths - mobile
-- [ ] Ensure all links are to correct paths - desktop
+- [x] Ensure all links are to correct paths - desktop
 
 ## TODO Landing Page
 
@@ -43,8 +43,10 @@
 - [ ] Calendar of events thumbnail
 - [x] Hamburger Menu closed on load
 - [x] map and schedule to be made responsive on medium screens
-- [ ] calendarEvents schema - description to be reference of Event page description? - use clamp to shorten on calendar component
+- [x] calendarEvents schema - description to be reference of Event page description? - use clamp to shorten on calendar component
 - [x] Make Calendar component responsive - currently div on right pushes outside screen
+- [ ] data fetched via client side -- add loading component for calendar
+- [ ] Make calendar list item clickable to go to event page
 
 ## TODO About Page
 

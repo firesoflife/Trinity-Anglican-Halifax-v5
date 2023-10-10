@@ -3,6 +3,8 @@ import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import ImageUrlBuilder from '@sanity/image-url';
 import { fallbackImages, placeholders } from '../../utilities/fallbackAssets';
 import { getParish } from '@/app/lib/api/getParish';
+import { Suspense } from 'react';
+import Loading from '../../events/loading';
 
 const builder = ImageUrlBuilder(client);
 

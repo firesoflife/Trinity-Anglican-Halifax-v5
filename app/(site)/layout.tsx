@@ -8,6 +8,8 @@ import {
 } from './utilities/fonts';
 import NavLayout from './components/Nav/layout';
 import Footer from './components/Footer/Footer';
+import Loading from './loading';
+import { Suspense } from 'react';
 
 type LayoutProps = {
 	children: React.ReactNode;
@@ -34,7 +36,9 @@ export default function Layout({ children }: LayoutProps) {
 				<div>
 					<NavLayout />
 				</div>
-				<main>{children}</main>
+				<Suspense fallback={<Loading />}>
+					<main>{children}</main>
+				</Suspense>
 				<Footer />
 			</div>
 		</div>

@@ -1,3 +1,4 @@
+import CalendarLarge from '../components/Calendar/CalendarLarge';
 import EventsBanner from '../components/Events/EventsBanner';
 
 type LayoutProps = {
@@ -10,6 +11,7 @@ export default function Layout({ children }: LayoutProps) {
 			<main>
 				<EventsBanner />
 				{children}
+				<CalendarLarge />
 			</main>
 		</div>
 	);

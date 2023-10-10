@@ -2,9 +2,11 @@ import Link from 'next/link';
 import Logo from '../../../../public/triquetra-svg.svg';
 import Image from 'next/image';
 import { getHome } from '@/app/lib/api/getHome';
+import { getParishEvents } from '@/app/lib/api/getParishEvents';
 
 const Navbar = async () => {
 	const home = await getHome();
+	const pEvent = await getParishEvents();
 
 	return (
 		<div className='bg-primary border-myGrey z-50 hidden lg:block'>
@@ -113,55 +115,55 @@ const Navbar = async () => {
 									<Link
 										className='rounded-t bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='/events'>
-										All Events
+										Calendar & Events
 									</Link>
 								</li>
 								<li className=''>
 									<Link
 										className='bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='#'>
+										href='/events'>
 										Parish Breakfast
 									</Link>
 								</li>
 								<li className=''>
 									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='#'>
+										href='/events'>
 										Ladies' Bible Study
 									</Link>
 								</li>
 								<li className=''>
 									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='#'>
+										href='/events'>
 										Sunday School
 									</Link>
 								</li>
 								<li className=''>
 									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='#'>
+										href='/events'>
 										Parish Study Group
 									</Link>
 								</li>
 								<li className=''>
 									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='#'>
+										href='/events'>
 										Rector's Rice Bowl
 									</Link>
 								</li>
 								<li className=''>
 									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='#'>
+										href='/events'>
 										Refugee Sponsorship
 									</Link>
 								</li>
 								<li className=''>
 									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='#'>
+										href='/events'>
 										Other Ministries & Volunteer Opportunities
 									</Link>
 								</li>
