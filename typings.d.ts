@@ -203,6 +203,7 @@ interface FacilityRental extends Base {
 	capacity: number;
 	price: number;
 	image: Image;
+	fileUrl: string;
 	preview: {
 		select: {
 			title: string;

@@ -45,6 +45,11 @@ export const rental = defineType({
 				hotspot: true,
 			},
 		}),
+		defineField({
+			name: 'file',
+			title: 'File',
+			type: 'file',
+		}),
 	],
 	preview: {
 		select: {

@@ -161,7 +161,9 @@ function CalendarUI() {
 				</div>
 				{/* Date Select and Display */}
 
-				<div className='h-full w-full lg:w-1/2 px-10 rounded-lg overflow-auto'>
+				<div
+					className='h-full w-full lg:w-1/2 px-10 rounded-lg overflow-y-auto'
+					style={{ maxHeight: '500px' }}>
 					<h1 className='text-4xl font-subContent2 text-secondary mb-4'>
 						Events for {selectDate.toDate().toDateString()}
 					</h1>
@@ -181,7 +183,7 @@ function CalendarUI() {
 							</div>
 						))
 					) : (
-						<p className='text-gray-600 text-lg'>No events for this day.</p>
+						<p className='text-gray-600 text-lg'>No events today.</p>
 					)}
 				</div>
 			</div>
