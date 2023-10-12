@@ -9,33 +9,12 @@ export const rental = defineType({
 			name: 'title',
 			title: 'Title',
 			type: 'string',
-			placeholder: 'Contact Us',
+			placeholder: 'Facility Rental',
 		}),
-
 		defineField({
-			name: 'name',
-			title: 'Facility Name',
+			name: 'subtitle',
+			title: 'Subtitle',
 			type: 'string',
-		}),
-		defineField({
-			name: 'description',
-			title: 'Description',
-			type: 'text',
-		}),
-		defineField({
-			name: 'location',
-			title: 'Location',
-			type: 'string',
-		}),
-		defineField({
-			name: 'capacity',
-			title: 'Capacity',
-			type: 'number',
-		}),
-		defineField({
-			name: 'price',
-			title: 'Price',
-			type: 'number',
 		}),
 		defineField({
 			name: 'image',
@@ -46,8 +25,19 @@ export const rental = defineType({
 			},
 		}),
 		defineField({
+			name: 'description',
+			title: 'Description of Summary of Rental Options',
+			type: 'text',
+		}),
+		defineField({
+			name: 'capacity',
+			title: 'Capacity',
+			type: 'number',
+		}),
+
+		defineField({
 			name: 'file',
-			title: 'File',
+			title: 'File or rental agreement form',
 			type: 'file',
 		}),
 	],

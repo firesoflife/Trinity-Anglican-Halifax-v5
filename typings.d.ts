@@ -196,12 +196,9 @@ interface ContactUsPreview {
 
 interface FacilityRental extends Base {
 	title: string;
-	slug: Slug;
-	name: string;
+	subtitle: string;
 	description: string;
-	location: string;
 	capacity: number;
-	price: number;
 	image: Image;
 	fileUrl: string;
 	preview: {

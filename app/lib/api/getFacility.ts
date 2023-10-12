@@ -4,15 +4,14 @@ import { client } from '@/sanity/lib/client';
 export async function getFacility(): Promise<FacilityRental> {
 	return client.fetch(
 		groq`
-      *[_type == "facilityRental"]{
+      *[_type == "facilityRental"][0]{
           ...,
           title,
-          name,
+          subtitle,
+          "imageUrl": image.asset->url,
           description,
           location,
           capacity,
-          price,
-          "imageUrl": image.asset->url,
           "fileUrl": file.asset->url
         }
     `

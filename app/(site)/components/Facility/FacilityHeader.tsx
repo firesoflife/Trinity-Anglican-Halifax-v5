@@ -2,7 +2,7 @@ function FacilityHeader() {
 	return (
 		<div
 			id='contact-form'
-			className='h-auto py-20 bg-primary text-secondary p-4'>
+			className='h-auto pt-20 bg-primary text-secondary p-4'>
 			<div className='flex justify-around'>
 				<hr className='staff-underline w-2/3 mx-auto' />
 			</div>
