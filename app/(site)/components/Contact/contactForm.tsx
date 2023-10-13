@@ -2,9 +2,23 @@
 
 import React, { FormEvent, useState } from 'react';
 
-interface FormProps {}
+interface FormProps {
+	contactInfo: {
+		pageTitle: string;
+		formHeading: string;
+		formSbuheading: string;
+		email: string;
+		phone: string;
+		hoursTitle: string;
+		days: {
+			day: string;
+			from: string;
+			to: string;
+		}[];
+	};
+}
 
-const ContactForm: React.FC<FormProps> = () => {
+const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 	const [email, setEmail] = useState<string>('');
 	const [subject, setSubject] = useState<string>('');
 	const [message, setMessage] = useState<string>('');
@@ -18,11 +32,12 @@ const ContactForm: React.FC<FormProps> = () => {
 		<section className='bg-primary h-vh'>
 			<div className='py-8 lg:py-16 px-4 mx-auto max-w-screen-md'>
 				<h2 className='mb-4 text-4xl tracking-tight font-subheading text-center text-secondary dark:text-white'>
-					Send a General Message or Request for Pastoral Care
+					{contactInfo?.formHeading ||
+						'Send a General Message or Request for Pastoral Care'}
 				</h2>
 				<p className='mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl'>
-					Got a technical issue? Want to send feedback about a beta feature?
-					Need details about our Business plan? Let us know.
+					{contactInfo?.formSbuheading ||
+						'Have a question for us? Need to get request pastoral care? Send us a message and we will get back to you as soon as possible.'}
 				</p>
 				<form onSubmit={handleSubmit} className='space-y-8'>
 					<div>
@@ -37,7 +52,7 @@ const ContactForm: React.FC<FormProps> = () => {
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							className='shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
-							placeholder='name@flowbite.com'
+							placeholder='name@youremail.com'
 							required
 						/>
 					</div>

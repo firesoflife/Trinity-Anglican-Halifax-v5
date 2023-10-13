@@ -8,18 +8,37 @@ export const contactUs = defineType({
 	fields: [
 		defineField({
 			name: 'pageTitle',
-			title: 'Page Title',
+			title: 'Page Title - Contact Us',
 			type: 'string',
 		}),
-
+		defineField({
+			name: 'hoursTitle',
+			title: 'Hours of Availability Title',
+			type: 'string',
+			placeholder: 'Office Hours',
+		}),
+		defineField({
+			name: 'formHeading',
+			title: 'Form Title',
+			type: 'string',
+			placeholder: 'Send a General Message or Request for Pastoral Care',
+			description: 'The title for the form on the contact page',
+		}),
+		defineField({
+			name: 'formSubheading',
+			title: 'Form Subheading',
+			type: 'string',
+			placeholder: 'We will respond to your message as soon as possible.',
+			description: 'The subheading for the form on the contact page',
+		}),
 		defineField({
 			name: 'days',
-			title: 'Days',
+			title: 'Office Hours or Days of Availability',
 			type: 'array',
 			of: [
 				{
 					type: 'object',
-					title: 'test',
+					title: 'Day of Week',
 					fields: [
 						defineField({
 							name: 'day',

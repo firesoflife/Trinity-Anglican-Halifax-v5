@@ -24,6 +24,7 @@
 - [x] Change deskStructure so Banner and general page content is in own studio pane in singleton form. Then event docs on on pane with multiple docs allowable. Need to change so title and slug are added to event. Currently have primary page title populated with test data. Also must reformat preview as current implementation does not render event title
 - [ ] Refactor ALL components to call data from props instead of directly from Sanity - may requrie refactoring most layout.tsx and page.tsx components to pass data down to children
 - [ ] Add Icon Picker ? (Optional)
+- [ ] Implement email sending using formspree or emailjs
 
 ## TODO Navigation
 
@@ -46,7 +47,9 @@
 - [x] calendarEvents schema - description to be reference of Event page description? - use clamp to shorten on calendar component
 - [x] Make Calendar component responsive - currently div on right pushes outside screen
 - [ ] data fetched via client side -- add loading component for calendar
-- [ ] Make calendar list item clickable to go to event page
+- [ ] fetch contant info from Contact groq ?
+- [x] Make calendar list item clickable to go to event page
+- [x] Match colour to large calendar component
 
 ## TODO About Page
 
@@ -62,8 +65,8 @@
 - [x] Remove description from the about / our history schema
 - [x] Add Verse and Verse attribution to smallImage banner schema
 - [ ] Add main banner verse and verse attributtion
-- [ ] Move block inside map to above map
-- [ ] Put map in container with x margin
+- [x] Move block inside map to above map
+- [x] Put map in container with x margin
 
 ## TODO Worship Page
 

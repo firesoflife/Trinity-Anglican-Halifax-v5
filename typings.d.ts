@@ -163,14 +163,25 @@ interface SpecialService extends Base {
 	daysOfWeek: string[];
 }
 
+type Day = {
+	day:
+		| 'monday'
+		| 'tuesday'
+		| 'wednesday'
+		| 'thursday'
+		| 'friday'
+		| 'saturday'
+		| 'sunday';
+	from: string;
+	to: string;
+};
+
 interface ContactUs extends Base {
 	pageTitle: string;
-	slug: Slug;
-	days: Array<{
-		day: string;
-		from: string;
-		to: string;
-	}>;
+	hoursTitle: string;
+	formHeading: string;
+	formSbuheading: string;
+	days: Day[];
 	email: string;
 	phone: string;
 	preview: {
@@ -178,19 +189,6 @@ interface ContactUs extends Base {
 			title: string;
 			subtitle: string;
 		};
-	};
-}
-
-interface ContactUsDay {
-	day: string;
-	from: string;
-	to: string;
-}
-
-interface ContactUsPreview {
-	select: {
-		title: string;
-		subtitle: string;
 	};
 }
 

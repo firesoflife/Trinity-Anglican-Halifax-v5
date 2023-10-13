@@ -70,12 +70,22 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 						</section>
 					</div>
 				</section>
-				<div className='mt-24 lg:w-4/5 mx-auto text-secondary bg-primary p-14'>
-					<PortableText
-						value={pEventData.body}
-						components={RichTextComponents}
-					/>
-				</div>
+				{pEventData.body ? (
+					<div className='mt-24 lg:w-4/5 mx-auto text-secondary bg-primary p-14'>
+						<PortableText
+							value={pEventData.body}
+							components={RichTextComponents}
+						/>
+					</div>
+				) : (
+					<div className='mt-24 lg:w-4/5 h-[15rem] mx-auto text-secondary bg-primary p-14'>
+						<h2 className='text-3xl'>
+							There is nothing here right now, but in the future we will provide
+							more information on {pEventData?.eventTitle} details and times
+							here.
+						</h2>
+					</div>
+				)}
 			</article>
 		</div>
 	);

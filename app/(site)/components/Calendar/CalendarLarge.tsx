@@ -7,6 +7,7 @@ import cn from './cn';
 import dayjs from 'dayjs';
 import CalendarHeader from './CalendarBanner';
 import { getParishEvents } from '@/app/lib/api/getParishEvents';
+import Link from 'next/link';
 
 type EventDetails = {
 	eventType: string;
@@ -169,18 +170,20 @@ function CalendarUI() {
 					</h1>
 					{events[selectDate.format('YYYY-MM-DD')] ? (
 						events[selectDate.format('YYYY-MM-DD')].map((event, index) => (
-							<div
-								key={index}
-								className={`p-6 mb-6 rounded-lg text-lg ${
-									event.eventDetails.eventType === 'recurring'
-										? 'bg-secondary text-primary'
-										: 'bg-slate-800'
-								}`}>
-								<h2 className='text-2xl pb-3 font-semibold text-primary'>
-									{event.eventTitle}
-								</h2>
-								<p className='text-white line-clamp-2'>{event.description}</p>
-							</div>
+							<Link href={`/event/${event.slug.current}`}>
+								<div
+									key={index}
+									className={`p-6 mb-6 rounded-lg text-lg ${
+										event.eventDetails.eventType === 'recurring'
+											? 'bg-secondary text-primary'
+											: 'bg-slate-800'
+									}`}>
+									<h2 className='text-2xl pb-3 font-semibold text-primary'>
+										{event.eventTitle}
+									</h2>
+									<p className='text-white line-clamp-2'>{event.description}</p>
+								</div>
+							</Link>
 						))
 					) : (
 						<p className='text-gray-600 text-lg'>No events today.</p>

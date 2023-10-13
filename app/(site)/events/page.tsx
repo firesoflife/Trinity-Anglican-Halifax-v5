@@ -17,9 +17,6 @@ const ParishLife = async () => {
 		? parishEvent.filter((event) => !event.eventDetails.recurrence)
 		: [parishEvent];
 
-	// TODO: Remove this after testing
-	await new Promise((resolve) => setTimeout(resolve, 4000));
-
 	return (
 		<Suspense fallback={<Loading />}>
 			<div className='bg-primary text-secondary pb-10'>
