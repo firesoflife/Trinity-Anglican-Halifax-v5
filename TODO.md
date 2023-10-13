@@ -8,19 +8,18 @@
 - [x] Add all links to Navbar --> first create dynamic pages for Parish Events
 - [x] Add announcements Schema / Component / Navigation - to home page
 - [ ] Add API calls for all header component - example AboutUs.tsx - to be done for all pages
-- [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
 - [ ] Locaiotn section -- move box out of map -- make schema for box info
 - [ ] Add featureVerse to all pages with banner -- update schemas, update groq queries, update components - example WorshipBanner.tsx
-- [ ] loading pages or spinners / skeleton for components -- skeleton example in Parish Events page
 - [ ] 404 page - seek and ye shall find
+- [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
 - [ ] Fallbacks for all images
 - [ ] Fallbacks for all fetched text
-- [ ] Build out Calendar of Events page
+- [x] Build out Calendar of Events page
 - [ ] Meta tags for all pages -- check layout.tsx from about for example
 - [ ] check that all banners and images use image builder for all images
 - [ ] checkout all images from Sanity for crop and hotspots - example of working scenario - worship.shceduleImage
-- [ ] All routes to get loading components with spinner or skeleton - preferably skeleton
-- [ ] Calendar and Events instead of All Events
+- [ ] loading pages or spinners / skeleton for components -- skeleton example in Parish Events page
+- [x] Calendar and Events instead of All Events
 - [ ] Add Sanity Schema field and Groq for all Header Titles. Change Headers to fetch data? Need to think this one through
 - [x] Change deskStructure so Banner and general page content is in own studio pane in singleton form. Then event docs on on pane with multiple docs allowable. Need to change so title and slug are added to event. Currently have primary page title populated with test data. Also must reformat preview as current implementation does not render event title
 - [ ] Refactor ALL components to call data from props instead of directly from Sanity - may requrie refactoring most layout.tsx and page.tsx components to pass data down to children
@@ -30,6 +29,7 @@
 
 - [ ] Ensure all links are to correct paths - mobile
 - [x] Ensure all links are to correct paths - desktop
+- [ ] Center Navigation and Title on medium (ipad type) screens
 
 ## TODO Landing Page
 
@@ -40,7 +40,7 @@
 - [x] Map to be made responsive
 - [x]if schedule grows to more items, map will need to flow or image added below map.
 - [x] Test schedule items for overflow and make responsive if needed
-- [ ] Calendar of events thumbnail
+- [x] Calendar of events thumbnail
 - [x] Hamburger Menu closed on load
 - [x] map and schedule to be made responsive on medium screens
 - [x] calendarEvents schema - description to be reference of Event page description? - use clamp to shorten on calendar component
@@ -61,7 +61,7 @@
 - [x] Change button on contact card for staff
 - [x] Remove description from the about / our history schema
 - [x] Add Verse and Verse attribution to smallImage banner schema
-- [ ] Add main banner verse and vers attributtion
+- [ ] Add main banner verse and verse attributtion
 - [ ] Move block inside map to above map
 - [ ] Put map in container with x margin
 
@@ -69,7 +69,7 @@
 
 - [x] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote (both banner component and faq component)
 - [x] Add fallbacks for verse and attribute
-- [ ] Fix banner image above schedules - change opacity to mask? Add text option for quote? Ensure text is not opaque
+- [x] Fix banner image above schedules - change opacity to mask? Add text option for quote? Ensure text is not opaque
 - [ ] Full Sermons section
 - [ ] Re-write descriptions to indicate to use where things will appear - make more clear
 - [ ] Check all quotes are using the `<RiDoubleQuotesR />` icon instead of svg
@@ -79,14 +79,14 @@
 ## TODO Parish Events Page
 
 - [ ] Allow for dynamic events to be made and then rendered via title in Navbar
-- [ ] Create dynamic pages like blogroll for events
+- [x] Create dynamic pages like blogroll for events
 - [ ] Change Events Banner Image and query from parish Events instead of worship
 - [ ] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote (both banner component)
-- [ ] Create Groq for General Page
-- [ ] Create Groq for Event specific page
+- [x] Create Groq for General Page
+- [x] Create Groq for Event specific page
 - [ ] implement parallel fetching
-- [ ] Event time on events list? -- need to add, schema, groq, and component
-- [ ] Add centering styles and Image manipulation (hotspot and crop? ) etc for RicheText Editor
+- [x] Event time on events list? -- need to add, schema, groq, and component
+- [x] Add centering styles and Image manipulation (hotspot and crop? ) etc for RicheText Editor
 
 ## TODO Contact Page
 
@@ -94,9 +94,15 @@
 - [ ] Secondary Form for Pastoral Care / or use same one or only use form for pastoral care? -- I think this is the best option
 - [ ] Social Media Links
 - [ ] Add styling to forms
+
   - [ ] Fonts
   - [ ] Colours
   - [ ] Responsiveness
+
+  ## TODO Footer
+
+  - [ ] Add Social Media Links
+  - [ ] Add quick links
 
 ## Need from Benj
 
@@ -104,5 +110,5 @@
 - [ ] Domain information
 - [ ] Any background on location? Demographics, Attractions etc that could be added to map
 - [ ] Social Media Links
-- [ ] ANOUNCEMENTS ?
+- [x] ANOUNCEMENTS ?
 -
