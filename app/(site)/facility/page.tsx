@@ -1,6 +1,8 @@
 import { getFacility } from '@/app/lib/api/getFacility';
 import FacilityHeader from '../components/Facility/FacilityHeader';
 import FacilityBanner from '../components/Facility/FacilityBanner';
+import Link from 'next/link';
+import FacilityDownloadButton from '../components/Facility/FacilityDownloadButton';
 
 const FacilityRental = async () => {
 	const facility = await getFacility();
@@ -12,7 +14,7 @@ const FacilityRental = async () => {
 			{/* TODO Gallery of images */}
 			<div className='flex items-center justify-center min-h-fit py-32 bg-primary text-primary text-center'>
 				<div className='w-3/5 bg-secondary p-14 rounded-lg shadow-md space-y-4'>
-					<h1 className='text-3xl font-subheading'>
+					<h1 className='text-4xl font-subheading'>
 						{facility?.title || 'Rental Info & Download Form'}{' '}
 					</h1>
 					<h2 className='text-lg w-2/3 m-auto font-mainContent text-gray-400'>
@@ -29,9 +31,8 @@ const FacilityRental = async () => {
 							{facility?.capacity || '100 persons'}{' '}
 						</span>
 					</p>
-					<button className='text-xl p-8 bg-myGrey download-button hover:cursor-pointer w-full'>
-						Download Rental Form
-					</button>
+
+					<FacilityDownloadButton fileUrl={facility?.fileUrl} />
 				</div>
 			</div>
 		</div>
