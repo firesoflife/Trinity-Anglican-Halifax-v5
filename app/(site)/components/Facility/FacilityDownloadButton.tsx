@@ -55,9 +55,9 @@ const FacilityDownloadButton: React.FC<FacilityDownloadButtonProps> = ({
 				onClick={handleClick}
 				disabled={!isLoaded}>
 				{isLoaded ? (
-					<Link href={fileUrl || '#'} download>
+					<a href={fileUrl || '#'} download target='_blank'>
 						Download Rental Form
-					</Link>
+					</a>
 				) : (
 					<div>
 						One Moment. File is being prepared{' '}

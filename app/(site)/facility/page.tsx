@@ -12,7 +12,7 @@ const FacilityRental = async () => {
 			<FacilityBanner />
 			<FacilityHeader />
 			{/* TODO Gallery of images */}
-			<div className='flex items-center justify-center min-h-fit py-32 bg-primary text-primary text-center'>
+			<div className='flex items-center justify-center min-h-fit pb-32 pt-20 bg-primary text-primary text-center'>
 				<div className='w-3/5 bg-secondary p-14 rounded-lg shadow-md space-y-4'>
 					<h1 className='text-4xl font-subheading'>
 						{facility?.title || 'Rental Info & Download Form'}{' '}
