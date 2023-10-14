@@ -93,7 +93,9 @@ function CalendarUI() {
 	};
 
 	return (
-		<div className='w-11/12 mx-auto flex flex-col justify-center items-center'>
+		<div
+			id='calendar-large'
+			className='w-11/12 mx-auto flex flex-col justify-center items-center'>
 			<div className='pb-20'>
 				<h1 className='text-4xl font-subheading text-secondary'>
 					Calendar of Events

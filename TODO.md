@@ -34,7 +34,7 @@
 - [ ] Ensure all links are to correct paths - mobile
 - [x] Ensure all links are to correct paths - desktop
 - [x] Center Navigation and Title on medium (ipad type) screens
-- [ ] Add option to show items on nav via Sanity setting - currently all items are mapped only if type == recurring
+- [ ] Add option to show items on nav via Sanity setting - currently all items are mapped only if type == recurring - Could simply hard code a few non-rucurring items (i.e. Refugee Sponsorship)
 
 ## TODO Landing Page
 
