@@ -21,7 +21,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 					<div className='relative min-h-56 flex flex-col md:flex-row justify-between'>
 						<div className='absolute top-0 w-full h-full opacity-10 blur-sm p-10'>
 							<Image
-								className='object-cover object-center mx-auto'
+								className='object-scale-down object-center mx-auto'
 								src={
 									urlFor(pEventData.pageBannerImage) ||
 									fallbackImages.parishEvents.pageBannerImageFallback
@@ -55,7 +55,14 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 											{pEventData.eventDetails?.date ? (
 												<p>
 													{' '}
-													Join us this coming: {pEventData.eventDetails.date}
+													Join us this coming:{' '}
+													{new Date(
+														pEventData.eventDetails.date
+													).toLocaleDateString('en-US', {
+														year: 'numeric',
+														month: 'long',
+														day: 'numeric',
+													})}
 												</p>
 											) : (
 												' '
@@ -81,8 +88,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 					<div className='mt-24 lg:w-4/5 h-[15rem] mx-auto text-secondary bg-primary p-14'>
 						<h2 className='text-3xl'>
 							There is nothing here right now, but in the future we will provide
-							more information on {pEventData?.eventTitle} details and times
-							here.
+							more information on {pEventData?.eventTitle} here.
 						</h2>
 					</div>
 				)}

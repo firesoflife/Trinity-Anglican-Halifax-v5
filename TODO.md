@@ -34,6 +34,7 @@
 - [ ] Ensure all links are to correct paths - mobile
 - [x] Ensure all links are to correct paths - desktop
 - [x] Center Navigation and Title on medium (ipad type) screens
+- [ ] Add option to show items on nav via Sanity setting - currently all items are mapped only if type == recurring
 
 ## TODO Landing Page
 
@@ -70,6 +71,7 @@
 - [ ] Add main banner verse and verse attributtion
 - [x] Move block inside map to above map
 - [x] Put map in container with x margin
+- [ ] Hide header if staff type does not exist
 
 ## TODO Worship Page
 
