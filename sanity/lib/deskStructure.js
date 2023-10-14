@@ -24,7 +24,7 @@ export const deskStructure = (S) =>
 				.title('Home')
 				.icon(MdHome)
 				.child(S.editor().schemaType('home').documentId('home')),
-			S.listItem().title('Post').child(S.editor().schemaType('post')),
+			// S.listItem().title('Post').child(S.editor().schemaType('post')),
 			S.listItem()
 				.title('About')
 				.icon(MdInfo)
@@ -139,6 +139,37 @@ export const deskStructure = (S) =>
 				.icon(GiChurch)
 				.child(
 					S.editor().schemaType('facilityRental').documentId('facilityRental')
+				),
+			S.listItem()
+				.title('Blog')
+				.icon(MdHistory)
+				.child(
+					S.list()
+						.title('Blog')
+						.items([
+							S.listItem()
+								.title('Blog Main Page')
+								.icon(MdHistory)
+								.child(S.editor().schemaType('blog').documentId('blog')),
+							S.listItem()
+								.title('Blog Posts')
+								.icon(MdHistory)
+								.child(
+									S.documentList()
+										.schemaType('post')
+										.title('Blog Posts')
+										.filter('_type == "post"')
+								),
+							S.listItem()
+								.title('Authors')
+								.icon(MdPeople)
+								.child(
+									S.documentList()
+										.schemaType('author')
+										.title('Authors')
+										.filter('_type == "author"')
+								),
+						])
 				),
 			S.listItem()
 				.title('Dummy Docs')

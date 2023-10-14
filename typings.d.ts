@@ -283,3 +283,10 @@ interface SingleParishEvent extends Base {
 	eventDetails: EventDetails;
 	pageBannerImage: Image;
 }
+
+interface Blog extends Base {
+	title: string;
+	bannerImage: Image;
+	bannerVerse: string;
+	bannerVerseAttribution: string;
+}
