@@ -12,7 +12,7 @@ export const fallbackImages = {
 
 	about: {
 		primaryImageFallback:
-			'https://images.unsplash.com/photo-1548093190-e40f9b1b4082?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+			'https://cdn.sanity.io/images/4ns0wsqo/production/61ae942ccff0230df54ecef6d8fff834f3ab515f-2400x1753.jpg',
 		smallImageFallback:
 			'https://images.unsplash.com/photo-1497621122273-f5cfb6065c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
 	},
@@ -29,7 +29,15 @@ export const fallbackImages = {
 		pageBannerImageFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/ba1297a6b58df28fb08871f0344edaf7b01e45cc-2400x1600.jpg',
 	},
+	facility: {
+		pageBannerImageFallback:
+			'https://images.unsplash.com/photo-1584792977024-014310b55977?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80',
+	},
 };
+
+//////////////////////////////////////
+////////// FALLBACK TEXT /////////////
+//////////////////////////////////////
 
 export const placeholders = {
 	about: {
@@ -57,16 +65,16 @@ export const placeholders = {
 			"And they continued steadfastly in the apostles' doctrine and fellowship, and in breaking of bread, and in prayers.",
 		scheduleVerseAttFallback: 'Acts 2:24',
 	},
-	worshiop: {
-		bannerVerseFallback:
-			'"But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
-		bannerVerseAttFallback: 'Galatians 6:14',
-	},
 	schedule: {
 		regularServiceTitle: 'Join us for our Regular Services',
 		specialServiceTitle: 'Join us on these Special Occasions',
 	},
 	parishEvents: {
 		allEventsBannerTitle: 'All Parish Events',
+	},
+	facility: {
+		bannerVerseFallback:
+			'"But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
+		bannerVerseAttFallback: 'Galatians 6:14',
 	},
 };

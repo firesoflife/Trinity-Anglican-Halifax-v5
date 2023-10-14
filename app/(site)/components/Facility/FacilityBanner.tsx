@@ -1,36 +1,45 @@
 import { getFacility } from '@/app/lib/api/getFacility';
-import { fallbackImages } from '../../utilities/fallbackAssets';
-import ImageUrlBuilder from '@sanity/image-url';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import { client } from '@/sanity/lib/client';
+import { fallbackImages, placeholders } from '../../utilities/fallbackAssets';
+import urlFor from '@/sanity/lib/urlFor';
+import { RiDoubleQuotesR } from 'react-icons/ri';
 
-const builder = ImageUrlBuilder(client);
-
-function urlFor(source: SanityImageSource) {
-	return builder.image(source);
-}
-
-const HomeBanner = async () => {
+const FacilityBanner = async () => {
 	const facility = await getFacility();
 
-	// Hero Image
-	const bannerImageUrl = facility?.image
-		? urlFor(facility?.image).url()
-		: fallbackImages.heroImageFallback;
+	// Banner Image
+	const facilityBannerUrl = facility?.bannerImage
+		? urlFor(facility?.bannerImage)
+		: fallbackImages.facility.pageBannerImageFallback;
 
 	return (
 		<>
 			<section
-				className='hero h-[44vh]'
-				style={{ backgroundImage: `url(${bannerImageUrl})` }}>
-				<div className='hero-overlay bg-opacity-60 border-b-[1px] border-primary'></div>
-				<div className='hero-content text-center text-neutral-content'>
-					<div className='max-w-md'></div>
+				className='hero h-[44vh] relative'
+				style={{ backgroundImage: `url(${facilityBannerUrl})` }}>
+				<div className='hero-overlay bg-opacity-60 border-b-[1px] border-primary absolute inset-0'></div>
+				<div className='hero-content absolute bottom-10 right-28 text-neutral-content'>
+					<div className='max-w-md'>
+						<div className='text-xl font-bold font-heading leading-snug text-left'>
+							<blockquote className='text-xl italic font-semibold text-primary opacity-70 font-heading'>
+								<div className='pb-2 -ml-3'>
+									<RiDoubleQuotesR />
+								</div>
+								<p className='drop-shadow-2xl'>
+									{facility?.bannerVerse ||
+										placeholders.facility.bannerVerseFallback}
+								</p>
+								<p className='text-right pr-9'>
+									--{' '}
+									{facility?.bannerVerseAttribution ||
+										placeholders.facility.bannerVerseAttFallback}
+								</p>
+							</blockquote>
+						</div>
+					</div>
 				</div>
 			</section>
-			{/* <div className='h-14 w-full bg-secondary '></div> */}
 		</>
 	);
 };
 
-export default HomeBanner;
+export default FacilityBanner;

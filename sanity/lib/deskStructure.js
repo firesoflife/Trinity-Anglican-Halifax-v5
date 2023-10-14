@@ -35,7 +35,7 @@ export const deskStructure = (S) =>
 							S.listItem()
 								.title('About')
 								.icon(MdInfo)
-								.child(S.documentTypeList('about').title('About')),
+								.child(S.editor().schemaType('about').documentId('about')),
 							S.listItem()
 								.title('Clergy and People')
 								.icon(MdPeople)

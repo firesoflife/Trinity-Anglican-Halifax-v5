@@ -199,7 +199,9 @@ interface FacilityRental extends Base {
 	subtitle: string;
 	description: string;
 	capacity: number;
-	image: Image;
+	bannerImage: Image;
+	bannerVerse: string;
+	bannerVerseAttribution: string;
 	fileUrl: string;
 	preview: {
 		select: {

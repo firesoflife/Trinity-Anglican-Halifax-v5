@@ -1,21 +1,13 @@
-import { client } from '@/sanity/lib/client';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
-import ImageUrlBuilder from '@sanity/image-url';
 import { getAbout } from '@/app/lib/api/getAbout';
 import { fallbackImages, placeholders } from '../../utilities/fallbackAssets';
 import { RiDoubleQuotesR } from 'react-icons/ri';
-
-const builder = ImageUrlBuilder(client);
-
-function urlFor(source: SanityImageSource) {
-	return builder.image(source);
-}
+import urlFor from '@/sanity/lib/urlFor';
 
 const AboutBanner = async () => {
 	const about = await getAbout();
 
 	const aboutBannerUrl = about.bannerImage
-		? urlFor(about.bannerImage).url()
+		? urlFor(about.bannerImage)
 		: fallbackImages.about.primaryImageFallback;
 
 	return (
