@@ -24,13 +24,16 @@
 - [x] Change deskStructure so Banner and general page content is in own studio pane in singleton form. Then event docs on on pane with multiple docs allowable. Need to change so title and slug are added to event. Currently have primary page title populated with test data. Also must reformat preview as current implementation does not render event title
 - [ ] Refactor ALL components to call data from props instead of directly from Sanity - may requrie refactoring most layout.tsx and page.tsx components to pass data down to children
 - [ ] Add Icon Picker ? (Optional)
-- [ ] Implement email sending using formspree or emailjs
+- [ ] Implement email sending using formspree or emailjs or Resend:
+  - [ ] Resend: https://resend.com/docs/send-with-nextjs
+  - [ ] Resend + Verecel Edge Functions: https://resend.com/docs/send-with-vercel-edge-functions
+  - [ ] Resend guide: https://www.youtube.com/watch?v=T2xaiw7VK4A
 
 ## TODO Navigation
 
 - [ ] Ensure all links are to correct paths - mobile
 - [x] Ensure all links are to correct paths - desktop
-- [ ] Center Navigation and Title on medium (ipad type) screens
+- [x] Center Navigation and Title on medium (ipad type) screens
 
 ## TODO Landing Page
 

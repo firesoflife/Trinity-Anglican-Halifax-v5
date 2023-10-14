@@ -1,5 +1,7 @@
+import { Suspense } from 'react';
 import LocationMap from '../components/About/LocationMap';
 import StaffHeader from './staff/StaffHeader';
+import Loading from '../loading';
 
 type LayoutProps = {
 	children: React.ReactNode;
@@ -14,7 +16,9 @@ export const metadata = {
 export default function Layout({ children }: LayoutProps) {
 	return (
 		<>
-			<main>{children}</main>
+			<Suspense fallback={<Loading />}>
+				<main>{children}</main>
+			</Suspense>
 		</>
 	);
 }

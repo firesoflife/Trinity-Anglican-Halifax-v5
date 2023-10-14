@@ -2,7 +2,8 @@ import { client } from '@/sanity/lib/client';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import ImageUrlBuilder from '@sanity/image-url';
 import { getAbout } from '@/app/lib/api/getAbout';
-import { fallbackImages } from '../../utilities/fallbackAssets';
+import { fallbackImages, placeholders } from '../../utilities/fallbackAssets';
+import { RiDoubleQuotesR } from 'react-icons/ri';
 
 const builder = ImageUrlBuilder(client);
 
@@ -13,24 +14,33 @@ function urlFor(source: SanityImageSource) {
 const AboutBanner = async () => {
 	const about = await getAbout();
 
-	const aboutBannerUrl = about.primaryImage
-		? urlFor(about.primaryImage).url()
+	const aboutBannerUrl = about.bannerImage
+		? urlFor(about.bannerImage).url()
 		: fallbackImages.about.primaryImageFallback;
 
 	return (
 		<>
 			<section
-				className='hero h-[44vh] shadow-lg rounded-lg overflow-hidden mb-12'
-				style={{
-					backgroundImage: `url(${aboutBannerUrl})`,
-					backgroundPosition: 'center',
-					backgroundRepeat: 'no-repeat',
-					backgroundSize: 'cover',
-				}}>
-				<div className='hero-content text-center text-neutral-content py-12 px-4 md:px-40'>
+				className='hero h-[44vh] relative'
+				style={{ backgroundImage: `url(${aboutBannerUrl})` }}>
+				<div className='hero-overlay bg-opacity-60 border-b-[1px] border-primary absolute inset-0'></div>
+				<div className='hero-content absolute bottom-10 right-28 text-neutral-content'>
 					<div className='max-w-md'>
-						<div className='mb-96 text-5xl font-bold font-heading leading-snug'>
-							{about.primaryImage}
+						<div className='text-xl font-bold font-heading leading-snug text-left'>
+							<blockquote className='text-xl italic font-semibold text-primary opacity-70 font-heading'>
+								<div className='pb-2 -ml-3'>
+									<RiDoubleQuotesR />
+								</div>
+								<p className='drop-shadow-2xl'>
+									{about?.bannerVerse ||
+										placeholders.worship.bannerVerseFallback}
+								</p>
+								<p className='text-right pr-9'>
+									--{' '}
+									{about?.bannerVerseAttribution ||
+										placeholders.worship.bannerVerseAttFallback}
+								</p>
+							</blockquote>
 						</div>
 					</div>
 				</div>

@@ -14,7 +14,7 @@ export const about = defineType({
 			validation: (Rule) => Rule.required(),
 		}),
 		defineField({
-			name: 'primaryImage',
+			name: 'bannerImage',
 			title: 'Top of Page - Banner Image',
 			type: 'image',
 			options: {

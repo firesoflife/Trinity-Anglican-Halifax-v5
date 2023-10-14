@@ -10,9 +10,9 @@ const Navbar = async () => {
 
 	return (
 		<div className='bg-primary border-myGrey z-50 hidden lg:block'>
-			<div className='m-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 px-20'>
+			<div className='m-w-screen-xl flex flex-col 2xl:flex-row items-center justify-between mx-auto p-4 px-20'>
 				<Link href='/'>
-					<div className='flex items-center'>
+					<div className='flex items-center pb-5 2xl:pb-0'>
 						<Image
 							src={Logo}
 							width={60}
@@ -25,7 +25,7 @@ const Navbar = async () => {
 					</div>
 				</Link>
 				<div className='w-full md:block md:w-auto text-secondary '>
-					<div className='flex space-x-5 p-4 md:p-0 mt-4 font-subheading text-2xl'>
+					<div className='flex space-x-5 p-4 md:p-0 font-subheading text-2xl'>
 						<button className='hover:bg-myGrey hover:text-white py-2 px-4 transition-all'>
 							<Link href='/'>Home</Link>
 						</button>

@@ -47,7 +47,9 @@ interface About extends Base {
 	title: string;
 	slug: Slug;
 	description: string;
-	primaryImage: Image;
+	bannerImage: Image;
+	bannerVerse: string;
+	bannerVerseAttribution: string;
 	smallImage: Image;
 	body: Array<Block | Image>;
 }
