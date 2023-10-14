@@ -18,6 +18,8 @@ import dummyAssetDoc from './schemas/dummyAssetDoc';
 import customAsset from './schemas/customAsset';
 import { parishEvents } from './schemas/components/parishEvents/parishEventsSchema';
 import { generalParishLayout } from './schemas/pages/parishSchema';
+import { author } from './schemas/pages/authorSchema';
+import { post } from './schemas/pages/postSchema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
@@ -40,5 +42,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		generalParishLayout,
 		dummyAssetDoc,
 		customAsset,
+		author,
+		post,
 	],
 };
