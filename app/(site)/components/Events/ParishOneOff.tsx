@@ -1,6 +1,7 @@
 import urlFor from '@/sanity/lib/urlFor';
 import { GiTriquetra } from 'react-icons/gi';
 import Link from 'next/link';
+import { placeholders } from '../../utilities/fallbackAssets';
 
 type Props = {
 	oneOffEvents: OneOffEvents[];
@@ -10,6 +11,9 @@ type CardProps = {
 	oEvent: OneOffEvents;
 	isReversed: boolean;
 };
+
+const { eventTitleFallback, descriptionFallback } =
+	placeholders.parishEventsOneOff;
 
 const Card = ({ oEvent, isReversed }: CardProps) => (
 	<div
@@ -21,8 +25,8 @@ const Card = ({ oEvent, isReversed }: CardProps) => (
 			<div className='aspect-w-1 aspect-h-1 mx-auto'>
 				<img
 					className='object-cover w-full h-full mx-auto'
-					src={urlFor(oEvent.primaryImage)}
-					alt={oEvent.eventTitle}
+					src={urlFor(oEvent?.primaryImage) || eventTitleFallback}
+					alt={oEvent?.eventTitle}
 				/>
 			</div>
 		</div>
@@ -31,10 +35,10 @@ const Card = ({ oEvent, isReversed }: CardProps) => (
 				isReversed ? 'md:order-first' : 'md:order-last'
 			}`}>
 			<h2 className='card-title text-3xl font-subheading underline underline-offset-3 decoration-5 decoration-myBlue'>
-				{oEvent.eventTitle}
+				{oEvent?.eventTitle || eventTitleFallback}
 			</h2>
 			<p className='line-clamp-3 xl:line-clamp-none max-w-prose font-heading text-lg'>
-				{oEvent.description}
+				{oEvent.description || descriptionFallback}
 			</p>
 			<hr className='p-3 lg:hidden' />
 			<div className='card-actions justify-between'>
@@ -72,7 +76,7 @@ const Card = ({ oEvent, isReversed }: CardProps) => (
 					</span>
 					<hr className='w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
 				</div>
-				<Link href={`/event/${oEvent.slug.current}`}>
+				<Link href={`/event/${oEvent?.slug.current}` || 'could not load'}>
 					<button className='btn bg-myBlue hover:bg-myGrey text-white'>
 						More Info ...
 					</button>
@@ -85,7 +89,7 @@ const Card = ({ oEvent, isReversed }: CardProps) => (
 const ParishOneOff = ({ oneOffEvents }: Props) => {
 	return (
 		<div className='container mx-auto p-8 bg-primary w-full text-white'>
-			{oneOffEvents.map((oEvent, i) => (
+			{oneOffEvents?.map((oEvent, i) => (
 				<Card
 					key={oEvent._id}
 					oEvent={oEvent}

@@ -28,6 +28,7 @@ export const fallbackImages = {
 	parishEvents: {
 		pageBannerImageFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/ba1297a6b58df28fb08871f0344edaf7b01e45cc-2400x1600.jpg',
+		oneOffPrimaryImageFallback: 'Image Not Found',
 	},
 	facility: {
 		pageBannerImageFallback:
@@ -71,6 +72,11 @@ export const placeholders = {
 	},
 	parishEvents: {
 		allEventsBannerTitle: 'All Parish Events',
+	},
+	parishEventsOneOff: {
+		eventTitleFallback: 'Event Yet to Be Named',
+		descriptionFallback:
+			'There is no description for this event. Check back later for more details.',
 	},
 	facility: {
 		bannerVerseFallback:

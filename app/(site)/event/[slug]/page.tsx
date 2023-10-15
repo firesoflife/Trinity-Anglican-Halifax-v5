@@ -44,7 +44,8 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 										<div>
 											<p className='text-2xl font-subheading'>
 												Join us every:{' '}
-												{pEventData.eventDetails?.recurrence?.dayOfWeek}
+												{pEventData.eventDetails?.recurrence?.dayOfWeek ||
+													'contact us for details'}
 											</p>
 											<p>
 												Time: {pEventData.eventDetails?.recurrence?.timeOfDay}
@@ -71,7 +72,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 									)}
 								</div>
 								<div className='flex flex-col justify-end w-1/2'>
-									{pEventData.description}
+									{pEventData?.description}
 								</div>
 							</div>
 						</section>

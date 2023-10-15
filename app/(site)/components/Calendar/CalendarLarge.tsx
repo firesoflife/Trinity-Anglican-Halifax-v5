@@ -49,7 +49,7 @@ function CalendarUI() {
 	const formatEvents = (eventsData: Event[]): Events => {
 		let eventsObj: Events = {};
 		eventsData.forEach((event) => {
-			if (event.eventDetails.eventType === 'recurring') {
+			if (event?.eventDetails?.eventType === 'recurring') {
 				// Handle recurring events
 				const { dayOfWeek, frequency } = event.eventDetails.recurrence;
 				// Assume the event starts from the current date
@@ -80,7 +80,7 @@ function CalendarUI() {
 				}
 			} else {
 				// Handle one-off events
-				const date = event.eventDetails.date;
+				const date = event?.eventDetails?.date;
 				if (date) {
 					if (!eventsObj[date]) {
 						eventsObj[date] = [];

@@ -12,6 +12,8 @@ export const parishEvents = defineType({
 			title: 'Name of the Event',
 			type: 'string',
 			placeholder: 'ex. Sunday School',
+			validation: (Rule) =>
+				Rule.required().error('An event title is required.'),
 		}),
 		defineField({
 			name: 'slug',
@@ -93,6 +95,8 @@ export const parishEvents = defineType({
 									'Sunday',
 								],
 							},
+							validation: (Rule) =>
+								Rule.required().error('A day of the week is required.'),
 						},
 						{
 							name: 'frequency',

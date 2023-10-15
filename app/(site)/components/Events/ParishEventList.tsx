@@ -90,7 +90,7 @@ const ParishEventList = ({ allParishEvents }: Props) => {
 		<div className='container mx-auto p-8 bg-primary w-full text-white'>
 			{/* EVENTS */}
 			{allParishEvents
-				.filter((pEvent) => pEvent.eventDetails.eventType === 'recurring')
+				.filter((pEvent) => pEvent?.eventDetails?.eventType === 'recurring')
 				.map((pEvent, index) => (
 					<Card
 						key={pEvent.slug.current}

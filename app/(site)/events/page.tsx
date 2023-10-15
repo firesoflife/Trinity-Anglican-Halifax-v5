@@ -14,7 +14,7 @@ const ParishLife = async () => {
 		: [parishEvent];
 
 	const oneOffEvents = Array.isArray(parishEvent)
-		? parishEvent.filter((event) => !event.eventDetails.recurrence)
+		? parishEvent.filter((event) => !event?.eventDetails?.recurrence)
 		: [parishEvent];
 
 	return (
