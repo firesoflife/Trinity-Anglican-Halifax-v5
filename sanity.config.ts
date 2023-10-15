@@ -7,6 +7,7 @@ import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { deskStructure } from './sanity/lib/deskStructure';
 import { media } from 'sanity-plugin-media';
+import { iconPicker } from 'sanity-plugin-icon-picker';
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { apiVersion, dataset, projectId } from './sanity/env';
@@ -14,7 +15,6 @@ import { schema } from './sanity/schema';
 import { myTheme } from './theme';
 import Logo from './app/(site)/components/Images/Logo';
 import StudioNavbar from './sanity/components/StudioNavbar';
-import { get } from 'http';
 import { getDefaultDocumentNode } from './previewStructure';
 
 const singletonTypes = new Set([
@@ -60,6 +60,7 @@ export default defineConfig({
 		// https://www.sanity.io/docs/the-vision-plugin
 		visionTool({ defaultApiVersion: apiVersion }),
 		media(),
+		iconPicker(),
 	],
 
 	studio: {

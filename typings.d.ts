@@ -190,7 +190,23 @@ interface ContactUs extends Base {
 		select: {
 			title: string;
 			subtitle: string;
+			media: Icon;
 		};
+	};
+}
+
+interface IconPickerOptions extends Base {
+	// ... define the properties based on the expected shape
+	outputFormat: string;
+	// ... other properties
+}
+
+interface SocialMediaPlatform extends Base {
+	platformName: string;
+	platformUrl: string;
+	icon: {
+		provider: string;
+		name: string;
 	};
 }
 
