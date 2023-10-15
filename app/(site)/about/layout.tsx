@@ -1,6 +1,4 @@
 import { Suspense } from 'react';
-import LocationMap from '../components/About/LocationMap';
-import StaffHeader from './staff/StaffHeader';
 import Loading from '../loading';
 
 type LayoutProps = {

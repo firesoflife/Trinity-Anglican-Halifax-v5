@@ -1,7 +1,6 @@
 import urlFor from '@/sanity/lib/urlFor';
 import { GiTriquetra } from 'react-icons/gi';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
 type Props = {
 	oneOffEvents: OneOffEvents[];
