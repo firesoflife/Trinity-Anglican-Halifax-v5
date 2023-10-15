@@ -1,6 +1,6 @@
 function CalendarHeader() {
 	return (
-		<div id='location' className='h-auto bg-primary text-secondary p-4'>
+		<div id='' className='h-auto bg-primary text-secondary p-4'>
 			<div className='flex justify-around'>
 				<hr className='staff-underline w-2/3 mx-auto' />
 			</div>

@@ -8,28 +8,58 @@ const Footer = () => {
 			<footer className='footer p-10 bg-secondary text-base-content'>
 				<nav>
 					<header className='footer-title'>About</header>
-					<a className='link link-hover'>Branding</a>
-					<a className='link link-hover'>Design</a>
-					<a className='link link-hover'>Marketing</a>
-					<a className='link link-hover'>Advertisement</a>
+					<Link href={'/about'} className='link link-hover'>
+						Our History
+					</Link>
+					<Link href={'/about#staff-clergy'} className='link link-hover'>
+						Clergy & People
+					</Link>
+					<Link href={'/about#location'} className='link link-hover'>
+						Find Us
+					</Link>
 				</nav>
 				<nav>
-					<header className='footer-title'>Company</header>
-					<a className='link link-hover'>About us</a>
-					<a className='link link-hover'>Contact</a>
-					<a className='link link-hover'>Jobs</a>
-					<a className='link link-hover'>Press kit</a>
+					<header className='footer-title'>Worship</header>
+					<Link href={'/worship'} className='link link-hover'>
+						What to Expect
+					</Link>
+					<Link href={'/worship#schedule'} className='link link-hover'>
+						Schedule
+					</Link>
+					<Link href={'/worship#sermons'} className='link link-hover'>
+						Sermons & Teaching
+					</Link>
+					<Link href={'/blog'} className='link link-hover'>
+						Blog
+					</Link>
 				</nav>
 				<nav>
-					<header className='footer-title'>Legal</header>
-					<a className='link link-hover'>Terms of use</a>
-					<a className='link link-hover'>Privacy policy</a>
-					<a className='link link-hover'>Cookie policy</a>
+					<header className='footer-title'>Parish Life</header>
+					<Link href={'/events'} className='link link-hover'>
+						List of Events
+					</Link>
+					<Link href={'/event/refugee-sponsorship'} className='link link-hover'>
+						Refugee Sponsorship
+					</Link>
+					<Link href={'/events#calendar-large'} className='link link-hover'>
+						Calendar
+					</Link>
+				</nav>
+				<nav>
+					<header className='footer-title'>Quick Links</header>
+					<Link href={'/contact'} className='link link-hover'>
+						Pastoral Care
+					</Link>
+					<Link href={'/contact'} className='link link-hover'>
+						Contact Us
+					</Link>
+					<Link href={'/facility'} className='link link-hover'>
+						Facility Rental
+					</Link>
 				</nav>
 			</footer>
 			<footer className='footer px-10 py-4  bg-secondary text-base-content '>
 				<aside className='items-center grid-flow-col'>
-					{/* TODO - Replace with Icon ?  */}
 					<Image
 						src={Logo}
 						width={60}

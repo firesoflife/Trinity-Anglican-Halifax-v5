@@ -76,7 +76,7 @@ export const placeholders = {
 	parishEventsOneOff: {
 		eventTitleFallback: 'Event Yet to Be Named',
 		descriptionFallback:
-			'There is no description for this event. Check back later for more details.',
+			'There is no description for this event. Check back later for more details',
 	},
 	facility: {
 		bannerVerseFallback:
