@@ -66,7 +66,13 @@ export const parishEvents = defineType({
 						layout: 'radio',
 						direction: 'horizontal',
 					},
-					validation: (Rule) => Rule.required(),
+					validation: (Rule) =>
+						Rule.custom((eventType) => {
+							if (eventType === 'recurring' || eventType === 'one-off') {
+								return true; // Valid eventType
+							}
+							return 'Event Type is required';
+						}),
 				},
 				{
 					name: 'date',
