@@ -25,6 +25,7 @@ export const socialMediaPlatform = defineType({
 			type: 'iconPicker',
 			options: {
 				outputFormat: 'react',
+				providers: ['fa', 'mdi', 'hi', 'fi', 'si'],
 			},
 		}),
 	],
