@@ -95,6 +95,7 @@
 - [ ] implement parallel fetching
 - [x] Event time on events list? -- need to add, schema, groq, and component
 - [x] Add centering styles and Image manipulation (hotspot and crop? ) etc for RicheText Editor
+- [ ] Dynamic Event page - mobile view
 
 ## TODO Contact Page
 

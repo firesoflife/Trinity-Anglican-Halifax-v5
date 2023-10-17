@@ -306,3 +306,23 @@ interface Blog extends Base {
 	bannerVerse: string;
 	bannerVerseAttribution: string;
 }
+
+interface EventDetails {
+	eventType?: string;
+	date?: string;
+	recurrence?: {
+		dayOfWeek?: string;
+		frequency?: string;
+		timeofDay?: string;
+	};
+}
+
+interface ParishEvent {
+	eventTitle?: string;
+	eventDetails?: EventDetails;
+	[key: string]: any; // for any other properties that might exist on a ParishEvent object
+}
+
+interface ParishEventsProps {
+	data: ParishEvent[];
+}

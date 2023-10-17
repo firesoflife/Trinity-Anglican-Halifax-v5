@@ -6,12 +6,11 @@ import Logo from '../../../../public/triquetra-svg.svg';
 import Image from 'next/image';
 import { Squash as Hamburger } from 'hamburger-react';
 
-const MobileNav = () => {
+const MobileNav: React.FC<ParishEventsProps> = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isAboutOpen, setIsAboutOpen] = useState(false);
 	const [isWorshipOpen, setIsWorshipOpen] = useState(false);
 	const [isParishLifeOpen, setIsParishLifeOpen] = useState(false);
-	const [pEvent, setPEvent] = useState<ParishEvents[]>([]);
 
 	useEffect(() => {
 		const closeMenu = (e: KeyboardEvent) => {
@@ -143,83 +142,25 @@ const MobileNav = () => {
 								className='cursor-pointer'>
 								Parish Life
 							</div>
-							{/* {isParishLifeOpen && (
-								<div className='flex w-full justify-center'>
-									<div className='rounded-sm p-4 space-y-2 inline-flex justify-center flex-col bg-black opacity-70 text-white text-left w-fit'>
-										{' '}
-										<Link href='/events' onClick={closeMenu}>
-											<span className='text-lg opacity-100'>
-												Calendar & Events
-											</span>
-										</Link>
-										<Link
-											href='/parish-life#parish-breakfast'
-											onClick={closeMenu}>
-											<span className='text-lg opacity-100'>
-												Parish Breakfast
-											</span>
-										</Link>
-										<Link
-											href='/parish-life#ladies-bible-study'
-											onClick={closeMenu}>
-											<span className='text-lg opacity-100'>
-												Ladies' Bible Study
-											</span>
-										</Link>
-										<Link href='/parish-life#sunday-school' onClick={closeMenu}>
-											<span className='text-lg opacity-100'>Sunday School</span>
-										</Link>
-										<Link
-											href='/parish-life#parish-study-group'
-											onClick={closeMenu}>
-											<span className='text-lg opacity-100'>
-												Parish Study Group
-											</span>
-										</Link>
-										<Link
-											href='/parish-life#rectors-rice-bowl'
-											onClick={closeMenu}>
-											<span className='text-lg opacity-100'>
-												Rector's Rice Bowl
-											</span>
-										</Link>
-										<Link
-											href='/parish-life#refugee-sponsorship'
-											onClick={closeMenu}>
-											<span className='text-lg opacity-100'>
-												Refugee Sponsorship
-											</span>
-										</Link>
-										<Link
-											href='/parish-life#other-ministries'
-											onClick={closeMenu}>
-											<span className='text-lg opacity-100'>
-												Other Ministries & <br /> Volunteer Opportunities
-											</span>
-										</Link>
-									</div>
-								</div>
-							)} */}
+
 							{isParishLifeOpen && (
 								<div className='flex w-full justify-center'>
 									<div className='rounded-sm p-4 space-y-2 inline-flex justify-center flex-col bg-black opacity-70 text-white text-left w-fit'>
-										{/* ... (rest of your links) */}
-										{/* The following block is your events section */}
-										{pEvent
+										{props.data
 											.filter(
-												(event) =>
-													event?.eventDetails?.eventType === 'recurring'
+												(event) => event.eventDetails?.eventType === 'recurring'
 											)
 											.map((event, index) => (
 												<Link
 													key={index}
-													href={`/event/${event.slug.current}`}
+													href={`/event/${event.slug?.current}`}
 													onClick={closeMenu}>
 													<span className='text-lg opacity-100'>
-														{event?.eventTitle || 'could not load'}
+														{event.eventTitle || 'could not load'}
 													</span>
 												</Link>
 											))}
+
 										<Link href='/events' onClick={closeMenu}>
 											<span className='text-lg opacity-100'>
 												Refugee Sponsorship
