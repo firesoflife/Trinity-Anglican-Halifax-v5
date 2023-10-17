@@ -3,6 +3,12 @@ import FacilityHeader from '../components/Facility/FacilityHeader';
 import FacilityBanner from '../components/Facility/FacilityBanner';
 import FacilityDownloadButton from '../components/Facility/FacilityDownloadButton';
 
+export const metadata = {
+	title: 'Facility Rentals at Trinity Anglican Church, Halifax',
+	description:
+		'Plan your event in a serene setting. Download our rental form and discover the facilities awaiting you at Trinity Anglican Church, Halifax.',
+};
+
 const FacilityRental = async () => {
 	const facility = await getFacility();
 

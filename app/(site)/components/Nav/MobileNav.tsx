@@ -11,6 +11,7 @@ const MobileNav = () => {
 	const [isAboutOpen, setIsAboutOpen] = useState(false);
 	const [isWorshipOpen, setIsWorshipOpen] = useState(false);
 	const [isParishLifeOpen, setIsParishLifeOpen] = useState(false);
+	const [pEvent, setPEvent] = useState<ParishEvents[]>([]);
 
 	useEffect(() => {
 		const closeMenu = (e: KeyboardEvent) => {
@@ -142,7 +143,7 @@ const MobileNav = () => {
 								className='cursor-pointer'>
 								Parish Life
 							</div>
-							{isParishLifeOpen && (
+							{/* {isParishLifeOpen && (
 								<div className='flex w-full justify-center'>
 									<div className='rounded-sm p-4 space-y-2 inline-flex justify-center flex-col bg-black opacity-70 text-white text-left w-fit'>
 										{' '}
@@ -192,6 +193,39 @@ const MobileNav = () => {
 										<Link
 											href='/parish-life#other-ministries'
 											onClick={closeMenu}>
+											<span className='text-lg opacity-100'>
+												Other Ministries & <br /> Volunteer Opportunities
+											</span>
+										</Link>
+									</div>
+								</div>
+							)} */}
+							{isParishLifeOpen && (
+								<div className='flex w-full justify-center'>
+									<div className='rounded-sm p-4 space-y-2 inline-flex justify-center flex-col bg-black opacity-70 text-white text-left w-fit'>
+										{/* ... (rest of your links) */}
+										{/* The following block is your events section */}
+										{pEvent
+											.filter(
+												(event) =>
+													event?.eventDetails?.eventType === 'recurring'
+											)
+											.map((event, index) => (
+												<Link
+													key={index}
+													href={`/event/${event.slug.current}`}
+													onClick={closeMenu}>
+													<span className='text-lg opacity-100'>
+														{event?.eventTitle || 'could not load'}
+													</span>
+												</Link>
+											))}
+										<Link href='/events' onClick={closeMenu}>
+											<span className='text-lg opacity-100'>
+												Refugee Sponsorship
+											</span>
+										</Link>
+										<Link href='/events' onClick={closeMenu}>
 											<span className='text-lg opacity-100'>
 												Other Ministries & <br /> Volunteer Opportunities
 											</span>

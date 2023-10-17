@@ -1,6 +1,7 @@
+import { Metadata } from 'next';
 import './globals.css';
 
-export const metadata = {
+export const metadata: Metadata = {
 	title:
 		'Trinity Anglican Church - A Historic Spiritual Community in Halifax, Nova Scotia',
 	description:
@@ -13,10 +14,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html
-			lang='en'
-			// data-theme='corporate'
-			data-theme='business'>
+		<html lang='en' data-theme='business'>
 			<body className='text-gray-300'>{children}</body>
 		</html>
 	);
