@@ -32,7 +32,7 @@
 // 						{/* About Group */}
 // 						<div className='group inline-block relative'>
 // 							<button className=' text-secondary hover:bg-myGrey hover:text-white font-semibold py-2 px-4 rounded inline-flex items-center'>
-// 								<Link href={'/about'} className='mr-1'>
+// 								<Link href='/about' className='mr-1'>
 // 									About
 // 								</Link>
 // 								<svg
@@ -69,7 +69,7 @@
 // 						{/* Worship Group */}
 // 						<div className='group inline-block relative'>
 // 							<button className=' text-secondary hover:bg-myGrey hover:text-white font-semibold py-2 px-4 rounded inline-flex items-center'>
-// 								<Link href={'/worship'} className='mr-1'>
+// 								<Link href='/worship' className='mr-1'>
 // 									Worship
 // 								</Link>
 // 								<svg
@@ -106,7 +106,7 @@
 // 						{/* Parish Life */}
 // 						<div className='group inline-block relative'>
 // 							<button className=' text-secondary hover:bg-myGrey hover:text-white font-semibold py-2 px-4 rounded inline-flex items-center'>
-// 								<Link href={'/events'} className='mr-1'>
+// 								<Link href='events' className='mr-1'>
 // 									Parish Life
 // 								</Link>
 // 								<svg
@@ -213,7 +213,7 @@ const Navbar = async () => {
 							alt='Trinity Anglican Church, Halifax, Logo'
 						/>
 						<button className='bg-primary text-secondary font-subheading py-2 px-4 inline-flex items-center '>
-							<span className='mr-1 text-2xl'>{home.pageTitle}</span>
+							<span className='mr-1 text-2xl'>{home?.pageTitle}</span>
 						</button>
 					</div>
 				</Link>
@@ -239,7 +239,7 @@ const Navbar = async () => {
 								<li className=''>
 									<Link
 										className='hover:border-white border-3 border bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='/about'>
+										href={'/about'}>
 										Our History
 									</Link>
 								</li>

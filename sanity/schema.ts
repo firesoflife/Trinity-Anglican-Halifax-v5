@@ -20,6 +20,7 @@ import { parishEvents } from './schemas/components/parishEvents/parishEventsSche
 import { generalParishLayout } from './schemas/pages/parishSchema';
 import { author } from './schemas/components/blog/authorSchema';
 import { post } from './schemas/components/blog/postSchema';
+import { blog } from './schemas/pages/blogLayoutSchema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
@@ -44,5 +45,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		customAsset,
 		author,
 		post,
+		blog,
 	],
 };

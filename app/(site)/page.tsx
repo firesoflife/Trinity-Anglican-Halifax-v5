@@ -4,6 +4,7 @@ import QuickLinksLayout from './home/QuickLinksLayout';
 import HomeBanner from './home/homeBanner';
 import MapContactCard from './components/HomePage/mapContactCard';
 import CalendarUI from './components/Calendar/CalendarUI';
+import { Suspense } from 'react';
 
 const HomePage = async () => {
 	// --------------FETCH FUNCTIONS --------------//
@@ -32,9 +33,11 @@ const HomePage = async () => {
 					<MapContactCard />
 				</div>
 				{/* ANOUNCMENTS OR CALENDAR SECTION?  */}
-				<div className='p-8'>
-					<CalendarUI />
-				</div>
+				<Suspense fallback={<div>Loading...</div>}>
+					<div className='p-8'>
+						<CalendarUI />
+					</div>
+				</Suspense>
 			</div>
 		</div>
 	);

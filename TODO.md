@@ -7,7 +7,7 @@
 - [x] Change Staff and Clergy menu to "Clergy & People"
 - [x] Add all links to Navbar --> first create dynamic pages for Parish Events
 - [x] Add announcements Schema / Component / Navigation - to home page
-- [ ] Add Icon Picker ? (Optional) https://npm.io/package/sanity-plugin-icon-picker -- Icons for Front End and in particular for the footer
+- [x] Add Icon Picker ? (Optional) https://npm.io/package/sanity-plugin-icon-picker -- Icons for Front End and in particular for the footer
 - [ ] Add API calls for all header component - example AboutUs.tsx - to be done for all pages
 - [ ] Locaiotn section -- move box out of map -- make schema for box info
 - [ ] Add featureVerse to all pages with banner -- update schemas, update groq queries, update components - example WorshipBanner.tsx

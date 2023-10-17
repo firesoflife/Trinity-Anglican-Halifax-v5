@@ -1,7 +1,6 @@
 import { getFacility } from '@/app/lib/api/getFacility';
 import FacilityHeader from '../components/Facility/FacilityHeader';
 import FacilityBanner from '../components/Facility/FacilityBanner';
-import Link from 'next/link';
 import FacilityDownloadButton from '../components/Facility/FacilityDownloadButton';
 
 const FacilityRental = async () => {
