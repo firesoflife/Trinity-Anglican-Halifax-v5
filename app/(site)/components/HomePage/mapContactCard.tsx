@@ -1,12 +1,14 @@
+import { getContact } from '@/app/lib/api/getContact';
 import { getRegularServices } from '@/app/lib/api/getServices';
 import React from 'react';
 import { LiaCrossSolid } from 'react-icons/lia';
 
 const MapContactCard = async () => {
 	const services = await getRegularServices();
+	const contact = await getContact();
+
 	return (
 		<>
-		
 			<section className='mb-20 text-primary'>
 				<div className='flex flex-wrap justify-center'>
 					<div className='flex-initial shrink w-full xl:w-5/12 lg:w-6/12'>
@@ -26,11 +28,10 @@ const MapContactCard = async () => {
 									321 Main Ave, st <br /> Halifax, NS
 								</p>
 								<h5 className='text-xl font-semibold mb-4'>Email us:</h5>
-								<p className='mb-6'>filleraddres@trinityanglican.com</p>
+								<p className='mb-6'>{contact.email || 'not available'}</p>
 								<h5 className='text-xl font-semibold mb-4'>Phone:</h5>
-								<p className='mb-6'>(555) 555-5555</p>
+								<p className='mb-6'>{contact.phone || 'Not Available'}</p>
 							</div>
-							{/* TODO - Add icon  */}
 							<div className='divider lg:divider-horizontal justify-center'>
 								<LiaCrossSolid size={75} />
 							</div>

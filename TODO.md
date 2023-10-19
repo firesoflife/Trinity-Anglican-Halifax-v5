@@ -34,7 +34,7 @@
 - [ ] Ensure all links are to correct paths - mobile
 - [x] Ensure all links are to correct paths - desktop
 - [x] Center Navigation and Title on medium (ipad type) screens
-- [ ] Add option to show items on nav via Sanity setting - currently all items are mapped only if type == recurring - Could simply hard code a few non-rucurring items (i.e. Refugee Sponsorship)
+- [x] Add option to show items on nav via Sanity setting - currently all items are mapped only if type == recurring - Could simply hard code a few non-rucurring items (i.e. Refugee Sponsorship)
 
 ## TODO Landing Page
 
@@ -50,8 +50,8 @@
 - [x] map and schedule to be made responsive on medium screens
 - [x] calendarEvents schema - description to be reference of Event page description? - use clamp to shorten on calendar component
 - [x] Make Calendar component responsive - currently div on right pushes outside screen
-- [ ] data fetched via client side -- add loading component for calendar
-- [ ] fetch contant info from Contact groq ?
+- [x] data fetched via client side -- add loading component for calendar
+- [x] fetch contact info from Contact groq ?
 - [x] Make calendar list item clickable to go to event page
 - [x] Match colour to large calendar component
 
@@ -97,6 +97,7 @@
 - [x] Event time on events list? -- need to add, schema, groq, and component
 - [x] Add centering styles and Image manipulation (hotspot and crop? ) etc for RicheText Editor
 - [ ] Dynamic Event page - mobile view
+- [ ] Large Calendar component - center title and "today" button on mobile - add padding to sides of calendar
 
 ## TODO Contact Page
 

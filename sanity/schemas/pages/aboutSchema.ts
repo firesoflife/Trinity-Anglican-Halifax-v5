@@ -28,8 +28,9 @@ export const about = defineType({
 		defineField({
 			name: 'bannerVerse',
 			title:
-				'Tope Banner - Enter a quote in the larger text box and quote attribution below',
+				'Top Banner - Enter a quote in the larger text box and quote attribution below',
 			type: 'text',
+			rows: 4,
 			placeholder:
 				'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
 			description:
@@ -46,7 +47,7 @@ export const about = defineType({
 		}),
 		defineField({
 			name: 'body',
-			title: 'Body',
+			title: 'About Us Text Block Content',
 			type: 'array',
 			of: [{ type: 'block' }, { type: 'image' }],
 		}),
@@ -64,6 +65,7 @@ export const about = defineType({
 			title:
 				'Middle of Page Quote - Enter a quote in the larger text box and quote attribution below',
 			type: 'text',
+			rows: 4,
 			placeholder:
 				'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
 			description:

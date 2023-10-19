@@ -37,7 +37,7 @@ export const home = defineType({
 			type: 'string',
 			description:
 				'Appears on the home page navigation beside the logo. Leave blank if you want no text showing',
-			placeholder: 'Trinity Anglican Church',
+			initialValue: 'Trinity Anglican Church',
 		}),
 		defineField({
 			name: 'bannerTitle',

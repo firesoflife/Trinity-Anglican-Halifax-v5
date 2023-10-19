@@ -31,6 +31,7 @@ export const worship = defineType({
 			name: 'bannerVerse',
 			title: 'Enter a quote in the larger text box and quote attribution below',
 			type: 'text',
+			rows: 4,
 			placeholder:
 				'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
 			description:
