@@ -71,7 +71,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 										</div>
 									)}
 								</div>
-								<div className='flex flex-col justify-end w-1/2'>
+								<div className='flex flex-col justify-end  lg:w-1/2'>
 									{pEventData?.description}
 								</div>
 							</div>
@@ -87,7 +87,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 					</div>
 				) : (
 					<div className='mt-24 lg:w-4/5 h-[15rem] mx-auto text-secondary bg-primary p-14'>
-						<h2 className='text-3xl'>
+						<h2 className='text-3xl pb-9'>
 							There is nothing here right now, but in the future we will provide
 							more information on {pEventData?.eventTitle} here.
 						</h2>

@@ -13,7 +13,7 @@ export const fallbackImages = {
 	about: {
 		primaryImageFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/61ae942ccff0230df54ecef6d8fff834f3ab515f-2400x1753.jpg',
-		smallImageFallback:
+		middleBannerImageFallback:
 			'https://images.unsplash.com/photo-1497621122273-f5cfb6065c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
 	},
 	worship: {
@@ -54,10 +54,13 @@ export const placeholders = {
 			p5: 'Trinity is rooted in the evangelical tradition and had its beginnings in the religious revival of the nineteenth-century. We continue to have confidence and hope that God will indeed restore, renew, and revive his Church and the world he so loves. Today we seek to be true to our evangelical and catholic (universal) inheritance. We seek to hear and be transformed by the Gospel, and to preach the same by our words and actions. We seek to be faithful in serving Christ through our prayer and worship, ministry and mission, hospitality and friendship, and in the ordinary exchanges with one another and the stranger among us.',
 			p6: 'Trinity Church is a parish in the Diocese of NS and PEI, and a member of the Anglican Church of Canada.',
 		},
+		middleBannerVerseFallback:
+			"And they continued steadfastly in the apostles' doctrine and fellowship, and in breaking of bread, and in prayers.",
+		middleBannerVerseAttFallback: 'Acts 2:24',
 	},
 	worship: {
 		bannerVerseFallback:
-			'"But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
+			'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world.',
 		bannerVerseAttFallback: 'Galatians 6:14',
 		expectVerseFallback:
 			'"But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',

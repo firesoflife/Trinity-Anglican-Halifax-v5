@@ -9,7 +9,7 @@ async function AboutHeader() {
 			</div>
 
 			<h1 className='text-4xl font-subheading text-center py-16'>
-				{about.title}{' '}
+				{about.title || 'About Us'}{' '}
 			</h1>
 			<hr className='staff-underline w-1/3 mx-auto' />
 		</div>

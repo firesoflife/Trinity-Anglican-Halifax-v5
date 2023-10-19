@@ -1,6 +1,8 @@
 function LocationHeader() {
 	return (
-		<div id='location' className='h-auto py-20 bg-secondary text-primary p-4'>
+		<div
+			id='location'
+			className='h-auto pt-20 md:py-20 bg-secondary text-primary p-4'>
 			<div className='flex justify-around'>
 				<hr className='inverse-staff-underline w-2/3 mx-auto' />
 			</div>

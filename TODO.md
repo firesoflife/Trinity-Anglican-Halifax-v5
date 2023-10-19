@@ -61,7 +61,7 @@
 - [x] Add Location Header
 - [x] add Location Schema with header and subheader for map contanct.
 - [x] Remove "Description" from schema
-- [ ] Location page exists here as well -- might be intersting to have just a small bit of info on thel location -- the church's place in the commmunity.
+- [x] Location page exists here as well -- might be intersting to have just a small bit of info on thel location -- the church's place in the commmunity.
 - [x] Remove extra space at bottom of page
 - [x] Remove Gradient on About page background
 - [x] Conditioanlly render "contact" button for wardens
@@ -71,6 +71,7 @@
 - [ ] Add main banner verse and verse attributtion
 - [x] Move block inside map to above map
 - [x] Put map in container with x margin
+- [ ] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote (both banner component and faq component)
 - [ ] Hide header if staff type does not exist
 
 ## TODO Worship Page

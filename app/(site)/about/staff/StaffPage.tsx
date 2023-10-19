@@ -23,7 +23,7 @@ const StaffPage = async () => {
 	const roleTitles: Record<Role, string> = {
 		rector: 'Rector',
 		clergy: 'Clergy',
-		general: 'Church Staff',
+		general: 'People & Volunteers',
 		warden: 'Wardens',
 	};
 

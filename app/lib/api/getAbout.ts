@@ -4,7 +4,7 @@ import { groq } from 'next-sanity';
 export async function getAbout(): Promise<About> {
 	return client.fetch(
 		groq`
-      *[_type == "about"]{
+      *[_type == "about"][1]{
         title,
         slug,
         description,
@@ -16,14 +16,16 @@ export async function getAbout(): Promise<About> {
         },
         bannerVerse,
         bannerVerseAttribution,
-        smallImage{
+        middleBannerImage{
           asset->{
             _id,
             url
           }
         },
+        middleBannerVerse,
+        middleBannerVerseAttribution,
         body
-      }[0]
+      }
     `
 	);
 }

@@ -51,6 +51,9 @@ interface About extends Base {
 	bannerVerse: string;
 	bannerVerseAttribution: string;
 	smallImage: Image;
+	middleBannerImage: Image;
+	middleBannerVerse: string;
+	middleBannerVerseAttribution: string;
 	body: Array<Block | Image>;
 }
 

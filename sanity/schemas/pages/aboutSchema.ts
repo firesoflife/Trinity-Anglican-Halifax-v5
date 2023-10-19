@@ -4,7 +4,10 @@ export const about = defineType({
 	name: 'about',
 	title: 'About Page',
 	type: 'document',
-	groups: [{ name: 'banner', title: 'Banner' }],
+	groups: [
+		{ name: 'banner', title: 'Banner' },
+		{ name: 'middleBanner', title: 'Middle Banner' },
+	],
 	fields: [
 		defineField({
 			name: 'title',
@@ -24,7 +27,8 @@ export const about = defineType({
 		}),
 		defineField({
 			name: 'bannerVerse',
-			title: 'Enter a quote in the larger text box and quote attribution below',
+			title:
+				'Tope Banner - Enter a quote in the larger text box and quote attribution below',
 			type: 'text',
 			placeholder:
 				'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
@@ -34,7 +38,7 @@ export const about = defineType({
 		}),
 		defineField({
 			name: 'bannerVerseAttribution',
-			title: 'Attribution',
+			title: 'Top Banner - Quote Attribution',
 			type: 'string',
 			placeholder: 'Galatians 6:14',
 			description: 'Enter the quote attribution here',
@@ -45,6 +49,34 @@ export const about = defineType({
 			title: 'Body',
 			type: 'array',
 			of: [{ type: 'block' }, { type: 'image' }],
+		}),
+		defineField({
+			name: 'middleBannerImage',
+			title: 'Middle of Page - Banner Image',
+			type: 'image',
+			options: {
+				hotspot: true,
+			},
+			group: 'middleBanner',
+		}),
+		defineField({
+			name: 'middleBannerVerse',
+			title:
+				'Middle of Page Quote - Enter a quote in the larger text box and quote attribution below',
+			type: 'text',
+			placeholder:
+				'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
+			description:
+				'A short verse or quote that will be overlayed on the banner image (optional)',
+			group: 'middleBanner',
+		}),
+		defineField({
+			name: 'middleBannerVerseAttribution',
+			title: 'Middle of Page Quote - Attribution',
+			type: 'string',
+			placeholder: 'Galatians 6:14',
+			description: 'Enter the quote attribution here',
+			group: 'middleBanner',
 		}),
 	],
 	preview: {
