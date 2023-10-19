@@ -5,7 +5,7 @@ import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { generateDate, months } from './calendar';
 import cn from './cn';
 import dayjs from 'dayjs';
-import CalendarHeader from './CalendarBanner';
+import CalendarHeader from './CalendarHeader';
 import { getParishEvents } from '@/app/lib/api/getParishEvents';
 import Link from 'next/link';
 
@@ -161,7 +161,13 @@ function CalendarUI() {
 
 				<div className='h-96 w-96 px-5 rounded-lg overflow-auto'>
 					<h1 className='text-2xl font-semibold text-gray-800 mb-4'>
-						Events for {selectDate.toDate().toDateString()}
+						Events for:{' '}
+						{selectDate.toDate().toLocaleDateString(undefined, {
+							weekday: 'short',
+							year: 'numeric',
+							month: 'short',
+							day: 'numeric',
+						})}
 					</h1>
 					{events[selectDate.format('YYYY-MM-DD')] ? (
 						events[selectDate.format('YYYY-MM-DD')].map((event, index) => (

@@ -5,7 +5,7 @@ import { GrFormNext, GrFormPrevious } from 'react-icons/gr';
 import { generateDate, months } from './calendar';
 import cn from './cn';
 import dayjs from 'dayjs';
-import CalendarHeader from './CalendarBanner';
+import CalendarHeader from './CalendarHeader';
 import { getParishEvents } from '@/app/lib/api/getParishEvents';
 import Link from 'next/link';
 
@@ -24,8 +24,6 @@ type Event = ParishEvents;
 type Events = {
 	[date: string]: Event[];
 };
-
-// TODO: Create hook for logic to reuse hee and home component
 
 function CalendarUI() {
 	const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
@@ -97,7 +95,7 @@ function CalendarUI() {
 
 	return (
 		<div className='w-11/12 mx-auto flex flex-col justify-center items-center'>
-			<div className='pb-20'>
+			<div id='calendar-large-mobile' className='pb-20'>
 				<h1 className='text-4xl font-subheading text-secondary'>
 					Calendar of Events
 				</h1>
@@ -105,10 +103,10 @@ function CalendarUI() {
 			<div className='flex flex-col md:flex-row md:w-full mx-auto divide-x-2 gap-10 h-full items-center justify-center'>
 				<div className='w-full lg:w-1/2'>
 					<div className='lg:flex justify-between'>
-						<h2 className='text-4xl font-bold'>
+						<h2 className='text-4xl font-bold text-center md:text-left mb-6 md:mb-0'>
 							{months[today.month()]}, {today.year()}
 						</h2>
-						<div className='flex items-center gap-10'>
+						<div className='flex items-center gap-10 justify-center mb-3'>
 							<GrFormPrevious
 								className='w-10 h-10 cursor-pointer'
 								onClick={() => setToday(today.month(today.month() - 1))}
@@ -169,8 +167,15 @@ function CalendarUI() {
 					id='calendar-large'
 					className='h-full w-full lg:w-1/2 px-10 rounded-lg overflow-y-auto'
 					style={{ maxHeight: '500px' }}>
-					<h1 className='text-4xl font-subContent2 text-secondary mb-4'>
-						Events for {selectDate.toDate().toDateString()}
+					<h1 className='text-4xl font-subContent2 font-extralight text-secondary mb-4'>
+						{/* Events for {selectDate.toDate().toDateString()} */}
+						Events for:{' '}
+						{selectDate.toDate().toLocaleDateString(undefined, {
+							weekday: 'long',
+							year: 'numeric',
+							month: 'short',
+							day: 'numeric',
+						})}
 					</h1>
 					{events[selectDate.format('YYYY-MM-DD')] ? (
 						events[selectDate.format('YYYY-MM-DD')].map((event, index) => (

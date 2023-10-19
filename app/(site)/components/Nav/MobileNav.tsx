@@ -64,9 +64,6 @@ const MobileNav: React.FC<ParishEventsProps> = (props) => {
 							height={60}
 							alt='Trinity Anglican Church, Halifax, Logo'
 						/>
-						<button className='bg-primary text-secondary font-subheading py-2 px-4 inline-flex items-center '>
-							<span className='mr-1 text-2xl'>TitleDrop</span>
-						</button>
 					</div>
 				</Link>
 				<div className='text-secondary z-50 sticky'>
@@ -146,6 +143,14 @@ const MobileNav: React.FC<ParishEventsProps> = (props) => {
 							{isParishLifeOpen && (
 								<div className='flex w-full justify-center'>
 									<div className='rounded-sm p-4 space-y-2 inline-flex justify-center flex-col bg-black opacity-70 text-white text-left w-fit'>
+										<Link href='/events' onClick={closeMenu}>
+											<span className=' text-lg opacity-100'>Events</span>
+										</Link>
+										<Link
+											href='/events#calendar-large-mobile'
+											onClick={closeMenu}>
+											<span className=' text-lg opacity-100'>Calendar</span>
+										</Link>
 										{props.data
 											.filter(
 												(event) => event.eventDetails?.eventType === 'recurring'
