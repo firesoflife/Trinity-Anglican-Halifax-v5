@@ -86,7 +86,7 @@
 
 ## TODO Parish Events Page
 
-- [ ] Allow for dynamic events to be made and then rendered via title in Navbar
+- [x] Allow for dynamic events to be made and then rendered via title in Navbar
 - [x] Create dynamic pages like blogroll for events
 - [ ] Change Events Banner Image and query from parish Events instead of worship
 - [ ] Add featureVerseQuote to attribute the verse or author to schema, groq and implement in block quote (both banner component)
@@ -110,8 +110,8 @@
 
   ## TODO Footer
 
-  - [ ] Add Social Media Links
-  - [ ] Add quick links
+  - [x] Add Social Media Links
+  - [x] Add quick links
 
 ## Need from Benj
 

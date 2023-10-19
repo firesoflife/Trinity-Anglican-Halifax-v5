@@ -18,7 +18,7 @@ const FacilityRental = async () => {
 			<FacilityHeader />
 			{/* TODO Gallery of images */}
 			<div className='flex items-center justify-center min-h-fit pb-32 pt-20 bg-primary text-primary text-center'>
-				<div className='w-3/5 bg-secondary p-14 rounded-lg shadow-md space-y-4'>
+				<div className='lg:w-3/5 w-[95%] mx-auto bg-secondary p-6 md:p-14 rounded-lg shadow-md space-y-4'>
 					<h1 className='text-4xl font-subheading'>
 						{facility?.title || 'Rental Info & Download Form'}{' '}
 					</h1>
@@ -26,7 +26,7 @@ const FacilityRental = async () => {
 						{facility?.subtitle ||
 							'Have an upcoming event an need a place to host? Download the form for rental requests to learn more!'}{' '}
 					</h2>
-					<p className='text-prose text-center w-2/3 m-auto'>
+					<p className='text-prose text-center md:w-2/3 m-auto'>
 						{facility?.description ||
 							'Need a space to host a large gathering? Look no further! Our church facility offers a spacious, utilitarian venue with ample parking and essential amenities. Perfect for meetings, community events, or simple gatherings. Make your next event hassle-free with us.'}
 					</p>
