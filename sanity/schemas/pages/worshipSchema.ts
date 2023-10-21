@@ -50,6 +50,7 @@ export const worship = defineType({
 			name: 'expectVerse',
 			title: 'Enter a verse for the "What to Expect" section',
 			type: 'text',
+			rows: 4,
 			placeholder:
 				'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
 			description:
@@ -139,6 +140,7 @@ export const worship = defineType({
 			name: 'scheduleBannerVerse',
 			title: 'Schedule Banner Verse',
 			type: 'text',
+			rows: 4,
 			description:
 				'A verse that overlays over top of the image above the two schedule block',
 			group: 'schedule',

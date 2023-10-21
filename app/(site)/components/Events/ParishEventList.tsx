@@ -1,8 +1,6 @@
 import urlFor from '@/sanity/lib/urlFor';
 import { GiTriquetra } from 'react-icons/gi';
 import Link from 'next/link';
-import { Suspense } from 'react';
-import Loading from '../../events/loading';
 
 type Props = {
 	allParishEvents: ParishEvents[];
@@ -86,7 +84,6 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 
 const ParishEventList = ({ allParishEvents }: Props) => {
 	return (
-		// <Suspense fallback={<Loading />}>
 		<div className='container mx-auto p-8 bg-primary w-full text-white'>
 			{/* EVENTS */}
 			{allParishEvents
@@ -99,7 +96,6 @@ const ParishEventList = ({ allParishEvents }: Props) => {
 					/>
 				))}
 		</div>
-		// </Suspense>
 	);
 };
 

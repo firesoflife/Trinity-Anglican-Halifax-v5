@@ -23,7 +23,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 							<Image
 								className='object-scale-down object-center mx-auto'
 								src={
-									urlFor(pEventData.pageBannerImage) ||
+									urlFor(pEventData?.pageBannerImage) ||
 									fallbackImages.parishEvents.pageBannerImageFallback
 								}
 								alt={`${pEventData?.eventTitle} Image`}
@@ -40,20 +40,20 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 										{pEventData?.eventTitle}
 									</h1>
 
-									{pEventData.eventDetails?.eventType === 'recurring' ? (
+									{pEventData?.eventDetails?.eventType === 'recurring' ? (
 										<div>
 											<p className='text-2xl font-subheading'>
 												Join us every:{' '}
-												{pEventData.eventDetails?.recurrence?.dayOfWeek ||
+												{pEventData?.eventDetails?.recurrence?.dayOfWeek ||
 													'contact us for details'}
 											</p>
 											<p>
-												Time: {pEventData.eventDetails?.recurrence?.timeOfDay}
+												Time: {pEventData?.eventDetails?.recurrence?.timeOfDay}
 											</p>
 										</div>
 									) : (
 										<div>
-											{pEventData.eventDetails?.date ? (
+											{pEventData?.eventDetails?.date ? (
 												<p>
 													{' '}
 													Join us this coming:{' '}
@@ -78,10 +78,10 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 						</section>
 					</div>
 				</section>
-				{pEventData.body ? (
+				{pEventData?.body ? (
 					<div className='mt-24 lg:w-4/5 mx-auto text-secondary bg-primary p-14'>
 						<PortableText
-							value={pEventData.body}
+							value={pEventData?.body}
 							components={RichTextComponents}
 						/>
 					</div>

@@ -27,7 +27,7 @@ export const fallbackImages = {
 	},
 	parishEvents: {
 		pageBannerImageFallback:
-			'https://cdn.sanity.io/images/4ns0wsqo/production/ba1297a6b58df28fb08871f0344edaf7b01e45cc-2400x1600.jpg',
+			'https://cdn.sanity.io/images/4ns0wsqo/production/1d6908816fa09ef25037664ee8b8201e3664ebe1-2400x1600.jpg',
 		oneOffPrimaryImageFallback: 'Image Not Found',
 	},
 	facility: {
@@ -85,5 +85,9 @@ export const placeholders = {
 		bannerVerseFallback:
 			'"But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
 		bannerVerseAttFallback: 'Galatians 6:14',
+	},
+	contact: {
+		subheadingFallback:
+			'Have a question for us? Need to request pastoral care? Send us a message and we will get back to you as soon as possible.',
 	},
 };

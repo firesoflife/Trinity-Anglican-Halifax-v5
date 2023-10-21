@@ -31,18 +31,21 @@ const StaffPage = async () => {
 
 	return (
 		<div className='flex flex-wrap gap-8 w-full'>
-			{rolesOrder.map((role) => (
-				<div key={role} className='w-full  p-4 rounded-lg'>
-					<h2 className='text-center text-4xl mb-8 text-primary font-subheading first-letter:uppercase'>
-						{roleTitles[role as Role]}
-					</h2>
-					<div className='flex flex-wrap justify-center gap-4'>
-						{staffByRole[role]?.map((staffMember: Staff) => (
-							<StaffCard key={staffMember._id} staffMember={staffMember} />
-						))}
-					</div>
-				</div>
-			))}
+			{rolesOrder.map(
+				(role) =>
+					staffByRole[role]?.length > 0 && (
+						<div key={role} className='w-full p-4 rounded-lg'>
+							<h2 className='text-center text-4xl mb-8 text-primary font-subheading first-letter:uppercase'>
+								{roleTitles[role as Role]}
+							</h2>
+							<div className='flex flex-wrap justify-center gap-4'>
+								{staffByRole[role].map((staffMember: Staff) => (
+									<StaffCard key={staffMember._id} staffMember={staffMember} />
+								))}
+							</div>
+						</div>
+					)
+			)}
 		</div>
 	);
 };

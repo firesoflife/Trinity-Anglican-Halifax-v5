@@ -10,7 +10,7 @@ const EventsBanner = async () => {
 
 	const bannerImageUrl = parish.bannerImage
 		? urlFor(parish.bannerImage)
-		: fallbackImages.worship.primaryImageFallback;
+		: fallbackImages.parishEvents.pageBannerImageFallback;
 
 	return (
 		<>
