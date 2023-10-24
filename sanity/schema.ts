@@ -37,7 +37,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		rental,
 		socialMediaPlatform,
 		contactUs,
-		pastoralCare,
+		// pastoralCare,
 		card,
 		parishEvents,
 		generalParishLayout,

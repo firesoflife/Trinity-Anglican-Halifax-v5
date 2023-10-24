@@ -40,7 +40,11 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 					{contactInfo?.formSubheading ||
 						placeholders.contact.subheadingFallback}
 				</p>
-				<form onSubmit={handleSubmit} className='space-y-8'>
+				<form
+					onSubmit={handleSubmit}
+					action='https://formspree.io/f/xgejdydg'
+					method='POST'
+					className='space-y-8'>
 					<div>
 						<label
 							htmlFor='email'

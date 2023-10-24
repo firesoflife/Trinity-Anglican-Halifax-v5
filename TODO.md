@@ -2,28 +2,11 @@
 
 ## TODO General
 
-- [x] fix type error in Dummy Docs Schema
-- [ ] Convert component that fetch from multiple endpoints to fetch in parallel - guide: https://www.youtube.com/watch?v=-Sj05H2AuW8
-- [x] Change Staff and Clergy menu to "Clergy & People"
-- [x] Add all links to Navbar --> first create dynamic pages for Parish Events
-- [x] Add announcements Schema / Component / Navigation - to home page
-- [x] Add Icon Picker ? (Optional) https://npm.io/package/sanity-plugin-icon-picker -- Icons for Front End and in particular for the footer
-- [x] Add API calls for all header component - example AboutUs.tsx - to be done for all pages
-- [x] Locaiotn section -- move box out of map -- make schema for box info
-- [x] Add featureVerse to all pages with banner -- update schemas, update groq queries, update components - example WorshipBanner.tsx
-- [ ] 404 page - seek and ye shall find
 - [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
 - [ ] Fallbacks for all images
 - [ ] Fallbacks for all fetched text
-- [x] Build out Calendar of Events page
-- [x] Meta tags for all pages -- check layout.tsx from about for example
 - [ ] check that all banners and images use image builder for all images
 - [ ] checkout all images from Sanity for crop and hotspots - example of working scenario with function in component - worship.shceduleImage - check others that import helper function urlBuilder to see if crop and hotspot are respected
-- [x] loading pages or spinners / skeleton for components -- skeleton example in Parish Events page
-- [x] Calendar and Events instead of All Events
-- [ ] Add Sanity Schema field and Groq for all Header Titles. Change Headers to fetch data? Need to think this one through
-- [x] Change deskStructure so Banner and general page content is in own studio pane in singleton form. Then event docs on on pane with multiple docs allowable. Need to change so title and slug are added to event. Currently have primary page title populated with test data. Also must reformat preview as current implementation does not render event title
-- [ ] Refactor ALL components to call data from props instead of directly from Sanity - may requrie refactoring most layout.tsx and page.tsx components to pass data down to children
 - [ ] Implement email sending using formspree or emailjs or Resend:
   - [ ] Resend: https://resend.com/docs/send-with-nextjs
   - [ ] Resend + Verecel Edge Functions: https://resend.com/docs/send-with-vercel-edge-functions
@@ -31,6 +14,23 @@
 - [ ] Add backup images to media library
   - [ ] rename all backup images with zzz-DO_NOT_ALTER prefix to ensure they are at the bottom of the media library
   - [ ] Hide the doc referene document in Sanity Studio when all images are uploaded
+- [x] fix type error in Dummy Docs Schema
+- [x] Convert component that fetch from multiple endpoints to fetch in parallel - guide: https://www.youtube.com/watch?v=-Sj05H2AuW8
+- [x] Change Staff and Clergy menu to "Clergy & People"
+- [x] Add all links to Navbar --> first create dynamic pages for Parish Events
+- [x] Add announcements Schema / Component / Navigation - to home page
+- [x] Add Icon Picker ? (Optional) https://npm.io/package/sanity-plugin-icon-picker -- Icons for Front End and in particular for the footer
+- [x] Add API calls for all header component - example AboutUs.tsx - to be done for all pages
+- [x] Locaiotn section -- move box out of map -- make schema for box info
+- [x] Add featureVerse to all pages with banner -- update schemas, update groq queries, update components - example WorshipBanner.tsx
+- [x] 404 page - seek and ye shall find
+- [x] Build out Calendar of Events page
+- [x] Meta tags for all pages -- check layout.tsx from about for example
+- [x] loading pages or spinners / skeleton for components -- skeleton example in Parish Events page
+- [x] Calendar and Events instead of All Events
+- [x] Add Sanity Schema field and Groq for all Header Titles. Change Headers to fetch data? Need to think this one through
+- [x] Change deskStructure so Banner and general page content is in own studio pane in singleton form. Then event docs on on pane with multiple docs allowable. Need to change so title and slug are added to event. Currently have primary page title populated with test data. Also must reformat preview as current implementation does not render event title
+- [x] Refactor ALL components to call data from props instead of directly from Sanity - may requrie refactoring most layout.tsx and page.tsx components to pass data down to children
 
 ## TODO Navigation
 
@@ -103,7 +103,7 @@
 ## TODO Contact Page
 
 - [x] Add in Contact info above general form
-- [ ] Secondary Form for Pastoral Care / or use same one or only use form for pastoral care? -- I think this is the best option
+- [x] Secondary Form for Pastoral Care / or use same one or only use form for pastoral care? -- I think this is the best option
 - [x] Social Media Links
 - [x] Add styling to forms
 - [ ] Hook up to Email service

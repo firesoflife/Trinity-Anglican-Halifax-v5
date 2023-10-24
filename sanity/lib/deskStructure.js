@@ -70,14 +70,15 @@ export const deskStructure = (S) =>
 										.schemaType('socialMediaPlatform')
 										.filter('_type == "socialMediaPlatform"')
 								),
-							S.listItem()
-								.title('Pastoral Care')
-								.icon(GiHeartPlus)
-								.child(
-									S.editor()
-										.schemaType('pastoralCare')
-										.documentId('pastoralCare')
-								),
+							///////// REMOVED Pastoral Care from Contact Us to use main form instead /////////
+							// 	S.listItem()
+							// 		.title('Pastoral Care')
+							// 		.icon(GiHeartPlus)
+							// 		.child(
+							// 			S.editor()
+							// 				.schemaType('pastoralCare')
+							// 				.documentId('pastoralCare')
+							// 		),
 						])
 				),
 			S.listItem()
