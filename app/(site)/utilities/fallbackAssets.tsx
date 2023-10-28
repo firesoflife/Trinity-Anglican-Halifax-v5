@@ -15,6 +15,8 @@ export const fallbackImages = {
 			'https://cdn.sanity.io/images/4ns0wsqo/production/61ae942ccff0230df54ecef6d8fff834f3ab515f-2400x1753.jpg',
 		middleBannerImageFallback:
 			'https://images.unsplash.com/photo-1497621122273-f5cfb6065c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
+		missingProfileImageFallback:
+			'https://cdn.sanity.io/images/4ns0wsqo/production/bcdf6e29f4b2d1e5d6df97caee6427b21cf1eafe-300x344.jpg',
 	},
 	worship: {
 		// TODO - Change fallback image

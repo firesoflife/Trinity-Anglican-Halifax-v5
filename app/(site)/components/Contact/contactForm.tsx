@@ -1,5 +1,6 @@
 'use client';
 
+import { useForm, ValidationError } from '@formspree/react';
 import React, { FormEvent, useState } from 'react';
 import { placeholders } from '../../utilities/fallbackAssets';
 
@@ -24,10 +25,10 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 	const [subject, setSubject] = useState<string>('');
 	const [message, setMessage] = useState<string>('');
 
-	const handleSubmit = (e: FormEvent) => {
-		e.preventDefault();
-		// Handle form submission here
-	};
+	const [state, handleSubmit] = useForm('xgejdydg');
+	if (state.succeeded) {
+		return <p>Message Succesfully Sent!</p>;
+	}
 
 	return (
 		<section className='bg-primary h-vh'>
@@ -54,11 +55,17 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 						<input
 							type='email'
 							id='email'
+							name='email'
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 							className='shadow-sm bg-gray-50 border border-gray-300 text-secondary text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
 							placeholder='name@youremail.com'
 							required
+						/>
+						<ValidationError
+							prefix='Email'
+							field='email'
+							errors={state.errors}
 						/>
 					</div>
 					<div>
@@ -70,11 +77,17 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 						<input
 							type='text'
 							id='subject'
+							name='subject'
 							value={subject}
 							onChange={(e) => setSubject(e.target.value)}
 							className='block p-3 w-full text-sm text-secondary bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light'
 							placeholder='Let us know how we can help you'
 							required
+						/>
+						<ValidationError
+							prefix='Subject'
+							field='subject'
+							errors={state.errors}
 						/>
 					</div>
 					<div className='sm:col-span-2'>
@@ -85,15 +98,22 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 						</label>
 						<textarea
 							id='message'
+							name='message'
 							rows={6}
 							value={message}
 							onChange={(e) => setMessage(e.target.value)}
 							className='block p-2.5 w-full text-sm text-secondary bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500'
 							placeholder='Leave a comment...'
 						/>
+						<ValidationError
+							prefix='Message'
+							field='message'
+							errors={state.errors}
+						/>
 					</div>
 					<button
 						type='submit'
+						disabled={state.submitting}
 						className='py-3 px-5 text-sm font-medium text-center text-secondary rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300'>
 						Send message
 					</button>

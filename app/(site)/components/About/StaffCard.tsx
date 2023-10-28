@@ -1,16 +1,12 @@
 import { client } from '@/sanity/lib/client';
+import urlFor from '@/sanity/lib/urlFor';
 import ImageUrlBuilder from '@sanity/image-url';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import Link from 'next/link';
+import { fallbackImages } from '../../utilities/fallbackAssets';
 
 interface StaffCardProps {
 	staffMember: StaffCardMember;
-}
-
-const builder = ImageUrlBuilder(client);
-
-function urlFor(source: SanityImageSource) {
-	return builder.image(source);
 }
 
 const StaffCard: React.FC<StaffCardProps> = ({ staffMember }) => (
@@ -20,8 +16,11 @@ const StaffCard: React.FC<StaffCardProps> = ({ staffMember }) => (
 		<div>
 			<img
 				className='rounded-t-lg'
-				src={urlFor(staffMember.imageUrl).url()}
-				alt={staffMember.name}
+				src={urlFor(
+					staffMember?.imageUrl ||
+						fallbackImages.about.missingProfileImageFallback
+				)}
+				alt={staffMember?.name || 'Staff Member Image'}
 				style={{ width: '100%', height: 'auto' }}
 			/>
 		</div>
@@ -29,18 +28,21 @@ const StaffCard: React.FC<StaffCardProps> = ({ staffMember }) => (
 			<div>
 				<a href='#'>
 					<h5 className='mb-2 text-2xl font-bold tracking-tight text-center text-gray-900'>
-						{staffMember.name}
+						{staffMember?.name || 'Name Unavailable'}
 					</h5>
 				</a>
 				<p className='mb-3 font-normal text-gray-700 line-clamp-5 '>
-					{staffMember.bio}
+					{staffMember?.bio} || 'Nothing here yet...'
 				</p>
 			</div>
-			{staffMember.role === 'warden' && ( // Conditionally render the contact button for Wardens only
+			{staffMember?.role === 'warden' && ( // Conditionally render the contact button for Wardens only
 				<Link
-					href={`mailto:${staffMember.email}`}
+					href={`mailto:${
+						staffMember?.email ||
+						'Please contact the office on our Contact page.'
+					}`}
 					className='flex justify-center items-center px-3 py-2 text-sm font-medium text-white bg-secondary rounded-lg hover:bg-secondaryHover focus:ring-4 focus:outline-none focus:ring-myBlue '>
-					Contact {staffMember.name}
+					Contact {staffMember?.name || 'Name Unavailable'}
 					<svg
 						className='w-3.5 h-3.5 ml-2'
 						aria-hidden='true'

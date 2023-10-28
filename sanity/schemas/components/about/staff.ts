@@ -14,6 +14,7 @@ export const staff = defineType({
 			name: 'name',
 			title: 'Name',
 			type: 'string',
+			validation: (Rule: any) => Rule.required().warning('Please enter a name'),
 		}),
 		defineField({
 			name: 'slug',
@@ -43,6 +44,9 @@ export const staff = defineType({
 					{ title: 'Warden', value: 'warden' },
 				],
 				layout: 'dropdown',
+			},
+			validation(rule) {
+				return rule.required();
 			},
 		}),
 		defineField({
