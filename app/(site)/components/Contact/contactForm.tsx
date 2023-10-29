@@ -1,7 +1,7 @@
 'use client';
 
 import { useForm, ValidationError } from '@formspree/react';
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import { placeholders } from '../../utilities/fallbackAssets';
 
 interface FormProps {
@@ -26,9 +26,27 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 	const [message, setMessage] = useState<string>('');
 
 	const [state, handleSubmit] = useForm('xgejdydg');
-	if (state.succeeded) {
-		return <p>Message Succesfully Sent!</p>;
-	}
+
+	const [showToast, setShowToast] = useState(false);
+
+	useEffect(() => {
+		if (state.succeeded) {
+			setShowToast(true);
+			// Optionally hide the toast after a delay
+			const timeoutId = setTimeout(() => {
+				setShowToast(false);
+				// Form reset
+				resetForm();
+			}, 3000);
+			return () => clearTimeout(timeoutId); // Clear timeout if component is unmounted
+		}
+	}, [state.succeeded]);
+
+	const resetForm = () => {
+		setEmail('');
+		setSubject('');
+		setMessage('');
+	};
 
 	return (
 		<section className='bg-primary h-vh'>
@@ -119,6 +137,15 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 					</button>
 				</form>
 			</div>
+			{/* Toast Message */}
+
+			{showToast && (
+				<div className='toast toast-top toast-center'>
+					<div className='alert alert-success'>
+						<span>Message sent successfully.</span>
+					</div>
+				</div>
+			)}
 		</section>
 	);
 };
