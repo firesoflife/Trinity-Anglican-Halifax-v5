@@ -39,6 +39,25 @@ export default defineConfig({
 	name: 'Trinity_Anglican_Church_Content_Studio',
 	title: 'Trinity Content Studio',
 	dataset,
+	form: {
+		components: {
+			input: (props) => {
+				if (
+					'groups' in props &&
+					Array.isArray(props.groups) &&
+					props.groups.length > 0 &&
+					props.groups[0].name === 'all-fields'
+				) {
+					// Since shift() returns a FormFieldGroup | undefined, you need to check for undefined before using it.
+					const shiftedGroup = props.groups.shift();
+					if (shiftedGroup) {
+						props.groups.push(shiftedGroup);
+					}
+				}
+				return props.renderDefault(props);
+			},
+		},
+	},
 	// Add and edit the content schema in the './sanity/schema' folder
 	schema: {
 		...schema,

@@ -6,6 +6,7 @@ export const about = defineType({
 	type: 'document',
 	groups: [
 		{ name: 'banner', title: 'Banner' },
+		{ name: 'content', title: 'About Us Content' },
 		{ name: 'middleBanner', title: 'Middle Banner' },
 	],
 	fields: [
@@ -15,6 +16,7 @@ export const about = defineType({
 			type: 'string',
 			placeholder: 'About Us',
 			validation: (Rule) => Rule.required(),
+			group: 'banner',
 		}),
 		defineField({
 			name: 'bannerImage',
@@ -28,7 +30,7 @@ export const about = defineType({
 		defineField({
 			name: 'bannerVerse',
 			title:
-				'Top Banner - Enter a quote in the larger text box and quote attribution below',
+				'Top Banner Image Quote - Enter a quote in the larger text box and quote attribution below',
 			type: 'text',
 			rows: 4,
 			placeholder:
@@ -49,6 +51,7 @@ export const about = defineType({
 			name: 'body',
 			title: 'About Us Text Block Content',
 			type: 'array',
+			group: 'content',
 			of: [{ type: 'block' }, { type: 'image' }],
 		}),
 		defineField({

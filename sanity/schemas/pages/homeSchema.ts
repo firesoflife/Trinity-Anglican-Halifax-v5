@@ -1,36 +1,51 @@
 import { defineType, defineField, StringRule } from '@sanity/types';
 
+declare module '@sanity/types' {
+	interface FieldDefinitionBase {
+		inputComponent?: React.ComponentType<any>;
+	}
+}
+
 export const home = defineType({
 	name: 'home',
 	title: 'Home',
 	type: 'document',
+	groups: [
+		{ name: 'metadata', title: 'Site Metadata' },
+		{ name: 'navbar', title: 'Navigation Items' },
+		{ name: 'banner', title: 'Main Banner' },
+		{ name: 'welcome', title: 'Welcome Message Section' },
+		{ name: 'quickLinks', title: 'Quick Links' },
+	],
 	fields: [
 		defineField({
 			name: 'pageTitle',
-			title: 'Page Title',
+			title: 'Website Title',
 			type: 'string',
 			description:
-				'A title for the Church website is a required field. Recommended to use name you want to show on search engines',
+				'Not Displayed on the Page - A title for the Church website is a required field. Recommended to use name you want to show on search engines',
 			placeholder: 'Trinity Anglican Church',
 			validation: (Rule) =>
 				Rule.required().max(27).warning('You have exceeded the maximum length'),
+			group: 'metadata',
 		}),
 
-		defineField({
-			name: 'logo',
-			title: 'Logo',
-			type: 'image',
-			fields: [
-				{
-					name: 'alt',
-					title: 'Alt Text',
-					type: 'string',
-					description:
-						'alt text describes the image and is displayed or read to visually impaired visitors to the site. It is also useful in SEO',
-					placeholder: 'Trinity Aglican Church Logo',
-				},
-			],
-		}),
+		//////////////// NOT SET IN NEXT JS ///////////////////////
+		// defineField({
+		// 	name: 'logo',
+		// 	title: 'Logo',
+		// 	type: 'image',
+		// 	fields: [
+		// 		{
+		// 			name: 'alt',
+		// 			title: 'Alt Text',
+		// 			type: 'string',
+		// 			description:
+		// 				'alt text describes the image and is displayed or read to visually impaired visitors to the site. It is also useful in SEO',
+		// 			placeholder: 'Trinity Aglican Church Logo',
+		// 		},
+		// 	],
+		// }),
 		defineField({
 			name: 'navbarTitle',
 			title: 'Menu Bar Title',
@@ -38,14 +53,15 @@ export const home = defineType({
 			description:
 				'Appears on the home page navigation beside the logo. Leave blank if you want no text showing',
 			initialValue: 'Trinity Anglican Church',
+			group: 'navbar',
 		}),
 		defineField({
 			name: 'bannerTitle',
 			title: 'Banner Title',
 			type: 'string',
-			placeholder: 'Trinity Anglican Church',
 			description:
 				'Appears on the home page overlayed on the main Image. Leave blank if you want no text showing',
+			group: 'banner',
 		}),
 		defineField({
 			name: 'welcomeHeading',
@@ -58,6 +74,7 @@ export const home = defineType({
 				Rule.required()
 					.max(80)
 					.error('You have exceeded the maximum length or field is empty'),
+			group: 'welcome',
 		}),
 		defineField({
 			name: 'welcome',
@@ -73,12 +90,14 @@ export const home = defineType({
 					.error(
 						'Either you haven not entered any content, or you have exceeded the maximum allowable length'
 					),
+			group: 'welcome',
 		}),
 		defineField({
 			name: 'welcomeImage',
-			title: 'Welcome Image',
+			title: 'Main Banner Image',
 			type: 'image',
 			options: { hotspot: true },
+			group: 'banner',
 			fields: [
 				{
 					name: 'alt',
@@ -95,6 +114,7 @@ export const home = defineType({
 			type: 'string',
 			description:
 				'This text is rendered in the quicklinks cards. This one is specific to the "Get Patoral Care" card.',
+			group: 'quickLinks',
 		}),
 	],
 	preview: {

@@ -43,6 +43,12 @@ export const fallbackImages = {
 //////////////////////////////////////
 
 export const placeholders = {
+	home: {
+		welcomeTitleFallback: 'Trinity Anglican Church',
+		welcomeHeadingFallbck: 'Welcome to Trinity Church',
+		welcomeMessageFallback:
+			"Welcome to Trinity Anglican Church, Halifax, Nova Scotia! We are a vibrant community of faith, committed to spiritual growth, fellowship, and service. Join us as we celebrate God's love, explore the teachings of the Anglican tradition, and strive to make a positive impact in our community. All are welcome in our inclusive congregation.",
+	},
 	about: {
 		title: 'About Us',
 		slug: 'about-us',
