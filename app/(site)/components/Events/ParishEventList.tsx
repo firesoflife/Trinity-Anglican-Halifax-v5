@@ -34,7 +34,7 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 				{pEvent.eventTitle}
 			</h2>
 			<p className='line-clamp-3 xl:line-clamp-none max-w-prose font-heading text-lg'>
-				{pEvent.description}
+				{pEvent.description || 'Nothing here yet. Reach out to us for details.'}
 			</p>
 			<hr className='p-3 lg:hidden' />
 			<div className='card-actions justify-between'>

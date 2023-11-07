@@ -1,8 +1,6 @@
 import { getStaff } from '@/app/lib/api/getStaff';
 import StaffCard from '../../components/About/StaffCard';
 
-// TODO - Adapt for no staff members - i.e. if != wardens from Sanity then hide section and header
-
 const StaffPage = async () => {
 	const staffMembers: Staff[] = await getStaff();
 

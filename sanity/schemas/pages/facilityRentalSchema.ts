@@ -4,7 +4,10 @@ export const rental = defineType({
 	name: 'facilityRental',
 	title: 'Facility Rental',
 	type: 'document',
-	groups: [{ name: 'banner', title: 'Banner' }],
+	groups: [
+		{ name: 'banner', title: 'Banner' },
+		{ name: 'content', title: 'Page Content' },
+	],
 	fields: [
 		defineField({
 			name: 'title',
@@ -50,17 +53,20 @@ export const rental = defineType({
 			title: 'Description of Summary of Rental Options',
 			type: 'text',
 			rows: 7,
+			group: 'content',
 		}),
 		defineField({
 			name: 'capacity',
 			title: 'Capacity',
 			type: 'number',
+			group: 'content',
 		}),
 
 		defineField({
 			name: 'file',
 			title: 'File or rental agreement form',
 			type: 'file',
+			group: 'content',
 		}),
 	],
 	preview: {

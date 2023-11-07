@@ -27,7 +27,7 @@ const HomeBanner = async () => {
 				<div className='hero-content text-center text-neutral-content'>
 					<div className='max-w-md'>
 						<div className='mb-96 text-5xl font-bold font-heading leading-snug'>
-							{home.bannerTitle}
+							{home.bannerTitle || 'Welcome to Trinity Anglican Church'}
 						</div>
 					</div>
 				</div>

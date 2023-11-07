@@ -5,6 +5,7 @@ import HomeBanner from './home/homeBanner';
 import MapContactCard from './components/HomePage/mapContactCard';
 import CalendarUI from './components/Calendar/CalendarUI';
 import { Suspense } from 'react';
+import { fallbackImages, placeholders } from './utilities/fallbackAssets';
 
 const HomePage = async () => {
 	// --------------FETCH FUNCTIONS --------------//
@@ -16,11 +17,11 @@ const HomePage = async () => {
 				<HomeBanner />
 				<section className='px-8 py-16 bg-secondary'>
 					<h2 className='text-primary text-center text-4xl pb-4 font-subheading'>
-						{home.welcomeHeading}
+						{home.welcomeHeading || 'Welcome to Trinity Anglican Church'}
 					</h2>
 					<div className='max-w-4xl m-auto'>
 						<p className='leading-8 text-xl text-primary text-center font-subContent'>
-							{home.welcome}
+							{home.welcome || placeholders.home.welcomeMessageFallback}
 						</p>
 					</div>
 				</section>

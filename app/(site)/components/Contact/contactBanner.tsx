@@ -28,7 +28,6 @@ const HomeBanner = async () => {
 					<div className='max-w-md'></div>
 				</div>
 			</section>
-			{/* <div className='h-14 w-full bg-secondary '></div> */}
 		</>
 	);
 };

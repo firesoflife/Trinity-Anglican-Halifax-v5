@@ -8,7 +8,6 @@ const LocationMap = () => {
 			<LocationHeader />
 			<section className='text-primary relative leading-3 mb-8'>
 				<div className='container px-5 md:pb-24 mx-auto flex flex-col'>
-					{/* TODO - Add Sanity queries */}
 					<div className='lg:w-full md:w-full rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md bg-primary'>
 						<h2 className='text-secondary text-center text-xl mb-1 font-subheading'>
 							Come Find Us

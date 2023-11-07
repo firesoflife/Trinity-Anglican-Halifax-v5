@@ -14,9 +14,6 @@ const Contact = async () => {
 				<ContactBanner />
 				<ContactHeader />
 				<HoursContactCard />
-				{/* Contact Info Card (similar to map on home page) */}
-				{/* Social Media  */}
-				{/* Pastoral Care */}
 				<ContactForm contactInfo={contactInfo} />
 			</div>
 		</Suspense>
