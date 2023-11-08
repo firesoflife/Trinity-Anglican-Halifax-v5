@@ -65,7 +65,7 @@ export const home = defineType({
 		}),
 		defineField({
 			name: 'welcomeHeading',
-			title: 'Welcome Heading',
+			title: 'Welcome Message Heading',
 			type: 'string',
 			placeholder: 'Welcome to Trinity Anglican Church',
 			description:
@@ -78,7 +78,7 @@ export const home = defineType({
 		}),
 		defineField({
 			name: 'welcome',
-			title: 'Welcome Message',
+			title: 'Welcome Message Text',
 			type: 'text',
 			placeholder:
 				'"I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service. And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God." Romans 12:2',

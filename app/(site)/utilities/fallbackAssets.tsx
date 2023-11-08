@@ -4,22 +4,19 @@
 ////////// FALLBACK IMAGES ///////////
 //////////////////////////////////////
 
-// TODO - Add assets to build instead of URLs
-
 export const fallbackImages = {
 	heroImageFallback:
-		'https://images.unsplash.com/photo-1584792977024-014310b55977?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80',
+		'https://cdn.sanity.io/images/4ns0wsqo/production/91b8dbcdad8388aacf12954321dfb5cee8277c8c-1919x1277.jpg',
 
 	about: {
 		primaryImageFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/61ae942ccff0230df54ecef6d8fff834f3ab515f-2400x1753.jpg',
 		middleBannerImageFallback:
-			'https://images.unsplash.com/photo-1497621122273-f5cfb6065c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80',
+			'https://cdn.sanity.io/images/4ns0wsqo/production/36f67ee482bf3b55621e3388ada9ea962f30760d-2400x1800.jpg',
 		missingProfileImageFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/bcdf6e29f4b2d1e5d6df97caee6427b21cf1eafe-300x344.jpg',
 	},
 	worship: {
-		// TODO - Change fallback image
 		primaryImageFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/6bb071ff5e49cc3e07916a3b0be4d431aea17026-2400x1600.jpg',
 		expectBannerFallback:
@@ -34,7 +31,7 @@ export const fallbackImages = {
 	},
 	facility: {
 		pageBannerImageFallback:
-			'https://images.unsplash.com/photo-1584792977024-014310b55977?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3870&q=80',
+			'https://cdn.sanity.io/images/4ns0wsqo/production/49cfcf22d57eb5e26ddb987c74755e3c106885a1-2400x1594.jpg',
 	},
 };
 

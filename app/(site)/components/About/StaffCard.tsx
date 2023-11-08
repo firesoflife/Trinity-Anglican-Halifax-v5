@@ -1,7 +1,4 @@
-import { client } from '@/sanity/lib/client';
 import urlFor from '@/sanity/lib/urlFor';
-import ImageUrlBuilder from '@sanity/image-url';
-import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 import Link from 'next/link';
 import { fallbackImages } from '../../utilities/fallbackAssets';
 
@@ -32,7 +29,7 @@ const StaffCard: React.FC<StaffCardProps> = ({ staffMember }) => (
 					</h5>
 				</a>
 				<p className='mb-3 font-normal text-gray-700 line-clamp-5 '>
-					{staffMember?.bio} || 'Nothing here yet...'
+					{staffMember?.bio || 'Nothing here yet...'}
 				</p>
 			</div>
 			{staffMember?.role === 'warden' && ( // Conditionally render the contact button for Wardens only

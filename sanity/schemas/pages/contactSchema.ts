@@ -18,6 +18,15 @@ export const contactUs = defineType({
 			placeholder: 'Office Hours',
 		}),
 		defineField({
+			name: 'contactBannerImage',
+			title: 'Contact Page Banner Image',
+			type: 'image',
+			description: 'The banner image for the contact page',
+			options: {
+				hotspot: true,
+			},
+		}),
+		defineField({
 			name: 'formHeading',
 			title: 'Form Title',
 			type: 'string',

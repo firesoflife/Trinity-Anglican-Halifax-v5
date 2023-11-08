@@ -3,7 +3,6 @@ import Logo from '../../../../public/triquetra-svg.svg';
 import Image from 'next/image';
 import { getHome } from '@/app/lib/api/getHome';
 import { getParishEvents } from '@/app/lib/api/getParishEvents';
-import { placeholders } from '../../utilities/fallbackAssets';
 
 const Navbar = async () => {
 	const home = await getHome();
@@ -21,9 +20,7 @@ const Navbar = async () => {
 							alt='Trinity Anglican Church, Halifax, Logo'
 						/>
 						<button className='bg-primary text-secondary font-subheading py-2 px-4 inline-flex items-center '>
-							<span className='mr-1 text-2xl'>
-								{home?.pageTitle || placeholders.home.welcomeTitleFallback}
-							</span>
+							<span className='mr-1 text-2xl'>{home?.navbarTitle}</span>
 						</button>
 					</div>
 				</Link>

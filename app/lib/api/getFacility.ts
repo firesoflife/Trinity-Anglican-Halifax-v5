@@ -8,7 +8,14 @@ export async function getFacility(): Promise<FacilityRental> {
           ...,
           title,
           subtitle,
-          "imageUrl": bannerImage.asset->url,
+          bannerImage{
+            asset->{
+                _id,
+                url
+                },
+                crop,
+                hotspot
+          },
           bannerVerse,
           bannerVerseAttribution,
           description,

@@ -12,7 +12,9 @@ export async function getAbout(): Promise<About> {
           asset->{
             _id,
             url
-          }
+          },
+          crop,
+          hotspot
         },
         bannerVerse,
         bannerVerseAttribution,
@@ -20,7 +22,9 @@ export async function getAbout(): Promise<About> {
           asset->{
             _id,
             url
-          }
+          },
+          crop,
+          hotspot
         },
         middleBannerVerse,
         middleBannerVerseAttribution,

@@ -5,12 +5,12 @@
 - [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
 - [ ] Fallbacks for all images
 - [ ] Fallbacks for all fetched text
-- [ ] check that all banners and images use image builder for all images
-- [ ] checkout all images from Sanity for crop and hotspots - example of working scenario with function in component - worship.shceduleImage - check others that import helper function urlBuilder to see if crop and hotspot are respected
-- [ ] Implement email sending using formspree or emailjs or Resend:
-  - [ ] Resend: https://resend.com/docs/send-with-nextjs
-  - [ ] Resend + Verecel Edge Functions: https://resend.com/docs/send-with-vercel-edge-functions
-  - [ ] Resend guide: https://www.youtube.com/watch?v=T2xaiw7VK4A
+- [x] check that all banners and images use image builder for all images
+- [x] checkout all images from Sanity for crop and hotspots - example of working scenario with function in component - worship.shceduleImage - check others that import helper function urlBuilder to see if crop and hotspot are respected
+- [x] ~~Implement email sending using formspree or emailjs or Resend:~~
+  - [x] ~~Resend: https://resend.com/docs/send-with-nextjs~~
+  - [x] ~~Resend + Verecel Edge Functions: https://resend.com/docs/send-with-vercel-edge-functions~~
+  - [x] ~~Resend guide: https://www.youtube.com/watch?v=T2xaiw7VK4A~~
 - [ ] Add backup images to media library
   - [ ] rename all backup images with zzz-DO_NOT_ALTER prefix to ensure they are at the bottom of the media library
   - [ ] Hide the doc referene document in Sanity Studio when all images are uploaded

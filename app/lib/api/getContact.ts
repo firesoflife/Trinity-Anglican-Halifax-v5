@@ -6,6 +6,14 @@ export async function getContact(): Promise<ContactUs> {
 		groq`
       *[_type == "contactUs"][0]{
           pageTitle,
+          contactBannerImage{
+            asset->{
+              _id,
+              url
+            },
+            crop,
+            hotspot
+          },
           hoursTitle,
           formHeading,
           formSubheading,

@@ -185,6 +185,7 @@ interface ContactUs extends Base {
 	pageTitle: string;
 	hoursTitle: string;
 	formHeading: string;
+	contactBannerImage: Image;
 	formSubheading: string;
 	days: Day[];
 	email: string;
