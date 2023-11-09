@@ -16,6 +16,10 @@ export const fallbackImages = {
 		missingProfileImageFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/bcdf6e29f4b2d1e5d6df97caee6427b21cf1eafe-300x344.jpg',
 	},
+	blog: {
+		bannerImageFallback:
+			'https://cdn.sanity.io/images/4ns0wsqo/production/ba1297a6b58df28fb08871f0344edaf7b01e45cc-2400x1600.jpg',
+	},
 	worship: {
 		primaryImageFallback:
 			'https://cdn.sanity.io/images/4ns0wsqo/production/6bb071ff5e49cc3e07916a3b0be4d431aea17026-2400x1600.jpg',
@@ -73,6 +77,12 @@ export const placeholders = {
 		scheduleVerseFallback:
 			"And they continued steadfastly in the apostles' doctrine and fellowship, and in breaking of bread, and in prayers.",
 		scheduleVerseAttFallback: 'Acts 2:24',
+	},
+	blog: {
+		bannerTitleFallback: 'Trinity Blog',
+		bannerVerseFallback:
+			'"But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world."',
+		bannerVerseAttFallback: 'Galatians 6:14',
 	},
 	schedule: {
 		regularServiceTitle: 'Join us for our Regular Services',

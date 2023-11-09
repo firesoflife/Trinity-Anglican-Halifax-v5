@@ -57,6 +57,30 @@ interface About extends Base {
 	body: Array<Block | Image>;
 }
 
+interface Blog extends Base {
+	title: string;
+	bannerImage: Image;
+	bannerVerse: string;
+	bannerVerseAttribution: string;
+}
+
+interface BlogPost extends Base {
+	title: string;
+	slug: Slug;
+	author: Author[];
+	mainImage: Image;
+	alt: string;
+	publishedAt: Date;
+}
+
+interface Author extends Base {
+	name: string;
+	image: Image;
+	slug: Slug;
+	alt: string;
+	bio: string;
+}
+
 interface Block {
 	_key: string;
 	_type: 'block';
