@@ -66,7 +66,7 @@ const Card = ({ pEvent, isReversed }: CardProps) => (
 					</h2>
 				</div>
 				<div className='lg:flex hidden w-1/2'>
-					<hr className='w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700 ' />
+					<hr className='w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
 					<span className='self-center px-5'>
 						<GiTriquetra size={30} />
 					</span>

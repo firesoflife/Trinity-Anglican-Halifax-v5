@@ -5,7 +5,7 @@ export async function getSingleParishEvent(
 	slug: string
 ): Promise<ParishEvents> {
 	return client.fetch(
-		groq`*[_type == "parishEvents" && slug.current == $slug][0]{
+		groq`*[_type == "parishEvents" && slug.current == $slug]{
         eventTitle,
         slug,
         description,

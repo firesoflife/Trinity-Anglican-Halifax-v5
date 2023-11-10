@@ -64,21 +64,44 @@ interface Blog extends Base {
 	bannerVerseAttribution: string;
 }
 
-interface BlogPost extends Base {
+interface Post extends Base {
 	title: string;
 	slug: Slug;
-	author: Author[];
+	description: string;
+	author: Author;
 	mainImage: Image;
 	alt: string;
 	publishedAt: Date;
+	body: Block[];
 }
+
+interface Image extends Base {
+	_type: 'image';
+	asset: Reference;
+}
+
+interface SinglePost extends Base {
+	author: Author;
+	body: Block[];
+	categories: category[];
+	mainImage: Image;
+	slug: Slug;
+	title: string;
+	description: string;
+}
+// interface Author extends Base {
+// 	name: string;
+// 	image: Image;
+// 	slug: Slug;
+// 	alt: string;
+// 	bio: string;
+// }
 
 interface Author extends Base {
 	name: string;
-	image: Image;
 	slug: Slug;
-	alt: string;
-	bio: string;
+	image: Image;
+	bio: Block[];
 }
 
 interface Block {
