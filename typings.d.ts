@@ -191,6 +191,26 @@ interface RegularService extends Base {
 	};
 }
 
+interface Sermon extends Base {
+	title: string;
+	speaker: Speaker;
+	audio: File;
+	description: string;
+	date: Date;
+	tags: string[];
+	preview: {
+		select: {
+			title: string;
+			speaker: string;
+		};
+		prepare(selection: SermonSelection): {
+			title: string;
+			subtitle: string;
+			media: JSX.Element;
+		};
+	};
+}
+
 interface RegularServiceSelection {
 	title: string;
 	description: string;
