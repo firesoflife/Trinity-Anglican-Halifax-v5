@@ -16,7 +16,6 @@ const FacilityRental = async () => {
 		<div className='mt-2 bg-primary text-secondary'>
 			<FacilityBanner />
 			<FacilityHeader />
-			{/* TODO Gallery of images */}
 			<div className='flex items-center justify-center min-h-fit pb-32 pt-20 bg-primary text-primary text-center'>
 				<div className='lg:w-3/5 w-[95%] mx-auto bg-secondary p-6 md:p-14 rounded-lg shadow-md space-y-4'>
 					<h1 className='text-4xl font-subheading'>
