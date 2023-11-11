@@ -7,6 +7,8 @@ import StaffHeader from './staff/StaffHeader';
 import StaffPage from './staff/StaffPage';
 import Loading from './loading';
 
+export const revalidate = 1;
+
 const aboutPage = async () => {
 	return (
 		<div className=' bg-secondary'>

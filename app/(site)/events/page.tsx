@@ -5,6 +5,8 @@ import { getParish } from '@/app/lib/api/getParish';
 import EventsToggle from '../components/Events/EventsToggle';
 import Loading from './loading';
 
+export const revalidate = 1;
+
 const ParishLife = async () => {
 	const parishMain = await getParish();
 	const parishEvent = await getParishEvents();

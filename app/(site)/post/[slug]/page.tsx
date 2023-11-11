@@ -6,6 +6,8 @@ import { PortableText } from '@portabletext/react';
 import { RichTextComponents } from '../../utilities/RichTextComponents';
 import { getSinglePost } from '@/app/lib/api/getSinglePost';
 
+export const revalidate = 1;
+
 type Props = {
 	params: {
 		slug: string;

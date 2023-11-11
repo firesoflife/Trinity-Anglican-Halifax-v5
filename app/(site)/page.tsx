@@ -7,6 +7,8 @@ import CalendarUI from './components/Calendar/CalendarUI';
 import { Suspense } from 'react';
 import { fallbackImages, placeholders } from './utilities/fallbackAssets';
 
+export const revalidate = 1;
+
 const HomePage = async () => {
 	// --------------FETCH FUNCTIONS --------------//
 	const home = await getHome();

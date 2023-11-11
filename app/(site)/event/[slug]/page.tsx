@@ -5,6 +5,8 @@ import { fallbackImages } from '../../utilities/fallbackAssets';
 import { PortableText } from '@portabletext/react';
 import { RichTextComponents } from '../../utilities/RichTextComponents';
 
+export const revalidate = 1;
+
 type Props = {
 	params: {
 		slug: string;

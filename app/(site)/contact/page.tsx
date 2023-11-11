@@ -6,6 +6,8 @@ import Loading from './loading';
 import HoursContactCard from '../components/Contact/contactHours';
 import { getContact } from '@/app/lib/api/getContact';
 
+export const revalidate = 1;
+
 const Contact = async () => {
 	const contactInfo = await getContact();
 	return (

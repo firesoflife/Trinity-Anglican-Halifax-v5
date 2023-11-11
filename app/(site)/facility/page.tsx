@@ -9,6 +9,8 @@ export const metadata = {
 		'Plan your event in a serene setting. Download our rental form and discover the facilities awaiting you at Trinity Anglican Church, Halifax.',
 };
 
+export const revalidate = 1;
+
 const FacilityRental = async () => {
 	const facility = await getFacility();
 
