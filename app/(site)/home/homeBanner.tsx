@@ -10,6 +10,8 @@ function urlFor(source: SanityImageSource) {
 	return builder.image(source);
 }
 
+export const revalidate = 1;
+
 const HomeBanner = async () => {
 	const home = await getHome();
 
