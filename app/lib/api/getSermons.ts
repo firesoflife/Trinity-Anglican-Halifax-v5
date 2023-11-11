@@ -8,7 +8,8 @@ export async function getSermons(): Promise<Sermon[]> {
             ...,
             title,
             slug,
-            audio,
+            // audio,
+            "audioUrl": audio.asset->url,
             description,
             date,
             speaker->{

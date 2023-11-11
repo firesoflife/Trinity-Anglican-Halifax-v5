@@ -196,6 +196,7 @@ interface Sermon extends Base {
 	slug: Slug;
 	speaker: Speaker;
 	audio: File;
+	audioUrl: string;
 	description: string;
 	date: Date;
 	tags: string[];

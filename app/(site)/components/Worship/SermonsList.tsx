@@ -1,5 +1,4 @@
-import { GiTriquetra } from 'react-icons/gi';
-
+import AudioPlayerComponent from '../../utilities/AudioPlayerComponent';
 type Props = {
 	sermons: Sermon[];
 };
@@ -8,7 +7,7 @@ function SermonList({ sermons }: Props) {
 	return (
 		<div className='container mx-auto'>
 			{sermons.map((sermon) => (
-				<div className='flex gap-4 bg-base-100 shadow-xl p-3 m-3 mb-14 w-full mx-auto overflow-auto'>
+				<div className='flex flex-col gap-4 bg-base-100 shadow-xl p-3 m-3 mb-14 w-full mx-auto overflow-auto'>
 					<div className='col-span-1 hidden sm:block max-h-fit'></div>
 					<div className='card-body flex flex-col md:flex-row justify-between w-full'>
 						<div className='w-1/3 flex flex-col justify-between'>
@@ -30,7 +29,9 @@ function SermonList({ sermons }: Props) {
 								</p>
 							</div>
 						</div>
-						<div className='text-white'>{} </div>
+					</div>
+					<div className='text-white mb-6'>
+						<AudioPlayerComponent sermon={sermon} />
 					</div>
 				</div>
 			))}
