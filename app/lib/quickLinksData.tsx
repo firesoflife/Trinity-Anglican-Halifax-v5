@@ -24,7 +24,7 @@ export const cards = [
 		alt: 'Anglican Diocese of NS & PEI logo',
 		cta: {
 			text: 'Click me',
-			link: 'https://www.anglicanprayerbook.ca/',
+			link: 'https://www.nspeidiocese.ca/',
 		},
 	},
 	{
