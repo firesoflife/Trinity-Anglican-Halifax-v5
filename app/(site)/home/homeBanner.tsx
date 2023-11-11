@@ -1,3 +1,5 @@
+'use client';
+
 import { getHome } from '@/app/lib/api/getHome';
 import { client } from '@/sanity/lib/client';
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
@@ -10,7 +12,7 @@ function urlFor(source: SanityImageSource) {
 	return builder.image(source);
 }
 
-export const revalidate = 1;
+export const revalidate = 10;
 
 const HomeBanner = async () => {
 	const home = await getHome();
