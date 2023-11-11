@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import Logo from '../../../../public/triquetra-svg.svg';
 import Image from 'next/image';
