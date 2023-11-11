@@ -2,6 +2,7 @@ import SermonsHeader from './SermonsHeader';
 import SermonsList from './SermonsList';
 import { getSermons } from '@/app/lib/api/getSermons';
 
+export const revalidate = 6;
 const Sermons = async () => {
 	const sermons = await getSermons();
 	return (
