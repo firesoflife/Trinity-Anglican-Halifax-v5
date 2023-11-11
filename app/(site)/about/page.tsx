@@ -7,7 +7,7 @@ import StaffHeader from './staff/StaffHeader';
 import StaffPage from './staff/StaffPage';
 import Loading from './loading';
 
-export const revalidate = 1;
+export const revalidate = 10;
 
 const aboutPage = async () => {
 	return (

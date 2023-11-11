@@ -4,7 +4,7 @@ import Schedule from '../components/Worship/Schedule';
 import Sermons from '../components/Worship/Sermons';
 import WorshipBanner from '../components/Worship/WorshipBanner';
 
-export const revalidate = 1;
+export const revalidate = 10;
 
 function page() {
 	return (

@@ -5,7 +5,7 @@ import { fallbackImages } from '../../utilities/fallbackAssets';
 import { PortableText } from '@portabletext/react';
 import { RichTextComponents } from '../../utilities/RichTextComponents';
 
-export const revalidate = 1;
+export const revalidate = 10;
 
 type Props = {
 	params: {

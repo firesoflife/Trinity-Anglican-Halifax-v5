@@ -4,7 +4,7 @@ import BlogHeader from '../components/Blog/blogHeader';
 import BlogList from '../components/Blog/blogList';
 import { getPosts } from '@/app/lib/api/getPosts';
 
-export const revalidate = 1;
+export const revalidate = 10;
 
 const BlogPage = async () => {
 	const posts = await getPosts();
