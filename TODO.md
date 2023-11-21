@@ -1,5 +1,17 @@
 # Items Left to Dooooo
 
+- Hard edit diocese
+- Hide Blog link in footer
+- Add PDF of the covenant
+- 2 pictures of the church - just below Capacity (Change button text to "Download Rental Application")
+- Change header to "Rental Info adn Form"
+- Change Blog to "Pastoral Letters"
+- Check on adding images to block content editory
+- Covenant in Ministry (one About Page - add to About Nav Item?)
+- Add Pastoral Letters to About Nav Item
+- Add "Gallery of Photos" to About Nav Item
+- Send Benj Benj my Adress
+
 ## TODO General
 
 - [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
