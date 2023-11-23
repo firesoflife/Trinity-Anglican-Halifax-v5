@@ -296,12 +296,22 @@ interface FacilityRental extends Base {
 	};
 }
 
-interface FacilityRentalPreview {
-	select: {
-		title: string;
-		subtitle: string;
-		media: string;
-	};
+interface Gallery extends Base {
+	title: string;
+	description: string;
+	galleryImages: Image[];
+}
+
+interface galleryImage extends Base {
+	title: string;
+	description: string;
+	image: Image;
+}
+
+interface FacilityRentalGallery extends Base {
+	title: string;
+	description: string;
+	galleryImages: Image[];
 }
 
 interface Parish extends Base {

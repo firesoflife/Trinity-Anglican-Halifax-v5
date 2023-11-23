@@ -2,6 +2,7 @@ import { getFacility } from '@/app/lib/api/getFacility';
 import FacilityHeader from '../components/Facility/FacilityHeader';
 import FacilityBanner from '../components/Facility/FacilityBanner';
 import FacilityDownloadButton from '../components/Facility/FacilityDownloadButton';
+import FacilityGallery from '../components/Facility/FacilityGallery';
 
 export const metadata = {
 	title: 'Facility Rentals at Trinity Anglican Church, Halifax',
@@ -39,6 +40,8 @@ const FacilityRental = async () => {
 					</p>
 
 					<FacilityDownloadButton fileUrl={facility?.fileUrl} />
+					<hr />
+					<FacilityGallery />
 				</div>
 			</div>
 		</div>
