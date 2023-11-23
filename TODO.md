@@ -10,7 +10,7 @@
 - Covenant in Ministry (one About Page - add to About Nav Item?)
 - Add Pastoral Letters to About Nav Item
 - Add "Gallery of Photos" to About Nav Item
-- Send Benj Benj my Adress
+- [x] Send Benj Benj my Adress
 
 ## TODO General
 

@@ -21,6 +21,8 @@ import { generalParishLayout } from './schemas/pages/parishSchema';
 import { author } from './schemas/components/blog/authorSchema';
 import { post } from './schemas/components/blog/postSchema';
 import { blog } from './schemas/pages/blogLayoutSchema';
+import { galleryImage } from './schemas/components/facilityRentalGallery/imageSchema';
+import { gallery } from './schemas/components/facilityRentalGallery/gallerySchema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
@@ -46,5 +48,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		author,
 		post,
 		blog,
+		galleryImage,
+		gallery,
 	],
 };

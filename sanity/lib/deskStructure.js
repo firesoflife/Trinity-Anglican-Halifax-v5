@@ -13,6 +13,7 @@ import {
 	GiChurch,
 	GiHeartPlus,
 } from 'react-icons/gi';
+import { FaRegImages } from 'react-icons/fa';
 import { MdEventNote } from 'react-icons/md';
 import { IoShareSocialOutline } from 'react-icons/io5';
 
@@ -139,7 +140,27 @@ export const deskStructure = (S) =>
 				.title('Facility Rental')
 				.icon(GiChurch)
 				.child(
-					S.editor().schemaType('facilityRental').documentId('facilityRental')
+					S.list()
+						.title('Facility Rental')
+						.items([
+							S.listItem()
+								.title('Facility Rental')
+								.icon(GiChurch)
+								.child(
+									S.editor()
+										.schemaType('facilityRental')
+										.documentId('facilityRental')
+								),
+							S.listItem()
+								.title('Facility Images')
+								.icon(FaRegImages)
+								.child(
+									S.documentList()
+										.schemaType('galleryImage')
+										.title('Facility Images')
+										.filter('_type == "galleryImage"')
+								),
+						])
 				),
 			S.listItem()
 				.title('Blog')
