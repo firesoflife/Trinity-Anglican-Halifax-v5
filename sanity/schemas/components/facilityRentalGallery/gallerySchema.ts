@@ -7,20 +7,20 @@ export const gallery = defineType({
 	fields: [
 		defineField({
 			name: 'title',
-			title: 'Title',
+			title: 'Gallery Title - Header',
 			type: 'string',
 			placeholder: 'Facility Image Gallery',
 		}),
 		defineField({
 			name: 'description',
-			title: 'Description',
+			title: 'Give the gallery a description',
 			type: 'text',
 		}),
 		defineField({
 			name: 'galleryImages',
 			title: 'Gallery Images',
 			type: 'array',
-			of: [{ type: 'reference', to: { type: 'image' } }],
+			of: [{ type: 'reference', to: { type: 'galleryImage' } }],
 		}),
 	],
 });

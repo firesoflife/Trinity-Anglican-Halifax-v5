@@ -152,13 +152,13 @@ export const deskStructure = (S) =>
 										.documentId('facilityRental')
 								),
 							S.listItem()
-								.title('Facility Images')
+								.title('Facility Image Gallery')
 								.icon(FaRegImages)
 								.child(
-									S.documentList()
-										.schemaType('galleryImage')
-										.title('Facility Images')
-										.filter('_type == "galleryImage"')
+									S.editor()
+										.schemaType('gallery')
+										.documentId('gallery')
+										.title('Gallery Title & Description')
 								),
 						])
 				),

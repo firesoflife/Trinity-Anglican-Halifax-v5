@@ -3,17 +3,10 @@ import { groq } from 'next-sanity';
 
 export async function getGallery(): Promise<Gallery[]> {
 	return client.fetch(
-		groq`*[_type == "gallery"]{
-        ...,
-        title,
-        description,
-        "galleryImages": galleryImages[]->{
-            _id,
-            asset->{
-                _id,
-                url
-            },
-            }
+		groq`*[_type == "galleryImage"]{
+            title,
+            description,
+            "imageUrl": image.asset->url
         }`
 	);
 }
