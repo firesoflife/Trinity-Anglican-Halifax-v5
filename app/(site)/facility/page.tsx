@@ -4,6 +4,8 @@ import FacilityBanner from '../components/Facility/FacilityBanner';
 import FacilityDownloadButton from '../components/Facility/FacilityDownloadButton';
 import FacilityGallery from '../components/Facility/FacilityGallery';
 import { getGallery, getGalleryDescription } from '@/app/lib/api/getGallery';
+import { Suspense } from 'react';
+import Loading from './Loadings';
 
 export const metadata = {
 	title: 'Facility Rentals at Trinity Anglican Church, Halifax',
@@ -46,10 +48,12 @@ const FacilityRental = async () => {
 					<div className='pt-8'>
 						<hr />
 					</div>
-					<FacilityGallery
-						facilityImages={facilityGallery}
-						galleryDetails={galleryDetails}
-					/>
+					<Suspense fallback={<Loading />}>
+						<FacilityGallery
+							facilityImages={facilityGallery}
+							galleryDetails={galleryDetails}
+						/>
+					</Suspense>
 				</div>
 			</div>
 		</div>
