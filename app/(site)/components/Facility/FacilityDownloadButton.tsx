@@ -49,7 +49,7 @@ const FacilityDownloadButton: React.FC<FacilityDownloadButtonProps> = ({
 	};
 
 	return (
-		<>
+		<div>
 			<button
 				className='text-xl p-8 bg-myGrey download-button hover:cursor-pointer w-full'
 				onClick={handleClick}
@@ -96,7 +96,7 @@ const FacilityDownloadButton: React.FC<FacilityDownloadButtonProps> = ({
 					</div>
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 

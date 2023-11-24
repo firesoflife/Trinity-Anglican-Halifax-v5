@@ -3,6 +3,7 @@ import FacilityHeader from '../components/Facility/FacilityHeader';
 import FacilityBanner from '../components/Facility/FacilityBanner';
 import FacilityDownloadButton from '../components/Facility/FacilityDownloadButton';
 import FacilityGallery from '../components/Facility/FacilityGallery';
+import { getGallery, getGalleryDescription } from '@/app/lib/api/getGallery';
 
 export const metadata = {
 	title: 'Facility Rentals at Trinity Anglican Church, Halifax',
@@ -14,6 +15,8 @@ export const revalidate = 10;
 
 const FacilityRental = async () => {
 	const facility = await getFacility();
+	const facilityGallery = await getGallery();
+	const galleryDetails = await getGalleryDescription();
 
 	return (
 		<div className='mt-2 bg-primary text-secondary'>
@@ -40,8 +43,13 @@ const FacilityRental = async () => {
 					</p>
 
 					<FacilityDownloadButton fileUrl={facility?.fileUrl} />
-					<hr />
-					<FacilityGallery />
+					<div className='pt-8'>
+						<hr />
+					</div>
+					<FacilityGallery
+						facilityImages={facilityGallery}
+						galleryDetails={galleryDetails}
+					/>
 				</div>
 			</div>
 		</div>

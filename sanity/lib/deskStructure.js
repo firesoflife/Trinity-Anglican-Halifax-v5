@@ -160,6 +160,17 @@ export const deskStructure = (S) =>
 										.documentId('gallery')
 										.title('Gallery Title & Description')
 								),
+							/////////// Multiple Galleries Documents ////////
+							// S.listItem()
+							// 	.title('Facility Images')
+							// 	.icon(FaRegImages)
+							// 	.child(
+							// 		S.documentList()
+							// 			.id('gallery')
+							// 			.title('gallery')
+							// 			.schemaType('gallery')
+							// 			.filter('_type == "gallery"')
+							// 	),
 						])
 				),
 			S.listItem()

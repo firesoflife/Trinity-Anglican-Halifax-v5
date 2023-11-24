@@ -6,15 +6,6 @@ type Base = {
 	_updatedAt: Date;
 };
 
-// interface Image {
-// 	asset: {
-// 		_id: string;
-// 		url: string;
-// 	};
-// 	crop: any;
-// 	hotspot: any;
-// }
-
 interface Slug {
 	current: string;
 }
@@ -300,6 +291,18 @@ interface Gallery extends Base {
 	title: string;
 	description: string;
 	galleryImages: Image[];
+	imageUrl: string;
+	galleryDetails: {
+		select: {
+			title: string;
+			description: string;
+		};
+	};
+}
+
+interface GalleryDetails extends Base {
+	title: string;
+	description: string;
 }
 
 interface galleryImage extends Base {

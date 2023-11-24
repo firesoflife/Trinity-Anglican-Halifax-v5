@@ -10,3 +10,12 @@ export async function getGallery(): Promise<Gallery[]> {
         }`
 	);
 }
+
+export async function getGalleryDescription(): Promise<GalleryDetails> {
+	return client.fetch(
+		groq`*[_type == "gallery"][0]{
+            title,
+            description
+        }`
+	);
+}
