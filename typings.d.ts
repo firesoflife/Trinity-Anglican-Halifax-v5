@@ -93,6 +93,8 @@ interface Covenant extends Base {
 	covenantBannerImage: Image;
 	bannerVerse: string;
 	bannerVerseAttribution: string;
+	covenantFile: File | asset;
+	covenantFileUrl: string;
 }
 
 interface Author extends Base {

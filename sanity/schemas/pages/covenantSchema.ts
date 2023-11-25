@@ -37,5 +37,14 @@ export const covenant = defineType({
 			placeholder: 'Galatians 6:14',
 			description: 'Enter the quote attribution here',
 		}),
+		defineField({
+			name: 'covenantFile',
+			title: 'Covenant File',
+			type: 'file',
+			description: 'Upload the covenant file here in PDF format',
+			options: {
+				accept: '.pdf',
+			},
+		}),
 	],
 });
