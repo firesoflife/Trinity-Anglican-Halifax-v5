@@ -23,6 +23,7 @@ import { post } from './schemas/components/blog/postSchema';
 import { blog } from './schemas/pages/blogLayoutSchema';
 import { galleryImage } from './schemas/components/facilityRentalGallery/imageSchema';
 import { gallery } from './schemas/components/facilityRentalGallery/gallerySchema';
+import { covenant } from './schemas/pages/covenantSchema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
@@ -50,5 +51,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		blog,
 		galleryImage,
 		gallery,
+		covenant,
 	],
 };

@@ -16,6 +16,10 @@ import {
 import { FaRegImages } from 'react-icons/fa';
 import { MdEventNote } from 'react-icons/md';
 import { IoShareSocialOutline } from 'react-icons/io5';
+import { LuScroll } from 'react-icons/lu';
+import { PiScrollLight } from 'react-icons/pi';
+import { TbSectionSign } from 'react-icons/tb';
+import { FaPenFancy } from 'react-icons/fa6';
 
 export const deskStructure = (S) =>
 	S.list()
@@ -45,6 +49,12 @@ export const deskStructure = (S) =>
 										.schemaType('staff')
 										.title('Clergy and Staff')
 										.filter('_type == "staff"')
+								),
+							S.listItem()
+								.title('Covenant In Ministry')
+								.icon(LuScroll)
+								.child(
+									S.editor().schemaType('covenant').documentId('covenant')
 								),
 						])
 				),
@@ -87,7 +97,7 @@ export const deskStructure = (S) =>
 				.icon(GiBookCover)
 				.child(
 					S.list()
-						.title('Worship')
+						.title('Worship Sections')
 						.items([
 							S.listItem()
 								.title('Worship Main Page')
@@ -174,19 +184,19 @@ export const deskStructure = (S) =>
 						])
 				),
 			S.listItem()
-				.title('Blog')
-				.icon(MdHistory)
+				.title('Pastoral Letters')
+				.icon(PiScrollLight)
 				.child(
 					S.list()
-						.title('Blog')
+						.title('Pastoral Letters Sections')
 						.items([
 							S.listItem()
-								.title('Blog Main Page')
-								.icon(MdHistory)
+								.title('Banner Section')
+								.icon(TbSectionSign)
 								.child(S.editor().schemaType('blog').documentId('blog')),
 							S.listItem()
-								.title('Blog Posts')
-								.icon(MdHistory)
+								.title('Letters to the Parish')
+								.icon(FaPenFancy)
 								.child(
 									S.documentList()
 										.schemaType('post')

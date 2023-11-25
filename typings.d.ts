@@ -88,6 +88,13 @@ interface SinglePost extends Base {
 // 	bio: string;
 // }
 
+interface Covenant extends Base {
+	title: string;
+	covenantBannerImage: Image;
+	bannerVerse: string;
+	bannerVerseAttribution: string;
+}
+
 interface Author extends Base {
 	name: string;
 	slug: Slug;

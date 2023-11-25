@@ -64,6 +64,20 @@ const Navbar = async () => {
 										Location
 									</Link>
 								</li>
+								<li className=''>
+									<Link
+										className='hover:border-white border-3 border bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
+										href='/blog'>
+										Pastoral Letters
+									</Link>
+								</li>
+								<li className=''>
+									<Link
+										className='hover:border-white border-3 border bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
+										href='/covenant'>
+										Covenant in Ministry
+									</Link>
+								</li>
 							</ul>
 						</div>
 						{/* Worship Group */}
