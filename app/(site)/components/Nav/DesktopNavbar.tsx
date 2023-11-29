@@ -74,7 +74,7 @@ const Navbar = async () => {
 								<li className=''>
 									<Link
 										className='hover:border-white border-3 border bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='/covenant'>
+										href='about/covenant'>
 										Covenant in Ministry
 									</Link>
 								</li>
