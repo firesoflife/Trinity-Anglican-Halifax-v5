@@ -2,7 +2,6 @@ import { getCovenant } from '@/app/lib/api/getCovenant';
 
 const CovenantHeader = async () => {
 	const covenant = await getCovenant();
-	console.log(covenant);
 	return (
 		<div
 			id='what-to-expect'
