@@ -1,4 +1,7 @@
-import { getSingleParishEvent } from '@/app/lib/api/getSingleEvent';
+import {
+	getSingleParishEvent,
+	getSingleParishEventPage,
+} from '@/app/lib/api/getSingleEvent';
 import urlFor from '@/sanity/lib/urlFor';
 import Image from 'next/image';
 import { fallbackImages } from '../../utilities/fallbackAssets';
@@ -14,7 +17,7 @@ type Props = {
 };
 
 const ParishEvent = async ({ params: { slug } }: Props) => {
-	const pEventData = await getSingleParishEvent(slug);
+	const pEventData = await getSingleParishEventPage(slug);
 
 	return (
 		<div className='h-full pt-32 bg-secondary border-t-2 border-secondary'>

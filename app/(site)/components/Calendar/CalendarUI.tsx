@@ -44,6 +44,8 @@ function CalendarUI() {
 		});
 	}, []);
 
+	console.log(events);
+
 	const formatEvents = (eventsData: Event[]): Events => {
 		let eventsObj: Events = {};
 		eventsData.forEach((event) => {
