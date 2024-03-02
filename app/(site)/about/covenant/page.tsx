@@ -4,6 +4,8 @@ import CovenantHeader from './CovenantHeader';
 import { getCovenant } from '@/app/lib/api/getCovenant';
 import PdfViewer from '../../components/Covenant/PdfViewer';
 
+export const revalidate = 10;
+
 const Covenant = async () => {
 	const covenant = await getCovenant();
 
