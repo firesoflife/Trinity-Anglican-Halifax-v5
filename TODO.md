@@ -14,7 +14,7 @@
 
 ## TODO General
 
-- [ ] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
+- [x] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
 - [ ] Fallbacks for all images
 - [ ] Fallbacks for all fetched text
 - [x] check that all banners and images use image builder for all images
