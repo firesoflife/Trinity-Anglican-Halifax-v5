@@ -6,7 +6,7 @@ interface StaffCardProps {
 	staffMember: StaffCardMember;
 }
 
-const StaffCard: React.FC<StaffCardProps> = ({ staffMember }) => (
+const StaffCard: React.FC<StaffCardProps> = async ({ staffMember }) => (
 	<div
 		key={staffMember._id}
 		className='flex flex-col items-center max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow'>
