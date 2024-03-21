@@ -13,6 +13,7 @@ interface Home extends Base {
 	pageTitle: string;
 	logo: 'Image';
 	bannerTitle: string;
+	bannerSubtitle: string;
 	navbarTitle: string;
 	slug: Slug;
 	welcomeHeading: string;

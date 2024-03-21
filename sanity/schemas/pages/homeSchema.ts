@@ -62,6 +62,18 @@ export const home = defineType({
 			description:
 				'Appears on the home page overlayed on the main Image. Leave blank if you want no text showing',
 			group: 'banner',
+			validation: (Rule: StringRule) =>
+				Rule.max(45).warning('You have exceeded the maximum length'),
+		}),
+		defineField({
+			name: 'bannerSubtitle',
+			title: 'Banner Subtitle',
+			type: 'string',
+			description:
+				'Appears on the home page overlayed on the main Image beneath the Title. Leave blank if you want no text showing',
+			group: 'banner',
+			validation: (Rule: StringRule) =>
+				Rule.max(256).warning('You have exceeded the maximum length'),
 		}),
 		defineField({
 			name: 'welcomeHeading',

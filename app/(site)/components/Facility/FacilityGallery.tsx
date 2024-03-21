@@ -14,6 +14,7 @@ const FacilityGallery: React.FC<FacilityGalleryProps> = React.memo(
 	({ facilityImages, galleryDetails }) => {
 		const [open, setOpen] = useState(false);
 		const [image, setImage] = useState('');
+		const [currentIndex, setCurrentIndex] = useState(0);
 
 		const galleryTab = facilityImages.map((image) => ({
 			imageUrl: image.imageUrl,
@@ -62,6 +63,7 @@ const FacilityGallery: React.FC<FacilityGalleryProps> = React.memo(
 											onClick={() => {
 												setOpen(true);
 												setImage(x.imageUrl);
+												setCurrentIndex(index);
 											}}>
 											<p className='text-white opacity-0 group-hover:opacity-100'>
 												<AiOutlineExpandAlt className='text-2xl border w-10 h-10 bg-neutral-500 hover:bg-white hover:text-black p-3  rounded-full' />
@@ -79,6 +81,7 @@ const FacilityGallery: React.FC<FacilityGalleryProps> = React.memo(
 					plugins={[Zoom]}
 					// showPrevNext={false}
 					slides={slides}
+					index={currentIndex}
 				/>
 			</div>
 		);

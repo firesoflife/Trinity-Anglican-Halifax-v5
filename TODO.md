@@ -12,6 +12,9 @@
 - Add "Gallery of Photos" to About Nav Item
 - [x] Send Benj Benj my Adress
 
+- [] Fix error when clicking menu link for page you are currently on
+  - Example - navigate to 'Covenant in Ministry' and then click 'Covenant in Ministry' in the menu
+
 ## TODO General
 
 - [x] Create fallback content in separate internal file for all api calls if no data is returned / undefined / null
@@ -137,3 +140,11 @@
 - [ ] Social Media Links
 - [x] ANOUNCEMENTS ?
 - [ ] our vison arao -- our covenant in ministry
+
+---
+
+NEW TODO
+
+- [ ] Add "subtitle" or paragraph section to Home Page Banner beneat "Title"
+- [ ] Add rule to Home Page Banner for max characters in "Title" and "Subtitle" (Currently breaks if too much text added)
+- [ ] Live Prewview for all edits

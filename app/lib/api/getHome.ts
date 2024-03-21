@@ -12,6 +12,7 @@ export async function getHome(): Promise<Home> {
       navbarTitle,
       "logo": logo.asset->url,
       bannerTitle,
+      bannerSubtitle,
       welcome,
       welcomeHeading,
       // "welcomeImage": welcomeImage.asset->url,

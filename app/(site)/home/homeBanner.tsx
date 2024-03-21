@@ -27,10 +27,13 @@ const HomeBanner = async () => {
 				style={{ backgroundImage: `url(${welcomeImageUrl})` }}>
 				<div className='hero-overlay bg-opacity-60 border-b-[1px] border-primary'></div>
 				<div className='hero-content text-center text-neutral-content'>
-					<div className='max-w-md'>
-						<div className='mb-96 text-5xl font-bold font-heading leading-snug'>
+					<div className='max-w-xl mb-56 flex flex-col justify-center items-center'>
+						<div className='text-5xl font-bold font-heading text-center justify-center leading-snug max-w-md'>
 							{home.bannerTitle || ''}
 						</div>
+						<p className='text-2xl font-bold font-heading'>
+							{home.bannerSubtitle || ''}
+						</p>
 					</div>
 				</div>
 			</section>
