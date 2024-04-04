@@ -75,13 +75,31 @@ export const staff = defineType({
 					invert: false, // Boolean to allow any value that does NOT match pattern
 				}).warning('Please enter a valid email address'),
 		}),
+		defineField({
+			name: 'order',
+			title: 'Order',
+			type: 'number',
+			description:
+				'Position of the staff member in the list. Lower nummbers appear first.',
+			validation: (Rule: any) =>
+				Rule.required().min(0).warning('Order must be a non-negative number.'),
+		}),
 	],
 	preview: {
 		select: {
 			title: 'name',
-			subtitle: 'position',
-			description: 'role',
+			subtitle: 'order',
+			order: 'order',
+			description: 'order',
 			media: 'image',
+		},
+		prepare(selection: any) {
+			const { title, order, media } = selection;
+			return {
+				title,
+				subtitle: `Will show in position: ${order}`,
+				media,
+			};
 		},
 	},
 });

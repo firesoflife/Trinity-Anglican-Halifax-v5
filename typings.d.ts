@@ -121,6 +121,7 @@ interface Span {
 }
 
 interface Staff extends Base {
+	[x: string]: any;
 	name: string;
 	role: string;
 	imageUrl: SanityImageSource;

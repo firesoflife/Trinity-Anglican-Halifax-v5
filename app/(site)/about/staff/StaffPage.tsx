@@ -16,6 +16,11 @@ const StaffPage = async () => {
 		{}
 	);
 
+	// Sort the staff members within each role by their order number assigned in the Studio
+	Object.keys(staffByRole).forEach((role) => {
+		staffByRole[role].sort((a, b) => a.order - b.order);
+	});
+
 	type Role = 'rector' | 'clergy' | 'general' | 'warden';
 
 	const roleTitles: Record<Role, string> = {
