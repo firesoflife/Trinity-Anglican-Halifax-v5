@@ -10,7 +10,10 @@ function BlogList({ posts }: Props) {
 	return (
 		<div className='container mx-auto'>
 			{posts.map((post) => (
-				<ClientSideRoute route={`/post/${post.slug.current}`} key={post._id}>
+				<ClientSideRoute
+					// route={`/post/${post.slug?.current}`} # Original which caused build failure
+					route={post.slug?.current ? `/post/${post.slug.current}` : '/'}
+					key={post._id}>
 					<div className='flex gap-4 bg-base-100 shadow-xl p-3 m-3 mb-14 w-full mx-auto overflow-auto'>
 						<div className='col-span-1 hidden sm:block max-h-fit'>
 							<div className='aspect-w-1 aspect-h-1 mx-auto'>
