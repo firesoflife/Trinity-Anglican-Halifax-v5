@@ -24,6 +24,7 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 	const [email, setEmail] = useState<string>('');
 	const [subject, setSubject] = useState<string>('');
 	const [message, setMessage] = useState<string>('');
+	const [emailListOptIn, setEmailListOptIn] = useState<boolean>(false);
 
 	const [state, handleSubmit] = useForm('xgejdydg');
 
@@ -46,6 +47,7 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 		setEmail('');
 		setSubject('');
 		setMessage('');
+		setEmailListOptIn(false);
 	};
 
 	return (
@@ -129,6 +131,20 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 							errors={state.errors}
 						/>
 					</div>
+					<div className='flex items-center'>
+						<input
+							type='checkbox'
+							id='emailListOptIn'
+							checked={emailListOptIn}
+							onChange={(e) => setEmailListOptIn(e.target.checked)}
+							className='w-4 h-4 text-primary-600 bg-gray-100 rounded border-gray-300 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+						/>
+						<label
+							htmlFor='emailListOptIn'
+							className='ml-2 text-lg font-medium text-secondary dark:text-gray-300'>
+							Check here to join the church email list
+						</label>
+					</div>
 					<button
 						type='submit'
 						disabled={state.submitting}
@@ -142,7 +158,7 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 			{showToast && (
 				<div className='toast toast-top toast-center'>
 					<div className='alert alert-success'>
-						<span>Message sent successfully.</span>
+						<span>Message sent successfully</span>
 					</div>
 				</div>
 			)}
