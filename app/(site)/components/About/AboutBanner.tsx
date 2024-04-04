@@ -6,8 +6,12 @@ import urlFor from '@/sanity/lib/urlFor';
 const AboutBanner = async () => {
 	const about = await getAbout();
 
+	// const aboutBannerUrl = about.bannerImage
+	// 	? urlFor(about.bannerImage)
+	// 	: fallbackImages.about.primaryImageFallback;
+
 	const aboutBannerUrl = about.bannerImage
-		? urlFor(about.bannerImage)
+		? urlFor(about?.bannerImage)
 		: fallbackImages.about.primaryImageFallback;
 
 	return (

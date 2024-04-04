@@ -145,13 +145,13 @@
 
 NEW TODO
 
-- [ ] Add "subtitle" or paragraph section to Home Page Banner beneat "Title"
-- [ ] Add rule to Home Page Banner for max characters in "Title" and "Subtitle" (Currently breaks if too much text added)
+- [x] Add "subtitle" or paragraph section to Home Page Banner beneat "Title"
+- [x] Add rule to Home Page Banner for max characters in "Title" and "Subtitle" (Currently breaks if too much text added)
 - [ ] Live Prewview for all edits
 
-- [ ] About banner not changing - (aboutGet)
-- [ ] Contact banner not changing (check contactGet)
-- [ ] ordering of people on staff list - seniority
+- [x] About banner not changing - (aboutGet)
+- [x] Contact banner not changing (check contactGet)
+- [x] ordering of people on staff list - seniority
 
   - [ ] staff page modal for full bio - 150 words
   - [ ] potential contact form for staff

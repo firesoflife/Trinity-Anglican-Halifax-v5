@@ -16,6 +16,14 @@ export async function getAbout(): Promise<About> {
           crop,
           hotspot
         },
+         bannerImage{
+          asset->{
+            _id,
+            url
+          },
+          crop,
+          hotspot
+        },
         bannerVerse,
         bannerVerseAttribution,
         middleBannerImage{
