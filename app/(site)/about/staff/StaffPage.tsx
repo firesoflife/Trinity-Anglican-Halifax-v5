@@ -1,6 +1,8 @@
 import { getStaff } from '@/app/lib/api/getStaff';
 import StaffCard from '../../components/About/StaffCard';
 
+export const revalidate = 10;
+
 const StaffPage = async () => {
 	const staffMembers: Staff[] = await getStaff();
 

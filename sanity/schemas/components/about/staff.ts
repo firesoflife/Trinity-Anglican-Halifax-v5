@@ -29,7 +29,7 @@ export const staff = defineType({
 		}),
 		defineField({
 			name: 'position',
-			title: 'Position',
+			title: 'Job or Title',
 			type: 'string',
 		}),
 		defineField({
@@ -80,7 +80,7 @@ export const staff = defineType({
 			title: 'Order',
 			type: 'number',
 			description:
-				'Position of the staff member in the list. Lower nummbers appear first.',
+				'Position of the staff member in the list. Lower nummbers appear first. IMPORTANT - ensure all staff members have a unique order number.',
 			validation: (Rule: any) =>
 				Rule.required().min(0).warning('Order must be a non-negative number.'),
 		}),
