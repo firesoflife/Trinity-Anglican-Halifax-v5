@@ -1,40 +1,29 @@
-// import React from 'react';
+import { fallbackImages } from '../../utilities/fallbackAssets';
 
-// function StaffDetails() {
-// 	return (
-// 		<div className='w-2/3 p-4'>
-// 			{/* Render your staff details here */}
-// 			<h2 className='text-2xl font-bold'>Staff Name</h2>
-// 			<p>Staff Bio</p>
-// 		</div>
-// 	);
-// }
-
-// export default StaffDetails;
-
-interface StaffDetailsProps {
-	isOpen: boolean;
-	onClose: () => void;
-	children: React.ReactNode;
+interface StaffDetailsModalProps {
+	staffMember: StaffCardMember;
 }
 
-const Modal: React.FC<StaffDetailsProps> = ({ isOpen, onClose, children }) => {
-	if (!isOpen) return null;
-
+const StaffDetailsModal: React.FC<StaffDetailsModalProps> = ({
+	staffMember,
+}) => {
 	return (
-		<div className='fixed inset-0 z-50 overflow-y-auto bg-black bg-opacity-50'>
-			<div className='flex items-center justify-center min-h-screen'>
-				<div className='bg-white p-5 rounded-lg shadow-lg'>
-					{children}
-					<button
-						onClick={onClose}
-						className='mt-4 px-4 py-2 bg-red-500 text-white rounded'>
-						Close
-					</button>
-				</div>
+		<div className='space-y-4'>
+			<div className='flex'>
+				<img
+					className='w-32 h-32 object-cover rounded-full'
+					src={
+						staffMember.imageUrl ||
+						fallbackImages.about.missingProfileImageFallback
+					}
+					alt={staffMember.name || 'Staff Member'}
+				/>
+				<h3 className='text-xl font-bold mx-12'>{staffMember.name}</h3>
 			</div>
+			<p>{staffMember.bio}</p>
+			{/* Add more details as needed */}
 		</div>
 	);
 };
 
-export default Modal;
+export default StaffDetailsModal;

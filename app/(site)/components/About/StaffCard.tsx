@@ -5,6 +5,8 @@ import urlFor from '@/sanity/lib/urlFor';
 import Link from 'next/link';
 import { fallbackImages } from '../../utilities/fallbackAssets';
 import StaffDetails from './StaffDetails';
+import Modal from './Modal';
+import StaffDetailsModal from './StaffDetails';
 
 interface StaffCardProps {
 	staffMember: StaffCardMember;
@@ -42,11 +44,12 @@ const StaffCard: React.FC<StaffCardProps> = async ({ staffMember }) => {
 						Read Full Bio
 					</p>
 
-					<StaffDetails
-						isOpen={isModalOpen}
-						onClose={() => setModalOpen(false)}>
+					{/* <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
 						<p>{staffMember?.bio || 'Nothing here yet...'}</p>
-					</StaffDetails>
+					</Modal> */}
+					<Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+						<StaffDetailsModal staffMember={staffMember} />
+					</Modal>
 				</div>
 				{staffMember?.role === 'warden' && ( // Conditionally render the contact button for Wardens only
 					<Link
