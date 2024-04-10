@@ -1,10 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import urlFor from '@/sanity/lib/urlFor';
 import Link from 'next/link';
 import { fallbackImages } from '../../utilities/fallbackAssets';
-import StaffDetails from './StaffDetails';
 import Modal from './Modal';
 import StaffDetailsModal from './StaffDetails';
 
@@ -12,13 +11,28 @@ interface StaffCardProps {
 	staffMember: StaffCardMember;
 }
 
-const StaffCard: React.FC<StaffCardProps> = async ({ staffMember }) => {
+const StaffCard: React.FC<StaffCardProps> = ({ staffMember }) => {
 	const [isModalOpen, setModalOpen] = useState(false);
+
+	// Effect to toggle the body-fixed class on the body element
+	useEffect(() => {
+		const body = document.body;
+		if (isModalOpen) {
+			body.classList.add('body-fixed');
+		} else {
+			body.classList.remove('body-fixed');
+		}
+
+		// Cleanup function to ensure the class is removed when the component unmounts or modal state changes
+		return () => {
+			body.classList.remove('body-fixed');
+		};
+	}, [isModalOpen]);
 
 	return (
 		<div
 			key={staffMember._id}
-			className='flex flex-col items-center max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow'>
+			className='flex flex-col items-center max-w-sm mx-auto bg-white border border-gray-200 rounded-lg shadow-md'>
 			<div>
 				<img
 					className='rounded-t-lg'
@@ -35,7 +49,7 @@ const StaffCard: React.FC<StaffCardProps> = async ({ staffMember }) => {
 					<h5 className='mb-2 text-2xl font-bold tracking-tight text-center text-gray-900'>
 						{staffMember?.name || 'Name Unavailable'}
 					</h5>
-					<p className='mb-3 font-normal text-gray-700 line-clamp-5 '>
+					<p className='mb-3 font-normal text-gray-700 line-clamp-5'>
 						{staffMember?.bio || 'Nothing here yet...'}
 					</p>
 					<p
@@ -43,15 +57,8 @@ const StaffCard: React.FC<StaffCardProps> = async ({ staffMember }) => {
 						onClick={() => setModalOpen(true)}>
 						Read Full Bio
 					</p>
-
-					{/* <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
-						<p>{staffMember?.bio || 'Nothing here yet...'}</p>
-					</Modal> */}
-					<Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
-						<StaffDetailsModal staffMember={staffMember} />
-					</Modal>
 				</div>
-				{staffMember?.role === 'warden' && ( // Conditionally render the contact button for Wardens only
+				{staffMember?.role === 'warden' && (
 					<Link
 						href={`mailto:${
 							staffMember?.email ||
@@ -62,7 +69,6 @@ const StaffCard: React.FC<StaffCardProps> = async ({ staffMember }) => {
 						<svg
 							className='w-3.5 h-3.5 ml-2'
 							aria-hidden='true'
-							xmlns='http://www.w3.org/2000/svg'
 							fill='none'
 							viewBox='0 0 14 10'>
 							<path
@@ -75,6 +81,9 @@ const StaffCard: React.FC<StaffCardProps> = async ({ staffMember }) => {
 						</svg>
 					</Link>
 				)}
+				<Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)}>
+					<StaffDetailsModal staffMember={staffMember} />
+				</Modal>
 			</div>
 		</div>
 	);

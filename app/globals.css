@@ -99,3 +99,9 @@
 .download-button {
     margin-top: 2.5rem !important;
 }
+
+/* Fix Staff Modal Background */
+
+.body-fixed {
+    overflow: hidden;
+}
