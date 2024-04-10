@@ -153,7 +153,7 @@ NEW TODO
 - [x] Contact banner not changing (check contactGet)
 - [x] ordering of people on staff list - seniority
 
-  - [ ] staff page modal for full bio - 150 words
+  - [x] staff page modal for full bio - 150 words
   - [ ] potential contact form for staff
 
 - [ ] contact - add social media links to contact card
