@@ -26,6 +26,10 @@ export const staff = defineType({
 				source: 'name',
 				maxLength: 96,
 			},
+			validation: (Rule: any) =>
+				Rule.required().warning(
+					'Please enter a slug to ensure the staff profile page will show'
+				),
 		}),
 		defineField({
 			name: 'position',
