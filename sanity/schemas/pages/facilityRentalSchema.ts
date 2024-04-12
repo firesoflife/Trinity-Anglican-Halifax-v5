@@ -13,9 +13,6 @@ export const rental = defineType({
 			name: 'title',
 			title: 'Title',
 			type: 'string',
-			options: {
-				placeholder: 'Facility Rental',
-			},
 		}),
 		defineField({
 			name: 'subtitle',
