@@ -161,4 +161,5 @@ NEW TODO
 
 -[ ] potentail ordering of events on parish events page
 
-parish email -
+- NOT GOING TO HAPPEN
+  parish email -
