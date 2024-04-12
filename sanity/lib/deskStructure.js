@@ -12,6 +12,7 @@ import {
 	GiScrollUnfurled,
 	GiChurch,
 	GiHeartPlus,
+	GiGalley,
 } from 'react-icons/gi';
 import { FaRegImages } from 'react-icons/fa';
 import { MdEventNote } from 'react-icons/md';
@@ -213,6 +214,15 @@ export const deskStructure = (S) =>
 										.filter('_type == "author"')
 								),
 						])
+				),
+			S.listItem()
+				.title('Featured Image Gallery')
+				.icon(GiGalley)
+				.child(
+					S.documentList()
+						.title('Featured Image Galleries')
+						.schemaType('featureGallery')
+						.filter('_type == "featureGallery"')
 				),
 			S.listItem()
 				.title('Dummy Docs')

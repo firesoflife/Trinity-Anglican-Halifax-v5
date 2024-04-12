@@ -418,3 +418,22 @@ interface ParishEvent {
 interface ParishEventsProps {
 	data: ParishEvent[];
 }
+
+interface featureGallery extends Base {
+	title: string;
+	description: string;
+	featureGalleryImages: Image[];
+}
+
+interface featureGalleryImage extends Base {
+	title: string;
+	description: string;
+	image: Image;
+}
+
+interface ArrayFieldDefinition {
+	of?: Array<{
+		type: string;
+		to?: Array<{ type: string }>;
+	}>;
+}

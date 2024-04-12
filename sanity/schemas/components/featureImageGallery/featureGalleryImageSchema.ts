@@ -1,8 +1,8 @@
-import { defineType, defineField, StringRule } from '@sanity/types';
+import { defineType, defineField } from '@sanity/types';
 
-export const galleryImage = defineType({
-	name: 'galleryImage',
-	title: 'Gallery Image',
+export const featureGalleryImage = defineType({
+	name: 'featureGalleryImage',
+	title: 'Feature Gallery Image',
 	type: 'document',
 	fields: [
 		defineField({
@@ -10,7 +10,7 @@ export const galleryImage = defineType({
 			title: 'Title for the Image',
 			type: 'string',
 			options: {
-				placeholder: 'Facility Image Gallery',
+				placeholder: 'Feature Gallery Image',
 			},
 		}),
 		defineField({

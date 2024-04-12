@@ -24,7 +24,9 @@ export const home = defineType({
 			type: 'string',
 			description:
 				'Not Displayed on the Page - A title for the Church website is a required field. Recommended to use name you want to show on search engines',
-			placeholder: 'Trinity Anglican Church',
+			options: {
+				placeholder: 'Trinity Anglican Church',
+			},
 			validation: (Rule) =>
 				Rule.required().max(27).warning('You have exceeded the maximum length'),
 			group: 'metadata',
