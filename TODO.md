@@ -147,7 +147,7 @@ NEW TODO
 
 - [x] Add "subtitle" or paragraph section to Home Page Banner beneat "Title"
 - [x] Add rule to Home Page Banner for max characters in "Title" and "Subtitle" (Currently breaks if too much text added)
-- [ ] Live Prewview for all edits
+- [ ] Live Preview for all edits
 
 - [x] About banner not changing - (aboutGet)
 - [x] Contact banner not changing (check contactGet)
@@ -156,8 +156,8 @@ NEW TODO
   - [x] staff page modal for full bio - 150 words
   - [ ] potential contact form for staff
 
-- [ ] contact - add social media links to contact card
-- [ ] mailing list contact form checkbox
+- [x] contact - add social media links to contact card
+- [x] mailing list contact form checkbox
 
 -[ ] potentail ordering of events on parish events page
 

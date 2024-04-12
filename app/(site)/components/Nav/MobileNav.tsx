@@ -185,9 +185,10 @@ const MobileNav: React.FC<ParishEventsProps> = (props) => {
 									</div>
 								</div>
 							)}
-							<Link href='/facility' onClick={closeMenu}>
+							{/* Facility Link removed and added to Contact Page */}
+							{/* <Link href='/facility' onClick={closeMenu}>
 								<span>Facility Rental</span>
-							</Link>
+							</Link> */}
 							<Link href='/contact' onClick={closeMenu}>
 								<span>Contact</span>
 							</Link>

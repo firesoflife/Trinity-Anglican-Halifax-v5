@@ -173,6 +173,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 import React, { useState, useEffect } from 'react';
 import { placeholders } from '../../utilities/fallbackAssets';
+import Link from 'next/link';
 
 interface FormProps {
 	contactInfo: {
@@ -225,9 +226,14 @@ const ContactForm: React.FC<FormProps> = ({ contactInfo }) => {
 					{contactInfo?.formHeading ||
 						'Send a General Message or Request for Pastoral Care'}
 				</h2>
-				<p className='mb-8 lg:mb-16 font-light text-center text-gray-700 sm:text-xl'>
+				<p className='mb-8  font-light text-center text-gray-700 sm:text-xl'>
 					{contactInfo?.formSubheading ||
 						placeholders.contact.subheadingFallback}
+				</p>
+				<p className='mb-8 lg:mb-16 font-light text-center text-gray-700 sm:text-xl'>
+					<Link href='/facility' className='underline'>
+						For facility rental queries, click here.
+					</Link>
 				</p>
 				<form
 					onSubmit={handleSubmit}

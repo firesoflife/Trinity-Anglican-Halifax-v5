@@ -171,15 +171,17 @@ const Navbar = async () => {
 									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 										href='/events'>
-										Other Ministries & Volunteer Opportunities
+										Other Ministries &
+										<br />{' '}
+										<span className='pl-3'>Volunteer Opportunities </span>
 									</Link>
 								</li>
 							</ul>
 						</div>
-						{/* Facility Rental */}
-						<button className='hover:bg-myGrey hover:text-white py-2 px-4 transition-all'>
+						{/* Facility Rental - Removed and placed in Contact Page*/}
+						{/* <button className='hover:bg-myGrey hover:text-white py-2 px-4 transition-all'>
 							<Link href='/facility'>Facility Rental</Link>
-						</button>
+						</button> */}
 						<button className='hover:bg-myGrey hover:text-white py-2 px-4 transition-all'>
 							<Link href='/contact'>Contact</Link>
 						</button>
