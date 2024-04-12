@@ -9,9 +9,7 @@ export const galleryImage = defineType({
 			name: 'title',
 			title: 'Title for the Image',
 			type: 'string',
-			options: {
-				placeholder: 'Facility Image Gallery',
-			},
+			placeholder: 'Facility Image Gallery',
 		}),
 		defineField({
 			name: 'image',
