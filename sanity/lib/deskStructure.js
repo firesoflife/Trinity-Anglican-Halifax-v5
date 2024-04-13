@@ -224,7 +224,8 @@ export const deskStructure = (S) =>
 						.schemaType('featureGallery')
 						.filter('_type == "featureGallery"')
 				),
-			S.listItem()
-				.title('Dummy Docs')
-				.child(S.documentTypeList('dummyAssetDoc').title('Dummy Docs')),
+			// HIDE DUMMY DOCS FROM MENU
+			// S.listItem()
+			// 	.title('Dummy Docs')
+			// 	.child(S.documentTypeList('dummyAssetDoc').title('Dummy Docs')),
 		]);
