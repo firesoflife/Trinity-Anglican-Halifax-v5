@@ -1,4 +1,4 @@
-import { defineType, defineField, va } from '@sanity/types';
+import { defineType, defineField } from '@sanity/types';
 
 export const featureGallery = defineType({
 	name: 'featureGallery',
