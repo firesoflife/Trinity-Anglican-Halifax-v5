@@ -19,12 +19,19 @@ export const featureGallery = defineType({
 					.max(180)
 					.warning('You have exceeded the maximum length of 180 characters'),
 		}),
-
+		defineField({
+			name: 'image',
+			title: 'Gallery Cover Image',
+			type: 'image',
+			options: {
+				hotspot: true,
+			},
+		}),
 		defineField({
 			name: 'galleries',
-			title: 'Galleries',
+			title: 'Images',
 			type: 'array',
-			of: [{ type: 'reference', to: [{ type: 'gallery' }] }],
+			of: [{ type: 'reference', to: [{ type: 'featureGalleryImage' }] }],
 		}),
 	],
 });

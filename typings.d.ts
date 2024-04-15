@@ -437,3 +437,9 @@ interface ArrayFieldDefinition {
 		to?: Array<{ type: string }>;
 	}>;
 }
+
+interface galleryHome extends Base {
+	title: string;
+	description: string;
+	images: Image[];
+}

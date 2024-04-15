@@ -24,7 +24,7 @@ import { blog } from './schemas/pages/blogLayoutSchema';
 import { galleryImage } from './schemas/components/facilityRentalGallery/imageSchema';
 import { gallery } from './schemas/components/facilityRentalGallery/gallerySchema';
 import { covenant } from './schemas/pages/covenantSchema';
-import { galleryHome } from './schemas/pages/galleryHomeSchema';
+
 import { featureGalleryImage } from './schemas/components/featureImageGallery/featureGalleryImageSchema';
 import { featureGallery } from './schemas/components/featureImageGallery/featureGallerySchema';
 
@@ -57,6 +57,5 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		covenant,
 		featureGallery,
 		featureGalleryImage,
-		galleryHome,
 	],
 };
