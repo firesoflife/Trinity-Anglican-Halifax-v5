@@ -423,6 +423,7 @@ interface featureGallery extends Base {
 	title: string;
 	description: string;
 	featureGalleryImages: Image[];
+	coverImageUrl: string;
 }
 
 interface featureGalleryImage extends Base {
