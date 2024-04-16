@@ -11,6 +11,16 @@ export const featureGallery = defineType({
 			type: 'string',
 		}),
 		defineField({
+			name: 'slug',
+			title: 'Slug',
+			type: 'slug',
+			options: {
+				source: 'title',
+				maxLength: 96,
+			},
+			validation: (Rule) => Rule.required,
+		}),
+		defineField({
 			name: 'description',
 			title: 'Description',
 			type: 'string',
