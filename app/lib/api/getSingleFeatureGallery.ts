@@ -8,6 +8,7 @@ export async function getSingleFeatureGallery(
 	const query = groq`*[_type == "featureGallery" && slug.current == $slug][0]{
         _id,
         title,
+        description,
         "coverImageUrl": image.asset->url,
         "imageIds": galleries[]->{
             _id,
