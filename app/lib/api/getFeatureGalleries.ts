@@ -6,6 +6,7 @@ export async function getFeatureGalleries(): Promise<FeatureGallery[]> {
     *[_type == "featureGallery"]{
       _id,
       title,
+      description,
       "coverImageUrl": image.asset->url,
       "slug": slug.current,
       "imageIds": galleries[]->{
