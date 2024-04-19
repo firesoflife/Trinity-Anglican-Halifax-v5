@@ -176,6 +176,13 @@ const Navbar = async () => {
 										<span className='pl-3'>Volunteer Opportunities </span>
 									</Link>
 								</li>
+								<li className=''>
+									<Link
+										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
+										href='/gallery'>
+										Photo Gallery
+									</Link>
+								</li>
 							</ul>
 						</div>
 						{/* Facility Rental - Removed and placed in Contact Page*/}

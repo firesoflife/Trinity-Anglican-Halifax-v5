@@ -16,6 +16,6 @@ export async function getSingleFeatureGallery(
         }
     }`;
 	const data = await client.fetch(query, { slug });
-	console.log('Fetched data:', data);
+	// console.log('Fetched data:', data);
 	return data;
 }

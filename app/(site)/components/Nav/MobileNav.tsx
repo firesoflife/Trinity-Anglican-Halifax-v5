@@ -182,6 +182,9 @@ const MobileNav: React.FC<ParishEventsProps> = (props) => {
 												Other Ministries & <br /> Volunteer Opportunities
 											</span>
 										</Link>
+										<Link href='/gallery' onClick={closeMenu}>
+											<span className='text-lg opacity-100'>Photo Gallery</span>
+										</Link>
 									</div>
 								</div>
 							)}

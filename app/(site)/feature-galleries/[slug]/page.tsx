@@ -48,18 +48,22 @@ const FeatureGalleryPage = ({ params: { slug } }: GalleryProps) => {
 	return (
 		<div className='bg-primary mx-auto'>
 			<div className='relative w-full h-[50vh] overflow-hidden mb-2'>
-				<Image
-					src={gallery?.coverImageUrl}
-					alt={`Cover for ${gallery.title}`}
-					className='w-full h-full object-cover '
-					fill
-				/>
+				{gallery.coverImageUrl ? (
+					<Image
+						src={gallery.coverImageUrl}
+						alt={`Cover for ${gallery.title}`}
+						className='w-full h-full object-cover'
+						fill={true}
+					/>
+				) : (
+					<div className='w-full h-full bg-black'></div>
+				)}
 				<div className='absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center'>
-					<h1 className='text-4xl font-mainContent mb-4 text-white'>
-						{gallery.title}
+					<h1 className='text-2xl md:text-4xl font-mainContent mb-4 text-white'>
+						{gallery?.title || ''}
 					</h1>
-					<p className='text-xl w-1/3 text-white text-center'>
-						{gallery.description}
+					<p className='text-base md:text-xl w-2/3 md:w-2/4 text-white text-center'>
+						{gallery?.description || ''}
 					</p>
 				</div>
 			</div>
@@ -82,8 +86,8 @@ const FeatureGalleryPage = ({ params: { slug } }: GalleryProps) => {
 								<Image
 									src={img.imageUrl}
 									alt={`Image ${index}`}
-									layout='fill'
-									objectFit='cover'
+									fill={true}
+									style={{ objectFit: 'cover' }}
 									className='transition-transform duration-300 ease-in-out group-hover:scale-110'
 								/>
 								<div className='absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 duration-300 bg-black bg-opacity-50'>

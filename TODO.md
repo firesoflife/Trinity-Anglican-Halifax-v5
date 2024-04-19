@@ -137,9 +137,9 @@
 - [ ] Mailer / Subscription host?
 - [ ] Domain information
 - [x] Any background on location? Demographics, Attractions etc that could be added to map
-- [ ] Social Media Links
+- [x] Social Media Links
 - [x] ANOUNCEMENTS ?
-- [ ] our vison arao -- our covenant in ministry
+- [x] our vison arao -- our covenant in ministry
 
 ---
 
@@ -162,4 +162,5 @@ NEW TODO
 -[ ] potentail ordering of events on parish events page
 
 - NOT GOING TO HAPPEN
-  parish email -
+
+parish email -
