@@ -18,7 +18,7 @@ export default function Layout({ children }: LayoutProps) {
 			<main>
 				<EventsBanner />
 				{children}
-				<CalendarLarge />
+				{/* <CalendarLarge /> */}
 			</main>
 		</div>
 	);
