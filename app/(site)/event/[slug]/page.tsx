@@ -23,13 +23,14 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 					<div className='relative min-h-56 flex flex-col md:flex-row justify-between'>
 						<div className='absolute top-0 w-full h-full opacity-10 blur-sm p-10'>
 							<Image
-								className='object-scale-down object-center mx-auto'
+								className=' object-center mx-auto'
 								src={
 									urlFor(pEventData?.pageBannerImage) ||
 									fallbackImages.parishEvents.pageBannerImageFallback
 								}
 								alt={`${pEventData?.eventTitle} Image`}
 								fill
+								objectFit='cover'
 							/>
 						</div>
 
@@ -45,7 +46,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 									{pEventData?.eventDetails?.eventType === 'recurring' ? (
 										<div>
 											<p className='text-2xl font-subheading'>
-												Join us every:{' '}
+												Join us:{' '}
 												{pEventData?.eventDetails?.recurrence?.dayOfWeek ||
 													'contact us for details'}
 											</p>
