@@ -26,7 +26,7 @@ export const EventsToggle: React.FC<EventsToggleProps> = ({
 									? 'inline-block p-4 border-2 rounded-b-lg border-myGrey hover:text-white hover:border-myblue hover:bg-myGrey transition-all'
 									: 'inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:border-myBlue transition-all'
 							}>
-							Common Events
+							Regular Events
 						</button>
 					</li>
 					<li className='mr-2'>
