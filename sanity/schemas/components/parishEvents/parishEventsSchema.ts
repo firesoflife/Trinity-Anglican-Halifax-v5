@@ -117,6 +117,14 @@ export const parishEvents = defineType({
 							title: 'Time of Day',
 							type: 'string',
 						},
+						{
+							name: 'weekOfMonth',
+							title: 'Week of the Month',
+							type: 'string',
+							options: {
+								list: ['First', 'Second', 'Third', 'Fourth', 'Last'],
+							},
+						},
 					],
 				},
 			],

@@ -349,6 +349,7 @@ interface Recurrence {
 	dayOfWeek: string;
 	frequency: string;
 	timeOfDay: string;
+	weekOfMonth: string;
 }
 
 interface ParishEvents extends Base {
