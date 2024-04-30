@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import { getHome } from '@/app/lib/api/getHome';
 import { client } from '@/sanity/lib/client';

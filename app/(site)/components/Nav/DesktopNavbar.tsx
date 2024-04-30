@@ -8,6 +8,38 @@ const Navbar = async () => {
 	const home = await getHome();
 	const pEvent = await getParishEvents();
 
+	// Helper Function to Break up Event Titles Exceeding Max Characters
+
+	const MAX_CHARS_SINGLE_LINE = 24; // For example, adjust as needed
+
+	function formatEventTitle(eventTitle: string): JSX.Element | string {
+		if (eventTitle.length > MAX_CHARS_SINGLE_LINE) {
+			// Find the last space character before hitting the maximum character limit
+			let breakPoint = eventTitle.lastIndexOf(' ', MAX_CHARS_SINGLE_LINE);
+
+			// If no space character was found within the limit, search forward instead
+			if (breakPoint === -1) {
+				breakPoint = eventTitle.indexOf(' ', MAX_CHARS_SINGLE_LINE);
+			}
+
+			// If no space character was found after the limit either, default to no break
+			if (breakPoint === -1) {
+				return eventTitle;
+			}
+
+			const firstLine = eventTitle.substring(0, breakPoint);
+			const secondLine = eventTitle.substring(breakPoint + 1);
+			return (
+				<>
+					{firstLine}
+					<br />
+					<span className='pl-3'>{secondLine}</span>
+				</>
+			);
+		}
+		return eventTitle;
+	}
+
 	return (
 		<div className='bg-primary border-myGrey z-50 hidden lg:block'>
 			<div className='m-w-screen-xl flex flex-col 2xl:flex-row items-center justify-between mx-auto p-4 px-20'>
@@ -156,7 +188,10 @@ const Navbar = async () => {
 											<Link
 												className='hover:border-white border-3 border bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 												href={`/event/${event.slug.current}`}>
-												{event?.eventTitle || 'could not load'}
+												{/* {event?.eventTitle || 'could not load'} */}
+												{formatEventTitle(
+													event?.eventTitle || 'could not load'
+												)}
 											</Link>
 										</li>
 									))}

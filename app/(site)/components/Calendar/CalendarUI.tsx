@@ -40,6 +40,8 @@ function CalendarUI() {
 
 	useEffect(() => {
 		getParishEvents().then((data: Event[]) => {
+			console.log('Fetched events data:', data);
+
 			setEvents(formatEvents(data));
 		});
 	}, []);
@@ -47,6 +49,7 @@ function CalendarUI() {
 	console.log(events);
 
 	const formatEvents = (eventsData: Event[]): Events => {
+		console.log(`Formatting ${eventsData.length} events.`);
 		let eventsObj: Events = {};
 		eventsData.forEach((event) => {
 			if (event?.eventDetails?.eventType === 'recurring') {
@@ -94,6 +97,68 @@ function CalendarUI() {
 		});
 		return eventsObj;
 	};
+
+	// const formatEvents = (eventsData: Event[]): Events => {
+	// 	console.log('formatEvents called with data:', eventsData); // Add this line
+
+	// 	let eventsObj: Events = {};
+	// 	eventsData.forEach((event) => {
+	// 		if (event?.eventDetails?.eventType === 'recurring') {
+	// 			if (event.eventDetails.recurrence) {
+	// 				const { dayOfWeek, frequency } = event.eventDetails.recurrence;
+	// 				let eventDate = dayjs();
+	// 				let loopCounter = 0; // For debugging: track iterations of while loop
+
+	// 				while (eventDate.isBefore(dayjs().add(1, 'year'))) {
+	// 					console.log(
+	// 						`Loop iteration: ${loopCounter}, Date being checked: ${eventDate.format(
+	// 							'YYYY-MM-DD'
+	// 						)}`
+	// 					); // For debugging: log each iteration
+	// 					loopCounter++; // For debugging: increment loop iteration count
+
+	// 					if (frequency === 'Every week') {
+	// 						if (eventDate.format('dddd') === dayOfWeek) {
+	// 							const formattedDate = eventDate.format('YYYY-MM-DD');
+	// 							if (!eventsObj[formattedDate]) {
+	// 								eventsObj[formattedDate] = [];
+	// 							}
+	// 							eventsObj[formattedDate].push(event);
+	// 						}
+	// 						eventDate = eventDate.add(1, 'day');
+	// 					} else if (frequency === 'Every month') {
+	// 						if (eventDate.date() === 1) {
+	// 							const formattedDate = eventDate.format('YYYY-MM-DD');
+	// 							if (!eventsObj[formattedDate]) {
+	// 								eventsObj[formattedDate] = [];
+	// 							}
+	// 							eventsObj[formattedDate].push(event);
+	// 						}
+	// 						eventDate = eventDate.add(1, 'day');
+	// 					}
+	// 					// For debugging: The 'else' part should never be reached considering the current frequencies, but just in case, let's add a safe exit
+	// 					else {
+	// 						console.error('Unexpected frequency encountered:', frequency);
+	// 						break;
+	// 					}
+	// 				}
+	// 				console.log(
+	// 					`Total loop iterations for event ${event.eventTitle}: ${loopCounter}`
+	// 				); // For debugging: log total iterations after loop ends
+	// 			}
+	// 		} else {
+	// 			// Handling for one-off events remains unchanged
+	// 			const date = event?.eventDetails?.date;
+	// 			if (date) {
+	// 				if (!eventsObj[date]) {
+	// 					eventsObj[date] = [];
+	// 				}
+	// 				eventsObj[date].push(event);
+	// 			}
+	// 		}
+	// 	});
+	// 	return eventsObj;
+	// };
 
 	return (
 		<>

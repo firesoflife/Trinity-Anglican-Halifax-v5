@@ -37,7 +37,9 @@ const HomePage = async () => {
 				</div>
 				{/* ANOUNCMENTS OR CALENDAR SECTION  */}
 				<Suspense fallback={<div>Loading...</div>}>
-					<div className='p-8'>{/* <CalendarUI /> */}</div>
+					<div className='p-8'>
+						<CalendarUI />
+					</div>
 				</Suspense>
 			</div>
 		</div>
