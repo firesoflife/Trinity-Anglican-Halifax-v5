@@ -48,56 +48,6 @@ function CalendarUI() {
 
 	console.log(events);
 
-	// const formatEvents = (eventsData: Event[]): Events => {
-	// 	console.log(`Formatting ${eventsData.length} events.`);
-	// 	let eventsObj: Events = {};
-	// 	eventsData.forEach((event) => {
-	// 		if (event?.eventDetails?.eventType === 'recurring') {
-	// 			// Handle recurring events
-	// 			if (event.eventDetails.recurrence) {
-	// 				const { dayOfWeek, frequency, weekOfMonth } =
-	// 					event.eventDetails.recurrence;
-	// 				// Assume the event starts from the current date
-	// 				let eventDate = dayjs();
-	// 				// Calculate the dates for recurring events based on the frequency
-	// 				while (eventDate.isBefore(dayjs().add(1, 'year'))) {
-	// 					// Generate dates for the next year
-	// 					if (frequency === 'Every week') {
-	// 						if (eventDate.format('dddd') === dayOfWeek) {
-	// 							const formattedDate = eventDate.format('YYYY-MM-DD');
-	// 							if (!eventsObj[formattedDate]) {
-	// 								eventsObj[formattedDate] = [];
-	// 							}
-	// 							eventsObj[formattedDate].push(event);
-	// 						}
-	// 						eventDate = eventDate.add(1, 'day');
-	// 					} else if (frequency === 'Every month') {
-	// 						if (eventDate.date() === 1) {
-	// 							// If the event occurs on the first day of every month
-	// 							const formattedDate = eventDate.format('YYYY-MM-DD');
-	// 							if (!eventsObj[formattedDate]) {
-	// 								eventsObj[formattedDate] = [];
-	// 							}
-	// 							eventsObj[formattedDate].push(event);
-	// 						}
-	// 						eventDate = eventDate.add(1, 'day');
-	// 					}
-	// 				}
-	// 			}
-	// 		} else {
-	// 			// Handle one-off events
-	// 			const date = event?.eventDetails?.date;
-	// 			if (date) {
-	// 				if (!eventsObj[date]) {
-	// 					eventsObj[date] = [];
-	// 				}
-	// 				eventsObj[date].push(event);
-	// 			}
-	// 		}
-	// 	});
-	// 	return eventsObj;
-	// };
-
 	const formatEvents = (eventsData: Event[]): Events => {
 		let eventsObj: Events = {};
 		eventsData.forEach((event) => {

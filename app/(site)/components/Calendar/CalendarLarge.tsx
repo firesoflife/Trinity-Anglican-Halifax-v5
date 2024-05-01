@@ -15,7 +15,8 @@ type EventDetails = {
 	recurrence: {
 		dayOfWeek: string;
 		frequency: string;
-		timeofDay: string;
+		timeOfDay: string;
+		weekOfMonth?: string;
 	};
 };
 
@@ -25,16 +26,13 @@ type Events = {
 	[date: string]: Event[];
 };
 
-function CalendarUI() {
+function CalendarLarge() {
 	const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 	const currentDate = dayjs();
 
 	const [today, setToday] = useState(currentDate);
-
 	const [selectDate, setSelectDate] = useState(currentDate);
-
-	// Data fetch and state management for events
 
 	const [events, setEvents] = useState<Events>({});
 
@@ -48,39 +46,66 @@ function CalendarUI() {
 		let eventsObj: Events = {};
 		eventsData.forEach((event) => {
 			if (event?.eventDetails?.eventType === 'recurring') {
-				// Handle recurring events
-				if (event.eventDetails.recurrence) {
-					// Check for null or undefined values before destructuring
-					const { dayOfWeek, frequency } = event.eventDetails.recurrence;
-					// Assume the event starts from the current date
-					let eventDate = dayjs();
-					// Calculate the dates for recurring events based on the frequency
-					while (eventDate.isBefore(dayjs().add(1, 'year'))) {
-						// Generate dates for the next year
+				const { recurrence } = event.eventDetails;
+				if (recurrence) {
+					const { dayOfWeek, frequency, weekOfMonth } = recurrence;
+					let baseDate = dayjs().startOf('year');
+
+					for (let month = 0; month < 12; month++) {
+						let monthDate = baseDate.month(month);
+
 						if (frequency === 'Every week') {
-							if (eventDate.format('dddd') === dayOfWeek) {
-								const formattedDate = eventDate.format('YYYY-MM-DD');
-								if (!eventsObj[formattedDate]) {
-									eventsObj[formattedDate] = [];
+							let firstDayOfMonth = monthDate.startOf('month');
+							for (let i = 0; i < 7; i++) {
+								let checkDate = firstDayOfMonth.add(i, 'days');
+								if (checkDate.format('dddd') === dayOfWeek) {
+									for (
+										let d = checkDate;
+										d.month() === monthDate.month();
+										d = d.add(1, 'week')
+									) {
+										const formattedDate = d.format('YYYY-MM-DD');
+										if (!eventsObj[formattedDate]) {
+											eventsObj[formattedDate] = [];
+										}
+										eventsObj[formattedDate].push(event);
+									}
+									break;
 								}
-								eventsObj[formattedDate].push(event);
 							}
-							eventDate = eventDate.add(1, 'day');
-						} else if (frequency === 'Every month') {
-							if (eventDate.date() === 1) {
-								// If the event occurs on the first day of every month
-								const formattedDate = eventDate.format('YYYY-MM-DD');
-								if (!eventsObj[formattedDate]) {
-									eventsObj[formattedDate] = [];
+						} else if (frequency === 'Every month' && weekOfMonth) {
+							const weekCounts: { [key: string]: number } = {
+								First: 1,
+								Second: 2,
+								Third: 3,
+								Fourth: 4,
+								Last: -1,
+							};
+							const weekDayFactors = weekCounts[weekOfMonth];
+							const lastDayOfMonth = monthDate.endOf('month');
+							let targetDate = monthDate.startOf('month');
+
+							while (targetDate.format('dddd') !== dayOfWeek) {
+								targetDate = targetDate.add(1, 'days');
+							}
+							if (weekDayFactors > 0) {
+								targetDate = targetDate.add(weekDayFactors - 1, 'week');
+							} else if (weekDayFactors === -1) {
+								while (
+									targetDate.add(1, 'week').month() === monthDate.month()
+								) {
+									targetDate = targetDate.add(1, 'week');
 								}
-								eventsObj[formattedDate].push(event);
 							}
-							eventDate = eventDate.add(1, 'day');
+							const formattedDate = targetDate.format('YYYY-MM-DD');
+							if (!eventsObj[formattedDate]) {
+								eventsObj[formattedDate] = [];
+							}
+							eventsObj[formattedDate].push(event);
 						}
 					}
 				}
 			} else {
-				// Handle one-off events
 				const date = event?.eventDetails?.date;
 				if (date) {
 					if (!eventsObj[date]) {
@@ -168,7 +193,6 @@ function CalendarUI() {
 					className='h-full w-full lg:w-1/2 px-10 rounded-lg overflow-y-auto'
 					style={{ maxHeight: '500px' }}>
 					<h1 className='text-4xl font-subContent2 font-extralight text-secondary mb-4'>
-						{/* Events for {selectDate.toDate().toDateString()} */}
 						Events for:{' '}
 						{selectDate.toDate().toLocaleDateString(undefined, {
 							weekday: 'long',
@@ -179,15 +203,14 @@ function CalendarUI() {
 					</h1>
 					{events[selectDate.format('YYYY-MM-DD')] ? (
 						events[selectDate.format('YYYY-MM-DD')].map((event, index) => (
-							<Link href={`/event/${event.slug.current}`}>
+							<Link href={`/event/${event.slug.current}`} key={index}>
 								<div
-									key={index}
 									className={`p-6 mb-6 rounded-lg text-lg ${
 										event.eventDetails.eventType === 'recurring'
 											? 'bg-secondary text-primary'
-											: 'bg-slate-800'
+											: 'bg-slate-800 text-primary'
 									}`}>
-									<h2 className='text-2xl pb-3 font-semibold text-primary'>
+									<h2 className='text-2xl pb-3 font-semibold'>
 										{event.eventTitle}
 									</h2>
 									<p className='text-white line-clamp-2'>{event.description}</p>
@@ -203,4 +226,4 @@ function CalendarUI() {
 	);
 }
 
-export default CalendarUI;
+export default CalendarLarge;
