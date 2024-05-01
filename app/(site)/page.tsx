@@ -35,7 +35,7 @@ const HomePage = async () => {
 					{/* MAP  & CONTACT */}
 					<MapContactCard />
 				</div>
-				{/* ANOUNCMENTS OR CALENDAR SECTION  */}
+				{/* CALENDAR SECTION  */}
 				<Suspense fallback={<div>Loading...</div>}>
 					<div className='p-8'>
 						<CalendarUI />

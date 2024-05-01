@@ -20,7 +20,7 @@ export const cards = [
 			'https://cdn.sanity.io/images/4ns0wsqo/production/dce9bbb22e96672f27c046ee3405408ce496026a-848x989.png',
 		header: 'Anglican Diocese of NS & PEI',
 		content:
-			'Explore the Anglican Diocese of Nova Scotia and PEI. Discover our vibrant community, worship services, and commitment to faith. Join us on our spiritual journey',
+			'Trinity belongs to the Chebucto Region in our local Diocese, and is part of the Anglican Church of Canada. Learn more about the broader governing structure of our Church, our Bishop, and Diocesan policy and resources.',
 		alt: 'Anglican Diocese of NS & PEI logo',
 		cta: {
 			text: 'Click me',
