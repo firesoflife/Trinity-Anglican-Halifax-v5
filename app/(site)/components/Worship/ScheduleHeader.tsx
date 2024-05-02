@@ -6,7 +6,7 @@ function ScheduleHeader() {
 			</div>
 
 			<h1 className='text-4xl font-subheading text-center py-16'>
-				Worship Shedule
+				Worship Schedule
 			</h1>
 			<hr className='inverse-staff-underline w-1/3 mx-auto' />
 		</div>

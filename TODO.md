@@ -161,6 +161,7 @@ NEW TODO
 
 -[ ] potentail ordering of events on parish events page
 
-- NOT GOING TO HAPPEN
+- [ ] Other Ministry and Volunteer Opportunities & Refugee Sponsorship pages need events page
+- [ ] Photo Copyright info - add to footer
 
 parish email -

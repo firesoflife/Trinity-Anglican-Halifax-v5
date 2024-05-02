@@ -103,6 +103,8 @@ const Footer = async () => {
 							{' '}
 							BG-Design
 						</Link>
+						<br />
+						and photographs by
 					</p>
 				</aside>
 				<nav className='md:place-self-center md:justify-self-end flex'>

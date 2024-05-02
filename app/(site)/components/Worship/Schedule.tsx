@@ -74,7 +74,9 @@ export default async function EventList() {
 									<p>{service.description}</p>
 									<p>Start Time: {service.startTime}</p>
 									<p>End Time: {service.endTime || 'Not specified'}</p>
-									<p>Days: {service.daysOfWeek.join(', ')}</p>
+									<p className='capitalize'>
+										Days: {service.daysOfWeek.join(', ')}
+									</p>
 								</div>
 							))
 						) : (
@@ -98,7 +100,9 @@ export default async function EventList() {
 									<p>{service.description}</p>
 									<p>Start Time: {service.startTime}</p>
 									<p>End Time: {service.endTime || 'Not specified'}</p>
-									<p>Days: {service.daysOfWeek.join(', ')}</p>
+									<p className='capitalize'>
+										Days: {service.daysOfWeek.join(', ')}
+									</p>
 								</div>
 							))
 						) : (
