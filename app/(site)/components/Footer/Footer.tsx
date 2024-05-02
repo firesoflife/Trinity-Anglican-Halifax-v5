@@ -103,8 +103,14 @@ const Footer = async () => {
 							{' '}
 							BG-Design
 						</Link>
+						, and
 						<br />
-						and photographs by
+						select photos by
+						<Link
+							className='underline'
+							href='https://www.flickr.com/photos/vitaminbea/setsg'>
+							Béatrice Schuler Photography.
+						</Link>
 					</p>
 				</aside>
 				<nav className='md:place-self-center md:justify-self-end flex'>
