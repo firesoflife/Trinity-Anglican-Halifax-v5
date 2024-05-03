@@ -1,3 +1,5 @@
+import { volunteer } from './sanity/schemas/components/parishEvents/volunteerSchema';
+
 type Base = {
 	_createdAt: Date;
 	_id: string;
@@ -390,6 +392,20 @@ interface SingleParishEvent extends Base {
 	body: Array<Block | Image>;
 	primaryImage: Image;
 	eventDetails: EventDetails;
+	pageBannerImage: Image;
+}
+
+interface volunteer extends Base {
+	volunteerOpportunities: string;
+	description: string;
+	body: Array<Block | Image>;
+	pageBannerImage: Image;
+}
+
+interface refugee extends Base {
+	refugeeSponsorship: string;
+	description: string;
+	body: Array<Block | Image>;
 	pageBannerImage: Image;
 }
 

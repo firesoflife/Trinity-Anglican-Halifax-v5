@@ -21,6 +21,10 @@ import { LuScroll } from 'react-icons/lu';
 import { PiScrollLight } from 'react-icons/pi';
 import { TbSectionSign } from 'react-icons/tb';
 import { FaPenFancy } from 'react-icons/fa6';
+import { BiDonateHeart } from 'react-icons/bi';
+import { LiaHandsHelpingSolid } from 'react-icons/lia';
+import { LuFolderSymlink } from 'react-icons/lu';
+import { BsLayoutTextWindowReverse } from 'react-icons/bs';
 
 export const deskStructure = (S) =>
 	S.list()
@@ -139,12 +143,33 @@ export const deskStructure = (S) =>
 						.items([
 							S.listItem()
 								.title('Parish Page Layout')
+								.icon(BsLayoutTextWindowReverse)
 								.child(
 									S.editor()
 										.schemaType('generalParishLayout')
 										.documentId('generalParishLayout')
 								),
-							S.documentTypeListItem('parishEvents').title('List of Events'),
+							S.documentTypeListItem('parishEvents')
+								.title('List of Events')
+								.icon(LuFolderSymlink),
+							S.listItem()
+								.title('Volunteer Opportunities')
+								.icon(LiaHandsHelpingSolid)
+								.child(
+									S.editor()
+										.schemaType('volunteer')
+										.documentId('volunteer')
+										.title('Volunteer Opportunities')
+								),
+							S.listItem()
+								.title('Refugee Sponsorship')
+								.icon(BiDonateHeart)
+								.child(
+									S.editor()
+										.schemaType('refugee')
+										.documentId('refugee')
+										.title('Refugee Sponsorship')
+								),
 						])
 				),
 			S.listItem()

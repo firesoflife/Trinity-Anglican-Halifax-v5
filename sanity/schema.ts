@@ -27,6 +27,8 @@ import { covenant } from './schemas/pages/covenantSchema';
 
 import { featureGalleryImage } from './schemas/components/featureImageGallery/featureGalleryImageSchema';
 import { featureGallery } from './schemas/components/featureImageGallery/featureGallerySchema';
+import { volunteer } from './schemas/components/parishEvents/volunteerSchema';
+import { refugee } from './schemas/components/parishEvents/refugeeSchema';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
 	types: [
@@ -57,5 +59,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
 		covenant,
 		featureGallery,
 		featureGalleryImage,
+		volunteer,
+		refugee,
 	],
 };
