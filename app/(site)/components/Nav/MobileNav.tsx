@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Logo from '../../../../public/triquetra-svg.svg';
 import Image from 'next/image';
 import { Squash as Hamburger } from 'hamburger-react';
+import { ParishEventsProps } from '@/typings';
 
 const MobileNav: React.FC<ParishEventsProps> = (props) => {
 	const [isOpen, setIsOpen] = useState(false);
