@@ -172,12 +172,12 @@ const MobileNav: React.FC<ParishEventsProps> = (props) => {
 												</Link>
 											))}
 
-										<Link href='/events' onClick={closeMenu}>
+										<Link href='/event/refugee' onClick={closeMenu}>
 											<span className='text-lg opacity-100'>
 												Refugee Sponsorship
 											</span>
 										</Link>
-										<Link href='/events' onClick={closeMenu}>
+										<Link href='/event/volunteer' onClick={closeMenu}>
 											<span className='text-lg opacity-100'>
 												Other Ministries & <br /> Volunteer Opportunities
 											</span>

@@ -6,10 +6,9 @@ export const refugee = defineType({
 	type: 'document',
 	fields: [
 		defineField({
-			name: 'refugeeSponsorship',
-			title: 'Refugee Sponsorship',
+			name: 'title',
+			title: 'Page Title',
 			type: 'string',
-			hidden: true,
 		}),
 		defineField({
 			name: 'description',

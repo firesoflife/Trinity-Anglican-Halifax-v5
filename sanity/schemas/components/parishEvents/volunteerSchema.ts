@@ -6,8 +6,8 @@ export const volunteer = defineType({
 	type: 'document',
 	fields: [
 		defineField({
-			name: 'volunteerOpportunities',
-			title: 'Volunteer Opportunities',
+			name: 'title',
+			title: 'Page Title',
 			type: 'string',
 			placeholder: 'ex. Sunday School Instructor',
 			hidden: true,

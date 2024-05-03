@@ -1,5 +1,6 @@
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
+import { ParishEvents } from '@/typings';
 
 export async function getSingleParishEvent(
 	slug: string

@@ -198,14 +198,14 @@ const Navbar = async () => {
 								<li className=''>
 									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='/events'>
+										href='/event/refugee'>
 										Refugee Sponsorship
 									</Link>
 								</li>
 								<li className=''>
 									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
-										href='/events'>
+										href='/event/volunteer'>
 										Other Ministries &
 										<br />{' '}
 										<span className='pl-3'>Volunteer Opportunities </span>

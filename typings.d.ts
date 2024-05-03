@@ -340,6 +340,16 @@ interface Parish extends Base {
 
 // ParishEvents
 
+interface ParishEvents extends Base {
+	eventTitle: string;
+	slug: Slug;
+	description: string;
+	body: Array<Block | Image>;
+	primaryImage: Image;
+	eventDetails: EventDetails;
+	pageBannerImage: Image;
+}
+
 interface EventDetails {
 	eventType: string;
 	date: string;
@@ -395,14 +405,16 @@ interface SingleParishEvent extends Base {
 	pageBannerImage: Image;
 }
 
-interface volunteer extends Base {
+interface Volunteer extends Base {
+	title: string;
 	volunteerOpportunities: string;
 	description: string;
 	body: Array<Block | Image>;
 	pageBannerImage: Image;
 }
 
-interface refugee extends Base {
+interface Refugee extends Base {
+	title: string;
 	refugeeSponsorship: string;
 	description: string;
 	body: Array<Block | Image>;
