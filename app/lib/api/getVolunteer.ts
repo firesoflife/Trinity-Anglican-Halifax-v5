@@ -2,8 +2,8 @@ import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
 import { Volunteer } from '@/typings';
 
-// Fetch the singleton refugee sponsorship opportunity
-export async function getRefugee(): Promise<Volunteer | null> {
+// Fetch the singleton volunteer sponsorship opportunity
+export async function getVolunteer(): Promise<Volunteer | null> {
 	const result = await client.fetch(
 		groq`*[_type == "volunteer"][0]{
       title,
@@ -30,6 +30,6 @@ export async function getRefugee(): Promise<Volunteer | null> {
 	return result || null;
 }
 
-getRefugee().then((refugeeOpportunity) => {
-	console.log(refugeeOpportunity);
+getVolunteer().then((volunteerOpportunity) => {
+	console.log(volunteerOpportunity);
 });
