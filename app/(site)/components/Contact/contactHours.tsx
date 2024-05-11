@@ -36,44 +36,52 @@ const MapContactCard = async () => {
 								</h3>
 								<div className='grid flex-1 card bg-white rounded-box text-primary bg-opacity-20 p-4 pl-4'>
 									{contactInfo.days.length > 0 ? (
-										contactInfo.days.map((dayInfo, index) => {
-											// Function to add leading zero to hour if necessary
-											const formatHour = (time: string) => {
-												const [hour, minute] = time.split(':');
-												return `${hour.padStart(2, '0')}:${minute}`;
-											};
+										contactInfo.days.map(
+											(
+												dayInfo: { from: string; to: string; day: string },
+												index: React.Key | null | undefined
+											) => {
+												// Function to add leading zero to hour if necessary
+												const formatHour = (time: string) => {
+													const [hour, minute] = time.split(':');
+													return `${hour.padStart(2, '0')}:${minute}`;
+												};
 
-											// Convert 24-hour format time to 12-hour format (AM/PM)
-											const fromTime = new Date(
-												`1970-01-01T${formatHour(dayInfo.from)}:00`
-											);
-											const toTime = new Date(
-												`1970-01-01T${formatHour(dayInfo.to)}:00`
-											);
-											const fromTime12Hour = fromTime.toLocaleTimeString(
-												'en-US',
-												{ hour: 'numeric', minute: 'numeric', hour12: true }
-											);
-											const toTime12Hour = toTime.toLocaleTimeString('en-US', {
-												hour: 'numeric',
-												minute: 'numeric',
-												hour12: true,
-											});
+												// Convert 24-hour format time to 12-hour format (AM/PM)
+												const fromTime = new Date(
+													`1970-01-01T${formatHour(dayInfo.from)}:00`
+												);
+												const toTime = new Date(
+													`1970-01-01T${formatHour(dayInfo.to)}:00`
+												);
+												const fromTime12Hour = fromTime.toLocaleTimeString(
+													'en-US',
+													{ hour: 'numeric', minute: 'numeric', hour12: true }
+												);
+												const toTime12Hour = toTime.toLocaleTimeString(
+													'en-US',
+													{
+														hour: 'numeric',
+														minute: 'numeric',
+														hour12: true,
+													}
+												);
 
-											return (
-												<div key={index} className='mb-2 min-w-fit '>
-													<p className='font-subheading text-2xl flex justify-between'>
-														{dayInfo.day.charAt(0).toUpperCase() +
-															dayInfo.day.slice(1)}{' '}
-														<span className='pl-4'>
-															{dayInfo.from && dayInfo.to
-																? `${fromTime12Hour} - ${toTime12Hour}`
-																: 'Away'}
-														</span>
-													</p>
-												</div>
-											);
-										})
+												return (
+													<div key={index} className='mb-2 min-w-fit '>
+														<p className='font-subheading text-2xl flex justify-between'>
+															{dayInfo.day.charAt(0).toUpperCase() +
+																dayInfo.day.slice(1)}{' '}
+															<span className='pl-4'>
+																{dayInfo.from && dayInfo.to
+																	? `${fromTime12Hour} - ${toTime12Hour}`
+																	: 'Away'}
+															</span>
+														</p>
+													</div>
+												);
+											}
+										)
 									) : (
 										<p>Closed</p>
 									)}

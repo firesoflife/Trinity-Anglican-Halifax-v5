@@ -49,7 +49,9 @@ const MapContactCard = async () => {
 												<div className='border border-b border-slate-400 w-64'></div>
 												<p>{service.description}</p>
 												<p>Start Time: {service.startTime}</p>
-												<p>Days: {service.daysOfWeek.join(', ')}</p>
+												<p className='capitalize'>
+													Days: {service.daysOfWeek.join(', ')}
+												</p>
 											</div>
 										))
 									) : (
