@@ -10,6 +10,7 @@ import { TbArrowBackUp } from 'react-icons/tb';
 import { getSingleFeatureGallery } from '@/app/lib/api/getSingleFeatureGallery';
 import Loading from './Loading';
 import Link from 'next/link';
+import { FeatureGallery } from '@/typings';
 
 type GalleryProps = {
 	params: {
@@ -22,6 +23,8 @@ type ImageId = {
 	title?: string;
 	description?: string;
 };
+
+export const revalidate = 10;
 
 const FeatureGalleryPage = ({ params: { slug } }: GalleryProps) => {
 	const [gallery, setGallery] = useState<FeatureGallery | null>(null);
