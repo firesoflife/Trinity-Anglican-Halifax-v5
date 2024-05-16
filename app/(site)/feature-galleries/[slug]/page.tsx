@@ -10,6 +10,7 @@ import { TbArrowBackUp } from 'react-icons/tb';
 import { getSingleFeatureGallery } from '@/app/lib/api/getSingleFeatureGallery';
 import Loading from './Loading';
 import Link from 'next/link';
+import { FeatureGallery } from '@/typings';
 
 type GalleryProps = {
 	params: {
