@@ -2,6 +2,8 @@ import { getFeatureGalleries } from '@/app/lib/api/getFeatureGalleries';
 import { FeatureGallery } from '@/typings';
 import Link from 'next/link';
 
+export const revalidate = 10;
+
 export default async function FeatureGalleryList() {
 	const galleries: FeatureGallery[] = await getFeatureGalleries();
 
