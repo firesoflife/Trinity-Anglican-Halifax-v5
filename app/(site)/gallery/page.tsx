@@ -7,6 +7,8 @@ export const revalidate = 10;
 export default async function FeatureGalleryList() {
 	const galleries: FeatureGallery[] = await getFeatureGalleries();
 
+	console.log(galleries);
+
 	return (
 		<div className='flex flex-wrap justify-center p-5'>
 			{galleries.map((gallery) => (
