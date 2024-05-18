@@ -350,27 +350,27 @@ interface ParishEvents extends Base {
 	pageBannerImage: Image;
 }
 
-interface EventDetails {
-	eventType: string;
-	date: string;
-	eventTime: string;
-	recurrence: Recurrence;
-}
-
 interface Recurrence {
-	dayOfWeek: string;
-	frequency: string;
-	timeOfDay: string;
-	weekOfMonth: string;
+	dayOfWeek?: string;
+	frequency?: string;
+	timeOfDay?: string;
+	weekOfMonth?: string;
 }
 
 interface ParishEvents extends Base {
-	pageTitle: string;
+	eventTitle: string;
+	pageTitle?: string;
+	eventType: 'recurring' | 'one-off';
+	isMultiDay: boolean;
+	date?: string;
+	startDate?: string;
+	endDate?: string;
+	eventTime: string;
+	recurrence: Recurrence;
 	slug: Slug;
 	bannerImage: Image;
-	bannerVerse: string;
-	bannerVerseAttribution: string;
-	eventTitle: string;
+	bannerVerse?: string;
+	bannerVerseAttribution?: string;
 	description: string;
 	body: Array<Block | Image>;
 	primaryImage: Image;
@@ -431,10 +431,13 @@ interface Blog extends Base {
 interface EventDetails {
 	eventType?: string;
 	date?: string;
+	startDate?: string;
+	endDate?: string;
+	showInNavigation?: boolean;
 	recurrence?: {
 		dayOfWeek?: string;
 		frequency?: string;
-		timeofDay?: string;
+		timeOfDay?: string;
 	};
 }
 

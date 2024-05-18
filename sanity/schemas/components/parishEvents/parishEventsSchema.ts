@@ -1,4 +1,5 @@
 // parishEventsSchema.ts
+import { describe } from 'node:test';
 import { IoCalendarOutline, IoRepeatOutline } from 'react-icons/io5';
 import { defineType, defineField } from 'sanity';
 
@@ -75,10 +76,31 @@ export const parishEvents = defineType({
 						}),
 				},
 				{
+					name: 'isMultiDay',
+					title: 'Is this a multi-day event?',
+					type: 'boolean',
+					hidden: ({ parent }) => parent?.eventType !== 'one-off', // Only show this field for one-off events
+				},
+				{
 					name: 'date',
-					title: 'Event Date',
+					title: 'Date',
 					type: 'date',
-					hidden: ({ parent }) => parent && parent.eventType === 'recurring',
+					hidden: ({ parent }) =>
+						parent?.eventType === 'one-off' && parent?.isMultiDay, // Hide if one-off event is multi-day
+				},
+				{
+					name: 'startDate',
+					title: 'Start Date',
+					type: 'date',
+					hidden: ({ parent }) =>
+						!(parent?.eventType === 'one-off' && parent?.isMultiDay), // Only show for multi-day one-off events
+				},
+				{
+					name: 'endDate',
+					title: 'End Date',
+					type: 'date',
+					hidden: ({ parent }) =>
+						!(parent?.eventType === 'one-off' && parent?.isMultiDay), // Only show for multi-day one-off events
 				},
 				{
 					name: 'recurrence',
@@ -126,6 +148,13 @@ export const parishEvents = defineType({
 							},
 						},
 					],
+				},
+				{
+					name: 'showInNavigation',
+					title: 'Show in Navigation',
+					type: 'boolean',
+					description:
+						'Toggle if you would like to have this item appear in the Events Naviation',
 				},
 			],
 		},

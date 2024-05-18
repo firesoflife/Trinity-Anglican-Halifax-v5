@@ -159,9 +159,7 @@ const MobileNav: React.FC<ParishEventsProps> = (props) => {
 											<span className=' text-lg opacity-100'>Calendar</span>
 										</Link>
 										{props.data
-											.filter(
-												(event) => event.eventDetails?.eventType === 'recurring'
-											)
+											.filter((event) => event.eventDetails?.showInNavigation)
 											.map((event, index) => (
 												<Link
 													key={index}

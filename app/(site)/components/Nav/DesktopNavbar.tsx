@@ -179,22 +179,21 @@ const Navbar = async () => {
 								</li>
 
 								{/* Filter and map over the events to create a new navigation item for each recurring event */}
+
 								{pEvent
-									.filter(
-										(event) => event?.eventDetails?.eventType === 'recurring'
-									)
+									.filter((event) => event?.eventDetails?.showInNavigation)
 									.map((event, index) => (
 										<li key={index} className=''>
 											<Link
 												className='hover:border-white border-3 border bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'
 												href={`/event/${event.slug.current}`}>
-												{/* {event?.eventTitle || 'could not load'} */}
 												{formatEventTitle(
 													event?.eventTitle || 'could not load'
 												)}
 											</Link>
 										</li>
 									))}
+
 								<li className=''>
 									<Link
 										className='rounded-b bg-white hover:bg-myGrey hover:text-primary py-2 px-4 block whitespace-no-wrap'

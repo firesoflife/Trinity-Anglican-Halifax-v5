@@ -8,16 +8,30 @@ import dayjs from 'dayjs';
 import CalendarHeader from './CalendarHeader';
 import { getParishEvents } from '@/app/lib/api/getParishEvents';
 import Link from 'next/link';
+import { ParishEvents } from '@/typings';
 
 type EventDetails = {
-	eventType: string;
-	date: string;
-	recurrence: {
-		dayOfWeek: string;
-		frequency: string;
-		timeOfDay: string;
-		weekOfMonth?: string;
-	};
+	eventType: 'recurring' | 'one-off';
+	date?: string; // For single-day events
+	startDate?: string; // For multi-day events
+	endDate?: string; // For multi-day events
+	recurrence?: RecurrenceDetails; // Ensure this is using the correct type
+};
+
+type WeekOfMonthKey = 'First' | 'Second' | 'Third' | 'Fourth' | 'Last';
+
+type RecurrenceDetails = {
+	dayOfWeek: string;
+	frequency: string;
+	timeOfDay?: string;
+	weekOfMonth?: WeekOfMonthKey;
+};
+
+const indexMap: { [K in Exclude<WeekOfMonthKey, 'Last'>]: number } = {
+	First: 0,
+	Second: 1,
+	Third: 2,
+	Fourth: 3,
 };
 
 type Event = ParishEvents;
@@ -32,12 +46,17 @@ function CalendarLarge() {
 	const currentDate = dayjs();
 
 	const [today, setToday] = useState(currentDate);
+
 	const [selectDate, setSelectDate] = useState(currentDate);
+
+	// Data fetch and state management for events
 
 	const [events, setEvents] = useState<Events>({});
 
 	useEffect(() => {
 		getParishEvents().then((data: Event[]) => {
+			console.log('Fetched events data:', data);
+
 			setEvents(formatEvents(data));
 		});
 	}, []);
@@ -45,73 +64,89 @@ function CalendarLarge() {
 	const formatEvents = (eventsData: Event[]): Events => {
 		let eventsObj: Events = {};
 		eventsData.forEach((event) => {
-			if (event?.eventDetails?.eventType === 'recurring') {
-				const { recurrence } = event.eventDetails;
-				if (recurrence) {
-					const { dayOfWeek, frequency, weekOfMonth } = recurrence;
-					let baseDate = dayjs().startOf('year');
+			const { eventDetails } = event;
+			if (eventDetails.eventType === 'recurring' && eventDetails.recurrence) {
+				const recurrence = eventDetails.recurrence;
+				const { dayOfWeek, frequency, weekOfMonth } = recurrence as {
+					dayOfWeek?: string | undefined;
+					frequency?: string | undefined;
+					weekOfMonth?: string | undefined;
+				};
+				let baseDate = dayjs().startOf('year');
 
-					for (let month = 0; month < 12; month++) {
-						let monthDate = baseDate.month(month);
+				for (let month = 0; month < 12; month++) {
+					let monthStart = baseDate.month(month).startOf('month');
+					let monthEnd = baseDate.month(month).endOf('month');
 
-						if (frequency === 'Every week') {
-							let firstDayOfMonth = monthDate.startOf('month');
-							for (let i = 0; i < 7; i++) {
-								let checkDate = firstDayOfMonth.add(i, 'days');
-								if (checkDate.format('dddd') === dayOfWeek) {
-									for (
-										let d = checkDate;
-										d.month() === monthDate.month();
-										d = d.add(1, 'week')
-									) {
-										const formattedDate = d.format('YYYY-MM-DD');
-										if (!eventsObj[formattedDate]) {
-											eventsObj[formattedDate] = [];
-										}
-										eventsObj[formattedDate].push(event);
-									}
-									break;
-								}
+					if (frequency === 'Every week') {
+						let firstOccurrence;
+						for (let day = 0; day < 7; day++) {
+							let potentialDay = monthStart.add(day, 'days');
+							if (potentialDay.format('dddd') === dayOfWeek) {
+								firstOccurrence = potentialDay;
+								break;
 							}
-						} else if (frequency === 'Every month' && weekOfMonth) {
-							const weekCounts: { [key: string]: number } = {
-								First: 1,
-								Second: 2,
-								Third: 3,
-								Fourth: 4,
-								Last: -1,
-							};
-							const weekDayFactors = weekCounts[weekOfMonth];
-							const lastDayOfMonth = monthDate.endOf('month');
-							let targetDate = monthDate.startOf('month');
+						}
 
-							while (targetDate.format('dddd') !== dayOfWeek) {
-								targetDate = targetDate.add(1, 'days');
+						if (firstOccurrence) {
+							while (
+								firstOccurrence.isBefore(monthEnd) ||
+								firstOccurrence.isSame(monthEnd, 'day')
+							) {
+								const formattedDate = firstOccurrence.format('YYYY-MM-DD');
+								eventsObj[formattedDate] = eventsObj[formattedDate] || [];
+								eventsObj[formattedDate].push(event);
+								firstOccurrence = firstOccurrence.add(1, 'week');
 							}
-							if (weekDayFactors > 0) {
-								targetDate = targetDate.add(weekDayFactors - 1, 'week');
-							} else if (weekDayFactors === -1) {
-								while (
-									targetDate.add(1, 'week').month() === monthDate.month()
-								) {
-									targetDate = targetDate.add(1, 'week');
-								}
+						}
+					} else if (frequency === 'Every month' && weekOfMonth) {
+						let matchingDays = [];
+						for (let day = 0; day <= monthEnd.diff(monthStart, 'day'); day++) {
+							let currentDay = monthStart.add(day, 'days');
+							if (currentDay.format('dddd') === dayOfWeek) {
+								matchingDays.push(currentDay);
 							}
-							const formattedDate = targetDate.format('YYYY-MM-DD');
-							if (!eventsObj[formattedDate]) {
-								eventsObj[formattedDate] = [];
+						}
+
+						let targetDay = null;
+						if (weekOfMonth === 'Last') {
+							targetDay = matchingDays.pop();
+						} else {
+							const index =
+								indexMap[weekOfMonth as Exclude<WeekOfMonthKey, 'Last'>];
+							if (index !== undefined && index < matchingDays.length) {
+								targetDay = matchingDays[index];
 							}
+						}
+
+						if (targetDay) {
+							const formattedDate = targetDay.format('YYYY-MM-DD');
+							eventsObj[formattedDate] = eventsObj[formattedDate] || [];
 							eventsObj[formattedDate].push(event);
 						}
 					}
 				}
 			} else {
-				const date = event?.eventDetails?.date;
+				// Handle one-off events, including multi-day events
+				const { date, startDate, endDate } = eventDetails;
 				if (date) {
-					if (!eventsObj[date]) {
-						eventsObj[date] = [];
-					}
+					// Single day event
+					eventsObj[date] = eventsObj[date] || [];
 					eventsObj[date].push(event);
+				} else if (startDate && endDate) {
+					// Multi-day event
+					let currentDay = dayjs(startDate);
+					const endDay = dayjs(endDate);
+
+					while (
+						currentDay.isBefore(endDay) ||
+						currentDay.isSame(endDay, 'day')
+					) {
+						const formattedDate = currentDay.format('YYYY-MM-DD');
+						eventsObj[formattedDate] = eventsObj[formattedDate] || [];
+						eventsObj[formattedDate].push(event);
+						currentDay = currentDay.add(1, 'day');
+					}
 				}
 			}
 		});
@@ -202,21 +237,47 @@ function CalendarLarge() {
 						})}
 					</h1>
 					{events[selectDate.format('YYYY-MM-DD')] ? (
-						events[selectDate.format('YYYY-MM-DD')].map((event, index) => (
-							<Link href={`/event/${event.slug.current}`} key={index}>
-								<div
-									className={`p-6 mb-6 rounded-lg text-lg ${
-										event.eventDetails.eventType === 'recurring'
-											? 'bg-secondary text-primary'
-											: 'bg-slate-800 text-primary'
-									}`}>
-									<h2 className='text-2xl pb-3 font-semibold'>
-										{event.eventTitle}
-									</h2>
-									<p className='text-white line-clamp-2'>{event.description}</p>
-								</div>
-							</Link>
-						))
+						events[selectDate.format('YYYY-MM-DD')].map((event, index) => {
+							const { eventDetails } = event;
+							const isMultiDayEvent =
+								eventDetails.startDate && eventDetails.endDate;
+							const isRecurringEvent = eventDetails.eventType === 'recurring';
+							const startDateFormatted = isMultiDayEvent
+								? dayjs(eventDetails.startDate).format('MMM D, YYYY')
+								: '';
+							const endDateFormatted = isMultiDayEvent
+								? dayjs(eventDetails.endDate).format('MMM D, YYYY')
+								: '';
+
+							// Determine the background color based on the event type
+							let bgColorClass = '';
+							if (isMultiDayEvent) {
+								bgColorClass = 'bg-myGrey';
+							} else if (isRecurringEvent) {
+								bgColorClass = 'bg-slate-800';
+							} else {
+								bgColorClass = 'bg-secondary';
+							}
+
+							return (
+								<Link href={`/event/${event.slug.current}`} key={index}>
+									<div
+										className={`p-6 mb-6 rounded-lg text-lg text-primary cursor-pointer ${bgColorClass}`}>
+										<h2 className='text-2xl pb-3 font-semibold'>
+											{event.eventTitle}
+										</h2>
+										{isMultiDayEvent && (
+											<p className='text-base text-primary mb-2'>
+												From {startDateFormatted} to {endDateFormatted}
+											</p>
+										)}
+										<p className='text-white line-clamp-2'>
+											{event.description}
+										</p>
+									</div>
+								</Link>
+							);
+						})
 					) : (
 						<p className='text-gray-600 text-lg'>No events today.</p>
 					)}
