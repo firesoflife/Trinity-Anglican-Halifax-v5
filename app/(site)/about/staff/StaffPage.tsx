@@ -1,5 +1,6 @@
 import { getStaff } from '@/app/lib/api/getStaff';
 import StaffCard from '../../components/About/StaffCard';
+import { Staff } from '@/typings';
 
 export const revalidate = 10;
 
