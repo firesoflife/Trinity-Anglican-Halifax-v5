@@ -1,5 +1,6 @@
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
+import { ContactUs } from '@/typings';
 
 export async function getContact(): Promise<ContactUs> {
 	return client.fetch(

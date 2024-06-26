@@ -1,4 +1,5 @@
 import { client } from '@/sanity/lib/client';
+import { FeatureGallery } from '@/typings';
 import { groq } from 'next-sanity';
 
 export async function getSingleFeatureGallery(

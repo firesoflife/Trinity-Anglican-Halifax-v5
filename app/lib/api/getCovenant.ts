@@ -1,4 +1,5 @@
 import { client } from '@/sanity/lib/client';
+import { Covenant } from '@/typings';
 import { groq } from 'next-sanity';
 
 export async function getCovenant(): Promise<Covenant> {

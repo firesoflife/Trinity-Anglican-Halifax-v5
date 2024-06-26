@@ -1,5 +1,6 @@
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
+import { Post } from '@/typings';
 
 export async function getSinglePost(slug: string): Promise<Post> {
 	return client.fetch(

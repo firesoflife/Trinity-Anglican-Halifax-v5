@@ -1,4 +1,5 @@
 import { client } from '@/sanity/lib/client';
+import { Gallery, GalleryDetails } from '@/typings';
 import { groq } from 'next-sanity';
 
 // Fetch for Facility Gallery (not Feature Galley)

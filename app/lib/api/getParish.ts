@@ -1,5 +1,6 @@
 import { groq } from 'next-sanity';
 import { client } from '@/sanity/lib/client';
+import { Parish } from '@/typings';
 
 export async function getParish(): Promise<Parish> {
 	return client.fetch(
