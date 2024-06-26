@@ -47,7 +47,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 										<div className='w-64 flex justify-around'>
 											<div>
 												<h3 className='text-lg font-bold'>
-													{post?.author.name}{' '}
+													{post?.author.name || ' '}{' '}
 												</h3>
 												<p>
 													{new Date(post._createdAt).toLocaleDateString(
@@ -66,7 +66,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 													urlFor(post?.author.image) ||
 													fallbackImages.parishEvents.pageBannerImageFallback
 												}
-												alt={post?.author.name}
+												alt={post?.author.name || ' '}
 												height={40}
 												width={40}
 											/>
