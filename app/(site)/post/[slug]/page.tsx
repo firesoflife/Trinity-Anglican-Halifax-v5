@@ -14,7 +14,7 @@ type Props = {
 	};
 };
 
-const ParishEvent = async ({ params: { slug } }: Props) => {
+const PastoralLetters = async ({ params: { slug } }: Props) => {
 	const post = await getSinglePost(slug);
 
 	return (
@@ -47,7 +47,7 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 										<div className='w-64 flex justify-around'>
 											<div>
 												<h3 className='text-lg font-bold'>
-													{post?.author.name || ' '}{' '}
+													{post?.author?.name || ' '}{' '}
 												</h3>
 												<p>
 													{new Date(post._createdAt).toLocaleDateString(
@@ -63,10 +63,10 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 											<Image
 												className='rounded-full'
 												src={
-													urlFor(post?.author.image) ||
+													urlFor(post?.author?.image) ||
 													fallbackImages.parishEvents.pageBannerImageFallback
 												}
-												alt={post?.author.name || ' '}
+												alt={post?.author?.name || ' '}
 												height={40}
 												width={40}
 											/>
@@ -98,4 +98,4 @@ const ParishEvent = async ({ params: { slug } }: Props) => {
 	);
 };
 
-export default ParishEvent;
+export default PastoralLetters;
