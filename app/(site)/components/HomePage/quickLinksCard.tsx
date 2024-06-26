@@ -1,3 +1,4 @@
+import { QuickLinkCardProps } from '@/typings';
 import Link from 'next/link';
 
 const QuickLinkCard: React.FC<QuickLinkCardProps> = ({

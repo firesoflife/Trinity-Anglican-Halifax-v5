@@ -1,4 +1,5 @@
 'use client';
+import { Gallery, GalleryDetails } from '@/typings';
 import React, { useState } from 'react';
 import { AiOutlineExpandAlt } from 'react-icons/ai';
 import Lightbox from 'yet-another-react-lightbox';

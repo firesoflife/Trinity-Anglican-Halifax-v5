@@ -1,3 +1,4 @@
+import { StaffCardMember } from '@/typings';
 import { fallbackImages } from '../../utilities/fallbackAssets';
 
 interface StaffDetailsModalProps {

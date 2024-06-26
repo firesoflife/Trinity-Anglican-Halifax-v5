@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { fallbackImages } from '../../utilities/fallbackAssets';
 import Modal from './Modal';
 import StaffDetailsModal from './StaffDetails';
+import { StaffCardMember } from '@/typings';
 
 interface StaffCardProps {
 	staffMember: StaffCardMember;

@@ -1,6 +1,7 @@
 import urlFor from '@/sanity/lib/urlFor';
 import { GiTriquetra } from 'react-icons/gi';
 import Link from 'next/link';
+import { ParishEvents } from '@/typings';
 
 type Props = {
 	allParishEvents: ParishEvents[];

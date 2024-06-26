@@ -7,6 +7,7 @@ import type {
 	AccordionItem,
 	AccordionInterface,
 } from 'flowbite';
+import { Worship } from '@/typings';
 
 type OurValuesProps = {
 	worship: Worship;

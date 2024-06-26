@@ -9,6 +9,7 @@ import Image from 'next/image';
 import type { CollapseOptions, CollapseInterface } from 'flowbite';
 import Logo from '../../../../public/triquetra-svg.svg';
 import { getHome } from '@/app/lib/api/getHome';
+import { Home } from '@/typings';
 
 const Navbar = () => {
 	const triggerRef = useRef<HTMLButtonElement>(null);

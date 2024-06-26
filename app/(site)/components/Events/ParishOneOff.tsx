@@ -2,6 +2,7 @@ import urlFor from '@/sanity/lib/urlFor';
 import { GiTriquetra } from 'react-icons/gi';
 import Link from 'next/link';
 import { placeholders } from '../../utilities/fallbackAssets';
+import { OneOffEvents } from '@/typings';
 
 type Props = {
 	oneOffEvents: OneOffEvents[];

@@ -1,5 +1,6 @@
 import ClientSideRoute from '../../utilities/ClientSideRoute';
 import urlFor from '@/sanity/lib/urlFor';
+import { Post } from '@/typings';
 import { GiTriquetra } from 'react-icons/gi';
 
 type Props = {
