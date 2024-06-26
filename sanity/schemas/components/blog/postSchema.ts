@@ -26,7 +26,7 @@ export const post = defineType({
 			description:
 				'Describe your post or use the first 3 sentences of the content for a preview on the bloglist',
 			validation: (Rule) =>
-				Rule.required().max(27).warning('You have exceeded the maximum length'),
+				Rule.required().max(50).warning('You have exceeded the maximum length'),
 		}),
 		defineField({
 			name: 'author',
