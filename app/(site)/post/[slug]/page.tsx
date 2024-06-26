@@ -19,7 +19,7 @@ const PastoralLetters = async ({ params: { slug } }: Props) => {
 
 	return (
 		<div className='h-full pt-32 bg-secondary border-t-2 border-secondary'>
-			<article className='px-10'>
+			<article className='sm:px-10'>
 				<section className='space-y-2 border-primary text-white'>
 					<div className='relative min-h-56 flex flex-col md:flex-row justify-between'>
 						<div className='absolute top-0 w-full h-full opacity-10 blur-sm p-10'>
@@ -82,7 +82,7 @@ const PastoralLetters = async ({ params: { slug } }: Props) => {
 					</div>
 				</section>
 				{post?.body ? (
-					<div className='mt-12 lg:w-4/5 mx-auto text-secondary bg-primary p-14'>
+					<div className='mt-12 lg:w-4/5 mx-auto text-secondary bg-primary p-6 sm:p-14'>
 						<PortableText value={post?.body} components={RichTextComponents} />
 					</div>
 				) : (
