@@ -39,7 +39,7 @@ export default function Layout({ children }: LayoutProps) {
 				</div>
 
 				<main>{children}</main>
-
+				<Analytics />
 				<Footer />
 			</div>
 		</div>
