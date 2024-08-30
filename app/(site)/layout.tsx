@@ -9,6 +9,9 @@ import {
 import NavLayout from './components/Nav/layout';
 import Footer from './components/Footer/Footer';
 
+/////// VERCEL ANALYTICS /////////
+import { Analytics } from '@vercel/analytics/react';
+
 type LayoutProps = {
 	children: React.ReactNode;
 };
